@@ -96,3 +96,8 @@ A DCL é responsável pela definição de permissões para os usuários do banco
 
 3. `DENY`: bloquear, restringir, o acesso a objetos do banco de dados.
 
+---
+
+# Link
+
+https://learnsql.com.br/blog/o-que-sao-ddl-dml-dql-e-dcl-em-sql/
