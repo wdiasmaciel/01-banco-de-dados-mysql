@@ -63,7 +63,11 @@ git add . && git commit -m "Exemplo" && git push
 
 2. Na barra de pesquisa digite `rebuild`. 
 
-3. Selecione a opção `Codespaces: Rebuild Container`. Clique no botão `Rebuild`. Aguarde o término do processamento.
+3. Selecione a opção `Codespaces: Rebuild Container`. 
+
+4. Clique no botão `Rebuild`. 
+
+5. Aguarde o término do processamento.
 
 ---
 
