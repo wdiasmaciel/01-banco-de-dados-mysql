@@ -49,6 +49,12 @@ Além disso, inicie o serviço do `MySQL` de forma automática assim que o `Code
 }
 ```
 
+3. No terminal do `VS Code`, execute o comando abaixo:
+
+```bash
+git add . && git commit -m "Exemplo" && git push
+```
+
 ---
 
 # Rebuild
