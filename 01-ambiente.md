@@ -21,11 +21,13 @@
 
 ---
 
-# Configuração do Ambiente: instalar o Node, o MySQL e a `Database Client`
+# Configuração do Ambiente
 
-- No Codespaces, adicione o `Node.js`, o `MySQL` e a extensão `Database Client` do `VS Code` no container do `Codespace`, usando um arquivo de configuração `devcontainer.json`. 
+Instalar o `Node`, o `MySQL` e a `Database Client`.
 
-- Além disso, inicie o serviço do `MySQL` de forma automática assim que o `Codespaces` abrir.
+1. No Codespaces, adicione o `Node.js`, o `MySQL` e a extensão `Database Client` do `VS Code` no container do `Codespace`, usando um arquivo de configuração `devcontainer.json`. 
+
+Além disso, inicie o serviço do `MySQL` de forma automática assim que o `Codespaces` abrir.
 
 1. Crie uma pasta chamada `.devcontainer` na raiz do seu repositório do GitHub. 
 
