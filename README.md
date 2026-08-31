@@ -1,7 +1,7 @@
-# 01-banco-de-dados-mysql
+# Introdução
  
 <p align="right">
-  <a href="01_fornecedor.md">Próximo →</a>
+  <a href="01_ambiente.md">Próximo →</a>
 </p>
 
 ---
@@ -113,5 +113,5 @@ Projeto usado nos exemplos:
 https://learnsql.com.br/blog/o-que-sao-ddl-dml-dql-e-dcl-em-sql/
 
 <p align="right">
-  <a href="01_fornecedor.md">Próximo →</a>
+  <a href="01_ambiente.md">Próximo →</a>
 </p>
