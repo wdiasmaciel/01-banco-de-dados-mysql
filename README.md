@@ -101,3 +101,7 @@ A DCL é responsável pela definição de permissões para os usuários do banco
 # Link
 
 https://learnsql.com.br/blog/o-que-sao-ddl-dml-dql-e-dcl-em-sql/
+
+<div style="display: flex; justify-content: right;">
+  <a href="01_fornecedor.md">Próximo →</a>
+</div>
