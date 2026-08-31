@@ -102,7 +102,7 @@ A DCL é responsável pela definição de permissões para os usuários do banco
 
 ---
 
-# Projeto
+# Projeto Empresa
 
 Projeto usado nos exemplos:
 
