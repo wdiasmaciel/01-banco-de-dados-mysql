@@ -374,6 +374,9 @@ Apresente todos os hotéis com:
 15. Substring "standard" no tipo da acomodação.
 16. Valor da diária entre R$ 250,00 e R$ 450,00.
 17. Hotel com check-out agendado para 2028.
+18. Garagem inclusa na hospedagem.
+19. Garagem inclusa, mas sem café incluso.
+20. Café incluso, mas sem garagem inclusa.
 
 ---
 
