@@ -211,7 +211,7 @@ from Fornecedor
 where id = 1;
 ```
 
-2. Apresente os fornecedores com id maiores que 2:
+2. Apresente os fornecedores com id's maiores que 2:
 
 ```sql
 select * 
