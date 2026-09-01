@@ -1,4 +1,3 @@
-
 # Ambiente
 
 <table width="100%" style="border: none; border-collapse: collapse;">
@@ -11,6 +10,8 @@
     </td>
   </tr>
 </table>
+
+---
 
 1. Nós vamos utilizar o **GitHub Codespaces** para realizar as nossas práticas. 
 
@@ -101,3 +102,14 @@ mysql --version
 **OBS**: no caso do `MySQL`, pode ser que seja necessário executar `mysql -V` ou executar o comando `SELECT VERSION()`; após acessar o prompt do banco de dados.
 
 ---
+
+<table width="100%" style="border: none; border-collapse: collapse;">
+  <tr style="border: none;">
+    <td align="left" style="border: none;">
+      <a href="README.md">← Anterior</a>
+    </td>
+    <td align="right" style="border: none;">
+      <a href="02-projeto.md">Próximo →</a>
+    </td>
+  </tr>
+</table>
