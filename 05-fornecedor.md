@@ -428,7 +428,7 @@ ORDER BY id DESC, nome DESC;
 SELECT *
 FROM Fornecedor
 WHERE endereco LIKE '%MG%' 
-   OR  endereco LIKE '%Minas Gerais%'
+   OR endereco LIKE '%Minas Gerais%'
 ORDER BY id DESC, nome DESC; 
 ```
 
