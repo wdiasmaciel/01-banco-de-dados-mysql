@@ -13,6 +13,8 @@
 
 ---
 
+# CREATE DATABASE
+
 1. Crie o banco de dados:
 
 ```sql
@@ -20,13 +22,30 @@
 CREATE DATABASE empresa;
 ```
 
-2. Crie o banco de dados apenas se ele ainda não existir (evita erros):
+2. Alternativamente, crie o banco de dados apenas se ele ainda não existir (evita erros):
 
 ```sql
 -- Cria o banco de dados apenas se ele ainda não existir (evita erros)
 CREATE DATABASE IF NOT EXISTS empresa;
 ```
-3. Selecione (use) o banco de dados para os próximos comandos:
+
+---
+
+# Listar os Bancos de Dados
+
+1. No console interativo do `MySQL`, execute o comando abaixo:
+
+```sql
+SHOW DATABASES;
+```
+
+![Comando SHOW DATABASES](./img/showdatabases2.png)
+
+---
+
+# Selecionar um Banco de Dados
+
+1. Selecione (use) o banco de dados `empresa` para os próximos comandos:
 
 ```sql
 -- Seleciona o banco de dados para os próximos comandos:
@@ -34,6 +53,7 @@ USE empresa;
 ```
 
 ---
+
 
 ## Configurando a Extensão "Database Client"
 
@@ -47,7 +67,7 @@ USE empresa;
    - **Host:** `localhost`
    - **Username:** `root`
    - **Password:** `root`
-   - **Database:** `livraria_db` *(ou deixe em branco)*
+   - **Database:** `empresa` *(ou deixe em branco)*
 
 5. Clique no botão **Connect**.
 
