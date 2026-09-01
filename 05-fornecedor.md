@@ -201,6 +201,18 @@ select * from Fornecedor;
 
 ---
 
+# WHERE
+
+1. Apresente o fornecedor com id igual a 1:
+
+```sql
+select * 
+from Fornecedor
+where id = 1;
+```
+
+---
+
 2. Alternativamnte, informe o comando abaixo no console interativo do `MySQL`:
 
 ```sql
