@@ -49,7 +49,9 @@ sudo /usr/sbin/mysqld --user=mysql &
 ps -aux | grep mysql
 ```
 
-# Defina a Senha do Usuário Root
+---
+
+# Conectar no Terminal Interativo do MySQL
 
 1. Conecte no terminal administrativo:
 
@@ -57,13 +59,33 @@ ps -aux | grep mysql
 sudo mysql --protocol=socket -u root -proot
 ```
 
-2. Dentro do prompt `mysql>`, cole o comando abaixo e tecle `<Enter>`:
+---
+
+# Definir a Senha do Usuário root para root
+
+1. Dentro do prompt `mysql>`, cole o comando abaixo e tecle `<Enter>`:
 
 ```sql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'root';
 FLUSH PRIVILEGES;
 EXIT;
 ```
+
+**OBS**: esse comando atualiza a senha do usuário `root` para `root`, define o método de segurança padrão do `MySQL` e fecha a sua sessão no terminal:
+- `ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'root';`: altera a senha do usuário `root` (que acessa localmente) para o texto `root`. Também define o plugin de autenticação como `caching_sha2_password`, que é o padrão moderno e mais seguro do MySQL.
+- `FLUSH PRIVILEGES;`: recarrega as tabelas de permissões do servidor MySQL. Isso garante que a alteração de segurança seja aplicada imediatamente.
+- `EXIT;`: fecha e encerra a conexão atual com o prompt de comando do MySQL.
+
+
+---
+
+# Verifique o MySQL em execução:
+
+```bash
+ps -aux | grep mysql
+```
+
+---
 
 # Entrar no Console do MySQL
 
@@ -75,6 +97,8 @@ sudo mysql -u root -proot
 
 **OBS**: lembre-se de deixar o `-proot` tudo junto. Se colocar espaço entre o `-p` e o `root`, o `MySQL` vai achar que `root` é o nome de um banco de dados e vai dar erro.
 
+
+---
 
 # Entrar no Console do MySQL de Forma Alternativa
 
@@ -89,6 +113,8 @@ sudo mysql -u root -p
 3. Digite `root`.
 
 4. tecle `<Enter>`. 
+
+---
 
 # Listar os Bancos de Dados
 
@@ -109,6 +135,8 @@ SHOW DATABASES;
 ```sql
 EXIT;
 ```
+
+---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
