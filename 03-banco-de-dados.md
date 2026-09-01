@@ -1,8 +1,10 @@
 # Criação do Banco de Dados
 
+<p align="right">
   <span align="right">
     <a href="link-da-pagina-proxima.md">Próximo</a>
   </span>
+</p>
 
 ---
 
