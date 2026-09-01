@@ -27,7 +27,7 @@ CREATE DATABASE IF NOT EXISTS empresa;
 USE empresa;
 ```
 
-<p align="between">
+<p style="display: flex; flex-direction: row; justify-content: space-between;">
     <a href="link-da-pagina-anterior.md">Anterior</a>
     <a href="link-da-pagina-proxima.md">Próximo</a>
 </p>
