@@ -43,6 +43,20 @@ CREATE TABLE Fornecedor (
 
 ---
 
+# DESCRIBE
+
+1. Observe a estrutura da tabela `Fornecedor` usando o comando `DESCRIBE` ou o seu atalho `DESC`.
+
+```sql
+DESCRIBE Fornecedor;
+```
+
+```sql
+DESC Fornecedor;
+```
+
+---
+
 2. Alternativamnte, informe o comando abaixo no console interativo do `MySQL`:
 
 ```sql
