@@ -219,6 +219,22 @@ from Fornecedor
 where nome = 'Embalagens Sustentáveis S.A.';
 ```
 
+3. Apresente os fornecedores que são sociedades anônimas;
+
+```sql
+select * 
+from Fornecedor
+where nome like '%S.A.';
+```
+
+3. Apresente os fornecedores que são sociedades anônimas;
+
+```sql
+select * 
+from Fornecedor
+where nome like '%S.A.';
+```
+
 ---
 
 2. Alternativamnte, informe o comando abaixo no console interativo do `MySQL`:
