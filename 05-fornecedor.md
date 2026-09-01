@@ -155,7 +155,7 @@ select * from Fornecedor;
 
 ```sql
 INSERT INTO Fornecedor (nome, telefone, endereco) 
-VALUES ('Embalagens Sustentáveis S.A.', '(41) 99111-2233', 'Rua das Flores, 123 - Curitiba, PR'),
+VALUES ('Embalagens Sustentáveis S.A.', '(41) 99111-2233', 'Rua das Flores, 123 - Curitiba, PR');
 ```
 
 2. Insira uma linha sem nome:
