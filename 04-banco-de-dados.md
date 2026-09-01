@@ -3,10 +3,10 @@
 <table>
   <tr>
     <td align="left" style="border: none;">
-      <a href="02-projeto.md">Anterior</a>
+      <a href="03-projeto.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="04-fornecedor.md">Próximo</a>
+      <a href="05-fornecedor.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -38,10 +38,10 @@ USE empresa;
 <table>
   <tr>
     <td align="left" style="border: none;">
-      <a href="02-projeto.md">Anterior</a>
+      <a href="03-projeto.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="04-fornecedor.md">Próximo</a>
+      <a href="05-fornecedor.md">Próximo</a>
     </td>
   </tr>
 </table>
