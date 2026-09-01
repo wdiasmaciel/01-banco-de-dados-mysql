@@ -353,6 +353,30 @@ Apresente todos os voos com:
 
 ---
 
+## Exercício 2
+
+Crie um banco de dados para uma empresa de hotelaria. No banco, crie a tabela "Hotel". Crie as consultas abaixo. Insira dados na tabela "Hotel" que atendam às consultas.
+Apresente todos os hotéis com:
+1. Cidade de Minas Gerais.
+2. Valor da diária abaixo de R$ 300,00.
+3. Cidade São Luís.
+4. Categoria 3 estrelas.
+5. Substring "resort" no nome do hotel.
+6. Cidade Recife ou Salvador.
+7. Tipo de acomodação "Quarto duplo".
+8. Valor da diária acima de R$ 100,00.
+9. Substring "elite" no nome do hotel ou da acomodação.
+10. Hotel com check-in agendado para 2027.
+11. Cidade Curitiba e acomodação tipo "Suite".
+12. Estado Rio Grande do Sul.
+13. Estado São Paulo ou Paraná.
+14. Hospedagem sem café incluso.
+15. Substring "standard" no tipo da acomodação.
+16. Valor da diária entre R$ 250,00 e R$ 450,00.
+17. Hotel com check-out agendado para 2028.
+
+---
+
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
