@@ -327,6 +327,31 @@ WHERE id IS NULL OR
 
 ---
 
+# Exercícios
+
+## Exercício 1
+
+Crie um banco de dados para uma empresa de aviaçao. No banco, crie a tabela "Voo". Crie as consultas abaixo. Insira dados na tabela "Voo" que atendam às consultas.
+Apresente todos os voos com: 
+1. Partida de Belo Horizonte.
+2. Destino Fortaleza.
+3. Viagem de volta agendada.
+4. Valor abaixo de R$ 950,00.
+5. Valor acima de R$ 1.200,00.
+6. Valor entre R$ 500,00 e R$ 800,00.
+7. Partida agendada para 2027.
+8. Volta agendada para 2028.
+9. Partida de Cuiabá e destino Curitiba.
+10. Partida de Minas Gerais.
+11. Destino Rio Grande do Sul.
+12. Partida de Tocantins ou do Pará.
+13. Destino Salvador ou Aracajú.
+14. Viagem de volta não agendada.
+15. Substring "es" na cidade/estado de partida. 
+16. Substring "ta" na cidade/estado de destino.
+17. Substring "or" na cidade/estado de partida ou de destino.
+
+---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
