@@ -280,7 +280,7 @@ where nome like '%Componentes%';
 ```sql
 select * 
 from Fornecedor
-where nome = null;
+where id is null;
 ```
 
 ---
