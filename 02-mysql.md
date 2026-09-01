@@ -99,7 +99,16 @@ SHOW DATABASES;
 ```
 
 ![Comando SHOW DATABASES](./img/showdatabases.png)
+
 ---
+
+# Sair do Terminal Interativo
+
+1. Para sair do terminal interativo do MySQL, execute o comando abaixo:
+
+```sql
+EXIT;
+```
 
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
