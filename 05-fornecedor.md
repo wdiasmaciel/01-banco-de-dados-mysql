@@ -122,6 +122,13 @@ INSERT INTO Fornecedor (nome, telefone, endereco)
 VALUES (1, 'Distribuidora Norte-Sul', '(21) 2555-1234', 'Rua das Marrecas, 45 - Rio de Janeiro, RJ');
 ```
 
+2. Verifique a inserção indevida:
+
+```sql
+select * from Fornecedor;
+```
+
+
 3. Insira uma linha com `telefone` repetido:
 
 ---
