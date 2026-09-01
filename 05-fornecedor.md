@@ -433,7 +433,9 @@ WHERE endereco LIKE '%MG%'
 ORDER BY id DESC, nome DESC; 
 ```
 
-**OBS**: por padrão, o operador `LIKE` no `MySQL` não diferencia maiúsculas de minúsculas (case-insensitive) se a sua tabela estiver usando uma `colação` padrão como `utf8mb4_0900_ai_ci` ou `latin1_swedish_ci`, em que:
+**OBS**: por padrão, o operador `LIKE` no `MySQL` não diferencia maiúsculas de minúsculas (case-insensitive) se a sua tabela estiver usando uma `COLLATE` (`colação`) padrão como `utf8mb4_0900_ai_ci` ou `latin1_swedish_ci`, em que:
+
+- `COLLATE`: no MySQL, a palavra-chave `COLLATE` serve para definir explicitamente a `colação` (as regras de comparação e ordenação de texto) que deve ser usada em uma operação específica.
 
 - O `utf8` refere-se ao formato de codificação de caracteres que implementa o padrão universal Unicode. Ele foi criado para permitir que o banco de dados armazene textos em múltiplos idiomas e alfabetos diferentes no mesmo lugar.
 
