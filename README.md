@@ -102,12 +102,6 @@ A DCL é responsável pela definição de permissões para os usuários do banco
 
 ---
 
-# Projeto Empresa
-
-Projeto usado nos exemplos:
-
-![DER Empresa](./img/empresa.png)
-
 # Link
 
 https://learnsql.com.br/blog/o-que-sao-ddl-dml-dql-e-dcl-em-sql/
