@@ -433,7 +433,15 @@ WHERE endereco LIKE '%MG%'
 ORDER BY id DESC, nome DESC; 
 ```
 
-**OBS**: por padrão, o operador LIKE no MySQL não diferencia maiúsculas de minúsculas (case-insensitive).
+**OBS**: por padrão, o operador `LIKE` no `MySQL` não diferencia maiúsculas de minúsculas (case-insensitive) se a sua tabela estiver usando uma `colação` padrão como `utf8mb4_0900_ai_ci` ou `latin1_swedish_ci`, em que o `_ai` significa `Accent Insensitive` (Insensível a Acentos) e o `_ci` significa Case Insensitive (Insensível a Minúsculas e Maiúsculas).
+
+```sql
+SELECT * 
+FROM Fornecedor 
+WHERE endereco LIKE '%MG%' COLLATE utf8mb4_general_ci 
+   OR endereco LIKE '%Minas Gerais%' COLLATE utf8mb4_general_ci 
+ORDER BY id DESC, nome DESC;
+```
 
 26. Apresente os fornecedores de Minas Gerais em ordem decrescente de id e de nome. Desconsidere letras mínusculas e maiúsculas.
 
