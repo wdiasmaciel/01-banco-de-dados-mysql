@@ -39,7 +39,7 @@ mysql --version
 sudo /usr/sbin/mysqld --user=mysql &
 ```
 
-*OBS**: após dar Enter, algumas linhas de log vão aparecer. Aperte a tecla `<ENTER>` mais uma vez para liberar a linha de comando.
+**OBS**: após dar Enter, algumas linhas de log vão aparecer. Aperte a tecla `<ENTER>` mais uma vez para liberar a linha de comando.
 
 ---
 
