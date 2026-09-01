@@ -4,7 +4,7 @@
     <a href="link-da-pagina-anterior.md">Anterior</a>
   </span>
 
-  <span align="right"">
+  <span align="right">
     <a href="link-da-pagina-proxima.md">Próximo</a>
   </span>
 
