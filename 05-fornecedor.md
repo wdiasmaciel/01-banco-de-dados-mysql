@@ -410,6 +410,36 @@ SELECT *
 FROM Fornecedor
 ORDER BY id DESC, nome DESC; 
 ```
+
+24. Apresente os fornecedores com id's válidos em ordem decrescente de id e de nome:
+
+```sql
+SELECT *
+FROM Fornecedor
+WHERE id IS NOT NULL
+ORDER BY id DESC, nome DESC; 
+```
+
+25. Apresente os fornecedores de Minas Gerais em ordem decrescente de id e de nome:
+
+```sql
+SELECT *
+FROM Fornecedor
+WHERE endereco LIKE '%MG%' 
+   OR  endereco LIKE '%Minas Gerais%'
+ORDER BY id DESC, nome DESC; 
+```
+
+26. Apresente os fornecedores de Minas Gerais em ordem decrescente de id e de nome. Desconsidere letras mínusculas e maiúsculas.
+
+```sql
+SELECT * 
+FROM Fornecedor 
+WHERE LOWER(endereco) LIKE '%mg%' 
+   OR LOWER(endereco) LIKE '%minas gerais%' 
+ORDER BY id DESC, nome DESC;
+```
+
 ---
 
 # Exercícios
