@@ -73,46 +73,46 @@ INSERT INTO Fornecedor (id, nome, telefone, endereco) VALUES
 1. Apresente os dados inseridos na tabela `Fornecedor`:
 
 ```sql
-select id, nome, telefone, endereco from Fornecedor;
+SELECT id, nome, telefone, endereco FROM Fornecedor;
 ```
 
 2. Apresente todas as colunas da linha inserida da tabela `Fornecedor`:
 
 ```sql
-select * from Fornecedor;
+SELECT * FROM Fornecedor;
 ```
 
 3. Apresente a coluna `nome` da linha inserida na tabela `Fornecedor`:
 
 ```sql
-select nome from Fornecedor;
+SELECT nome FROM Fornecedor;
 ```
 
 4. Apresente a coluna `nome` e a coluna `telefone` da linha inserida na tabela `Fornecedor`:
 
 ```sql
-select nome, telefone from Fornecedor;
+SELECT nome, telefone FROM Fornecedor;
 ```
 
 5. Apresente a coluna `nome` e a coluna `endereco` da linha inserida na tabela `Fornecedor`:
 
 ```sql
-select nome, endereco 
-from Fornecedor;
+SELECT nome, endereco 
+FROM Fornecedor;
 ```
 
 6. Apresente a coluna `nome` como "Nome do Fornecedor" e a coluna `endereco` como "Endereço do Fornecedor":
 
 ```sql
-select nome as "Nome do Fornecedor", endereco as "Endereço do Fornecedor"
-from Fornecedor;
+SELECT nome AS "Nome do Fornecedor", endereco AS "Endereço do Fornecedor"
+FROM Fornecedor;
 ```
 
 7. Apresente a coluna `id` como 'Código do Fornecedor' e a coluna `nome` como 'Nome do Fornecedor':
 
 ```sql
-select id as 'Código do Fornecedor', nome as 'Nome do Fornecedor'
-from Fornecedor;
+SELECT id AS 'Código do Fornecedor', nome AS 'Nome do Fornecedor'
+FROM Fornecedor;
 ```
 
 ---
@@ -129,7 +129,7 @@ VALUES (1, 'Distribuidora Norte-Sul', '(21) 2555-1234', 'Rua das Marrecas, 45 - 
 2. Verifique a inserção indevida:
 
 ```sql
-select * from Fornecedor;
+SELECT * FROM Fornecedor;
 ```
 
 ---
@@ -146,7 +146,7 @@ VALUES (2, 'Tech Componentes Eletrônicos', '(21) 2555-1234', 'Av. Antônio Carl
 2. Verifique a inserção indevida:
 
 ```sql
-select * from Fornecedor;
+SELECT * FROM Fornecedor;
 ```
 
 # Dado Faltante
@@ -175,7 +175,7 @@ VALUES (3, 'Atacadista Central');
 4. Verifique as inserções indevidas:
 
 ```sql
-select * from Fornecedor;
+SELECT * FROM Fornecedor;
 ```
 
 ---
@@ -196,7 +196,7 @@ INSERT INTO Fornecedor (id, nome, telefone, endereco) VALUES
 2. Verifique as inserções:
 
 ```sql
-select * from Fornecedor;
+SELECT * FROM Fornecedor;
 ```
 
 ---
@@ -206,57 +206,57 @@ select * from Fornecedor;
 1. Apresente o fornecedor com id igual a 1:
 
 ```sql
-select * 
-from Fornecedor
-where id = 1;
+SELECT * 
+FROM Fornecedor
+WHERE id = 1;
 ```
 
 2. Apresente os fornecedores com id's maiores que 2:
 
 ```sql
-select * 
-from Fornecedor
-where id > 2;
+SELECT * 
+FROM Fornecedor
+WHERE id > 2;
 ```
 
 3. Apresente os fornecedores com id's menores ou iguais a 3:
 
 ```sql
-select * 
-from Fornecedor
-where id <= 3;
+SELECT * 
+FROM Fornecedor
+WHERE id <= 3;
 ```
 
 4. Apresente os fornecedores com id's diferentes de 3:
 
 ```sql
-select * 
-from Fornecedor
-where id <> 3;
+SELECT * 
+FROM Fornecedor
+WHERE id <> 3;
 ```
 
 5. Apresente os fornecedores com id's diferentes de 1:
 
 ```sql
-select * 
-from Fornecedor
-where id != 1;
+SELECT * 
+FROM Fornecedor
+WHERE id != 1;
 ```
 
 6. Apresente o fornecedor com nome igual a "Embalagens Sustentáveis S.A.":
 
 ```sql
-select * 
-from Fornecedor
-where nome = 'Embalagens Sustentáveis S.A.';
+SELECT * 
+FROM Fornecedor
+WHERE nome = 'Embalagens Sustentáveis S.A.';
 ```
 
 7. Apresente o fornecedor com nome igual a "Atacadista Central":
 
 ```sql
-select * 
-from Fornecedor
-where nome like 'Atacadista Central';
+SELECT * 
+FROM Fornecedor
+WHERE nome LIKE 'Atacadista Central';
 ```
 
 8. Apresente os fornecedores que são sociedades anônimas:
@@ -324,22 +324,9 @@ from Fornecedor
 where id is null or
       telefone is null;
 ```
----
-
-2. Alternativamnte, informe o comando abaixo no console interativo do `MySQL`:
-
-```sql
-DROP TABLE IF EXISTS Fornecedor;
-
-CREATE TABLE Fornecedor (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(256) NOT NULL,
-    telefone VARCHAR(20),
-    endereco VARCHAR(256)
-);
-```
 
 ---
+
 
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
