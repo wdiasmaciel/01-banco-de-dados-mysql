@@ -219,6 +219,14 @@ from Fornecedor
 where id > 2;
 ```
 
+3. Apresente os fornecedores com id's menores ou iguais a 3:
+
+```sql
+select * 
+from Fornecedor
+where id <= 3;
+```
+
 3. Apresente os fornecedores com id's diferentes de 3:
 
 ```sql
