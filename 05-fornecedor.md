@@ -211,6 +211,22 @@ from Fornecedor
 where id = 1;
 ```
 
+2. Apresente os fornecedores com id maiores que 2:
+
+```sql
+select * 
+from Fornecedor
+where id > 2;
+```
+
+3. Apresente os fornecedores com id diferente de 3:
+
+```sql
+select * 
+from Fornecedor
+where id <> 3;
+```
+
 2. Apresente o fornecedor com nome igual a "Embalagens Sustentáveis S.A.".
 
 ```sql
@@ -219,7 +235,7 @@ from Fornecedor
 where nome = 'Embalagens Sustentáveis S.A.';
 ```
 
-3. Apresente os fornecedores que são sociedades anônimas;
+3. Apresente o fornecedor com nome igual a "Embalagens Sustentáveis S.A.".
 
 ```sql
 select * 
