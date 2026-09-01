@@ -1,10 +1,7 @@
 # Criação do Banco de Dados
 
 <p align="between">
-  <span align="left" style="width=100%;">
-    <a href="link-da-pagina-anterior.md">Anterior</a>
-  </span>
-  <span align="right" style="float: right;">
+  <span align="right"">
     <a href="link-da-pagina-proxima.md">Próximo</a>
   </span>
 </p>
