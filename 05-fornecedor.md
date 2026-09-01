@@ -387,6 +387,22 @@ FROM Fornecedor
 ORDER BY id DESC; 
 ```
 
+22. Apresente os fornecedores em ordem decrescente de id e crescente de nome:
+
+```sql
+SELECT *
+FROM Fornecedor
+ORDER BY id DESC, nome; 
+```
+
+ou
+
+```sql
+SELECT *
+FROM Fornecedor
+ORDER BY id DESC, nome ASC; 
+```
+
 ---
 
 # Exercícios
