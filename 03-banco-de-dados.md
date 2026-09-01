@@ -1,9 +1,15 @@
 # Criação do Banco de Dados
 
-<p align="between">
-    <a href="link-da-pagina-proxima.md">Anterior</a>
-    <a href="link-da-pagina-proxima.md">Próximo</a>
-</p>
+<table width="100%" style="border: none; border-collapse: collapse;">
+  <tr style="border: none;">
+    <td align="left" style="border: none;">
+      <a href="arquivo-anterior.md">← Anterior</a>
+    </td>
+    <td align="right" style="border: none;">
+      <a href="proximo-arquivo.md">Próximo →</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -27,7 +33,13 @@ CREATE DATABASE IF NOT EXISTS empresa;
 USE empresa;
 ```
 
-<p style="display: flex; flex-direction: row; justify-content: space-between;">
-    <a href="link-da-pagina-anterior.md">Anterior</a>
-    <a href="link-da-pagina-proxima.md">Próximo</a>
-</p>
+<table width="100%" style="border: none; border-collapse: collapse;">
+  <tr style="border: none;">
+    <td align="left" style="border: none;">
+      <a href="arquivo-anterior.md">← Anterior</a>
+    </td>
+    <td align="right" style="border: none;">
+      <a href="proximo-arquivo.md">Próximo →</a>
+    </td>
+  </tr>
+</table>
