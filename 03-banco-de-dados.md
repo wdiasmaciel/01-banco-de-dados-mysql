@@ -1,10 +1,12 @@
 # Criação do Banco de Dados
 
-<p align="right">
+  <span align="left">
+    <a href="link-da-pagina-anterior.md">Anterior</a>
+  </span>
+
   <span align="right"">
     <a href="link-da-pagina-proxima.md">Próximo</a>
   </span>
-</p>
 
 ---
 
