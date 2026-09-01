@@ -275,12 +275,12 @@ from Fornecedor
 where nome like '%Componentes%';
 ```
 
-10. Apresente os fornecedores cujo ID seja NULL.
+10. Apresente os fornecedores cujo ID seja NULL:
 
 ```sql
 select * 
 from Fornecedor
-where nome like '%Componentes%';
+where nome = null;
 ```
 
 ---
