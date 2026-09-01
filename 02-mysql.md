@@ -92,7 +92,7 @@ sudo mysql -u root -p
 
 # Listar os Bancos de Dados
 
-1. No terminal, execute o comando abaixo:
+1. No console interativo do `MySQL`, execute o comando abaixo:
 
 ```sql
 SHOW DATABASES;
