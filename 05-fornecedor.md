@@ -149,12 +149,43 @@ VALUES (2, 'Tech Componentes Eletrônicos', '(21) 2555-1234', 'Av. Antônio Carl
 select * from Fornecedor;
 ```
 
+# Dado Faltante
+
+1. Insira uma linha sem ID:
+
+```sql
+INSERT INTO Fornecedor (nome, telefone, endereco) 
+VALUES ('Embalagens Sustentáveis S.A.', '(41) 99111-2233', 'Rua das Flores, 123 - Curitiba, PR'),
+```
+
+2. Insira uma linha sem nome:
+
+```sql
+INSERT INTO Fornecedor (id, telefone, endereco) 
+VALUES (3, '(61) 3222-0000', 'SCS Quadra 4, Bloco A - Brasília, DF');
+```
+
+3. Insira uma linha sem telefone e sem endereço:
+
+```sql
+INSERT INTO Fornecedor (id, telefone, endereco) 
+VALUES (3, 'Atacadista Central');
+```
+
 ---
 
+# Inserçao de Várias Linhas
+
+1. Insira várias linhas simulteneamente:
+
+```sql
 INSERT INTO Fornecedor (nome, telefone, endereco) VALUES 
+('Logística Brasil Ltda', '(11) 98765-4321', 'Av. Paulista, 1000 - São Paulo, SP'),
+('Distribuidora Norte-Sul', '(21) 2555-1234', 'Rua das Marrecas, 45 - Rio de Janeiro, RJ'),
 ('Tech Componentes Eletrônicos', '(31) 3444-9876', 'Av. Antônio Carlos, 6627 - Belo Horizonte, MG'),
 ('Embalagens Sustentáveis S.A.', '(41) 99111-2233', 'Rua das Flores, 123 - Curitiba, PR'),
 ('Atacadista Central', '(61) 3222-0000', 'SCS Quadra 4, Bloco A - Brasília, DF');
+```
 
 ---
 
