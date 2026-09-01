@@ -33,6 +33,16 @@ mysql --version
 
 ---
 
+# Inicie o Servidor MySQL em Segundo Plano
+
+```bash
+sudo /usr/sbin/mysqld --user=mysql &
+```
+
+*OBS**: após dar Enter, algumas linhas de log vão aparecer. Aperte a tecla `<ENTER>` mais uma vez para liberar a linha de comando.
+
+---
+
 # Verifique o MySQL em execução:
 
 ```bash
