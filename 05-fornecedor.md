@@ -211,6 +211,14 @@ from Fornecedor
 where id = 1;
 ```
 
+2. Apresente o fornecedor com nome igual a "Embalagens Sustentáveis S.A".
+
+```sql
+select * 
+from Fornecedor
+where nome = "Embalagens Sustentáveis S.A";
+```
+
 ---
 
 2. Alternativamnte, informe o comando abaixo no console interativo do `MySQL`:
