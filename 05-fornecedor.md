@@ -283,6 +283,13 @@ from Fornecedor
 where id is null;
 ```
 
+11. Apresente os fornecedores cujo ID seja diferente de NULL:
+
+```sql
+select * 
+from Fornecedor
+where id is not null;
+```
 ---
 
 2. Alternativamnte, informe o comando abaixo no console interativo do `MySQL`:
