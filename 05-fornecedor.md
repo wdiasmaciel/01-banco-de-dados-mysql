@@ -113,11 +113,15 @@ select id as 'Código do Fornecedor', nome as 'Nome do Fornecedor'
 from Fornecedor;
 ```
 
-2. Insira uma linha com `id` repetido:
+# ID Repetido
+
+1. Insira uma linha com `id` repetido:
+
 ```sql
 INSERT INTO Fornecedor (nome, telefone, endereco) 
 VALUES (1, 'Distribuidora Norte-Sul', '(21) 2555-1234', 'Rua das Marrecas, 45 - Rio de Janeiro, RJ');
 ```
+
 3. Insira uma linha com `telefone` repetido:
 
 ---
