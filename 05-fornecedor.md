@@ -433,6 +433,8 @@ WHERE endereco LIKE '%MG%'
 ORDER BY id DESC, nome DESC; 
 ```
 
+**OBS**: por padrão, o operador LIKE no MySQL não diferencia maiúsculas de minúsculas (case-insensitive).
+
 26. Apresente os fornecedores de Minas Gerais em ordem decrescente de id e de nome. Desconsidere letras mínusculas e maiúsculas.
 
 ```sql
@@ -442,6 +444,8 @@ WHERE LOWER(endereco) LIKE '%mg%'
    OR LOWER(endereco) LIKE '%minas%' 
 ORDER BY id DESC, nome DESC;
 ```
+
+**OBS**: o uso de funções como LOWER() em colunas pode impedir o MySQL de usar índices se eles existirem para essa coluna, tornando a busca um pouco mais lenta em tabelas muito grandes.
 
 ---
 
