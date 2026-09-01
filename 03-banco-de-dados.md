@@ -28,10 +28,6 @@ USE empresa;
 ```
 
 <p align="between">
-  <span align="left">
     <a href="link-da-pagina-anterior.md">Anterior</a>
-  </span>
-  <span align="right" style="float: right;">
     <a href="link-da-pagina-proxima.md">Próximo</a>
-  </span>
 </p>
