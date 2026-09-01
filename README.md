@@ -1,8 +1,13 @@
-<p align="right">
-  <a href="01-ambiente.md">Próximo →</a>
-</p>
-
 # Introdução
+
+
+<table width="100%" style="border: none; border-collapse: collapse;">
+  <tr style="border: none;">
+    <td align="right" style="border: none;">
+      <a href="01-ambiente.md">Próximo</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -108,6 +113,10 @@ https://learnsql.com.br/blog/o-que-sao-ddl-dml-dql-e-dcl-em-sql/
 
 ---
 
-<p align="right">
-  <a href="01-ambiente.md">Próximo →</a>
-</p>
+<table width="100%" style="border: none; border-collapse: collapse;">
+  <tr style="border: none;">
+    <td align="right" style="border: none;">
+      <a href="01-ambiente.md">Próximo</a>
+    </td>
+  </tr>
+</table>

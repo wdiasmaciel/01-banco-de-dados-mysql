@@ -33,6 +33,8 @@ CREATE DATABASE IF NOT EXISTS empresa;
 USE empresa;
 ```
 
+---
+
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
