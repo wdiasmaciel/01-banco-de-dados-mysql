@@ -1,15 +1,13 @@
 # Criação do Banco de Dados
 
-<table width="100%">
-  <tr>
-    <td align="left">
-      <a href="link-da-pagina-anterior.md">⬅️ Anterior</a>
-    </td>
-    <td align="right">
-      <a href="link-da-pagina-proxima.md">Próximo ➡️</a>
-    </td>
-  </tr>
-</table>
+<p align="between">
+  <span align="left">
+    <a href="link-da-pagina-anterior.md">⬅️ Anterior</a>
+  </span>
+  <span align="right" style="float: right;">
+    <a href="link-da-pagina-proxima.md">Próximo ➡️</a>
+  </span>
+</p>
 
 ---
 
@@ -33,13 +31,11 @@ CREATE DATABASE IF NOT EXISTS empresa;
 USE empresa;
 ```
 
-<table width="100%">
-  <tr>
-    <td align="left">
-      <a href="link-da-pagina-anterior.md">⬅️ Anterior</a>
-    </td>
-    <td align="right">
-      <a href="link-da-pagina-proxima.md">Próximo ➡️</a>
-    </td>
-  </tr>
-</table>
+<p align="between">
+  <span align="left">
+    <a href="link-da-pagina-anterior.md">⬅️ Anterior</a>
+  </span>
+  <span align="right" style="float: right;">
+    <a href="link-da-pagina-proxima.md">Próximo ➡️</a>
+  </span>
+</p>
