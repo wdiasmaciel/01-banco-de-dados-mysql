@@ -106,6 +106,13 @@ select nome as "Nome do Fornecedor", endereco as "Endereço do Fornecedor"
 from Fornecedor;
 ```
 
+7. Apresente a coluna `id` como 'Código do Fornecedor' e a coluna `nome` como 'Nome do Fornecedor':
+
+```sql
+select id as 'Código do Fornecedor', nome as 'Nome do Fornecedor'
+from Fornecedor;
+```
+
 2. Insira uma linha com `id` repetido:
 ```sql
 INSERT INTO Fornecedor (nome, telefone, endereco) 
