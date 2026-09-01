@@ -140,7 +140,7 @@ select * from Fornecedor;
 
 ```sql
 INSERT INTO Fornecedor (id, nome, telefone, endereco) 
-VALUES (2, 'Tech Componentes Eletrônicos', '(21) 2555-1234', 'Av. Antônio Carlos, 6627 - Belo Horizonte, MG'),
+VALUES (2, 'Tech Componentes Eletrônicos', '(21) 2555-1234', 'Av. Antônio Carlos, 6627 - Belo Horizonte, MG');
 ```
 
 2. Verifique a inserção indevida:
