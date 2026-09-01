@@ -98,7 +98,7 @@ sudo mysql -u root -p
 SHOW DATABASES;
 ```
 
-![Comando SHOW DATABASES](./img/showdatabases.png)
+![Comando SHOW DATABASES](./img/showdatabases1.png)
 
 ---
 
