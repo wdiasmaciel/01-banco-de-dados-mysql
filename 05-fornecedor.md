@@ -172,6 +172,12 @@ INSERT INTO Fornecedor (id, telefone, endereco)
 VALUES (3, 'Atacadista Central');
 ```
 
+4. Verifique as inserções indevidas:
+
+```sql
+select * from Fornecedor;
+```
+
 ---
 
 # Inserçao de Várias Linhas
@@ -185,6 +191,12 @@ INSERT INTO Fornecedor (nome, telefone, endereco) VALUES
 ('Tech Componentes Eletrônicos', '(31) 3444-9876', 'Av. Antônio Carlos, 6627 - Belo Horizonte, MG'),
 ('Embalagens Sustentáveis S.A.', '(41) 99111-2233', 'Rua das Flores, 123 - Curitiba, PR'),
 ('Atacadista Central', '(61) 3222-0000', 'SCS Quadra 4, Bloco A - Brasília, DF');
+```
+
+2. Verifique as inserções:
+
+```sql
+select * from Fornecedor;
 ```
 
 ---
