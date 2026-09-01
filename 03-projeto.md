@@ -15,7 +15,7 @@
 
 Projeto de uma empresa usado nos exemplos:
 
-![DER Empresa](./img/empresa4.png)
+![DER Empresa](./img/empresa2.png)
 
 ---
 
