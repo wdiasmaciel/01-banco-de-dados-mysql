@@ -168,7 +168,7 @@ VALUES (3, '(61) 3222-0000', 'SCS Quadra 4, Bloco A - Brasília, DF');
 3. Insira uma linha sem telefone e sem endereço:
 
 ```sql
-INSERT INTO Fornecedor (id, telefone, endereco) 
+INSERT INTO Fornecedor (id, nome) 
 VALUES (3, 'Atacadista Central');
 ```
 
