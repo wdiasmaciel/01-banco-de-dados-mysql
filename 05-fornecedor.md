@@ -66,6 +66,61 @@ INSERT INTO Fornecedor (id, nome, telefone, endereco) VALUES
 (1, 'Logística Brasil Ltda', '(11) 98765-4321', 'Av. Paulista, 1000 - São Paulo, SP');
 ```
 
+# SELECT
+
+1. Apresente os dados inseridos na tabela `Fornecedor`:
+
+```sql
+select id, nome, telefone, endereco from Fornecedor;
+```
+
+2. Apresente todas as colunas da linha inserida da tabela `Fornecedor`:
+
+```sql
+select * from Fornecedor;
+```
+
+3. Apresente a coluna `nome` da linha inserida na tabela `Fornecedor`:
+
+```sql
+select nome from Fornecedor;
+```
+
+4. Apresente a coluna `nome` e a coluna `telefone` da linha inserida na tabela `Fornecedor`:
+
+```sql
+select nome, telefone from Fornecedor;
+```
+
+5. Apresente a coluna `nome` e a coluna `endereco` da linha inserida na tabela `Fornecedor`:
+
+```sql
+select nome, endereco 
+from Fornecedor;
+```
+
+6. Apresente a coluna `nome` como "Nome do Fornecedor" e a coluna `endereco` como "Endereço do Fornecedor":
+
+```sql
+select nome as "Nome do Fornecedor", endereco as "Endereço do Fornecedor"
+from Fornecedor;
+```
+
+2. Insira uma linha com `id` repetido:
+```sql
+INSERT INTO Fornecedor (nome, telefone, endereco) 
+VALUES (1, 'Distribuidora Norte-Sul', '(21) 2555-1234', 'Rua das Marrecas, 45 - Rio de Janeiro, RJ');
+```
+3. Insira uma linha com `telefone` repetido:
+
+---
+
+INSERT INTO Fornecedor (nome, telefone, endereco) VALUES 
+('Distribuidora Norte-Sul', '(21) 2555-1234', 'Rua das Marrecas, 45 - Rio de Janeiro, RJ'),
+('Tech Componentes Eletrônicos', '(31) 3444-9876', 'Av. Antônio Carlos, 6627 - Belo Horizonte, MG'),
+('Embalagens Sustentáveis S.A.', '(41) 99111-2233', 'Rua das Flores, 123 - Curitiba, PR'),
+('Atacadista Central', '(61) 3222-0000', 'SCS Quadra 4, Bloco A - Brasília, DF');
+
 ---
 
 2. Alternativamnte, informe o comando abaixo no console interativo do `MySQL`:
