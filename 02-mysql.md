@@ -92,24 +92,6 @@ sudo mysql -u root -p
 
 ---
 
-## Configurando a Extensão "Database Client"
-
-1. Na barra lateral esquerda do `VS Code`, clique no ícone de **Banco de Dados** (tomada/cilindros).
-
-2. Clique no botão **`+`** (Create Connection).
-
-3. Escolha o tipo de banco: **MySQL**.
-
-4. Preencha os campos exatamente assim:
-   - **Host:** `localhost`
-   - **Username:** `root`
-   - **Password:** `root`
-   - **Database:** `livraria_db` *(ou deixe em branco)*
-
-5. Clique no botão **Connect**.
-
----
-
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
