@@ -63,7 +63,7 @@ DESC Fornecedor;
 
 ```sql
 INSERT INTO Fornecedor (id, nome, telefone, endereco) VALUES 
-(1, 'Logística Brasil Ltda', '(11) 98765-4321', 'Av. Paulista, 1000 - São Paulo, SP'),
+(1, 'Logística Brasil Ltda', '(11) 98765-4321', 'Av. Paulista, 1000 - São Paulo, SP');
 ```
 
 ---
