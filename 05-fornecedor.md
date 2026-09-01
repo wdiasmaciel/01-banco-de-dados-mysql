@@ -227,7 +227,7 @@ from Fornecedor
 where id <= 3;
 ```
 
-3. Apresente os fornecedores com id's diferentes de 3:
+4. Apresente os fornecedores com id's diferentes de 3:
 
 ```sql
 select * 
@@ -235,7 +235,7 @@ from Fornecedor
 where id <> 3;
 ```
 
-4. Apresente os fornecedores com id's diferentes de 1:
+5. Apresente os fornecedores com id's diferentes de 1:
 
 ```sql
 select * 
@@ -243,7 +243,7 @@ from Fornecedor
 where id != 1;
 ```
 
-5. Apresente o fornecedor com nome igual a "Embalagens Sustentáveis S.A.":
+6. Apresente o fornecedor com nome igual a "Embalagens Sustentáveis S.A.":
 
 ```sql
 select * 
@@ -251,7 +251,7 @@ from Fornecedor
 where nome = 'Embalagens Sustentáveis S.A.';
 ```
 
-6. Apresente o fornecedor com nome igual a "Atacadista Central":
+7. Apresente o fornecedor com nome igual a "Atacadista Central":
 
 ```sql
 select * 
@@ -259,7 +259,7 @@ from Fornecedor
 where nome like 'Atacadista Central';
 ```
 
-7. Apresente os fornecedores que são sociedades anônimas:
+8. Apresente os fornecedores que são sociedades anônimas:
 
 ```sql
 select * 
@@ -267,7 +267,15 @@ from Fornecedor
 where nome like '%S.A.';
 ```
 
-8. Apresente os fornecedores cujo nome termine com a letra 'a':
+9. Apresente os fornecedores cujo nome comece com a letra 'a':
+
+```sql
+select * 
+from Fornecedor
+where nome like 'a%';
+```
+
+10. Apresente os fornecedores cujo nome termine com a letra 'a':
 
 ```sql
 select * 
@@ -275,7 +283,7 @@ from Fornecedor
 where nome like '%a';
 ```
 
-9. Apresente os fornecedores que tenham "Componentes" no nome:
+11. Apresente os fornecedores que tenham "Componentes" no nome:
 
 ```sql
 select * 
@@ -283,7 +291,7 @@ from Fornecedor
 where nome like '%Componentes%';
 ```
 
-10. Apresente os fornecedores cujo ID seja NULL:
+12. Apresente os fornecedores cujo ID seja NULL:
 
 ```sql
 select * 
@@ -291,7 +299,7 @@ from Fornecedor
 where id is null;
 ```
 
-11. Apresente os fornecedores cujo ID seja diferente de NULL:
+13. Apresente os fornecedores cujo ID seja diferente de NULL:
 
 ```sql
 select * 
@@ -299,13 +307,22 @@ from Fornecedor
 where id is not null;
 ```
 
-12. Apresente os fornecedores sem teleone e sem endereço:
+14. Apresente os fornecedores sem teleone e sem endereço:
 
 ```sql
 select * 
 from Fornecedor
 where telefone is null and
       endereco is null;
+```
+
+15. Apresente os fornecedores sem id ou sem teleone:
+
+```sql
+select * 
+from Fornecedor
+where id is null or
+      telefone is null;
 ```
 ---
 
