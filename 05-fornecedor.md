@@ -429,7 +429,7 @@ ORDER BY id DESC, nome DESC;
 SELECT *
 FROM Fornecedor
 WHERE endereco LIKE '%MG%' 
-   OR endereco LIKE '%Minas Gerais%'
+   OR endereco LIKE '%Minas%'
 ORDER BY id DESC, nome DESC; 
 ```
 
@@ -439,7 +439,7 @@ ORDER BY id DESC, nome DESC;
 SELECT * 
 FROM Fornecedor 
 WHERE LOWER(endereco) LIKE '%mg%' 
-   OR LOWER(endereco) LIKE '%minas gerais%' 
+   OR LOWER(endereco) LIKE '%minas%' 
 ORDER BY id DESC, nome DESC;
 ```
 
