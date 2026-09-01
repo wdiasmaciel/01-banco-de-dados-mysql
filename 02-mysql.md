@@ -90,6 +90,14 @@ sudo mysql -u root -p
 
 4. tecle `<Enter>`. 
 
+# Listar os Bancos de Dados
+
+1. No terminal, execute o comando abaixo:
+
+```sql
+SHOW DATABASES;
+```
+
 ---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
