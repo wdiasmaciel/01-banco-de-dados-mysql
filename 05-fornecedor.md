@@ -325,6 +325,44 @@ WHERE id IS NULL OR
       telefone IS NULL;
 ```
 
+16. Apresente todos os nomes distintos de fornecedores:
+
+```sql
+SELECT DISTINCT(nome) 
+FROM Fornecedor;
+```
+
+17. Apresente todos os nomes distintos de fornecedores com os respectivos telefones e endereços:
+
+```sql
+SELECT DISTINCT(nome), telefone, endereco
+FROM Fornecedor;
+```
+
+18. Apresente todos os nomes distintos de fornecedores com os respectivos telefones e endereços em ordem alfabética:
+
+```sql
+SELECT DISTINCT(nome), telefone, endereco
+FROM Fornecedor
+ORDER BY nome; 
+```
+
+ou
+
+```sql
+SELECT DISTINCT(nome), telefone, endereco
+FROM Fornecedor
+ORDER BY nome ASC; 
+```
+
+19. Apresente todos os nomes distintos de fornecedores com os respectivos telefones e endereços em ordem alfabética descendente:
+
+```sql
+SELECT DISTINCT(nome), telefone, endereco
+FROM Fornecedor
+ORDER BY nome DESC; 
+```
+
 ---
 
 # Exercícios
