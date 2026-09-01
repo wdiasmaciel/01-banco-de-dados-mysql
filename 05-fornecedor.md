@@ -290,6 +290,15 @@ select *
 from Fornecedor
 where id is not null;
 ```
+
+12. Apresente os fornecedores sem teleone e sem endereço:
+
+```sql
+select * 
+from Fornecedor
+where telefone is null and
+      endereco is null;
+```
 ---
 
 2. Alternativamnte, informe o comando abaixo no console interativo do `MySQL`:
