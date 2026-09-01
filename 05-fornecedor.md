@@ -266,6 +266,15 @@ select *
 from Fornecedor
 where nome like '%a';
 ```
+
+9. Apresente os fornecedores que tenham "Componentes" no nome;
+
+```sql
+select * 
+from Fornecedor
+where nome like '%Componentes%';
+```
+
 ---
 
 2. Alternativamnte, informe o comando abaixo no console interativo do `MySQL`:
