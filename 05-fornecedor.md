@@ -259,6 +259,13 @@ from Fornecedor
 where nome like '%S.A.';
 ```
 
+8. Apresente os fornecedores cujo nome termine com a letra 'a';
+
+```sql
+select * 
+from Fornecedor
+where nome like '%a';
+```
 ---
 
 2. Alternativamnte, informe o comando abaixo no console interativo do `MySQL`:
