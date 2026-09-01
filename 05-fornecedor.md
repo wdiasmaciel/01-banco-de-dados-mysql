@@ -262,67 +262,67 @@ WHERE nome LIKE 'Atacadista Central';
 8. Apresente os fornecedores que são sociedades anônimas:
 
 ```sql
-select * 
-from Fornecedor
-where nome like '%S.A.';
+SELECT * 
+FROM Fornecedor
+WHERE nome LIKE '%S.A.';
 ```
 
 9. Apresente os fornecedores cujo nome comece com a letra 'a':
 
 ```sql
-select * 
-from Fornecedor
-where nome like 'a%';
+SELECT * 
+FROM Fornecedor
+WHERE nome LIKE 'a%';
 ```
 
 10. Apresente os fornecedores cujo nome termine com a letra 'a':
 
 ```sql
-select * 
-from Fornecedor
-where nome like '%a';
+SELECT * 
+FROM Fornecedor
+WHERE nome LIKE '%a';
 ```
 
 11. Apresente os fornecedores que tenham "Componentes" no nome:
 
 ```sql
-select * 
-from Fornecedor
-where nome like '%Componentes%';
+SELECT * 
+FROM Fornecedor
+WHERE nome LIKE '%Componentes%';
 ```
 
 12. Apresente os fornecedores cujo ID seja NULL:
 
 ```sql
-select * 
-from Fornecedor
-where id is null;
+SELECT * 
+FROM Fornecedor
+WHERE id IS NULL;
 ```
 
 13. Apresente os fornecedores cujo ID seja diferente de NULL:
 
 ```sql
-select * 
-from Fornecedor
-where id is not null;
+SELECT * 
+FROM Fornecedor
+WHERE id IS NOT NULL;
 ```
 
 14. Apresente os fornecedores sem teleone e sem endereço:
 
 ```sql
-select * 
-from Fornecedor
-where telefone is null and
-      endereco is null;
+SELECT * 
+FROM Fornecedor
+WHERE telefone IS NULL AND
+      endereco IS NULL;
 ```
 
 15. Apresente os fornecedores sem id ou sem teleone:
 
 ```sql
-select * 
-from Fornecedor
-where id is null or
-      telefone is null;
+SELECT * 
+FROM Fornecedor
+WHERE id IS NULL OR
+      telefone IS NULL;
 ```
 
 ---
