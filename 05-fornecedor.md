@@ -433,7 +433,15 @@ WHERE endereco LIKE '%MG%'
 ORDER BY id DESC, nome DESC; 
 ```
 
-**OBS**: por padrão, o operador `LIKE` no `MySQL` não diferencia maiúsculas de minúsculas (case-insensitive) se a sua tabela estiver usando uma `colação` padrão como `utf8mb4_0900_ai_ci` ou `latin1_swedish_ci`, em que o `_ai` significa `Accent Insensitive` (Insensível a Acentos) e o `_ci` significa Case Insensitive (Insensível a Minúsculas e Maiúsculas).
+**OBS**: por padrão, o operador `LIKE` no `MySQL` não diferencia maiúsculas de minúsculas (case-insensitive) se a sua tabela estiver usando uma `colação` padrão como `utf8mb4_0900_ai_ci` ou `latin1_swedish_ci`, em que:
+
+- O `utf8` refere-se ao formato de codificação de caracteres que implementa o padrão universal Unicode. Ele foi criado para permitir que o banco de dados armazene textos em múltiplos idiomas e alfabetos diferentes no mesmo lugar.
+
+- O fragmento `mb4` significa `Most Bytes 4` (ou `Max Bytes 4`). Isso indica que o conjunto de caracteres (charset) pode usar até 4 bytes para armazenar cada caractere no banco de dados. O padrão antigo do MySQL, chamado apenas de `utf8` (que na verdade é um codinome para `utf8mb3`), usava no máximo 3 bytes por caractere. Isso criava uma limitação: o banco de dados não conseguia guardar caracteres mais complexos. Ao usar o `utf8mb4`, você ganha suporte completo para: emojis, símbolos matemáticos avançados e ideogramas asiáticos raros ou complexos (chinês, japonês, coreano).
+
+- O `_ai` significa `Accent Insensitive` (Insensível a Acentos).
+
+- O `_ci` significa Case Insensitive (Insensível a Minúsculas e Maiúsculas). 
 
 ```sql
 SELECT * 
