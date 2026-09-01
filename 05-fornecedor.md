@@ -235,7 +235,7 @@ from Fornecedor
 where id != 1;
 ```
 
-2. Apresente o fornecedor com nome igual a "Embalagens Sustentáveis S.A.".
+5. Apresente o fornecedor com nome igual a "Embalagens Sustentáveis S.A.".
 
 ```sql
 select * 
@@ -243,15 +243,15 @@ from Fornecedor
 where nome = 'Embalagens Sustentáveis S.A.';
 ```
 
-3. Apresente o fornecedor com nome igual a "Embalagens Sustentáveis S.A.".
+6. Apresente o fornecedor com nome igual a "Atacadista Central".
 
 ```sql
 select * 
 from Fornecedor
-where nome like '%S.A.';
+where nome like 'Atacadista Central';
 ```
 
-3. Apresente os fornecedores que são sociedades anônimas;
+7. Apresente os fornecedores que são sociedades anônimas;
 
 ```sql
 select * 
