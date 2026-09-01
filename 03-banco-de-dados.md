@@ -1,7 +1,7 @@
 # Criação do Banco de Dados
 
-<table width="100%" style="border: none; border-collapse: collapse;">
-  <tr style="border: none;">
+<table>
+  <tr>
     <td align="left" style="border: none;">
       <a href="arquivo-anterior.md">← Anterior</a>
     </td>
