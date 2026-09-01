@@ -98,6 +98,7 @@ sudo mysql -u root -p
 SHOW DATABASES;
 ```
 
+![Comando SHOW DATABASES](./img/showdatabases.png)
 ---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
