@@ -3,10 +3,10 @@
 <table>
   <tr>
     <td align="left" style="border: none;">
-      <a href="arquivo-anterior.md">← Anterior</a>
+      <a href="arquivo-anterior.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="proximo-arquivo.md">Próximo →</a>
+      <a href="proximo-arquivo.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -38,10 +38,10 @@ USE empresa;
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="arquivo-anterior.md">← Anterior</a>
+      <a href="arquivo-anterior.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="proximo-arquivo.md">Próximo →</a>
+      <a href="proximo-arquivo.md">Próximo</a>
     </td>
   </tr>
 </table>

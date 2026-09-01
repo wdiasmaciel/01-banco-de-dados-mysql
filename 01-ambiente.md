@@ -3,10 +3,10 @@
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="README.md">← Anterior</a>
+      <a href="README.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="02-projeto.md">Próximo →</a>
+      <a href="02-projeto.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -106,10 +106,10 @@ mysql --version
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="README.md">← Anterior</a>
+      <a href="README.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="02-projeto.md">Próximo →</a>
+      <a href="02-projeto.md">Próximo</a>
     </td>
   </tr>
 </table>
