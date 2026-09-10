@@ -217,6 +217,18 @@ WHERE id IN (1, 3, 5);
 
 ---
 
+# NOT IN
+
+1. Apresente os fornecedores cujos IDs não estejam em 1, 3 e 5:
+
+```sql
+SELECT * 
+FROM Fornecedor
+WHERE id NOT IN (1, 3, 5);
+```
+
+---
+
 # Exercícios
 
 ## Exercício 1
