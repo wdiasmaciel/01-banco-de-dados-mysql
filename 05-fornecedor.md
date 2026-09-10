@@ -6,7 +6,7 @@
       <a href="04-banco-de-dados.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="05-produto.md">Próximo</a>
+      <a href="06-fornecedor.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -526,7 +526,7 @@ Apresente todos os hotéis com:
       <a href="04-banco-de-dados.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="05-produto.md">Próximo</a>
+      <a href="06-fornecedor.md">Próximo</a>
     </td>
   </tr>
 </table>
