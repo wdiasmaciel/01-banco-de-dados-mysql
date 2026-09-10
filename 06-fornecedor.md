@@ -71,8 +71,8 @@ DESC Fornecedor;
 1. Insira uma linha (registro) na tabela `Fornecedor`.
 
 ```sql
-INSERT INTO Fornecedor (id, nome, telefone, endereco) VALUES 
-(1, 'Logística Brasil Ltda', '(11) 98765-4321', 'Av. Paulista, 1000 - São Paulo, SP');
+INSERT INTO Fornecedor (nome, telefone, endereco) VALUES 
+('Logística Brasil Ltda', '(11) 98765-4321', 'Av. Paulista, 1000 - São Paulo, SP');
 ```
 
 ---
