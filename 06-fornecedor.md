@@ -58,6 +58,8 @@ CREATE TABLE Fornecedor (
 DESCRIBE Fornecedor;
 ```
 
+ou
+
 ```sql
 DESC Fornecedor;
 ```
