@@ -237,6 +237,14 @@ FROM Fornecedor
 ORDER BY `código do fornecedor` DESC;
 ```
 
+ou
+
+```sql
+SELECT id as `código do fornecedor`, nome, telefone, endereco 
+FROM Fornecedor
+ORDER BY `código do fornecedor` DESC;
+```
+
 ---
 # Exercícios
 
