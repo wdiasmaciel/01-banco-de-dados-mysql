@@ -305,6 +305,69 @@ Escreva uma consulta que exiba apenas as colunas nome e endereco de todos os for
 
 ---
 
+## Exercício 6 (Inserção Padrão):
+
+Escreva o comando SQL para cadastrar um único fornecedor com os seguintes dados: Nome: Paraná Madeiras, Telefone: (41) 3322-1111, Endereço: Rua Chile, 1500 - Curitiba, PR.
+
+---
+
+## Exercício 7 (Inserção Múltipla):
+
+Escreva um único comando INSERT para cadastrar três fornecedores de uma só vez: 
+Alimentos Nordeste | (81) 9988-7766 | Av. Boa Viagem, 400 - Recife, PE
+Metais Sudeste | (11) 2233-4455 | Rua das Indústrias, 80 - Osasco, SP
+Vidros do Sul | (51) 3211-0000 | Av. Farrapos, 1010 - Porto Alegre, RS
+
+---
+
+## Exercício 8 (Inserção Condicional/Nulos):
+
+Considerando que a coluna telefone permita valores nulos (ou seja, não é obrigatória), escreva o comando para cadastrar o fornecedor Artesanatos da Bahia, localizado na Rua do Passo, 12 - Salvador, BA, deixando o telefone sem preenchimento (NULL).
+
+---
+
+## Exercício 9 (Seleção Simples):
+
+Escreva uma consulta que retorne apenas o nome e o telefone de todos os fornecedores cadastrados na tabela.
+
+---
+
+## Exercício 10 (Filtro de Texto Exato):
+
+Escreva uma consulta que retorne todas as colunas do fornecedor cujo nome seja exatamente 'Metais Sudeste'.
+
+---
+
+## Exercício 11 (Filtro de Texto Parcial - LIKE):
+
+Escreva uma consulta para listar todos os fornecedores localizados no estado de São Paulo. Para isso, filtre os registros cujo endereço termine ou contenha a sigla 'SP'.
+
+---
+
+## Exercício 12 (Filtro por ID):
+
+Escreva uma consulta que traga as informações completas do fornecedor que possui o código (id) igual a 3.
+
+---
+
+## Exercício 13 (Operadores de Comparação):
+
+Escreva uma consulta que retorne todos os fornecedores que possuem o id maior ou igual a 4.
+
+---
+
+## Exercício 14 (Ordenação Ascendente):
+
+Escreva uma consulta que liste o nome e o endereço de todos os fornecedores, organizados em ordem alfabética (A-Z) pelo nome.
+
+---
+
+## Exercício 15 (Filtro Composto e Ordenação):
+
+Escreva uma consulta que selecione todos os campos da tabela. O resultado deve exibir apenas os fornecedores com id entre 2 e 5 e vir ordenado do ID mais alto para o mais baixo (ordem decrescente).
+
+---
+
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
