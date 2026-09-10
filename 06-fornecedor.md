@@ -151,19 +151,23 @@ SELECT * FROM Fornecedor;
 
 # Dado Faltante
 
-2. Insira uma linha sem nome:
+1. Insira uma linha sem nome:
 
 ```sql
-INSERT INTO Fornecedor (id, telefone, endereco) 
-VALUES (3, '(61) 3222-0000', 'SCS Quadra 4, Bloco A - Brasília, DF');
+INSERT INTO Fornecedor (telefone, endereco) 
+VALUES ('(61) 3222-0000', 'SCS Quadra 4, Bloco A - Brasília, DF');
 ```
+
+O comando dispara um erro, porque o nome é obrigatório, não pode ser nulo.
 
 3. Insira uma linha sem telefone e sem endereço:
 
 ```sql
-INSERT INTO Fornecedor (id, nome) 
-VALUES (3, 'Atacadista Central');
+INSERT INTO Fornecedor (nome, endereco) 
+VALUES ('Atacadista Central', 'Avenida Amazonas, n. 436, Barro Preto, Belo Horizonte, MG');
 ```
+
+O comando dispara um erro, porque o telefone é obrigatório, não pode ser nulo.
 
 4. Verifique as inserções indevidas:
 
