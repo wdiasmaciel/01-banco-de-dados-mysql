@@ -176,7 +176,7 @@ INSERT INTO Fornecedor (nome, telefone)
 VALUES ('Atacadista Central', '(31) 9 9751-4523');
 ```
 
-O comando dispara um erro, porque o telefone é obrigatório, não pode ser nulo.
+O comando dispara um erro, porque o endereço é obrigatório, não pode ser nulo.
 
 ---
 
