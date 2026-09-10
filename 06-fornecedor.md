@@ -272,6 +272,7 @@ ORDER BY id DESC;
 ```
 
 ---
+
 # Exercícios
 
 ## Exercício 1
