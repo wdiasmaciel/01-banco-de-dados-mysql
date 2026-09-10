@@ -231,6 +231,8 @@ WHERE id NOT IN (1, 3, 5);
 
 # Ordenando por Apelido de Coluna
 
+1. No MySQL, para nos referirmos a apelidos (aliases) ou colunas que possuem espaços ou caracteres especiais, usamos a `crase`:
+
 ```sql
 SELECT id as "código do fornecedor", nome, telefone, endereco 
 FROM Fornecedor
