@@ -229,6 +229,15 @@ WHERE id NOT IN (1, 3, 5);
 
 ---
 
+# Ordenando por Apelido de Coluna
+
+```sql
+SELECT id as 'código do fornecedor', nome, telefone, endereco 
+FROM Fornecedor
+ORDER BY 'código do fornecedor' DESC;
+```
+
+---
 # Exercícios
 
 ## Exercício 1
