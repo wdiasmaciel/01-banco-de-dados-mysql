@@ -41,8 +41,8 @@ DROP TABLE IF EXISTS Fornecedor;
 
 CREATE TABLE Fornecedor (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(256) NOT NULL,
-    telefone VARCHAR(20),
+    nome VARCHAR(256) NOT NULL UNIQUE,
+    telefone VARCHAR(20) UNIQUE,
     endereco VARCHAR(255)
 );
 
