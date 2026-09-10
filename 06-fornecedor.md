@@ -48,19 +48,6 @@ CREATE TABLE Fornecedor (
 
 ```
 
-2. Alternativamnte, informe o comando abaixo no console interativo do `MySQL`:
-
-```sql
-DROP TABLE IF EXISTS Fornecedor;
-
-CREATE TABLE Fornecedor (
-    id INT,
-    nome VARCHAR(256),
-    telefone VARCHAR(20),
-    endereco VARCHAR(256)
-);
-```
-
 ---
 
 # DESCRIBE
