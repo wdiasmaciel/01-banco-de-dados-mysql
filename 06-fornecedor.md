@@ -275,54 +275,33 @@ ORDER BY id DESC;
 
 # Exercícios
 
-## Exercício 1
+## Exercício 1 (Inserção e Restrições):
 
-Crie um banco de dados para uma empresa de aviaçao. No banco, crie a tabela "Voo". Crie as consultas abaixo. Insira dados na tabela "Voo" que atendam às consultas.
-Apresente todos os voos com: 
-1. Partida de Belo Horizonte.
-2. Destino Fortaleza.
-3. Viagem de volta agendada.
-4. Valor abaixo de R$ 950,00.
-5. Valor acima de R$ 1.200,00.
-6. Valor entre R$ 500,00 e R$ 800,00.
-7. Partida agendada para 2027.
-8. Volta agendada para 2028.
-9. Partida de Cuiabá e destino Curitiba.
-10. Partida de Minas Gerais.
-11. Destino Rio Grande do Sul.
-12. Partida de Tocantins ou do Pará.
-13. Destino Salvador ou Aracajú.
-14. Viagem de volta não agendada.
-15. Substring "es" na cidade/estado de partida. 
-16. Substring "ta" na cidade/estado de destino.
-17. Substring "or" na cidade/estado de partida ou de destino.
+Escreva o comando SQL para inserir um novo fornecedor chamado 'Suprimentos Globais', com o telefone '(11) 91111-2222' e endereço 'Av. das Nações, 500 - São Paulo, SP'. Em seguida, responda: O que acontecerá se você tentar executar esse mesmo comando uma segunda vez? Por quê?
 
 ---
 
-## Exercício 2
+## Exercício 2 (Filtro por Intervalo):
 
-Crie um banco de dados para uma empresa de hotelaria. No banco, crie a tabela "Hotel". Crie as consultas abaixo. Insira dados na tabela "Hotel" que atendam às consultas.
-Apresente todos os hotéis com:
-1. Cidade de Minas Gerais.
-2. Valor da diária abaixo de R$ 300,00.
-3. Cidade São Luís.
-4. Categoria 3 estrelas.
-5. Substring "resort" no nome do hotel.
-6. Cidade Recife ou Salvador.
-7. Tipo de acomodação "Quarto duplo".
-8. Valor da diária acima de R$ 100,00.
-9. Substring "elite" no nome do hotel ou da acomodação.
-10. Hotel com check-in agendado para 2027.
-11. Cidade Curitiba e acomodação tipo "Suite".
-12. Estado Rio Grande do Sul.
-13. Estado São Paulo ou Paraná.
-14. Hospedagem sem café incluso.
-15. Substring "standard" no tipo da acomodação.
-16. Valor da diária entre R$ 250,00 e R$ 450,00.
-17. Hotel com check-out agendado para 2028.
-18. Garagem inclusa na hospedagem.
-19. Garagem inclusa, mas sem café incluso.
-20. Café incluso, mas sem garagem inclusa.
+Escreva uma consulta que selecione todos os campos da tabela Fornecedor, mas retorne apenas os registros cujos códigos (id) estejam no intervalo de 3 a 5 (inclusive). Utilize o operador de intervalo adequado visto em aula.
+
+---
+
+## Exercício 3 (Seleção de Valores Específicos):
+
+Escreva uma consulta que apresente todas as colunas dos fornecedores que possuem os IDs 1, 2 ou 4. Não utilize o operador OR nesta solução.
+
+---
+
+## Exercício 4 (Ordenação por Posição):
+
+Escreva uma consulta que retorne todas as colunas da tabela Fornecedor. O resultado deve ser ordenado de forma decrescente utilizando o nome do fornecedor, porém você deve obrigatoriamente fazer essa ordenação referenciando a posição numérica da coluna na tabela.
+
+---
+
+## Exercício 5 (Ordenação Oculta):
+
+Escreva uma consulta que exiba apenas as colunas nome e endereco de todos os fornecedores. Garanta que o resultado venha ordenado do último ID gerado para o primeiro (ordem decrescente de id), mesmo que a coluna id não apareça no resultado final do SELECT.
 
 ---
 
