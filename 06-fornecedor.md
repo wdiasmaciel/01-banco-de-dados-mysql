@@ -160,7 +160,7 @@ VALUES ('(61) 3222-0000', 'SCS Quadra 4, Bloco A - Brasília, DF');
 
 O comando dispara um erro, porque o nome é obrigatório, não pode ser nulo.
 
-3. Insira uma linha sem telefone e sem endereço:
+2. Insira uma linha sem telefone:
 
 ```sql
 INSERT INTO Fornecedor (nome, endereco) 
@@ -169,11 +169,14 @@ VALUES ('Atacadista Central', 'Avenida Amazonas, n. 436, Barro Preto, Belo Horiz
 
 O comando dispara um erro, porque o telefone é obrigatório, não pode ser nulo.
 
-4. Verifique as inserções indevidas:
+3. Insira uma linha sem endereço:
 
 ```sql
-SELECT * FROM Fornecedor;
+INSERT INTO Fornecedor (nome, telefone) 
+VALUES ('Atacadista Central', '(31) 9 9751-4523');
 ```
+
+O comando dispara um erro, porque o telefone é obrigatório, não pode ser nulo.
 
 ---
 
