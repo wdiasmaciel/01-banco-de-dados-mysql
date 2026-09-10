@@ -111,6 +111,7 @@ INSERT INTO Fornecedor (nome, telefone, endereco) VALUES
 
 O comando dispara um erro, porque não permite a inserção de nomes repetidos.
 
+---
 
 # Telefone Repetido
 
@@ -122,6 +123,22 @@ INSERT INTO Fornecedor (nome, telefone, endereco) VALUES
 ```
 
 O comando dispara um erro, porque não permite a inserção de telefones repetidos.
+
+---
+
+# Endereço Repetido
+
+1. Insira uma linha com `endereço` repetido:
+
+```sql
+INSERT INTO Fornecedor (nome, telefone, endereco) VALUES 
+('Nova Logística Brasil Ltda', '(31) 98154-3227', 'Av. Paulista, 1000 - São Paulo, SP');
+```
+
+O comando é executado com sucesso, porque permite a inserção de endereços repetidos.
+
+
+--- 
 
 # Dado Faltante
 
