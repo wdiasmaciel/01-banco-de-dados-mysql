@@ -26,6 +26,9 @@ USE empresa;
 ou
 
 ```sql
+DROP SCHEMA IF EXISTS empresa;
+CREATE SCHEMA empresa;
+USE empresa;
 ```
 
 
