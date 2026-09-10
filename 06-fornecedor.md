@@ -42,8 +42,8 @@ DROP TABLE IF EXISTS Fornecedor;
 CREATE TABLE Fornecedor (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(256) NOT NULL UNIQUE,
-    telefone VARCHAR(20) UNIQUE,
-    endereco VARCHAR(255)
+    telefone VARCHAR(20) NOT NULL UNIQUE,
+    endereco VARCHAR(255) NOT NULL
 );
 
 ```
@@ -68,7 +68,7 @@ DESC Fornecedor;
 
 # INSERT
 
-1. Insira uma linha (registro) na tabela `Fornecedor`.
+1. Insira uma linha (registro) na tabela `Fornecedor`. O ID é gerado automaticamente:
 
 ```sql
 INSERT INTO Fornecedor (nome, telefone, endereco) VALUES 
@@ -137,17 +137,19 @@ INSERT INTO Fornecedor (nome, telefone, endereco) VALUES
 
 O comando é executado com sucesso, porque permite a inserção de endereços repetidos.
 
+---
+
+# SELECT
+
+1. Apresente os dados inseridos na tabela `Fornecedor`:
+
+```sql
+SELECT * FROM Fornecedor;
+```
 
 --- 
 
 # Dado Faltante
-
-1. Insira uma linha sem ID:
-
-```sql
-INSERT INTO Fornecedor (nome, telefone, endereco) 
-VALUES ('Embalagens Sustentáveis S.A.', '(41) 99111-2233', 'Rua das Flores, 123 - Curitiba, PR');
-```
 
 2. Insira uma linha sem nome:
 
