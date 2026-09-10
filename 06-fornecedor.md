@@ -117,15 +117,11 @@ O comando dispara um erro, porque não permite a inserção de nomes repetidos.
 1. Insira uma linha com `telefone` repetido:
 
 ```sql
-INSERT INTO Fornecedor (id, nome, telefone, endereco) 
-VALUES (2, 'Tech Componentes Eletrônicos', '(21) 2555-1234', 'Av. Antônio Carlos, 6627 - Belo Horizonte, MG');
+INSERT INTO Fornecedor (nome, telefone, endereco) VALUES 
+('Nova Logística Brasil Ltda', '(11) 98765-4321', 'Av. Paulista, 1000 - São Paulo, SP');
 ```
 
-2. Verifique a inserção indevida:
-
-```sql
-SELECT * FROM Fornecedor;
-```
+O comando dispara um erro, porque não permite a inserção de telefones repetidos.
 
 # Dado Faltante
 
