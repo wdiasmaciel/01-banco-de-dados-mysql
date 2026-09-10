@@ -13,19 +13,36 @@
 
 ---
 
+# Criar o Banco de Dados
+
+1. Crie o banco de dados `empresa`:
+
+```sql
+DROP DATABASE IF EXISTS empresa;
+CREATE DATABASE empresa;
+USE empresa;
+```
+
+ou
+
+```sql
+```
+
+
 # CREATE TABLE
 
 1. Crie a tabela Fornecedor.
 
-2. No console interativo do `MySQL`, informe o comando abaixo:
-
 ```sql
+DROP TABLE IF EXISTS Fornecedor;
+
 CREATE TABLE Fornecedor (
-    id INT,
-    nome VARCHAR(256),
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(256) NOT NULL,
     telefone VARCHAR(20),
-    endereco VARCHAR(256)
+    endereco VARCHAR(255)
 );
+
 ```
 
 2. Alternativamnte, informe o comando abaixo no console interativo do `MySQL`:
