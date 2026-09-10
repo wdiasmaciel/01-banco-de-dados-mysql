@@ -207,6 +207,14 @@ WHERE id BETWEEN 2 and 4;
 
 # IN
 
+1. Apresente os fornecedores com ID em 1, 3 e 5:
+
+```sql
+SELECT * 
+FROM Fornecedor
+WHERE id IN (1, 3, 5);
+```
+
 ---
 
 # Exercícios
