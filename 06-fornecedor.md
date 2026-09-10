@@ -248,6 +248,17 @@ ORDER BY `código do fornecedor` DESC;
 ```
 
 ---
+
+# Classificando pela Posição da Coluna
+
+1. Apresentar o fornecedores em ordem decrescente de nome:
+
+```sql
+SELECT *
+FROM Fornecedor
+ORDER BY 2
+```
+
 # Exercícios
 
 ## Exercício 1
