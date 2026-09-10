@@ -256,7 +256,7 @@ ORDER BY `código do fornecedor` DESC;
 ```sql
 SELECT *
 FROM Fornecedor
-ORDER BY 2
+ORDER BY 2 DESC;
 ```
 
 # Exercícios
