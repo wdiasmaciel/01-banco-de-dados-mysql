@@ -92,8 +92,8 @@ SELECT id, nome, telefone, endereco FROM Fornecedor;
 1. Insira uma linha com `id` repetido:
 
 ```sql
-INSERT INTO Fornecedor (id, nome, telefone, endereco) 
-VALUES (1, 'Distribuidora Norte-Sul', '(21) 2555-1234', 'Rua das Marrecas, 45 - Rio de Janeiro, RJ');
+INSERT INTO Fornecedor (id, nome, telefone, endereco) VALUES 
+(1, 'Logística Brasil Ltda', '(11) 98765-4321', 'Av. Paulista, 1000 - São Paulo, SP');
 ```
 
 O comando dispara um erro, porque não permite a inserção de IDs repetidos.
@@ -105,7 +105,7 @@ O comando dispara um erro, porque não permite a inserção de IDs repetidos.
 1. Insira uma linha com `nome` repetido:
 
 ```sql
-INSERT INTO Fornecedor (id, nome, telefone, endereco) 
+INSERT INTO Fornecedor (nome, telefone, endereco) 
 VALUES ('Distribuidora Norte-Sul', '(21) 2555-1234', 'Rua das Marrecas, 45 - Rio de Janeiro, RJ');
 ```
 
