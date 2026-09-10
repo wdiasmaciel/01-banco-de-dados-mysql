@@ -249,7 +249,7 @@ ORDER BY `código do fornecedor` DESC;
 
 ---
 
-# Classificando pela Posição da Coluna
+# Ordenando pela Posição da Coluna
 
 1. Apresentar o fornecedores em ordem decrescente de nome:
 
@@ -259,6 +259,19 @@ FROM Fornecedor
 ORDER BY 2 DESC;
 ```
 
+---
+
+# Ordenando por uma Coluna Ausente na Cláusula SELECT
+
+1. Apresentar o nome e telefone dos fornecedores, mas apresentar em ordem decrescente de ID:
+
+```sql
+SELECT nome, telefone 
+FROM Fornecedor
+ORDER BY id DESC;
+```
+
+---
 # Exercícios
 
 ## Exercício 1
