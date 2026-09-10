@@ -85,45 +85,6 @@ INSERT INTO Fornecedor (nome, telefone, endereco) VALUES
 SELECT id, nome, telefone, endereco FROM Fornecedor;
 ```
 
-2. Apresente todas as colunas da linha inserida da tabela `Fornecedor`:
-
-```sql
-SELECT * FROM Fornecedor;
-```
-
-3. Apresente a coluna `nome` da linha inserida na tabela `Fornecedor`:
-
-```sql
-SELECT nome FROM Fornecedor;
-```
-
-4. Apresente a coluna `nome` e a coluna `telefone` da linha inserida na tabela `Fornecedor`:
-
-```sql
-SELECT nome, telefone FROM Fornecedor;
-```
-
-5. Apresente a coluna `nome` e a coluna `endereco` da linha inserida na tabela `Fornecedor`:
-
-```sql
-SELECT nome, endereco 
-FROM Fornecedor;
-```
-
-6. Apresente a coluna `nome` como "Nome do Fornecedor" e a coluna `endereco` como "Endereço do Fornecedor":
-
-```sql
-SELECT nome AS "Nome do Fornecedor", endereco AS "Endereço do Fornecedor"
-FROM Fornecedor;
-```
-
-7. Apresente a coluna `id` como 'Código do Fornecedor' e a coluna `nome` como 'Nome do Fornecedor':
-
-```sql
-SELECT id AS 'Código do Fornecedor', nome AS 'Nome do Fornecedor'
-FROM Fornecedor;
-```
-
 ---
 
 # ID Repetido
@@ -135,13 +96,21 @@ INSERT INTO Fornecedor (id, nome, telefone, endereco)
 VALUES (1, 'Distribuidora Norte-Sul', '(21) 2555-1234', 'Rua das Marrecas, 45 - Rio de Janeiro, RJ');
 ```
 
-2. Verifique a inserção indevida:
-
-```sql
-SELECT * FROM Fornecedor;
-```
+O comando dispara um erro, porque não permite a inserção de IDs repetidos.
 
 ---
+
+# Nome Repetido
+
+1. Insira uma linha com `nome` repetido:
+
+```sql
+INSERT INTO Fornecedor (id, nome, telefone, endereco) 
+VALUES ('Distribuidora Norte-Sul', '(21) 2555-1234', 'Rua das Marrecas, 45 - Rio de Janeiro, RJ');
+```
+
+O comando dispara um erro, porque não permite a inserção de nomes repetidos.
+
 
 # Telefone Repetido
 
