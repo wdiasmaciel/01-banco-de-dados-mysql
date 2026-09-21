@@ -486,7 +486,7 @@ CREATE TABLE Pacote (
     destino     VARCHAR(100) NOT NULL,
     preco       DECIMAL(10,2) NOT NULL,
     vagas       INT NOT NULL,
-    ativo       TINYINT(1) NOT NULL DEFAULT 1,  -- 1 = ativo, 0 = inativo
+    ativo       BOOLEAN NOT NULL DEFAULT 1,  -- 1 = ativo, 0 = inativo
     PRIMARY KEY (id)
 );
 
