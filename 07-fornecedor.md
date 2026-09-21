@@ -13,21 +13,21 @@
 
 --- 
 
-# Banco de Dados — Tabela Fornecedor e o comando UPDATE
+# Tabela Fornecedor e o comando UPDATE
 
-Este material acompanha o script `fornecedor_aula.sql` e traz, antes de cada exemplo, uma explicação do conceito que está sendo praticado. A ideia é usar a tabela **Fornecedor** como "laboratório" para explorar ao máximo as possibilidades do comando `UPDATE` no MySQL.
+Explorar o comando `UPDATE` no MySQL.
 
 ---
 
 ## 1. Criando a tabela
 
-Antes de popular a tabela, é uma boa prática remover uma versão anterior dela (caso exista), para evitar erros de "tabela já existe" ao reexecutar o script durante a aula:
+Antes de popular a tabela, removermos uma versão anterior dela (caso exista), para evitar erros de "tabela já existe" ao reexecutar o script durante a aula:
 
 ```sql
 DROP TABLE IF EXISTS Fornecedor;
 ```
 
-Em seguida, criamos a tabela `Fornecedor` com os atributos definidos no projeto: `cnpj` (chave primária), `nome`, `telefone` e `endereco`.
+Em seguida, criamos a tabela `Fornecedor` com os atributos: `cnpj` (chave primária), `nome`, `telefone` e `endereco`.
 
 ```sql
 CREATE TABLE Fornecedor (
@@ -39,13 +39,13 @@ CREATE TABLE Fornecedor (
 );
 ```
 
-> **Ponto de discussão em aula:** por que `cnpj` foi definido como `VARCHAR` e não como `INT`? (Dica: CNPJ pode ter zeros à esquerda e não é usado em operações aritméticas, então não faz sentido tratá-lo como número.)
+> **OBS:** por que `cnpj` foi definido como `VARCHAR` e não como `INT`? (Dica: CNPJ pode ter zeros à esquerda e não é usado em operações aritméticas, então não faz sentido tratá-lo como número.)
 
 ---
 
 ## 2. Inserindo os dados iniciais
 
-Os `INSERT`s abaixo populam a tabela com 8 fornecedores fictícios. Note que alguns registros já nascem propositalmente com `telefone` ou `endereco` em `NULL`, para que possamos explorar isso mais adiante nos exemplos de `UPDATE`.
+Os `INSERT`s abaixo populam a tabela com 8 fornecedores fictícios. Note que alguns registros já nascem propositalmente com `telefone` ou `endereco` em `NULL`, para que possamos explorar isso nos exemplos de `UPDATE`.
 
 ```sql
 INSERT INTO Fornecedor (cnpj, nome, telefone, endereco) VALUES
@@ -56,7 +56,7 @@ INSERT INTO Fornecedor (cnpj, nome, telefone, endereco) VALUES
 ('55555555000105', 'Epsilon Higiene e Limpeza Ltda', '3132225555', NULL),
 ('66666666000106', 'Zeta Papelaria ME',              '3132226666', 'Rua Rio de Janeiro, 600 - Belo Horizonte/MG'),
 ('77777777000107', 'Eta Eletrônicos Ltda',           '3132227777', 'Rua Curitiba, 700 - Belo Horizonte/MG'),
-('88888888000108', 'Theta Móveis e Decoração Ltda',  '3132228888', 'Av. do Contorno, 800 - Belo Horizonte/MG');
+('88888888000108', 'Sigma Móveis e Decoração Ltda',  '3132228888', 'Av. do Contorno, 800 - Belo Horizonte/MG');
 ```
 
 Conferimos o resultado com um `SELECT`:
