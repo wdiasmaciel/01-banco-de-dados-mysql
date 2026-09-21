@@ -361,7 +361,7 @@ WHERE cnpj IN (
 AND endereco IS NOT NULL;
 ```
 
-> **Detalhe técnico importante:** o MySQL não permite referenciar diretamente, dentro do `WHERE` de um `UPDATE`, um subselect que consulta a **mesma tabela** que está sendo atualizada. Por isso a subquery foi "embrulhada" em uma tabela derivada (`AS sub_tabela`).
+> **OBS:** o MySQL não permite referenciar diretamente, dentro do `WHERE` de um `UPDATE`, um subselect que consulta a **mesma tabela** que está sendo atualizada. Por isso a subquery foi "embrulhada" em uma tabela derivada (`AS sub_tabela`).
 
 **OBS:** teste o exemplo anterior sem o primeiro SELECT (o do `AS sub_tabela`) e verifique o erro que o MySQL retorna.
 
