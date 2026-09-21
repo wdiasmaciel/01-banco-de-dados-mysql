@@ -89,7 +89,11 @@ SET coluna1 = valor1, coluna2 = valor2, ...
 WHERE condição;
 ```
 
-A cláusula `WHERE` é **opcional**, mas fundamental: é ela quem decide *quais linhas* serão alteradas. Sem `WHERE`, o `UPDATE` afeta **todas as linhas da tabela**. Os exemplos a seguir exploram essa e outras variações, do caso mais simples ao mais avançado.
+A cláusula `WHERE` é **opcional**, mas fundamental: é ela quem decide *quais linhas* serão alteradas. 
+
+Sem `WHERE`, o `UPDATE` afeta **todas as linhas da tabela**. 
+
+Os exemplos a seguir exploram essa e outras variações, do caso mais simples ao mais avançado.
 
 ---
 
