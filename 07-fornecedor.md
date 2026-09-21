@@ -135,12 +135,20 @@ SELECT * FROM Fornecedor;
 
 ### 3.3 Preenchendo um campo que estava NULL
 
-O `UPDATE` também é usado para completar informações que faltavam. Aqui, o fornecedor Delta Bebidas foi cadastrado sem telefone (`NULL`) e agora recebe um valor.
+O `UPDATE` também é usado para completar informações que faltavam. 
+
+Aqui, o fornecedor Delta Bebidas foi cadastrado sem telefone (`NULL`) e agora recebe um valor.
 
 ```sql
 UPDATE Fornecedor
 SET telefone = '3133334444'
 WHERE cnpj = '44444444000104';
+```
+
+Conferimos o resultado com um `SELECT`:
+
+```sql
+SELECT * FROM Fornecedor;
 ```
 
 ---
