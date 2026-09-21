@@ -188,7 +188,7 @@ WHERE nome LIKE '%Ltda%'
   AND endereco IS NOT NULL;
 ```
 
-> **Atenção:** a condição `AND endereco IS NOT NULL` é necessária porque `CONCAT` com um valor `NULL` resulta em `NULL` — bom exemplo para mostrar esse comportamento aos alunos.
+> **Atenção:** a condição `AND endereco IS NOT NULL` é necessária porque `CONCAT` com um valor `NULL` resulta em `NULL`.
 
 ---
 
