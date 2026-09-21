@@ -125,6 +125,12 @@ SET telefone = '3133332222',
 WHERE cnpj = '22222222000102';
 ```
 
+Conferimos o resultado com um `SELECT`:
+
+```sql
+SELECT * FROM Fornecedor;
+```
+
 ---
 
 ### 3.3 Preenchendo um campo que estava NULL
