@@ -376,7 +376,7 @@ UPDATE Fornecedor
 SET endereco = 'Endereço atualizado em 2026';
 ```
 
-> **OBS:** analise o impacto de esquecer o `WHERE`, um dos erros mais comuns e mais perigosos em ambientes de produção.
+> **OBS:** analise o impacto de esquecer o `WHERE`, um erro comum e perigoso em ambientes de produção.
 
 ---
 
