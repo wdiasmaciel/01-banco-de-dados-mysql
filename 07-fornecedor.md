@@ -561,7 +561,7 @@ DROP TABLE IF EXISTS Filial;
 
 CREATE TABLE Filial (
     cnpj      VARCHAR(14) NOT NULL,
-    nome      VARCHAR(100) NOT NULL,
+    nome      VARCHAR(200) NOT NULL,
     telefone  VARCHAR(15),
     endereco  VARCHAR(200),
     PRIMARY KEY (cnpj)
@@ -596,10 +596,9 @@ b) Escreva um `UPDATE` que zere a `quantidade` de todos os itens de estoque cuja
 
 c) Some `10` unidades à `quantidade` de todos os itens de estoque do produto `id = 1`, em ambas as filiais, em um único comando `UPDATE`.
 
-d) Usando subquery, aumente em 5% o `preco` de todos os itens de estoque cujo produto (`id_produto`) pertença ao fornecedor de `cnpj` `'11111111000101'` (você vai precisar relacionar `Estoque` com `Produto` através de uma subconsulta, já que `Estoque` não tem diretamente o `cnpj_fornecedor`).
+d) Usando subquery, aumente em 5% o `preco` de todos os itens de estoque cujo produto pertença à 'Filial Centro'.
 
 e) Justifique por que a tabela `Estoque` tem **chave primária composta** (`id_produto` + `cnpj_filial`) e o que isso implica na cláusula `WHERE` de um `UPDATE` que precise alterar **um único** registro de estoque.
-
 
 ---
 
