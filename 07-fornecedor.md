@@ -392,22 +392,8 @@ SELECT * FROM Fornecedor;
 
 ---
 
-## 4. Resumo dos conceitos praticados
+## Exercícios
 
-| Exemplo | Conceito |
-|---|---|
-| 3.1 | UPDATE simples por chave primária |
-| 3.2 | Atualização de múltiplas colunas |
-| 3.3 | Preenchimento de campo NULL |
-| 3.4 | Atribuição de NULL |
-| 3.5 | LIKE + CONCAT |
-| 3.6 | Operador IN |
-| 3.7 | Funções de string (UPPER) |
-| 3.8 | CASE WHEN dentro do SET |
-| 3.9 | Atualização em massa (IS NULL) |
-| 3.10 | ORDER BY + LIMIT (específico do MySQL) |
-| 3.11 | Subquery no WHERE |
-| 3.12 | UPDATE sem WHERE (alerta de boas práticas) |
 
 ---
 
