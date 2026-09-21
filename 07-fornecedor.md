@@ -392,17 +392,7 @@ SELECT * FROM Fornecedor;
 
 ---
 
-## 4. Verificando o resultado final
-
-Ao final de todas as alterações, um novo `SELECT` mostra o estado atual da tabela, permitindo comparar com o `SELECT` do início da aula:
-
-```sql
-SELECT * FROM Fornecedor;
-```
-
----
-
-## 5. Resumo dos conceitos praticados
+## 4. Resumo dos conceitos praticados
 
 | Exemplo | Conceito |
 |---|---|
