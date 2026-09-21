@@ -252,19 +252,23 @@ SELECT LOWER('CaSa');
 
 Exemplo:
 ```sql
-SELECT TRIM('   texto   ');  -- resultado: 'texto'
+SELECT TRIM('   texto   '); -- resultado: 'texto'
 ```
 
 ```sql
-SELECT TRIM(BOTH '*' FROM '***Produto***');     -- resultado: 'Produto'
+SELECT TRIM(BOTH '*' FROM '***Produto***'); -- resultado: 'Produto'
 ```
 
 ```sql
-SELECT TRIM(LEADING '0' FROM '000123');          -- resultado: '123'
+SELECT TRIM(LEADING '0' FROM '000123'); -- resultado: '123'
 ```
 
 ```sql
-SELECT TRIM(TRAILING '.' FROM 'Fornecedor...');  -- resultado: 'Fornecedor'
+SELECT TRIM(TRAILING '.' FROM 'Fornecedor...'); -- resultado: 'Fornecedor'
+```
+
+```sql
+SELECT TRIM(TRAILING '.' FROM TRIM(LEADING '*' FROM '***Fornecedor...')); -- resultado: 'Fornecedor'
 ```
 
 ---
