@@ -470,7 +470,7 @@ b) Todos os pedidos da cliente `'Ana Souza'` que ainda estão `'pendente'` preci
 
 c) Usando `CASE WHEN`, escreva um único `UPDATE` que avance o status de todos os pedidos `'preparando'` para `'pronto'` e de todos os pedidos `'pronto'` para `'entregue'`, em um só comando.
 
-d) Usando subquery, atualize a observação dos pedidos cuja `quantidade` seja maior que a quantidade média de todos os pedidos, adicionando o texto `' - pedido grande'` ao final da observação atual (trate o caso de observação `NULL`).
+d) Usando subquery, atualize a observação dos pedidos cuja `quantidade` seja maior que 10, adicionando o texto `' - pedido grande'` ao final da observação atual (trate o caso de observação `NULL`).
 
 ---
 
