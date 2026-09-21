@@ -163,7 +163,13 @@ SET telefone = NULL
 WHERE cnpj = '66666666000106';
 ```
 
-> **Ponto de discussão em aula:** qual a diferença entre um campo `NULL` e um campo com string vazia (`''`)? Ambos representam "ausência de valor"?
+Conferimos o resultado com um `SELECT`:
+
+```sql
+SELECT * FROM Fornecedor;
+```
+
+> **OBS:** qual a diferença entre um campo `NULL` e um campo com string vazia (`''`)? Ambos representam "ausência de valor"?
 
 ---
 
