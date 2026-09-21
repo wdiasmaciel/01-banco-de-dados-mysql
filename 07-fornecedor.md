@@ -175,7 +175,11 @@ SELECT * FROM Fornecedor;
 
 ### 3.5 Condição com LIKE e uso de CONCAT
 
-O operador `LIKE` permite comparar textos por padrão (usando `%` como curinga). Combinado com a função `CONCAT`, conseguimos atualizar uma coluna a partir do seu próprio valor atual. Aqui, marcamos o endereço de todos os fornecedores cujo nome contenha "Ltda".
+O operador `LIKE` permite comparar textos por padrão (usando `%` como curinga). 
+
+Combinado com a função `CONCAT`, conseguimos atualizar uma coluna a partir do seu próprio valor atual. 
+
+Aqui, marcamos o endereço de todos os fornecedores cujo nome contenha "Ltda".
 
 ```sql
 UPDATE Fornecedor
