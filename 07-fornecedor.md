@@ -233,9 +233,40 @@ SELECT * FROM Fornecedor;
 ```
 
 **OBS:**
+
 `UPPER()`: converte todos os caracteres de uma string para maiúsculas.
+
+Exemplo:
+```sql
+SELECT UPPER('casa');
+```
+
 `LOWER()`: converte todos os caracteres de uma string para minúsculas.
+
+Exemplo:
+```sql
+SELECT LOWER('CaSa');
+```
+
 `TRIM()`: remove espaços em branco (ou outro caractere especificado) do início e do fim de uma string.
+
+Exemplo:
+```sql
+SELECT TRIM('   texto   ');  -- resultado: 'texto'
+```
+
+```sql
+SELECT TRIM(BOTH '*' FROM '***Produto***');     -- resultado: 'Produto'
+```
+
+```sql
+SELECT TRIM(LEADING '0' FROM '000123');          -- resultado: '123'
+```
+
+```sql
+SELECT TRIM(TRAILING '.' FROM 'Fornecedor...');  -- resultado: 'Fornecedor'
+```
+
 ---
 
 ### 3.8 UPDATE com CASE WHEN (lógica condicional)
