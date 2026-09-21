@@ -321,7 +321,9 @@ SELECT * FROM Fornecedor;
 
 ### 3.10 UPDATE com ORDER BY e LIMIT (recurso específico do MySQL)
 
-O MySQL permite combinar `ORDER BY` e `LIMIT` dentro de um `UPDATE`, algo que **não é padrão SQL** e não funciona em todos os SGBDs (Oracle e PostgreSQL, por exemplo, não suportam essa sintaxe diretamente). Isso é útil para atualizar apenas "o primeiro" registro segundo algum critério de ordenação.
+O MySQL permite combinar `ORDER BY` e `LIMIT` dentro de um `UPDATE`, algo que **não é padrão SQL** e não funciona em todos os SGBDs (Oracle e PostgreSQL, por exemplo, não suportam essa sintaxe diretamente). 
+
+Isso é útil para atualizar apenas "o primeiro" registro segundo algum critério de ordenação.
 
 ```sql
 UPDATE Fornecedor
@@ -330,7 +332,13 @@ ORDER BY nome ASC
 LIMIT 1;
 ```
 
-> **Ponto de discussão em aula:** esse é um bom momento para falar sobre portabilidade de código SQL entre diferentes bancos de dados.
+Conferimos o resultado com um `SELECT`:
+
+```sql
+SELECT * FROM Fornecedor;
+```
+
+> **OBS:** nem sempre há portabilidade de código SQL entre diferentes bancos de dados. Cada Sistema Gerenciador de Banco de Dados (SGBD) tem seu "dialeto" específico.
 
 ---
 
