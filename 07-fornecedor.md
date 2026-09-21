@@ -188,6 +188,12 @@ WHERE nome LIKE '%Ltda%'
   AND endereco IS NOT NULL;
 ```
 
+Conferimos o resultado com um `SELECT`:
+
+```sql
+SELECT * FROM Fornecedor;
+```
+
 > **Atenção:** a condição `AND endereco IS NOT NULL` é necessária porque `CONCAT` com um valor `NULL` resulta em `NULL`.
 
 ---
