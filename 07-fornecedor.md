@@ -340,6 +340,7 @@ SELECT * FROM Fornecedor;
 
 > **OBS:** nem sempre há portabilidade de código SQL entre diferentes bancos de dados. Cada Sistema Gerenciador de Banco de Dados (SGBD) tem seu "dialeto" específico.
 
+**OBS:** teste o exemplo anterior com `LIMIT 2;`.
 ---
 
 ### 3.11 UPDATE com subquery no WHERE
