@@ -289,6 +289,8 @@ WHERE cnpj IN ('11111111000101', '22222222000102');
 
 > Note o uso de `ELSE telefone`: isso garante que, se nenhuma condição do `CASE` for satisfeita para uma linha, o valor original seja mantido (evita que o campo vire `NULL` acidentalmente).
 
+**OBS:** `WHERE` e `CASE` resolvem problemas diferentes. O `WHERE` define quais linhas o `UPDATE` vai atualizar, e o `CASE` define o que fazer com o valor de cada linha. Usar só o `CASE` sem `WHERE` "funciona" nesse caso simples do ponto de vista lógico, mas é uma prática arriscada que pode gerar problemas de desempenho e comportamento inesperado em cenários mais complexos (com triggers, tabelas grandes, etc.).
+
 ---
 
 ### 3.9 Atualização em massa com base em uma condição lógica
