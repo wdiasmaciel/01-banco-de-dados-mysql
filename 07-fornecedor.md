@@ -491,12 +491,12 @@ CREATE TABLE Pacote (
 );
 
 INSERT INTO Pacote (id, destino, preco, vagas, ativo) VALUES
-(1, 'Rio de Janeiro - RJ',  1200.00, 10, 1),
+(1, 'Rio de Janeiro - RJ',      1200.00, 10, 1),
 (2, 'Fernando de Noronha - PE', 4500.00,  5, 1),
-(3, 'Gramado - RS',          980.00, 15, 1),
-(4, 'Foz do Iguacu - PR',   1350.00,  8, 1),
-(5, 'Bonito - MS',          2100.00,  0, 1),
-(6, 'Salvador - BA',        1100.00, 12, TRUE);
+(3, 'Gramado - RS',              980.00, 15, 1),
+(4, 'Foz do Iguacu - PR',       1350.00,  8, 1),
+(5, 'Bonito - MS',              2100.00,  0, 1),
+(6, 'Salvador - BA',            1100.00, 12, TRUE);
 ```
 
 **Tarefas:**
@@ -505,7 +505,7 @@ a) O pacote para `'Bonito - MS'` está com `vagas = 0`. Atualize o campo `ativo`
 
 b) Aplique um reajuste de 10% no `preco` de todos os pacotes que têm mais de 10 `vagas` disponíveis (dica: use uma expressão aritmética diretamente no `SET`, como `preco = preco * 1.10`).
 
-c) Uma promoção reduz em 15% o preço de todos os pacotes cujo `destino` contenha a palavra `'RS'` **ou** `'PR'` (use `LIKE` combinado com `OR`, ou `REGEXP`).
+c) Uma promoção reduz em 15% o preço de todos os pacotes cujo `destino` contenha a palavra `'RS'` **ou** `'PR'` (use `LIKE` combinado com `OR`).
 
 d) Escreva um `UPDATE` com `ORDER BY` e `LIMIT` que reduza em 1 o número de `vagas` do pacote mais barato (`preco` mais baixo) da tabela — simulando a venda de uma vaga.
 
