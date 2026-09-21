@@ -169,7 +169,7 @@ Conferimos o resultado com um `SELECT`:
 SELECT * FROM Fornecedor;
 ```
 
-> **OBS:** qual a diferença entre um campo `NULL` e um campo com string vazia (`''`)? Ambos representam "ausência de valor"?
+> **OBS:** qual a diferença entre um campo `NULL` e um campo com string vazia (`''`)? Ambos representam "ausência de valor"? Não são a mesma coisa. `NULL` representa a ausência de informação. String vazia (`''`) é um valor concreto e conhecido: sabemos que o campo existe e, deliberadamente, não tem caracteres. É um dado, só que "vazio".
 
 ---
 
