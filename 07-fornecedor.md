@@ -39,6 +39,18 @@ CREATE TABLE Fornecedor (
 );
 ```
 
+Observe a estrutura da tabela Fornecedor usando o comando `DESCRIBE` ou o seu atalho `DESC`.
+
+```sql
+DESCRIBE Fornecedor;
+```
+
+ou
+
+```sql
+DESC Fornecedor;
+```
+
 > **OBS:** por que `cnpj` foi definido como `VARCHAR` e não como `INT`? (Dica: CNPJ pode ter zeros à esquerda e não é usado em operações aritméticas, então não faz sentido tratá-lo como número.)
 
 ---
