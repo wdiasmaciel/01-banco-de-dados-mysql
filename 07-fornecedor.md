@@ -194,7 +194,7 @@ Conferimos o resultado com um `SELECT`:
 SELECT * FROM Fornecedor;
 ```
 
-> **Atenção:** a condição `AND endereco IS NOT NULL` é necessária porque `CONCAT` com um valor `NULL` resulta em `NULL`.
+> **OBS:** a condição `AND endereco IS NOT NULL` é necessária porque `CONCAT` com um valor `NULL` resulta em `NULL`.
 
 ---
 
@@ -206,6 +206,12 @@ Quando queremos aplicar a mesma alteração a um conjunto específico de registr
 UPDATE Fornecedor
 SET telefone = '3130000000'
 WHERE cnpj IN ('33333333000103', '77777777000107');
+```
+
+Conferimos o resultado com um `SELECT`:
+
+```sql
+SELECT * FROM Fornecedor;
 ```
 
 ---
