@@ -361,6 +361,12 @@ WHERE cnpj IN (
 AND endereco IS NOT NULL;
 ```
 
+Conferimos o resultado com um `SELECT`:
+
+```sql
+SELECT * FROM Fornecedor;
+```
+
 > **OBS:** o MySQL não permite referenciar diretamente, dentro do `WHERE` de um `UPDATE`, um subselect que consulta a **mesma tabela** que está sendo atualizada. Por isso a subquery foi "embrulhada" em uma tabela derivada (`AS sub_tabela`).
 
 **OBS:** teste o exemplo anterior sem o primeiro SELECT (o do `AS sub_tabela`) e verifique o erro que o MySQL retorna.
@@ -374,6 +380,12 @@ AND endereco IS NOT NULL;
 ```sql
 UPDATE Fornecedor
 SET endereco = 'Endereço atualizado em 2026';
+```
+
+Conferimos o resultado com um `SELECT`:
+
+```sql
+SELECT * FROM Fornecedor;
 ```
 
 > **OBS:** analise o impacto de esquecer o `WHERE`, um erro comum e perigoso em ambientes de produção.
