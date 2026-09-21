@@ -522,7 +522,7 @@ DROP TABLE IF EXISTS Conta;
 
 CREATE TABLE Conta (
     numero        INT,
-    titular       VARCHAR(100) NOT NULL,
+    titular       VARCHAR(200) NOT NULL,
     saldo         DECIMAL(12,2) NOT NULL,
     tipo          VARCHAR(20) NOT NULL,  -- 'corrente', 'poupanca'
     telefone      VARCHAR(15),
@@ -545,9 +545,9 @@ b) Preencha o `telefone` das contas que estão com esse campo `NULL`, atribuindo
 
 c) Todas as contas do tipo `'poupanca'` com saldo acima de `R$ 5.000,00` recebem 0,5% de rendimento mensal. Escreva o `UPDATE` que aplica esse rendimento ao `saldo`.
 
-d) Usando `CASE WHEN`, escreva um único `UPDATE` que classifique — em um novo cenário — contas `'corrente'` com saldo negativo como um caso especial: se o saldo de alguma conta corrente estivesse abaixo de zero, o `saldo` deveria ser zerado e o `telefone` marcado com `'CONTATO URGENTE'`. (Não há conta negativa nos dados atuais — insira você mesmo uma linha de teste antes de rodar esse `UPDATE`, ou adapte a condição para testar a lógica.)
+d) Usando `CASE WHEN`, escreva um único `UPDATE` que classifique contas `'corrente'` com saldo negativo como um caso especial: se o saldo de alguma conta corrente estiver abaixo de zero, o `telefone` deve ser marcado com `'CONTATO URGENTE'`. (Não há conta negativa nos dados atuais — insira linhas de teste antes de rodar esse `UPDATE`)
 
-e) Reflita: por que, em um sistema bancário real, um `UPDATE` direto de `saldo` (como nos itens acima) dificilmente seria feito assim, "na mão"? Que outros mecanismos (transações, procedures, trilhas de auditoria) você imagina que um banco de verdade usaria para alterar saldos com segurança?
+e) Reflita sobre um `UPDATE` direto em `saldo` sem controles de segurança.
 
 ---
 
