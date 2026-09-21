@@ -226,6 +226,16 @@ SET nome = UPPER(nome)
 WHERE cnpj = '55555555000105';
 ```
 
+Conferimos o resultado com um `SELECT`:
+
+```sql
+SELECT * FROM Fornecedor;
+```
+
+**OBS:**
+`UPPER()`: converte todos os caracteres de uma string para maiúsculas.
+`LOWER()`: converte todos os caracteres de uma string para minúsculas.
+`TRIM()`: remove espaços em branco (ou outro caractere especificado) do início e do fim de uma string.
 ---
 
 ### 3.8 UPDATE com CASE WHEN (lógica condicional)
