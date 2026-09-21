@@ -486,7 +486,7 @@ CREATE TABLE Pacote (
     destino     VARCHAR(100) NOT NULL,
     preco       DECIMAL(10,2) NOT NULL,
     vagas       INT NOT NULL,
-    ativo       BOOLEAN NOT NULL DEFAULT 1,  -- 1 = ativo, 0 = inativo
+    ativo       BOOLEAN NOT NULL DEFAULT 1,  -- 1/TRUE = ativo, 0/FALSE = inativo
     PRIMARY KEY (id)
 );
 
@@ -496,7 +496,7 @@ INSERT INTO Pacote (id, destino, preco, vagas, ativo) VALUES
 (3, 'Gramado - RS',          980.00, 15, 1),
 (4, 'Foz do Iguacu - PR',   1350.00,  8, 1),
 (5, 'Bonito - MS',          2100.00,  0, 1),
-(6, 'Salvador - BA',        1100.00, 12, 1);
+(6, 'Salvador - BA',        1100.00, 12, TRUE);
 ```
 
 **Tarefas:**
