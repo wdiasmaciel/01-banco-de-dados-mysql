@@ -6,7 +6,7 @@
       <a href="05-fornecedor.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="07-produto.md">Próximo</a>
+      <a href="07-fornecedor.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -374,7 +374,7 @@ Escreva uma consulta que selecione todos os campos da tabela. O resultado deve e
       <a href="05-fornecedor.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="07-produto.md">Próximo</a>
+      <a href="07-fornecedor.md">Próximo</a>
     </td>
   </tr>
 </table>
