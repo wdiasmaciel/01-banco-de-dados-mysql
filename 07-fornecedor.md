@@ -301,12 +301,20 @@ SELECT * FROM Fornecedor;
 
 ### 3.9 Atualização em massa com base em uma condição lógica
 
-Diferente do `IN` (que lista valores específicos), aqui a condição é uma regra: "todo fornecedor sem telefone cadastrado". Esse `UPDATE` pode afetar **várias linhas de uma vez**, dependendo de quantas satisfizerem a condição.
+Diferente do `IN` (que lista valores específicos), aqui a condição é uma regra: "todo fornecedor sem telefone cadastrado". 
+
+Esse `UPDATE` pode afetar **várias linhas de uma vez**, dependendo de quantas satisfizerem a condição.
 
 ```sql
 UPDATE Fornecedor
 SET telefone = '3130001000'
 WHERE telefone IS NULL;
+```
+
+Conferimos o resultado com um `SELECT`:
+
+```sql
+SELECT * FROM Fornecedor;
 ```
 
 ---
