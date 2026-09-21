@@ -107,6 +107,11 @@ SET telefone = '3133331111'
 WHERE cnpj = '11111111000101';
 ```
 
+Conferimos o resultado com um `SELECT`:
+
+```sql
+SELECT * FROM Fornecedor;
+```
 ---
 
 ### 3.2 Atualizando vários atributos ao mesmo tempo
