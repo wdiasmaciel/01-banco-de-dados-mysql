@@ -367,16 +367,16 @@ AND endereco IS NOT NULL;
 
 ---
 
-### 3.12 UPDATE sem WHERE — o exemplo de alerta
+### 3.12 UPDATE sem WHERE: exemplo de alerta
 
-Por fim, o exemplo mais importante da aula do ponto de vista de boas práticas: um `UPDATE` **sem** cláusula `WHERE` afeta **todas** as linhas da tabela, sem exceção.
+`CUIDADO`: por fim, o exemplo mais importante do ponto de vista de boas práticas. Um `UPDATE` **sem** cláusula `WHERE` afeta **todas** as linhas da tabela, sem exceção.
 
 ```sql
 UPDATE Fornecedor
-SET endereco = CONCAT(endereco, ' - Atualizado em 2026');
+SET endereco = 'Endereço atualizado em 2026';
 ```
 
-> **Recomendação para a aula:** demonstre esse comando ao vivo (com a turma avisada) para que os alunos vejam o impacto real de esquecer o `WHERE` — um dos erros mais comuns e mais perigosos em ambientes de produção. Depois, mostre como restaurar os dados originais executando novamente o `DROP TABLE` + `CREATE TABLE` + os `INSERT`s do início do script.
+> **OBS:** analise o impacto de esquecer o `WHERE`, um dos erros mais comuns e mais perigosos em ambientes de produção.
 
 ---
 
