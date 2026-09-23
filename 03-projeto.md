@@ -31,9 +31,9 @@ Projeto de uma empresa usado nos exemplos:
  
 7. No projeto: 
     - Cada Fornecedor fornece vários produtos, mas cada produto é fornecido por apenas um fornecedor. 
-  - Cada produto possui apenas uma única identificação e cada identificação refere-se a apenas um único produto. 
-  - Cada Filial vende vários produtos e cada produto pode ser vendido em mais de uma filial. 
-  - Entre as entidades Produto e Filial há a entidade-relacionamento Estoque. 
+    - Cada produto possui apenas uma única identificação e cada identificação refere-se a apenas um único produto. 
+    - Cada Filial vende vários produtos e cada produto pode ser vendido em mais de uma filial. 
+    - Entre as entidades Produto e Filial há a entidade-relacionamento Estoque. 
 
 ---
 
