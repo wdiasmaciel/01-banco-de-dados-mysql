@@ -284,6 +284,8 @@ SELECT * FROM Fornecedor;
 
 > **OBS:** esse recurso **não é padrão SQL**. Não funciona da mesma forma em todos os Sistemas Gerenciadores de Bancos de Dados (SGBDs). Cada SGBD tem seu dialeto (dificulta portabilidade entre bancos).
 
+> _Altere o limite para 2 e execute o comando novamente_.
+
 ---
 
 ### 3.9 DELETE sem WHERE x TRUNCATE TABLE
