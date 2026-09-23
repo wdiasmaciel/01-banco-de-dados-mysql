@@ -356,15 +356,42 @@ WHERE cnpj = '11111111000101';
 -- Confira o resultado:
 SELECT * FROM Fornecedor;
 
--- Se quiser desfazer, use:
--- ROLLBACK;
+-- Confira o resultado:
+SELECT * FROM Fornecedor;
+
+-- Confirme a exclusão:
+COMMIT;
+```
+
+```sql
+-- Confira o resultado:
+SELECT * FROM Fornecedor;
+```
+
+```sql
+INSERT INTO Fornecedor (cnpj, nome, telefone, endereco) VALUES
+('11111111000101', 'Distribuidora Alfa Ltda',       '3132221111', 'Rua das Flores, 100 - Belo Horizonte/MG');
+```
+
+```sql
+-- Confira o resultado:
+SELECT * FROM Fornecedor;
+```
+
+```sql
+START TRANSACTION;
+
+DELETE FROM Fornecedor
+WHERE cnpj = '11111111000101';
 
 -- Confira o resultado:
 SELECT * FROM Fornecedor;
 
--- Se estiver tudo certo, confirme a exclusão:
-COMMIT;
+-- Desfazer a operação:
+ROLLBACK;
+```
 
+```sql
 -- Confira o resultado:
 SELECT * FROM Fornecedor;
 ```
