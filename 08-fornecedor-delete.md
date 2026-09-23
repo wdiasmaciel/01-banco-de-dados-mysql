@@ -282,7 +282,7 @@ Conferimos o resultado com um `SELECT`:
 SELECT * FROM Fornecedor;
 ```
 
-> Esse recurso **não é padrão SQL**. Não funciona da mesma forma em todos os Sistemas Gerenciadores de Bancos de Dados (SGBDs). Cada SGBD tem seu dialeto (dificulta portabilidade entre bancos).
+> **OBS:** esse recurso **não é padrão SQL**. Não funciona da mesma forma em todos os Sistemas Gerenciadores de Bancos de Dados (SGBDs). Cada SGBD tem seu dialeto (dificulta portabilidade entre bancos).
 
 ---
 
