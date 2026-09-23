@@ -383,6 +383,8 @@ Conferimos os dados antes de começar:
 SELECT * FROM Fornecedor;
 ```
 
+Excluir todos os registros:
+
 ```sql
 DELETE FROM Fornecedor;
 ```
