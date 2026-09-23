@@ -419,7 +419,7 @@ CREATE TABLE Produto (
     id                INT AUTO_INCREMENT,
     cnpj_fornecedor   VARCHAR(14), 
     nome              VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id) 
+    PRIMARY KEY (id), 
     FOREIGN KEY (cnpj_fornecedor) REFERENCES Fornecedor (cnpj) -- ON DELETE RESTRICT / ON DELETE CASCADE / ON DELETE SET NULL
 );
 
