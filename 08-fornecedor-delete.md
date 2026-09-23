@@ -405,7 +405,9 @@ SELECT * FROM Fornecedor;
 Se a tabela `Produto` for criada e tiver registros que referenciam um `cnpj` de `Fornecedor` através de uma chave estrangeira, tentar excluir esse fornecedor gera um **erro de violação de integridade referencial**, e não uma exclusão silenciosa:
 
 ```sql
+DROP TABLE IF EXISTS Produto;
 DROP TABLE IF EXISTS Fornecedor;
+
 CREATE TABLE Fornecedor (
     cnpj      VARCHAR(14)  NOT NULL,
     nome      VARCHAR(100) NOT NULL,
@@ -414,7 +416,6 @@ CREATE TABLE Fornecedor (
     PRIMARY KEY (cnpj)
 );
 
-DROP TABLE IF EXISTS Produto;
 CREATE TABLE Produto (
     id                INT AUTO_INCREMENT,
     cnpj_fornecedor   VARCHAR(14), 
