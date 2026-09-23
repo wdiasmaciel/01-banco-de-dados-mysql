@@ -421,7 +421,7 @@ CREATE TABLE Produto (
     cnpj_fornecedor   VARCHAR(14), 
     nome              VARCHAR(100) NOT NULL,
     PRIMARY KEY (id), 
-    FOREIGN KEY (cnpj_fornecedor) REFERENCES Fornecedor (cnpj) -- ON DELETE RESTRICT / ON DELETE CASCADE / ON DELETE SET NULL
+    FOREIGN KEY (cnpj_fornecedor) REFERENCES Fornecedor (cnpj) -- ON DELETE RESTRICT / ON DELETE SET NULL / ON DELETE CASCADE
 );
 
 INSERT INTO Fornecedor (cnpj, nome, telefone, endereco) VALUES
@@ -464,8 +464,8 @@ WHERE cnpj = '77777777000107';
 
 > **OBS:** as opções:
 > 1. `ON DELETE RESTRICT`: padrão (default), impede a exclusão.
-> 2. `ON DELETE CASCADE`: exclui também os produtos daquele fornecedor.
-> 3. `ON DELETE SET NULL`: mantém o produto, mas "anula/null" a referência ao fornecedor. <br/><br/>
+> 2. `ON DELETE SET NULL`: mantém o produto, mas "anula/null" a referência ao fornecedor.
+> 3. `ON DELETE CASCADE`: exclui também os produtos daquele fornecedor. <br/><br/>
 > _É necessário avaliar qual é a opção mais adequada para cada projeto_.
 
 ---
