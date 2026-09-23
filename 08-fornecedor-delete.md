@@ -340,10 +340,14 @@ Antes de rodar exclusões "arriscadas", é uma ótima prática envolver o comand
 ```sql
 INSERT INTO Fornecedor (cnpj, nome, telefone, endereco) VALUES
 ('11111111000101', 'Distribuidora Alfa Ltda',       '3132221111', 'Rua das Flores, 100 - Belo Horizonte/MG');
+```
 
+```sql
 -- Confira o resultado:
 SELECT * FROM Fornecedor;
+```
 
+```sql
 START TRANSACTION;
 
 DELETE FROM Fornecedor
