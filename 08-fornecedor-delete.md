@@ -27,6 +27,10 @@ O `DELETE` remove linhas **permanentemente**.
 
 ## 1. Criando a tabela
 
+```sql
+USE empresa;
+```
+
 Como anteriormente, removemos qualquer versão anterior da tabela antes de recriá-la, para evitar erros ao reexecutar o script:
 
 ```sql
