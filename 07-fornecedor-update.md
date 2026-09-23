@@ -6,7 +6,7 @@
       <a href="06-fornecedor-restricoes-insert-select.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="08-produto.md">Próximo</a>
+      <a href="08-fornecedor-delete.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -608,7 +608,7 @@ e) Justifique por que a tabela `Estoque` tem **chave primária composta** (`id_p
       <a href="06-fornecedor-restricoes-insert-select.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="08-produto.md">Próximo</a>
+      <a href="08-fornecedor-delete.md">Próximo</a>
     </td>
   </tr>
 </table>

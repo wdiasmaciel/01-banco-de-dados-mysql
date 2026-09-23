@@ -3,10 +3,10 @@
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="06-fornecedor-restricoes-insert-select.md">Anterior</a>
+      <a href="07-fornecedor-update.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="08-fornecedor-delete.md">Próximo</a>
+      <a href="#">Próximo</a>
     </td>
   </tr>
 </table>
@@ -627,10 +627,10 @@ e) Escreva, em uma única transação, uma sequência seguindo esta ordem: exclu
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="06-fornecedor-restricoes-insert-select.md">Anterior</a>
+      <a href="07-fornecedor-update.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="08-fornecedor-delete.md">Próximo</a>
+      <a href="#">Próximo</a>
     </td>
   </tr>
 </table>
