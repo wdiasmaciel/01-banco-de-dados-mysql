@@ -204,7 +204,7 @@ Aqui, removemos fornecedores cujo nome tenha mais de 30 caracteres.
 
 ```sql
 DELETE FROM Fornecedor
-WHERE LENGTH(nome) > 30;
+WHERE LENGTH(nome) > 20;
 ```
 
 Conferimos o resultado com um `SELECT`:
@@ -215,6 +215,28 @@ SELECT * FROM Fornecedor;
 ---
 
 ### 3.7 Excluindo com subquery no WHERE
+
+Inserir novamente registros na tabela. 
+
+Usamos o mesmo conjunto de fornecedores anterior:
+
+```sql
+INSERT INTO Fornecedor (cnpj, nome, telefone, endereco) VALUES
+('11111111000101', 'Distribuidora Alfa Ltda',       '3132221111', 'Rua das Flores, 100 - Belo Horizonte/MG'),
+('22222222000102', 'Comercial Beta S.A.',            '3132222222', 'Av. Brasil, 200 - Belo Horizonte/MG'),
+('33333333000103', 'Gama Alimentos Ltda',            '3132223333', 'Rua da Bahia, 300 - Belo Horizonte/MG'),
+('44444444000104', 'Delta Bebidas Ltda',             NULL,         'Av. Afonso Pena, 400 - Belo Horizonte/MG'),
+('55555555000105', 'Epsilon Higiene e Limpeza Ltda', '3132225555', NULL),
+('66666666000106', 'Zeta Papelaria ME',              '3132226666', 'Rua Rio de Janeiro, 600 - Belo Horizonte/MG'),
+('77777777000107', 'Eta Eletrônicos Ltda',           '3132227777', 'Rua Curitiba, 700 - Belo Horizonte/MG'),
+('88888888000108', 'Theta Móveis e Decoração Ltda',  '3132228888', 'Av. do Contorno, 800 - Belo Horizonte/MG');
+```
+
+Conferimos os dados antes de começar:
+
+```sql
+SELECT * FROM Fornecedor;
+```
 
 Da mesma forma que no `UPDATE`, podemos basear a exclusão no resultado de uma subconsulta. 
 
