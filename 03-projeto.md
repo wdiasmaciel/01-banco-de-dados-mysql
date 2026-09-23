@@ -19,15 +19,15 @@ Projeto de uma empresa usado nos exemplos:
 
 1. As entidades do sistema são: Fornecedor, Produto, Identificação, Filial e Estoque.
 
-2. A entidade Fornecedor possui os atributos: cnpj (chave primária), nome, telefone e endereço.
+2. A entidade Fornecedor possui os atributos: cnpj (chave primária), nome (NOT NULL e UNIQUE), telefone (NOT NULL e UNIQUE) e endereço (NOT NULL).
 
-3. A entidade Produto possui os atributos: id (chave primária), cnpj_fornecedor (chave estrangeira que se refere à chave primária de fornecedor) e nome.
+3. A entidade Produto possui os atributos: id (chave primária), cnpj_fornecedor (chave estrangeira que se refere à chave primária de fornecedor) e nome (NOT NULL).
 
-4. A entidade Identificação possui os atributos: id (chave primária e também chave estrangeira que se refere à chave primária de Produto), descrição, e observação.
+4. A entidade Identificação possui os atributos: id (chave primária e também chave estrangeira que se refere à chave primária de Produto), descrição (NOT NULL), e observação (NOT NULL).
 
-5. A entidade Filial possui os atributos: cnpj (chave primária), nome, telefone e endereço.
+5. A entidade Filial possui os atributos: cnpj (chave primária), nome (NOT NULL e UNIQUE), telefone (NOT NULL e UNIQUE) e endereço (NOT NULL).
 
-6. A entidade Estoque possui os atributos: id_produto (chave primária e chave estrangeira que se refere à chave primária de Produto), cnpj_filial (chave primária e chave estrangeira que se refere à chave primária de Filial), preço, quantidade e validade (que é a data de validade do produto em estoque. 
+6. A entidade Estoque possui os atributos: id_produto (chave primária e chave estrangeira que se refere à chave primária de Produto), cnpj_filial (chave primária e chave estrangeira que se refere à chave primária de Filial), preço (NOT NULL), quantidade (NOT NULL) e validade (NOT NULL), que é a data de validade do produto em estoque. 
  
 7. No projeto: 
   - Cada Fornecedor fornece vários produtos, mas cada produto é fornecido por apenas um fornecedor. 
