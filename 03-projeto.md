@@ -30,7 +30,7 @@ Projeto de uma empresa usado nos exemplos:
 6. A entidade Estoque possui os atributos: id_produto (chave primária e chave estrangeira que se refere à chave primária de Produto), cnpj_filial (chave primária e chave estrangeira que se refere à chave primária de Filial), preço (NOT NULL), quantidade (NOT NULL) e validade (NOT NULL), que é a data de validade do produto em estoque. 
  
 7. No projeto: 
-  - Cada Fornecedor fornece vários produtos, mas cada produto é fornecido por apenas um fornecedor. 
+    - Cada Fornecedor fornece vários produtos, mas cada produto é fornecido por apenas um fornecedor. 
   - Cada produto possui apenas uma única identificação e cada identificação refere-se a apenas um único produto. 
   - Cada Filial vende vários produtos e cada produto pode ser vendido em mais de uma filial. 
   - Entre as entidades Produto e Filial há a entidade-relacionamento Estoque. 
