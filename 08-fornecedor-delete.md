@@ -357,7 +357,6 @@ WHERE cnpj = '77777777000107';
 > 1. `ON DELETE RESTRICT`: padrão, impede a exclusão.
 > 2. `ON DELETE CASCADE`: exclui também os produtos daquele fornecedor.
 > 3. `ON DELETE SET NULL`: mantém o produto, mas "anula/null" a referência ao fornecedor. 
-
 > _É necessário avaliar qual é a opção mais adequada para cada projeto_.
 
 ---
