@@ -101,7 +101,13 @@ DESCRIBE Fornecedor;
 DESC Fornecedor;
 ```
 
-**Produto** — `id` é a chave primária (usamos `AUTO_INCREMENT` para gerar o valor automaticamente). `cnpj_fornecedor` é `NOT NULL` porque, pela regra do projeto, todo produto precisa ter um fornecedor — não faria sentido um produto "órfão". A cláusula `FOREIGN KEY` garante que só é possível cadastrar um produto apontando para um `cnpj` que já exista em `Fornecedor`.
+**Produto**:
+
+O campo `id` é a chave primária (usamos `AUTO_INCREMENT` para gerar o valor automaticamente).
+
+O campo `cnpj_fornecedor` é `NOT NULL`, porque, pela regra do projeto, todo produto precisa ter um fornecedor, não faria sentido um produto "órfão". 
+
+A cláusula `FOREIGN KEY` garante que só é possível cadastrar um produto apontando para um `cnpj` que já exista em `Fornecedor`.
 
 ```sql
 CREATE TABLE Produto (
