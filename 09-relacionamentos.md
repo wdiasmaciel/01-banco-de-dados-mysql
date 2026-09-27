@@ -190,11 +190,11 @@ DESC Estoque;
 
 ---
 
-## 2. Inserindo dados de exemplo
+## Inserindo dados de exemplo
 
-> **Observação:** a ordem dos `INSERT`s também respeita as dependências de chave estrangeira — não é possível inserir um `Produto` antes de seu `Fornecedor` existir, por exemplo.
+> **OBS:** a ordem dos `INSERT`s também respeita as dependências de chave estrangeira: não é possível inserir um `Produto` antes de seu `Fornecedor` existir, por exemplo.
 
-### 2.1 Fornecedor
+### Fornecedor
 
 ```sql
 INSERT INTO Fornecedor (cnpj, nome, telefone, endereco) VALUES
@@ -208,9 +208,9 @@ INSERT INTO Fornecedor (cnpj, nome, telefone, endereco) VALUES
 ('88888888000108', 'Theta Móveis e Decoração Ltda',  '3132228888', 'Av. do Contorno, 800 - Belo Horizonte/MG');
 ```
 
-> Repare que todos os `nome` e `telefone` são diferentes entre si — condição obrigatória agora que essas colunas são `UNIQUE`. Se, em aula, alguém tentar inserir um telefone repetido, o MySQL vai recusar com um erro de violação de restrição única (`Duplicate entry ... for key`).
+> Observe que todos os `nome` e `telefone` são diferentes entre si; condição obrigatória, pois essas colunas são `UNIQUE`. Se alguém tentar inserir um telefone repetido, o MySQL vai recusar com um erro de violação de restrição única (`Duplicate entry ... for key`).
 
-### 2.2 Filial
+### Filial
 
 ```sql
 INSERT INTO Filial (cnpj, nome, telefone, endereco) VALUES
