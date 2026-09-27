@@ -377,6 +377,18 @@ INSERT INTO Filial (cnpj, nome, endereco) VALUES
 
 4. Apresente os itens do estoque cujo preço e quantidade são zero.
 
+5. Apresente os dados da filial Savassi.
+
+6. Apesente todos os produtos fornecidos pelo fornecedor com CNPJ '11111111000101'.
+
+7. Apresente todos os produtos com data de validade '2026-09-30'.
+
+8. Apresente os itens do estoque com validade posterior a '2026-09-30' e anterior a '2027-01-15'.
+
+9. Apresente os itens do estoque com validade posterior a '2027-01-01'.
+
+10. Apresente os itens do estoque com validade anterior a '2026-09-01'.
+
 
 ---
 
