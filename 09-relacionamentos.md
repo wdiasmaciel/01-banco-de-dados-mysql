@@ -357,6 +357,27 @@ SELECT * FROM Estoque;
 
 ---
 
+## Exercício
+
+1. Execute o comando abaixo:
+
+```sql
+INSERT INTO Filial (cnpj, nome, endereco) VALUES
+('20202020000120', 'Filial Savassi', 'Rua Pernambuco, 400 - Belo Horizonte/MG');
+```
+
+O `insert` cria um registro com o mesmo telefone da filial central (valor padrão, `default`, do campo telefone)? Justifique sua resposta.
+
+
+2. Apresente os itens do estoque cujo preço é zero.
+
+3. Apresente os itens do estoque cuja quantidade é zero.
+
+4. Apresente os itens do estoque cujo preço e quantidade são zero.
+
+
+---
+
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
