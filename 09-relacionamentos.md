@@ -226,6 +226,12 @@ SELECT * FROM Fornecedor;
 INSERT INTO Filial VALUES (cnpj, nome, telefone, endereco);
 ```
 
+Observe os dados inseridos na tabela:
+
+```sql
+SELECT * FROM Filial;
+```
+
 2. O `insert` abaixo criará um registro com o mesmo telefone da filial central (valor padrão, `default`, do campo telefone):
 
 ```sql
