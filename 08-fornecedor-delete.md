@@ -6,7 +6,7 @@
       <a href="07-fornecedor-update.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="#">Próximo</a>
+      <a href="09-relacionamentos.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -731,7 +731,7 @@ e) Escreva, em uma única transação, uma sequência seguindo esta ordem: exclu
       <a href="07-fornecedor-update.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="#">Próximo</a>
+      <a href="09-relacionamentos.md">Próximo</a>
     </td>
   </tr>
 </table>
