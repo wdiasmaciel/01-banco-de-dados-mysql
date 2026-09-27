@@ -223,7 +223,7 @@ SELECT * FROM Fornecedor;
 1. O `insert` abaixo criará um registro com os valores padrão (`default`) dos campos (atributos, colunas) da tabela:
 
 ```sql
-INSERT INTO Filial (cnpj, nome, telefone, endereco);
+INSERT INTO Filial VALUES (cnpj, nome, telefone, endereco);
 ```
 
 2. O `insert` abaixo criará um registro com o mesmo telefone da filial central (valor padrão, `default`, do campo telefone):
