@@ -161,7 +161,7 @@ DESC Identificacao;
 
 1. É a **entidade-relacionamento** entre `Produto` e `Filial` (resolve o relacionamento **N:N** entre elas: um produto pode estar em várias filiais e uma filial vende vários produtos). 
 
-2. Por isso, sua chave primária é **composta** por `id_produto` + `cnpj_filial`: juntos, eles identificam de forma única "o estoque de um produto específico em uma filial específica".
+2. Por isso, sua chave primária é **composta** por `id_produto` e `cnpj_filial`: juntos, eles identificam de forma única "o estoque de um produto específico em uma filial específica".
 
 3. Os campos `preco` e `quantidade` assumem o valor padrão (`default`) zero.
 
