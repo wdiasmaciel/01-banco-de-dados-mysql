@@ -329,7 +329,7 @@ Observe os dados inseridos na tabela:
 SELECT * FROM Estoque;
 ```
 
-5. O produtos abaixo terá a quantidade padrão (`default`) zero.
+5. O produto abaixo terá a quantidade padrão (`default`) zero.
 
 ```sql
 INSERT INTO Estoque (id_produto, cnpj_filial, preco, validade) VALUES
@@ -342,7 +342,7 @@ Observe os dados inseridos na tabela:
 SELECT * FROM Estoque;
 ```
 
-6. O produtos abaixo terá o preço e a quantidade padrão (`default`) zero.
+6. O produto abaixo terá o preço e a quantidade padrão (`default`) zero.
 
 ```sql
 INSERT INTO Estoque (id_produto, cnpj_filial, validade) VALUES
