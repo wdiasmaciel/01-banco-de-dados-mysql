@@ -395,7 +395,7 @@ INSERT INTO Filial (cnpj, nome, endereco) VALUES
 
 13. Quais identificações de produto são 'sem glúten' ou 'sem conservante'.
 
-14. 
+14. Quais produtos são vendidos por quilograma (kg)?
 
 ---
 
