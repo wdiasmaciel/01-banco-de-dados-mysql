@@ -387,7 +387,7 @@ INSERT INTO Filial (cnpj, nome, endereco) VALUES
 
 9. Apresente os itens do estoque com validade posterior a '2027-01-01'.
 
-10. Apresente os itens do estoque com validade anterior a '2026-09-01'.
+10. Apresente os itens do estoque com validade anterior a '2026-10-01'.
 
 
 ---
