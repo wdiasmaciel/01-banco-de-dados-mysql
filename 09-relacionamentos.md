@@ -33,11 +33,20 @@ DROP TABLE IF EXISTS Filial;
 DROP TABLE IF EXISTS Fornecedor;
 ```
 
-### 1.2 Criando as tabelas
+### Criando as tabelas
 
-A mesma lógica de dependência vale para a criação: criamos primeiro as tabelas sem FK (`Fornecedor`, `Filial`), depois `Produto` (que depende de `Fornecedor`), depois `Identificacao` (que depende de `Produto`) e, por fim, `Estoque` (que depende de `Produto` e `Filial`).
+A mesma lógica de dependência vale para a criação: 
 
-**Fornecedor** — `nome` e `telefone` agora são `UNIQUE`, ou seja, não pode haver dois fornecedores com o mesmo nome ou o mesmo telefone cadastrados na tabela.
+* Criamos primeiro as tabelas sem FK (`Fornecedor`, `Filial`).
+
+* Depois, `Produto` (que depende de `Fornecedor`).
+
+* Depois, `Identificacao` (que depende de `Produto`).
+
+* E, por fim, `Estoque` (que depende de `Produto` e `Filial`).
+
+
+**Fornecedor**: `nome` e `telefone` são `UNIQUE`, ou seja, não pode haver dois fornecedores com o mesmo nome ou o mesmo telefone cadastrados na tabela.
 
 ```sql
 CREATE TABLE Fornecedor (
