@@ -1,3 +1,14 @@
+<table width="100%" style="border: none; border-collapse: collapse;">
+  <tr style="border: none;">
+    <td align="left" style="border: none;">
+      <a href="08-fornecedor-delete.md">Anterior</a>
+    </td>
+    <td align="right" style="border: none;">
+      <a href="#">Próximo</a>
+    </td>
+  </tr>
+</table>
+
 # Projeto Empresa — Criação das Tabelas, Selects, Agregações e Joins
 
 Este material cobre a criação completa do banco de dados do projeto (Fornecedor, Produto, Identificação, Filial e Estoque), seguida de exemplos de `SELECT` entre tabelas, funções de agregação com `GROUP BY`/`HAVING`, e os principais tipos de `JOIN` do MySQL.
@@ -162,3 +173,13 @@ INSERT INTO Estoque (id_produto, cnpj_filial, preco, quantidade, validade) VALUE
 
 ---
 
+<table width="100%" style="border: none; border-collapse: collapse;">
+  <tr style="border: none;">
+    <td align="left" style="border: none;">
+      <a href="08-fornecedor-delete.md">Anterior</a>
+    </td>
+    <td align="right" style="border: none;">
+      <a href="#">Próximo</a>
+    </td>
+  </tr>
+</table>
