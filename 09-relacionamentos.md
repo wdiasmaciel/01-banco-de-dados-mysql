@@ -397,6 +397,8 @@ INSERT INTO Filial (cnpj, nome, endereco) VALUES
 
 14. Quais produtos são vendidos por quilograma (kg)?
 
+15. Quais filiais não estão em Belo Horizonte?
+
 ---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
