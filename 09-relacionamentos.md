@@ -309,6 +309,11 @@ INSERT INTO Estoque (id_produto, cnpj_filial, preco, quantidade, validade) VALUE
 (6, '20202020000120', 209.90, 10, '2027-06-01');
 ```
 
+4. Os produtos abaixo terão o preço padrão (`default`) zero.
+
+
+5. Os produtos abaixo terão a quantidade padrão (`default`) zero.
+
 Observe os dados inseridos na tabela:
 
 ```sql
