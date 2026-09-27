@@ -103,11 +103,11 @@ DESC Filial;
 
 **Produto**:
 
-O campo `id` é a chave primária (usamos `AUTO_INCREMENT` para gerar o valor automaticamente).
+1. O campo `id` é a chave primária (usamos `AUTO_INCREMENT` para gerar o valor automaticamente).
 
-O campo `cnpj_fornecedor` é `NOT NULL`, porque, pela regra do projeto, todo produto precisa ter um fornecedor, não faria sentido um produto "órfão". 
+2. O campo `cnpj_fornecedor` é `NOT NULL`, porque, pela regra do projeto, todo produto precisa ter um fornecedor, não faria sentido um produto "órfão". 
 
-A cláusula `FOREIGN KEY` garante que só é possível cadastrar um produto apontando para um `cnpj` que já exista em `Fornecedor`.
+3. A cláusula `FOREIGN KEY` garante que só é possível cadastrar um produto apontando para um `cnpj` que já exista em `Fornecedor`.
 
 ```sql
 CREATE TABLE Produto (
@@ -131,11 +131,11 @@ DESC Produto;
 
 **Identificacao**:
 
-O campo `id` é, ao mesmo tempo, chave primária **e** chave estrangeira para `Produto.id`. 
+1. O campo `id` é, ao mesmo tempo, chave primária **e** chave estrangeira para `Produto.id`. 
 
-Isso implementa o relacionamento **1:1** descrito no projeto: cada produto tem exatamente uma identificação e cada identificação pertence a exatamente um produto. 
+2. Isso implementa o relacionamento **1:1** descrito no projeto: cada produto tem exatamente uma identificação e cada identificação pertence a exatamente um produto. 
 
-Como `id` não é gerado automaticamente aqui (ele precisa ser igual ao `id` do produto correspondente), **não** usamos `AUTO_INCREMENT` nessa tabela.
+3. Como `id` não é gerado automaticamente aqui (ele precisa ser igual ao `id` do produto correspondente), **não** usamos `AUTO_INCREMENT` nessa tabela.
 
 ```sql
 CREATE TABLE Identificacao (
@@ -163,17 +163,29 @@ DESC Identificacao;
 
 2. Por isso, sua chave primária é **composta** por `id_produto` + `cnpj_filial`: juntos, eles identificam de forma única "o estoque de um produto específico em uma filial específica".
 
+3. Os campos `preco` e `quantidade` assumem o valor padrão (`default`) zero.
+
 ```sql
 CREATE TABLE Estoque (
-    id_produto   INT          NOT NULL,
-    cnpj_filial  VARCHAR(14)  NOT NULL,
-    preco        DECIMAL(10,2) NOT NULL,
-    quantidade   INT          NOT NULL,
-    validade     DATE         NOT NULL,
+    id_produto   INT           NOT NULL,
+    cnpj_filial  VARCHAR(14)   NOT NULL,
+    preco        DECIMAL(10,2) NOT NULL DEFAULT 0,
+    quantidade   INT           NOT NULL DEFAULT 0,
+    validade     DATE          NOT NULL,
     PRIMARY KEY (id_produto, cnpj_filial),
     FOREIGN KEY (id_produto) REFERENCES Produto(id),
     FOREIGN KEY (cnpj_filial) REFERENCES Filial(cnpj)
 );
+```
+
+Observe a estrutura da tabela, usando o comando `DESCRIBE` ou o seu atalho `DESC`.
+
+```sql
+DESCRIBE Estoque;
+```
+
+```sql
+DESC Estoque;
 ```
 
 ---
