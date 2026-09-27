@@ -76,10 +76,10 @@ DESC Fornecedor;
 
 2. Entretanto, `Filial` assume valores padrão (`default`), caso não sejam informados pelo usuário:
 
-> a. `cnpj`: '10101010000110'. 
-> b. `nome`: 'Filial Centro'.
-> c. `telefone`: '3140001010'.
-> d. `endereco`: 'Rua Tupis, 50 - Belo Horizonte/MG'.
+> a. `cnpj`: '10101010000110'. <br/>
+> b. `nome`: 'Filial Centro'. <br/>
+> c. `telefone`: '3140001010'. <br/>
+> d. `endereco`: 'Rua Tupis, 50 - Belo Horizonte/MG'. <br/>
 
 ```sql
 CREATE TABLE Filial (
