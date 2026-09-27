@@ -391,7 +391,11 @@ INSERT INTO Filial (cnpj, nome, endereco) VALUES
 
 11. Quais identificações de produto possuem a expressão 'alta demanda'?
 
-12
+12. Quais identificações de produto são 'sob encomenda'?
+
+13. Quais identificações de produto são 'sem glúten' ou 'sem conservante'.
+
+14. 
 
 ---
 
