@@ -15,11 +15,15 @@ Criação completa do banco de dados do projeto (Fornecedor, Produto, Identifica
 
 ---
 
-## 1. Criação das tabelas
+## Criação das tabelas
 
-### 1.1 Removendo tabelas existentes
+### Removendo tabelas existentes
 
-A ordem do `DROP TABLE` importa: como `Estoque` e `Identificação` possuem chaves estrangeiras que dependem de `Produto`, e `Produto` depende de `Fornecedor`, precisamos remover primeiro as tabelas "filhas" (que têm FK) antes das tabelas "pai" (referenciadas). Se tentássemos remover `Fornecedor` antes de `Produto`, o MySQL acusaria erro de dependência.
+A ordem do `DROP TABLE` importa: 
+
+* Como `Estoque` e `Identificação` possuem chaves estrangeiras que dependem de `Produto`, e `Produto` depende de `Fornecedor`, precisamos remover primeiro as tabelas "filhas" (que têm Chave Estrangeira, Foreign Key, FK) antes das tabelas "mães" (referenciadas). 
+
+* Se tentássemos remover `Fornecedor` antes de `Produto`, o MySQL acusaria erro de dependência.
 
 ```sql
 DROP TABLE IF EXISTS Estoque;
