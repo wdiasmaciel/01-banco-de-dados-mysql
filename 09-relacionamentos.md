@@ -129,7 +129,13 @@ DESCRIBE Produto;
 DESC Produto;
 ```
 
-**Identificacao** — aqui `id` é, ao mesmo tempo, chave primária **e** chave estrangeira para `Produto.id`. Isso implementa o relacionamento **1:1** descrito no projeto: cada produto tem exatamente uma identificação, e cada identificação pertence a exatamente um produto. Como `id` não é gerado automaticamente aqui (ele precisa ser igual ao `id` do produto correspondente), **não** usamos `AUTO_INCREMENT` nessa tabela.
+**Identificacao**:
+
+O campo `id` é, ao mesmo tempo, chave primária **e** chave estrangeira para `Produto.id`. 
+
+Isso implementa o relacionamento **1:1** descrito no projeto: cada produto tem exatamente uma identificação e cada identificação pertence a exatamente um produto. 
+
+Como `id` não é gerado automaticamente aqui (ele precisa ser igual ao `id` do produto correspondente), **não** usamos `AUTO_INCREMENT` nessa tabela.
 
 ```sql
 CREATE TABLE Identificacao (
@@ -139,6 +145,16 @@ CREATE TABLE Identificacao (
     PRIMARY KEY (id),
     FOREIGN KEY (id) REFERENCES Produto(id)
 );
+```
+
+Observe a estrutura da tabela, usando o comando `DESCRIBE` ou o seu atalho `DESC`.
+
+```sql
+DESCRIBE Identificacao;
+```
+
+```sql
+DESC Identificacao;
 ```
 
 **Estoque** — é a entidade-relacionamento entre `Produto` e `Filial` (resolve o relacionamento **N:N** entre elas: um produto pode estar em várias filiais, e uma filial vende vários produtos). Por isso, sua chave primária é **composta** por `id_produto` + `cnpj_filial`: juntos, eles identificam de forma única "o estoque de um produto específico em uma filial específica".
