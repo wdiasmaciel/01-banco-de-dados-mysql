@@ -226,7 +226,13 @@ INSERT INTO Filial (cnpj, nome, telefone, endereco) VALUES
 ('20202020000120', 'Filial Savassi', '3140002020', 'Rua Pernambuco, 400 - Belo Horizonte/MG');
 ```
 
-### 2.3 Produto
+Observe os dados inseridos na tabela:
+
+```sql
+SELECT * FROM Filial;
+```
+
+### Produto
 
 Apenas 5 dos 8 fornecedores possuem produtos cadastrados neste exemplo — isso é **proposital**, para explorarmos mais adiante a diferença entre `INNER JOIN` e `LEFT/RIGHT JOIN` (fornecedores sem produtos associados).
 
@@ -240,7 +246,13 @@ INSERT INTO Produto (id, cnpj_fornecedor, nome) VALUES
 (6, '77777777000107', 'Fone de Ouvido Bluetooth');
 ```
 
-### 2.4 Identificacao
+Observe os dados inseridos na tabela:
+
+```sql
+SELECT * FROM Produto;
+```
+
+### Identificacao
 
 Cada produto acima recebe sua identificação correspondente (relação 1:1).
 
@@ -254,7 +266,13 @@ INSERT INTO Identificacao (id, descricao, observacao) VALUES
 (6, 'Fone de ouvido bluetooth intra-auricular',  'Garantia de 12 meses do fabricante');
 ```
 
-### 2.5 Estoque
+Observe os dados inseridos na tabela:
+
+```sql
+SELECT * FROM Identificacao;
+```
+
+### Estoque
 
 Alguns produtos são vendidos em apenas uma filial; outros, em ambas — o que vai gerar dados interessantes para os exemplos de agregação da Seção 4.
 
@@ -269,6 +287,12 @@ INSERT INTO Estoque (id_produto, cnpj_filial, preco, quantidade, validade) VALUE
 (5, '20202020000120',  9.90,  25, '2026-10-05'),
 (6, '10101010000110', 199.90, 15, '2027-06-01'),
 (6, '20202020000120', 209.90, 10, '2027-06-01');
+```
+
+Observe os dados inseridos na tabela:
+
+```sql
+SELECT * FROM Estoque;
 ```
 
 ---
