@@ -60,6 +60,16 @@ CREATE TABLE Fornecedor (
 );
 ```
 
+Observe a estrutura da tabela, usando o comando `DESCRIBE` ou o seu atalho `DESC`.
+
+```sql
+DESCRIBE Fornecedor;
+```
+
+```sql
+DESC Fornecedor;
+```
+
 **Filial** — segue exatamente a mesma estrutura de `Fornecedor`, já que ambas representam "entidades de endereço/contato" no projeto.
 
 ```sql
