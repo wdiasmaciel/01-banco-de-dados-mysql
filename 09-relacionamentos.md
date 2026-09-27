@@ -70,7 +70,9 @@ DESCRIBE Fornecedor;
 DESC Fornecedor;
 ```
 
-**Filial** — segue exatamente a mesma estrutura de `Fornecedor`, já que ambas representam "entidades de endereço/contato" no projeto.
+**Filial**:
+
+Segue a mesma estrutura de `Fornecedor`, ambas representam "entidades de endereço/contato" no projeto.
 
 ```sql
 CREATE TABLE Filial (
@@ -80,6 +82,16 @@ CREATE TABLE Filial (
     endereco  VARCHAR(200) NOT NULL,
     PRIMARY KEY (cnpj)
 );
+```
+
+Observe a estrutura da tabela, usando o comando `DESCRIBE` ou o seu atalho `DESC`.
+
+```sql
+DESCRIBE Fornecedor;
+```
+
+```sql
+DESC Fornecedor;
 ```
 
 **Produto** — `id` é a chave primária (usamos `AUTO_INCREMENT` para gerar o valor automaticamente). `cnpj_fornecedor` é `NOT NULL` porque, pela regra do projeto, todo produto precisa ter um fornecedor — não faria sentido um produto "órfão". A cláusula `FOREIGN KEY` garante que só é possível cadastrar um produto apontando para um `cnpj` que já exista em `Fornecedor`.
