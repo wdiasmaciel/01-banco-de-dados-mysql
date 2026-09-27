@@ -212,6 +212,12 @@ INSERT INTO Fornecedor (cnpj, nome, telefone, endereco) VALUES
 >
 > * Se alguém tentar inserir um telefone repetido, o MySQL vai recusar com um erro de violação de restrição única (`Duplicate entry ... for key`).
 
+Observe os dados inseridos na tabela:
+
+```sql
+SELECT * FROM Fornecedor;
+```
+
 ### Filial
 
 ```sql
