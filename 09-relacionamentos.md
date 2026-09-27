@@ -248,7 +248,9 @@ SELECT * FROM Filial;
 
 ### Produto
 
-Apenas 5 dos 8 fornecedores possuem produtos cadastrados neste exemplo — isso é **proposital**, para explorarmos mais adiante a diferença entre `INNER JOIN` e `LEFT/RIGHT JOIN` (fornecedores sem produtos associados).
+1. Apenas 5 dos 8 fornecedores possuem produtos cadastrados neste exemplo.
+
+2. Isso é **proposital**, para explorarmos mais adiante a diferença entre `INNER JOIN` e `LEFT/RIGHT JOIN` (fornecedores sem produtos associados).
 
 ```sql
 INSERT INTO Produto (id, cnpj_fornecedor, nome) VALUES
