@@ -119,6 +119,16 @@ CREATE TABLE Produto (
 );
 ```
 
+Observe a estrutura da tabela, usando o comando `DESCRIBE` ou o seu atalho `DESC`.
+
+```sql
+DESCRIBE Fornecedor;
+```
+
+```sql
+DESC Fornecedor;
+```
+
 **Identificacao** — aqui `id` é, ao mesmo tempo, chave primária **e** chave estrangeira para `Produto.id`. Isso implementa o relacionamento **1:1** descrito no projeto: cada produto tem exatamente uma identificação, e cada identificação pertence a exatamente um produto. Como `id` não é gerado automaticamente aqui (ele precisa ser igual ao `id` do produto correspondente), **não** usamos `AUTO_INCREMENT` nessa tabela.
 
 ```sql
