@@ -208,7 +208,9 @@ INSERT INTO Fornecedor (cnpj, nome, telefone, endereco) VALUES
 ('88888888000108', 'Theta Móveis e Decoração Ltda',  '3132228888', 'Av. do Contorno, 800 - Belo Horizonte/MG');
 ```
 
-> Observe que todos os `nome` e `telefone` são diferentes entre si; condição obrigatória, pois essas colunas são `UNIQUE`. Se alguém tentar inserir um telefone repetido, o MySQL vai recusar com um erro de violação de restrição única (`Duplicate entry ... for key`).
+> Observe que todos os `nome` e `telefone` são diferentes entre si; condição obrigatória, pois essas colunas são `UNIQUE`. 
+
+> Se alguém tentar inserir um telefone repetido, o MySQL vai recusar com um erro de violação de restrição única (`Duplicate entry ... for key`).
 
 ### Filial
 
