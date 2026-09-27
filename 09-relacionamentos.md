@@ -209,7 +209,7 @@ INSERT INTO Fornecedor (cnpj, nome, telefone, endereco) VALUES
 ```
 
 > Observe que todos os `nome` e `telefone` são diferentes entre si; condição obrigatória, pois essas colunas são `UNIQUE`. 
-
+>
 > Se alguém tentar inserir um telefone repetido, o MySQL vai recusar com um erro de violação de restrição única (`Duplicate entry ... for key`).
 
 ### Filial
