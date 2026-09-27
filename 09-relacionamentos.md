@@ -72,7 +72,14 @@ DESC Fornecedor;
 
 **Filial**:
 
-Segue a mesma estrutura de `Fornecedor`, ambas representam "entidades de endereço/contato" no projeto.
+Segue a mesma estrutura de `Fornecedor`, ambas representam "entidades de endereço/contato" no projeto. 
+
+Entretanto, `Filial` assume valores padrão (`default`), caso não sejam informados pelo usuário:
+
+1. `cnpj`: '10101010000110'. 
+2. `nome`: 'Filial Centro'.
+3. `telefone`: '3140001010'.
+4. `endereco`: 'Rua Tupis, 50 - Belo Horizonte/MG'.
 
 ```sql
 CREATE TABLE Filial (
@@ -84,7 +91,6 @@ CREATE TABLE Filial (
 );
 ```
 
-'10101010000110', 'Filial Centro',  '3140001010', 'Rua Tupis, 50 - Belo Horizonte/MG'
 Observe a estrutura da tabela, usando o comando `DESCRIBE` ou o seu atalho `DESC`.
 
 ```sql
