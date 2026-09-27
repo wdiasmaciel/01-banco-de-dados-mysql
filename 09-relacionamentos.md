@@ -270,7 +270,7 @@ SELECT * FROM Produto;
 
 ### Identificacao
 
-Cada produto acima recebe sua identificação correspondente (relação 1:1).
+1. Cada produto na tabela `Produto` recebe sua identificação correspondente (`relacionamento 1:1`).
 
 ```sql
 INSERT INTO Identificacao (id, descricao, observacao) VALUES
