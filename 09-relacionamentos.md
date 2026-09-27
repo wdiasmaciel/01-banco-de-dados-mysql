@@ -389,6 +389,9 @@ INSERT INTO Filial (cnpj, nome, endereco) VALUES
 
 10. Apresente os itens do estoque com validade anterior a '2026-10-01'.
 
+11. Quais identificações de produto possuem a expressão 'alta demanda'?
+
+12
 
 ---
 
