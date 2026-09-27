@@ -47,6 +47,7 @@ A mesma lógica de dependência vale para a criação:
 
 
 **Fornecedor**: 
+
 Os campos (atributos, colunas) `nome` e `telefone` são `UNIQUE`, ou seja, não pode haver dois fornecedores com o mesmo nome ou o mesmo telefone cadastrados na tabela.
 
 ```sql
