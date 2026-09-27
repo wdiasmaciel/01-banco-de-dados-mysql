@@ -46,7 +46,8 @@ A mesma lógica de dependência vale para a criação:
 * E, por fim, `Estoque` (que depende de `Produto` e `Filial`).
 
 
-**Fornecedor**: `nome` e `telefone` são `UNIQUE`, ou seja, não pode haver dois fornecedores com o mesmo nome ou o mesmo telefone cadastrados na tabela.
+**Fornecedor**: 
+Os campos (atributos, colunas) `nome` e `telefone` são `UNIQUE`, ou seja, não pode haver dois fornecedores com o mesmo nome ou o mesmo telefone cadastrados na tabela.
 
 ```sql
 CREATE TABLE Fornecedor (
