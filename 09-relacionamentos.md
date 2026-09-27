@@ -313,9 +313,8 @@ INSERT INTO Estoque (id_produto, cnpj_filial, preco, quantidade, validade) VALUE
 
 ```sql
 INSERT INTO Estoque (id_produto, cnpj_filial, quantidade, validade) VALUES
-(1, '30303030000130',  50, '2027-01-15'),
-(2, '30303030000130', 100, '2026-11-01'),
-(3, '30303030000130',  80, '2026-09-30');
+(1, '30303030000130',  6, '2027-01-15'),
+(3, '30303030000130',  7, '2026-09-30');
 ```
 
 5. Os produtos abaixo terão a quantidade padrão (`default`) zero.
