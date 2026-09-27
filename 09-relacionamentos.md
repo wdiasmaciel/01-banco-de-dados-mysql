@@ -76,14 +76,15 @@ Segue a mesma estrutura de `Fornecedor`, ambas representam "entidades de endere√
 
 ```sql
 CREATE TABLE Filial (
-    cnpj      VARCHAR(14)  NOT NULL,
-    nome      VARCHAR(100) NOT NULL UNIQUE,
-    telefone  VARCHAR(15)  NOT NULL UNIQUE,
-    endereco  VARCHAR(200) NOT NULL,
+    cnpj      VARCHAR(14)  NOT NULL        DEFAULT '10101010000110',
+    nome      VARCHAR(100) NOT NULL UNIQUE DEFAULT 'Filial Centro',
+    telefone  VARCHAR(15)  NOT NULL UNIQUE DEFAULT '3140001010',
+    endereco  VARCHAR(200) NOT NULL        DEFAULT 'Rua Tupis, 50 - Belo Horizonte/MG',
     PRIMARY KEY (cnpj)
 );
 ```
 
+'10101010000110', 'Filial Centro',  '3140001010', 'Rua Tupis, 50 - Belo Horizonte/MG'
 Observe a estrutura da tabela, usando o comando `DESCRIBE` ou o seu atalho `DESC`.
 
 ```sql
