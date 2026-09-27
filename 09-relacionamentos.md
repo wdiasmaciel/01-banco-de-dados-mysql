@@ -290,7 +290,11 @@ SELECT * FROM Identificacao;
 
 ### Estoque
 
-Alguns produtos são vendidos em apenas uma filial; outros, em ambas — o que vai gerar dados interessantes para os exemplos de agregação da Seção 4.
+1. Alguns produtos são vendidos em apenas uma filial.
+
+2. Outros, em mais de uma. 
+
+3. Isso será explorado mais adiante nos exemplos de agregação.
 
 ```sql
 INSERT INTO Estoque (id_produto, cnpj_filial, preco, quantidade, validade) VALUES
