@@ -21,9 +21,9 @@ Criação completa do banco de dados do projeto (Fornecedor, Produto, Identifica
 
 A ordem do `DROP TABLE` importa: 
 
-* Como `Estoque` e `Identificação` possuem chaves estrangeiras que dependem de `Produto`, e `Produto` depende de `Fornecedor`, precisamos remover primeiro as tabelas "filhas" (que têm Chave Estrangeira, Foreign Key, FK) antes das tabelas "mães" (referenciadas). 
+1. Como `Estoque` e `Identificação` possuem chaves estrangeiras que dependem de `Produto`, e `Produto` depende de `Fornecedor`, precisamos remover primeiro as tabelas "filhas" (que têm Chave Estrangeira, Foreign Key, FK) antes das tabelas "mães" (referenciadas). 
 
-* Se tentássemos remover `Fornecedor` antes de `Produto`, o MySQL acusaria erro de dependência.
+2. Se tentássemos remover `Fornecedor` antes de `Produto`, o MySQL acusaria erro de dependência.
 
 ```sql
 DROP TABLE IF EXISTS Estoque;
@@ -37,18 +37,18 @@ DROP TABLE IF EXISTS Fornecedor;
 
 A mesma lógica de dependência vale para a criação: 
 
-* Criamos primeiro as tabelas sem FK (`Fornecedor`, `Filial`).
+1. Criamos primeiro as tabelas sem FK (`Fornecedor`, `Filial`).
 
-* Depois, `Produto` (que depende de `Fornecedor`).
+2. Depois, `Produto` (que depende de `Fornecedor`).
 
-* Depois, `Identificacao` (que depende de `Produto`).
+3. Depois, `Identificacao` (que depende de `Produto`).
 
-* E, por fim, `Estoque` (que depende de `Produto` e `Filial`).
+4. E, por fim, `Estoque` (que depende de `Produto` e `Filial`).
 
 
 **Fornecedor**: 
 
-Os campos (atributos, colunas) `nome` e `telefone` são `UNIQUE`, ou seja, não pode haver dois fornecedores com o mesmo nome ou o mesmo telefone cadastrados na tabela.
+1. Os campos (atributos, colunas) `nome` e `telefone` são `UNIQUE`, ou seja, não pode haver dois fornecedores com o mesmo nome ou o mesmo telefone cadastrados na tabela.
 
 ```sql
 CREATE TABLE Fornecedor (
@@ -72,14 +72,14 @@ DESC Fornecedor;
 
 **Filial**:
 
-Segue a mesma estrutura de `Fornecedor`, ambas representam "entidades de endereço/contato" no projeto. 
+1. Segue a mesma estrutura de `Fornecedor`, ambas representam "entidades de endereço/contato" no projeto. 
 
-Entretanto, `Filial` assume valores padrão (`default`), caso não sejam informados pelo usuário:
+2. Entretanto, `Filial` assume valores padrão (`default`), caso não sejam informados pelo usuário:
 
-1. `cnpj`: '10101010000110'. 
-2. `nome`: 'Filial Centro'.
-3. `telefone`: '3140001010'.
-4. `endereco`: 'Rua Tupis, 50 - Belo Horizonte/MG'.
+a. `cnpj`: '10101010000110'. 
+b. `nome`: 'Filial Centro'.
+c. `telefone`: '3140001010'.
+d. `endereco`: 'Rua Tupis, 50 - Belo Horizonte/MG'.
 
 ```sql
 CREATE TABLE Filial (
@@ -157,7 +157,11 @@ DESCRIBE Identificacao;
 DESC Identificacao;
 ```
 
-**Estoque** — é a entidade-relacionamento entre `Produto` e `Filial` (resolve o relacionamento **N:N** entre elas: um produto pode estar em várias filiais, e uma filial vende vários produtos). Por isso, sua chave primária é **composta** por `id_produto` + `cnpj_filial`: juntos, eles identificam de forma única "o estoque de um produto específico em uma filial específica".
+**Estoque**:
+
+1. É a **entidade-relacionamento** entre `Produto` e `Filial` (resolve o relacionamento **N:N** entre elas: um produto pode estar em várias filiais e uma filial vende vários produtos). 
+
+2. Por isso, sua chave primária é **composta** por `id_produto` + `cnpj_filial`: juntos, eles identificam de forma única "o estoque de um produto específico em uma filial específica".
 
 ```sql
 CREATE TABLE Estoque (
