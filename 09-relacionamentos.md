@@ -74,7 +74,7 @@ DESC Fornecedor;
 
 1. Segue a mesma estrutura de `Fornecedor`, ambas representam "entidades de endereço/contato" no projeto. 
 
-2. Entretanto, `Filial` assume valores padrão (`default`), caso não sejam informados pelo usuário:
+2. Entretanto, `Filial` assume valores padrão (`default`) para os campos, caso algum não seja informado pelo usuário:
 
 > a. `cnpj`: '10101010000110'. <br/>
 > b. `nome`: 'Filial Centro'. <br/>
