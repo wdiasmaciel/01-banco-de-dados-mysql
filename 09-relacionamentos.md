@@ -9,9 +9,9 @@
   </tr>
 </table>
 
-# Projeto Empresa — Criação das Tabelas, Selects, Agregações e Joins
+# 9 - Projeto Empresa — Criação das Tabelas, Relacionamentos e Selects
 
-Este material cobre a criação completa do banco de dados do projeto (Fornecedor, Produto, Identificação, Filial e Estoque), seguida de exemplos de `SELECT` entre tabelas, funções de agregação com `GROUP BY`/`HAVING`, e os principais tipos de `JOIN` do MySQL.
+Criação completa do banco de dados do projeto (Fornecedor, Produto, Identificação, Filial e Estoque), seguida de exemplos de `SELECT` entre tabelas.
 
 ---
 
