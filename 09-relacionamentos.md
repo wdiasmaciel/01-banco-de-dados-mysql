@@ -220,10 +220,18 @@ SELECT * FROM Fornecedor;
 
 ### Filial
 
+1. O `insert` abaixo criará um registro com os valores padrão (`default`) dos campos (atributos, colunas) da tabela:
+
+```sql
+INSERT INTO Filial (cnpj, nome, telefone, endereco) VALUES;
+```
+
+2. O `insert` abaixo criará um registro com o mesmo telefone da filial central (valor padrão, `default`, do campo telefone):
+
 ```sql
 INSERT INTO Filial (cnpj, nome, telefone, endereco) VALUES
-('10101010000110', 'Filial Centro',  '3140001010', 'Rua Tupis, 50 - Belo Horizonte/MG'),
-('20202020000120', 'Filial Savassi', '3140002020', 'Rua Pernambuco, 400 - Belo Horizonte/MG');
+('20202020000120', 'Filial Savassi', 'Rua Pernambuco, 400 - Belo Horizonte/MG');
+('30303030000130', 'Filial Contagem',  '3140003030', 'Av. João César de Oliveira, 1000 - Contagem/MG');
 ```
 
 Observe os dados inseridos na tabela:
