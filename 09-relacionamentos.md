@@ -366,7 +366,7 @@ INSERT INTO Filial (cnpj, nome, endereco) VALUES
 ('20202020000120', 'Filial Savassi', 'Rua Pernambuco, 400 - Belo Horizonte/MG');
 ```
 
-O `insert` cria um registro com o mesmo telefone da filial central (valor padrão, `default`, do campo telefone)? Justifique sua resposta.
+  O `insert` cria um registro com o mesmo telefone da filial central (valor padrão, `default`, do campo telefone)? Justifique sua resposta.
 
 
 2. Apresente os itens do estoque cujo preço é zero.
