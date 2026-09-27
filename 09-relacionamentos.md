@@ -321,7 +321,6 @@ INSERT INTO Estoque (id_produto, cnpj_filial, quantidade, validade) VALUES
 
 ```sql
 INSERT INTO Estoque (id_produto, cnpj_filial, preco, quantidade, validade) VALUES
-(4, '30303030000130',  12.50,  '2026-12-20'),
 (5, '30303030000130',   9.90,  '2026-10-05'),
 (6, '30303030000130', 199.90, '2027-06-01'),
 (6, '30303030000130', 209.90, '2027-06-01');
