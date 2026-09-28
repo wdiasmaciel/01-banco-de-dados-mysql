@@ -170,6 +170,11 @@ SELECT nome
 FROM   dept
 WHERE  nome LIKE '%?%%' ESCAPE '?'
 
+Teste se um valor é nulo utilizando o operador IS NULL.
+
+SELECT codcliente, codDVD, data 
+FROM   locacao
+WHERE  datadevolucao IS NULL
 
 
 UPPER
