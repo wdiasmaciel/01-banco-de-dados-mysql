@@ -64,6 +64,18 @@ AND codgenero =
     FROM   DVD
     WHERE  nome = 'O sexto sentido') 
 
+Quais os empregados trabalham no mesmo departamento do
+empregado 7654?
+
+SELECT empno, nome, deptno
+FROM   emp
+WHERE  deptno = 
+   (SELECT deptno 
+    FROM   emp
+    WHERE  empno = 7654)
+
+
+
 
 
 ### SELECT combinando duas tabelas (sem join)
