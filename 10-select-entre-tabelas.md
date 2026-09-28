@@ -45,6 +45,13 @@ WHERE cnpj_fornecedor = (
 
 Quais empregados possuem salário maior que o do empregado 7749?  
     
+    SELECT empno, nome
+    FROM   emp
+    WHERE  salario > = 
+                   (SELECT salario
+                    FROM   emp
+                    WHERE  empno > 7749)
+            
     
 
 
