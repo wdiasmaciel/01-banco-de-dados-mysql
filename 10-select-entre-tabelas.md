@@ -151,6 +151,10 @@ FROM   cliente
 WHERE  nome LIKE 'D%' 
 
 
+SELECT nome
+FROM   DVD
+WHERE  nome LIKE 'O%n' 
+
 
 
 UPPER
