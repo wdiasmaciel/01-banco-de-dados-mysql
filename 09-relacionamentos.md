@@ -4,7 +4,7 @@
       <a href="08-fornecedor-delete.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="#">Próximo</a>
+      <a href="10-select-entre-tabelas.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -407,7 +407,7 @@ INSERT INTO Filial (cnpj, nome, endereco) VALUES
       <a href="08-fornecedor-delete.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="#">Próximo</a>
+      <a href="10-select-entre-tabelas.md">Próximo</a>
     </td>
   </tr>
 </table>
