@@ -171,7 +171,7 @@ DESC Identificacao;
 CREATE TABLE Estoque (
     id_produto   INT           NOT NULL,
     cnpj_filial  VARCHAR(14)   NOT NULL,
-    preco        DECIMAL(10,2) NOT NULL DEFAULT 0 CHECK (preco > 0), -- Restrição (constraint) de coluna: não pode referenciar outras colunas da tabela.
+    preco        DECIMAL(10,2) NOT NULL DEFAULT 0 CHECK (preco >= 0), -- Restrição (constraint) de coluna: não pode referenciar outras colunas da tabela.
     quantidade   INT           NOT NULL DEFAULT 0,
     validade     DATE          NOT NULL,
     PRIMARY KEY (id_produto, cnpj_filial),
