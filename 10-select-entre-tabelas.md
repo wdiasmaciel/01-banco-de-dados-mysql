@@ -42,6 +42,12 @@ WHERE cnpj_fornecedor = (
 );
 ```
 
+
+Quais empregados possuem salário maior que o do empregado 7749?  
+    
+    
+
+
 ### SELECT combinando duas tabelas (sem join)
 
 1. Sem o `JOIN` explícito, é possível combinar tabelas listando-as no `FROM` separadas por vírgula e relacionando-as no `WHERE`. 
@@ -269,6 +275,13 @@ estilo – formato de data a ser utilizado para converter dados do tipo DATETIME
 
 SELECT cor, 'O valor é ' + CAST(VALOR AS varchar) valor
 FROM   preco 
+
+SELECT codDVD, CONVERT(VARCHAR, data, 100) Data
+FROM   locacao
+
+
+
+
 
 ---
 
