@@ -186,6 +186,11 @@ WHERE  cor = 'PR'
 OR     status = 'L'
 AND    codgenero = 3
 
+SELECT nome, cor, status, codgenero
+FROM   DVD
+WHERE  (cor = 'PR' 
+OR     status = 'L')
+AND    codgenero = 3
 
 
 UPPER
