@@ -160,6 +160,12 @@ FROM   DVD
 WHERE  nome LIKE '_o%'
 
 
+É possível usar o identificador ESCAPE para procurar por “ % “ ou “_“.
+
+SELECT nome
+FROM   dept
+WHERE  nome LIKE '%/_%' ESCAPE '/'
+
 
 UPPER
 LOWER
