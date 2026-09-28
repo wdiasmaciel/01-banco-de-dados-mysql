@@ -129,6 +129,8 @@ FROM   emp
 SELECT nome, salario, 12*(salario+100)
 FROM   emp
 
+SELECT nome + ' é um ' + cargo AS "Detalhes do Empregado"
+FROM   emp
 
 
 Funções de conversão 
