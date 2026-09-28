@@ -171,6 +171,43 @@ T1      T2
 
 (1 row(s) affected)
 
+Retorna o valor absoluto (positivo) de uma expressão numérica.
+ABS(expressao)
+Expressao – expressão numérica a ser avaliada
+
+SELECT ABS(-1.0) A1, ABS(0.0) A2, ABS(1.0) A3
+
+A1   A2   A3   
+---- ---- ---- 
+1.0  .0   1.0
+
+(1 row(s) affected)
+
+
+CEILING - Retorna o menor inteiro maior ou igual a uma determinada expressão
+CEILING(expressao)
+expressao – expressão numérica a ser avaliada
+
+FLOOR – Retorna o maior inteiro menor ou igual a uma determinada expressão
+FLOOR(expressao)
+expressao – expressão numérica a ser avaliada
+
+SELECT valor, CEILING(valor) Teto, FLOOR(valor) Piso
+FROM   preco
+valor                          Teto                     Piso                                                  
+------------------------------ ------------------------ --------------
+4.0                            4.0                      4.0
+2.5                            3.0                      2.0
+2.0                            2.0                      2.0
+3.0                            3.0                      3.0
+3.5                            4.0                      3.0
+4.5                            5.0                      4.0
+
+(6 row(s) affected)
+
+Retorna o sinal positivo (+1), zero (0) ou negativo (-1) de uma determinada expressão numérica
+SIGN(expressao) 
+expressao – expressão numérica a ser avaliada
 
 
 ---
