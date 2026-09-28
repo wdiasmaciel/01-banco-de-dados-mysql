@@ -406,9 +406,11 @@ INSERT INTO Filial (cnpj, nome, endereco) VALUES
 
 17. Atualize a data de validade de um dos itens no estoque de forma que a nova validade seja anterior a '1900-01-01'. Comente a resposta retornada pelo MySQL.
 
-16. Realize a inserção de um item no estoque com preço negativo. Comente a resposta retornada pelo MySQL.
+18. Realize a inserção de um item no estoque com preço negativo. Comente a resposta retornada pelo MySQL.
 
-17. Realize a inserção de um item no estoque com validade anterior a '1900-01-01'. Comente a resposta retornada pelo MySQL.
+19. Realize a inserção de um item no estoque com validade anterior a '1900-01-01'. Comente a resposta retornada pelo MySQL.
+
+20. Insira um novo fornecedor no banco de dados. Insira os produtos desse novo fornecedor, com as respecitivas identificações. Insira os produtos desse novo fornecedor no estoque das filiais da empresa. Apresente os dados dos produtos do novo fornecedor.
 
 ---
 
