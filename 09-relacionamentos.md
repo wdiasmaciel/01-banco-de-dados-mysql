@@ -165,8 +165,7 @@ DESC Identificacao;
 
 3. Os campos `preco` e `quantidade` assumem o valor padrão (`default`) zero.
 
-4. Restrição (`constraint CHECK`) é usada com as instruções `INSERT` e `UPDATE`, para verificação de valores do campo (atributo, coluna). Pode fazer referência a outras colunas na mesma tabela.
-Não podem conter subconsultas.
+4. A restrição (`constraint`) `CHECK` é usada com as instruções `INSERT` e `UPDATE`, para verificação de valores de um campo (atributo, coluna). Quando for de coluna: não pode fazer referência a outras colunas na mesma tabela. Quando for de tabela: pode fazer referência a outras colunas da mesma tabela. Não pode conter subconsultas, independentemente de ser de coluna ou de tabela.
 
 ```sql
 CREATE TABLE Estoque (
