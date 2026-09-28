@@ -192,6 +192,10 @@ WHERE  (cor = 'PR'
 OR     status = 'L')
 AND    codgenero = 3
 
+SELECT    cor, valor * 1.5 AS "Novo valor" 
+FROM      preco
+ORDER BY "Novo valor"
+
 
 UPPER
 LOWER
