@@ -209,6 +209,11 @@ SELECT   nome, cidade
 FROM     cliente
 ORDER BY estado
 
+SELECT   nome, cor
+FROM     DVD
+ORDER BY cor, nome DESC
+
+
 
 
 UPPER
