@@ -255,6 +255,21 @@ select	codConta
         end "Nome da Agência"
 from	conta
 
+
+SELECT comissao, salario, ISNULL(comissao, 0) + salario AS "Comissão + Salário"
+FROM   emp
+
+Convertem explicitamente um tipo de dados para um outro tipo de dados.
+CAST(expressao AS tipo_de_dados)
+CONVERT(tipo_de_dados[(tam)], expressao [,estilo]) 
+expressao – expressão a ser convertida
+tipo_de_dados – tipo de dados para o qual a expressao será convertida
+tam – parâmetro opcional para o tamanho do tipo de dados
+estilo – formato de data a ser utilizado para converter dados do tipo DATETIME ou SMALLDATETIME para dados do tipo caractere.
+
+SELECT cor, 'O valor é ' + CAST(VALOR AS varchar) valor
+FROM   preco 
+
 ---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
