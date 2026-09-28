@@ -70,7 +70,7 @@ WHERE p.id = e.id_produto
 ORDER BY p.nome, f.nome;
 ```
 
-### 3.5 SELECT com DISTINCT entre tabelas
+### SELECT com DISTINCT entre tabelas
 
 Para saber quais fornecedores **realmente têm** produtos cadastrados (sem repetir o mesmo fornecedor várias vezes, caso ele tenha mais de um produto):
 
