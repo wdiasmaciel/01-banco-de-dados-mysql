@@ -99,6 +99,22 @@ LTRIM
 RTRIM
 REPLACE
 
+SELECT nome, SUBSTRING(nome, 1, 5) AS sub
+FROM   DVD
+
+SELECT nome, LEN(nome) AS tamanho
+FROM   paciente
+
+Retorna a posição inicial da expressão especificada em uma string de caracteres
+
+CHARINDEX(expressao1, expressao2 [,pos_inicial])
+expressao1 – é uma expressão contendo uma seqüência de caracteres a ser encontrada
+expressao2 – é uma expressão a ser procurada pela seqüência especificada
+pos_inicial – é a posição do caractere de início para a pesquisa da expressao1 na expressao2. Se este argumento for omitido, ou se for um valor negativo ou zero, a procura começa no início da expressao2.
+
+SELECT nome, CHARINDEX('i', nome, 3) As "Posição" 
+FROM   DVD
+
 ---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
