@@ -402,6 +402,14 @@ INSERT INTO Filial (cnpj, nome, endereco) VALUES
 
 15. Quais filiais não estão em Belo Horizonte (`NOT LIKE '%Belo Horizonte%'`)?
 
+16. Atualize o preço de um dos itens no estoque de forma que o novo preço seja negativo. Comente a resposta retornada pelo MySQL.
+
+17. Atualize a data de validade de um dos itens no estoque de forma que a nova validade seja anterior a '1900-01-01'. Comente a resposta retornada pelo MySQL.
+
+16. Realize a inserção de um item no estoque com preço negativo. Comente a resposta retornada pelo MySQL.
+
+17. Realize a inserção de um item no estoque com validade anterior a '1900-01-01'. Comente a resposta retornada pelo MySQL.
+
 ---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
