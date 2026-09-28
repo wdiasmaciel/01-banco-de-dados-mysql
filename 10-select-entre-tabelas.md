@@ -124,6 +124,55 @@ pos_inicial – é a posição inicial
 SELECT nome, LEFT(nome, 3) AS Esquerda, RIGHT(nome, 3) AS DIREITA 
 FROM   DVD
 
+Removem espaços em branco no início ou no fim de uma string de caracteres.
+LTRIM(expressao)
+RTRIM(expressao)
+expressao – é uma string ou expressão envolvendo uma coluna
+
+SELECT LTRIM('   STR1   ') Esq, RTRIM('   STR2   ') Dir     
+
+Substitui todas as ocorrências de uma determinada string de caracteres em uma expressão por outra string de caracteres.
+REPLACE(expressao1, expressao2, expressao3)
+expressao1 – é uma string de caracteres ou expressão envolvendo uma coluna onde a string será substituída
+expressao2 – é a string a ser substituída
+expressao3 – é a string de substituição
+
+SELECT nome, REPLACE(nome, 'A', 'O') AS Troca
+FROM   DVD
+
+
+ROUND
+ABS
+CEILING
+FLOOR
+SIGN
+
+Retorna uma expressão numérica arredondada para um tamanho ou precisão especificada.  
+ROUND(expressao, tamanho [,funcao])  
+expressao – expressão numérica a ser arredondada
+tamanho – precisão de arredondamento. Quando positivo, a expressão é arredondada para o número de casas decimais especificadas pelo tamanho. Quando negativo, expressão é arredondada do lado esquerdo do ponto decimal, conforme especificado pelo tamanho.
+funcao – tipo de operação a ser realizada. Quando omitido ou com valor 0 (default), a expressão é arredondada. Quando diferente de zero, a expressão é truncada.
+
+
+SELECT ROUND(748.58, -1) R1, ROUND(748.58, -2) R2, ROUND(748.58, 0) R3, ROUND(748.58, 1) R4 
+R1      R2      R3      R4  
+------- ------- ------- ------- 
+750.00  700.00  749.00  748.60
+
+(1 row(s) affected)
+
+
+Utilizando a função ROUND para truncar
+
+SELECT ROUND(150.98, 0, 1) T1, ROUND(150.98, 1, 1) T2
+T1      T2 
+------- ------- 
+150.00  150.90
+
+(1 row(s) affected)
+
+
+
 ---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
