@@ -76,6 +76,13 @@ WHERE  deptno =
 
 
 
+Qual o empregado possui o maior salário na empresa?   
+   
+   SELECT empno, nome, salario
+   FROM   emp
+   WHERE  salario =
+       (SELECT MAX(salario)
+        FROM   emp)	
 
 
 ### SELECT combinando duas tabelas (sem join)
