@@ -166,6 +166,11 @@ SELECT nome
 FROM   dept
 WHERE  nome LIKE '%/_%' ESCAPE '/'
 
+SELECT nome
+FROM   dept
+WHERE  nome LIKE '%?%%' ESCAPE '?'
+
+
 
 UPPER
 LOWER
