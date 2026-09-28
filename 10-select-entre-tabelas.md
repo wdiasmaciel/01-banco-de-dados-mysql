@@ -53,6 +53,17 @@ Quais empregados possuem salário maior que o do empregado 7749?
                     WHERE  empno > 7749)
             
     
+    SELECT codDVD, nome
+FROM   DVD 
+WHERE  cor = 
+  (SELECT cor
+   FROM   DVD 
+   WHERE  nome = 'Top Gang')
+AND codgenero =
+   (SELECT codgenero
+    FROM   DVD
+    WHERE  nome = 'O sexto sentido') 
+
 
 
 ### SELECT combinando duas tabelas (sem join)
