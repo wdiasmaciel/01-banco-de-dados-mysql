@@ -123,6 +123,14 @@ FROM Fornecedor f, Produto p
 WHERE f.cnpj = p.cnpj_fornecedor;
 ```
 
+SELECT nome, salario, 12*salario+100
+FROM   emp
+
+SELECT nome, salario, 12*(salario+100)
+FROM   emp
+
+
+
 Funções de conversão 
 de maiúsculas e minúsculas
 
@@ -318,6 +326,10 @@ FROM   locacao
 
 
 
+INSERT INTO mineiro (codigo, nome, cidade)
+(SELECT codcliente, nome, cidade
+ FROM   cliente
+ WHERE  estado = 'MG')
 
 
 ---
