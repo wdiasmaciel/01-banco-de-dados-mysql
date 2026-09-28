@@ -177,7 +177,7 @@ CREATE TABLE Estoque (
     PRIMARY KEY (id_produto, cnpj_filial),
     FOREIGN KEY (id_produto) REFERENCES Produto(id),
     FOREIGN KEY (cnpj_filial) REFERENCES Filial(cnpj),
-    CONSTRAINT check_validade_minima CHECK (validade > '1900-01-01') -- Restrição (constraint) de tabela: pode referenciar outras colunas da tabela.
+    CONSTRAINT check_validade_minima CHECK (validade > '1900-01-01') -- Restrição (constraint) de tabela: poderia referenciar outras colunas da tabela (constraint de tabela: poderia referenciar várias colunas, aqui usa só validade).
 );
 ```
 
