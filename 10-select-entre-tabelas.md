@@ -80,7 +80,24 @@ FROM Fornecedor f, Produto p
 WHERE f.cnpj = p.cnpj_fornecedor;
 ```
 
+Funções de conversão 
+de maiúsculas e minúsculas
 
+UPPER
+LOWER
+
+
+Funções de manipulação
+de caracteres
+
+SUBSTRING
+LEN
+CHARINDEX
+LEFT
+RIGHT
+LTRIM
+RTRIM
+REPLACE
 
 ---
 
