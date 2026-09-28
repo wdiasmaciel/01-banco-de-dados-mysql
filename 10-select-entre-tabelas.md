@@ -155,6 +155,10 @@ SELECT nome
 FROM   DVD
 WHERE  nome LIKE 'O%n' 
 
+SELECT nome
+FROM   DVD
+WHERE  nome LIKE '_o%'
+
 
 
 UPPER
