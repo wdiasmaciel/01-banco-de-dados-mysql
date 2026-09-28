@@ -205,6 +205,9 @@ SELECT   nome, codgenero
 FROM     DVD
 ORDER BY codgenero, nome
 
+SELECT   nome, cidade
+FROM     cliente
+ORDER BY estado
 
 
 
