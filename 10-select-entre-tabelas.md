@@ -196,6 +196,17 @@ SELECT    cor, valor * 1.5 AS "Novo valor"
 FROM      preco
 ORDER BY "Novo valor"
 
+SELECT   codgenero, descricao
+FROM     genero
+ORDER BY 2
+
+
+SELECT   nome, codgenero 
+FROM     DVD
+ORDER BY codgenero, nome
+
+
+
 
 UPPER
 LOWER
