@@ -141,6 +141,16 @@ FROM   locacao
 WHERE  data >= '07-01-2019'
 
 
+Utilize o operador LIKE para executar pesquisas curinga de valores de string de pesquisa válidos.
+As condições de pesquisa podem conter caracteresliterais ou números.
+        ·  % denota zero ou muitos caracteres.
+        ·  _ denota um caractere.
+
+SELECT codcliente, nome
+FROM   cliente
+WHERE  nome LIKE 'D%' 
+
+
 
 
 UPPER
