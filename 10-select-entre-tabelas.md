@@ -176,6 +176,17 @@ SELECT codcliente, codDVD, data 
 FROM   locacao
 WHERE  datadevolucao IS NULL
 
+SELECT nome, estado 
+FROM   cliente
+WHERE  estado NOT IN ('RJ', 'SP')
+
+SELECT nome, cor, status, codgenero
+FROM   DVD
+WHERE  cor = 'PR' 
+OR     status = 'L'
+AND    codgenero = 3
+
+
 
 UPPER
 LOWER
