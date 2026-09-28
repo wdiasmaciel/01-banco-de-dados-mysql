@@ -136,6 +136,13 @@ FROM   emp
 Funções de conversão 
 de maiúsculas e minúsculas
 
+SELECT codcliente, data, data + 5 AS "Data máxima de devolução"
+FROM   locacao
+WHERE  data >= '07-01-2019'
+
+
+
+
 UPPER
 LOWER
 
