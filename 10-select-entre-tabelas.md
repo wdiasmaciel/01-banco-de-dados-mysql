@@ -209,6 +209,51 @@ Retorna o sinal positivo (+1), zero (0) ou negativo (-1) de uma determinada expr
 SIGN(expressao) 
 expressao – expressão numérica a ser avaliada
 
+SELECT SIGN(-10.0) Neg, SIGN(0.0) Zero, SIGN(10.0) Pos
+Neg   Zero Pos   
+----- ---- ----- 
+-1.0  .0   1.0
+
+(1 row(s) affected)
+
+SELECT cidade, estado, 
+ CASE estado
+   WHEN 'MG' THEN 'Minas Gerais'
+   WHEN 'RJ' THEN 'Rio de Janeiro'
+   WHEN 'SP' THEN 'São Paulo'
+   ELSE 'estado desconhecido'
+  END "Nome do Estado"
+FROM paciente
+Cidade			estado		Nome do Estado
+----------------  	---------	------------------
+Belo Horizonte		MG		Minas Gerais
+Sete Lagoas		MG		Minas Gerais
+Sete Lagoas		MG		Minas Gerais
+Rio de Janeiro		RJ		Rio de Janeiro
+Jacareí			SP		São Paulo
+
+SELECT codDVD, datadevolucao,
+ CASE 
+   WHEN datadevolucao BETWEEN '01-01-2019' AND '01-30-2019' THEN 'Dev. janeiro'
+   WHEN datadevolucao BETWEEN '02-01-2019' AND '02-28-2019' THEN 'Dev. fevereiro'
+   WHEN datadevolucao IS NULL THEN 'DVD não devolvido'
+   ELSE 'data desconhecida'
+  END "Data de devolução"
+FROM locacao
+
+select	codConta
+,		ABS(saldo) saldo
+,		case 
+            when saldo < 0 then 'D'
+            when saldo >= 0 then 'C'
+        end as 'D\C'
+,		case numeroAgencia
+            when 1010 then 'Savassi'
+            when 1020 then 'Centro'
+            when 1030 then 'Minas Shopping'
+            when 1040 then 'Cidade Nova'
+        end "Nome da Agência"
+from	conta
 
 ---
 
