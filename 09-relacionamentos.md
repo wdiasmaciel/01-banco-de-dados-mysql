@@ -397,7 +397,7 @@ INSERT INTO Filial (cnpj, nome, endereco) VALUES
 
 14. Quais produtos são vendidos por quilograma (kg)?
 
-15. Quais filiais não estão em Belo Horizonte?
+15. Quais filiais não estão em Belo Horizonte (`NOT LIKE '%Belo Horizonte%'`)?
 
 ---
 
