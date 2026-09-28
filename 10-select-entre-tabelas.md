@@ -115,6 +115,15 @@ pos_inicial – é a posição do caractere de início para a pesquisa da expres
 SELECT nome, CHARINDEX('i', nome, 3) As "Posição" 
 FROM   DVD
 
+Retornam parte de uma string de caracteres começando em um número específico de caracteres a partir da esquerda/direita da string.
+LEFT(expressao, pos_inicial)
+RIGHT(expressao, pos_inicial)
+expressao – é uma string ou expressão envolvendo uma coluna
+pos_inicial – é a posição inicial
+
+SELECT nome, LEFT(nome, 3) AS Esquerda, RIGHT(nome, 3) AS DIREITA 
+FROM   DVD
+
 ---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
