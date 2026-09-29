@@ -47,19 +47,39 @@ WHERE preco = 0;
 
 ```sql
 SELECT AVG(preco)
+FROM Estoque;
+```
+
+Calcular a média aritmética dos preços dos itens do estoque cujo preço é maior que zero.
+
+```sql
+SELECT AVG(preco)
 FROM Estoque
+WHERE preco > 0;
 ```
 
-4. `MIN()`:
+4. `MIN()`: apresentar o menor preço do estoque.
 
 ```sql
+SELECT MIN(preco)
+FROM Estoque;
 ```
 
-5. `MAX()`:
+Apresentar o menor preço do estoque, mas maior que zero.
 
 ```sql
+SELECT MIN(preco)
+FROM Estoque
+WHERE preco > 0;
 ```
 
+
+5. `MAX()`: apresentar o maior preço do estoque.
+
+```sql
+SELECT MAX(preco)
+FROM Estoque;
+```
 
 ### SELECT simples com WHERE e ORDER BY
 
