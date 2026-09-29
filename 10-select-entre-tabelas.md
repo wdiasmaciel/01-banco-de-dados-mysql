@@ -267,7 +267,7 @@ WHERE p.id = e.id_produto
 ORDER BY p.nome, f.nome;
 ```
 
-### SELECT com DISTINCT entre tabelas
+### SELECT com DISTINCT entre Tabelas
 
 Para saber quais fornecedores **realmente têm** produtos cadastrados (sem repetir o mesmo fornecedor várias vezes, caso ele tenha mais de um produto):
 
@@ -277,6 +277,7 @@ FROM Fornecedor f, Produto p
 WHERE f.cnpj = p.cnpj_fornecedor;
 ```
 
+<!--
 SELECT nome, salario, 12*salario+100
 FROM   emp
 
@@ -566,7 +567,7 @@ INSERT INTO mineiro (codigo, nome, cidade)
 (SELECT codcliente, nome, cidade
  FROM   cliente
  WHERE  estado = 'MG')
-
+-->
 
 ---
 
