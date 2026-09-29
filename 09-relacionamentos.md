@@ -447,8 +447,8 @@ CREATE TABLE Promocao (
   <img src="./img/funcionario.png" alt="Tabela Funcionario" width="230">
 </p>
 
-    - Insira registros na tabela funcionário.
-    - Apresente os funcionários da empresa.
+  - Insira registros na tabela funcionário.
+  - Apresente os funcionários da empresa.
 ---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
