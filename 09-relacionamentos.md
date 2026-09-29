@@ -429,11 +429,11 @@ CREATE TABLE Promocao (
 );
 ```
 
-  a. Estabeleça o relacionamento correto entre a tabela `Promocao`e a tabela `Estoque`.
+  - Estabeleça o relacionamento correto entre a tabela `Promocao`e a tabela `Estoque`.
 
-  b. Crie a tabeça `Promocao` no banco de dados `empresa`.
+  - Crie a tabela `Promocao` no banco de dados `empresa`.
 
-  c. Insira dados na tabela `Promocao`.
+  - Insira dados na tabela `Promocao`.
 
 ---
 
