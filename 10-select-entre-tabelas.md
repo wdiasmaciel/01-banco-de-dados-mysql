@@ -250,13 +250,18 @@ WHERE p.cnpj_fornecedor = f.cnpj;
 > Mas é considerada uma forma antiga e menos legível de escrever a mesma coisa. 
 > Atualmente, prefira sempre a sintaxe explícita com `JOIN`.
 
-### SELECT combinando três tabelas
+### SELECT Combinando Três Tabelas
 
 Um exemplo mais completo: nome do produto, nome da filial, preço e quantidade em estoque, relacionando informação de `Produto`, `Filial` e `Estoque` em uma única consulta.
 
 ```sql
-SELECT p.nome AS Produto, f.nome AS Filial, e.preco AS Preço, e.quantidade As Quantidade
-FROM Produto p, Estoque e, Filial f
+SELECT p.nome AS Produto, 
+       f.nome AS Filial, 
+       e.preco AS Preço, 
+       e.quantidade As Quantidade
+FROM Produto p, 
+     Estoque e, 
+     Filial f
 WHERE p.id = e.id_produto 
   AND e.cnpj_filial = f.cnpj
 ORDER BY p.nome, f.nome;
