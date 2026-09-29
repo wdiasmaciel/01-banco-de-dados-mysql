@@ -437,7 +437,11 @@ CREATE TABLE Promocao (
 
   - Apresente todas as promoções criadas pela empresa.
 
-22. Crie a tabela funcionário. Cada funcionário deve possuir nome, CPF, data de nascimento, data de contratação, endereço, telefone, cargo e salário. Cada funcionário trabalha em uma única filial da empresa. Entretanto, cada filial emprega vários funcionários. Cada funcionário possui um supervisor, mas cada supervisor pode gerenciar vários outros funcionários, formando um auto-relacionamento na própria tabela funcionário.
+22. Crie a tabela funcionário. Cada funcionário deve possuir nome, CPF, data de nascimento, data de contratação, endereço, telefone, cargo e salário. Cada funcionário trabalha em uma única filial da empresa. Entretanto, cada filial emprega vários funcionários. Cada funcionário possui um supervisor, mas cada supervisor pode gerenciar vários outros funcionários, formando um auto-relacionamento na própria tabela funcionário:
+
+    - Chave Primária (Primary Key, PK): identifica o funcionário de forma única (ex.: cpf).
+    - Chave Estrangeira (Foreign Key, FK): uma coluna criada na própria tabela que aponta para a chave primária da mesma tabela (ex.: cpf_supervisor).
+    - Valor Nulo: o topo da hierarquia (como o presidente da empresa) fica com o campo da chave estrangeira nulo (NULL), pois não tem um superior.
 
 ---
 
