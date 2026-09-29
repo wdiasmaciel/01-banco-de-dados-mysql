@@ -412,6 +412,29 @@ INSERT INTO Filial (cnpj, nome, endereco) VALUES
 
 20. Insira um novo fornecedor no banco de dados. Insira os produtos desse novo fornecedor, com as respecitivas identificações. Insira os produtos desse novo fornecedor no estoque das filiais da empresa. Apresente os dados dos produtos do novo fornecedor.
 
+21. Analise o código abaixo:
+
+```sql
+CREATE TABLE Promocao (
+    id                INT AUTO_INCREMENT,
+    data_inicio       DATE NOT NULL,
+    data_fim          DATE NOT NULL,
+    preco_normal      DECIMAL(10,2) NOT NULL,
+    preco_promocional DECIMAL(10,2) NOT NULL,
+    PRIMARY KEY (id),
+
+    -- Constraint de tabela referenciando duas colunas:
+    CONSTRAINT check_periodo CHECK (data_fim >= data_inicio),
+    CONSTRAINT check_preco   CHECK (preco_promo < preco_normal)
+);
+```
+
+    a. Estabeleça o relacionamento correto entre a tabela `Promocao`e a tabela `Estoque`.
+
+    b. Crie a tabeça `Promocao` no banco de dados `empresa`.
+
+    c. Insira dados na tabela `Promocao`.
+
 ---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
