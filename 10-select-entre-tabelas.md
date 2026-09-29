@@ -277,6 +277,62 @@ FROM Fornecedor f, Produto p
 WHERE f.cnpj = p.cnpj_fornecedor;
 ```
 
+# Exercícios
+
+## Agregações, DISTINCT e Subqueries
+
+---
+
+## Parte 1 — Funções de agregação simples
+
+**1.** Quantos fornecedores estão cadastrados na tabela `Fornecedor`? Use `COUNT()`.
+
+**2.** Quantos produtos estão cadastrados na tabela `Produto`?
+
+**3.** Qual é a soma total (`SUM()`) da coluna `quantidade` de toda a tabela `Estoque`, ou seja: quantas unidades de produtos existem no estoque somando todas as filiais e todos os produtos?
+
+**4.** Qual é o preço médio (`AVG()`) de todos os itens registrados na tabela `Estoque`?
+
+**5.** Qual é o maior preço (`MAX()`) já registrado na tabela `Estoque`?
+
+**6.** Qual é o menor preço (`MIN()`) já registrado na tabela `Estoque`?
+
+**7.** Calcule o valor total em estoque (soma de `preco * quantidade` de cada linha) de toda a tabela `Estoque`. Dica: `SUM()` aceita uma expressão como argumento, não apenas uma coluna.
+
+**8.** Quantas linhas existem na tabela `Estoque` cuja `validade` é anterior a `'2027-01-01'`? Use `COUNT()` combinado com `WHERE`.
+
+---
+
+## Parte 2 — DISTINCT
+
+**9.** Liste, sem repetição, todos os valores de `cnpj_filial` que aparecem na tabela `Estoque` (ou seja, quais filiais efetivamente têm algum item em estoque).
+
+**10.** Liste, sem repetição, todos os valores de `id_produto` que aparecem na tabela `Estoque` (ou seja, quais produtos têm estoque em pelo menos uma filial).
+
+**11.** Quantos fornecedores **diferentes** possuem pelo menos um produto cadastrado? Use `COUNT(DISTINCT ...)` diretamente sobre a coluna `cnpj_fornecedor` da tabela `Produto`.
+
+**12.** Quantas filiais **diferentes** vendem o produto de `id = 1`? Use `COUNT(DISTINCT ...)` com uma condição no `WHERE`.
+
+---
+
+## Parte 3 — Subqueries envolvendo mais de uma tabela (sem JOIN)
+
+**13.** Qual é a soma da `quantidade` em estoque do produto chamado `'Suco de Laranja 1L'`, considerando todas as filiais? (Você vai precisar de uma subquery para descobrir o `id` desse produto na tabela `Produto`.)
+
+**14.** Qual é o preço médio do produto `'Fone de Ouvido Bluetooth'` entre as filiais que o vendem?
+
+**15.** Quantas filiais vendem o produto `'Refrigerante Cola 2L'`? Resolva usando subquery (sem citar o `id` do produto diretamente no `WHERE`, descubra-o com uma subquery a partir do nome).
+
+**16.** Liste os nomes dos produtos que **não aparecem** na tabela `Estoque` (ou seja, produtos cadastrados que ainda não são vendidos nas filiais). Dica: use `NOT IN` com uma subquery.
+
+**17.** Liste os nomes dos fornecedores que **não possuem** nenhum produto cadastrado na tabela `Produto`. Dica: mesma lógica do exercício anterior, mas relacionando `Fornecedor` e `Produto`.
+
+**18.** Descubra qual é a maior `quantidade` registrada em um único item de estoque e, em seguida, retorne o `id_produto` e o `cnpj_filial` correspondentes a esse valor. Primeiro descubra o valor com `MAX()`, depois use esse valor em uma subquery no `WHERE` de uma segunda consulta.
+
+**19.** Retorne o menor `preco` entre os itens vendidos na `'Filial Savassi'`. Você vai precisar de uma subquery para obter o `cnpj` dessa filial a partir do nome, e então aplicar `MIN()` filtrando por esse `cnpj`.
+
+**20.** Liste os nomes dos produtos cuja observação (na tabela `Identificacao`) contenha a palavra `'garantia'`. Descubra os `id`s correspondentes com uma subquery usando `LIKE` sobre `Identificacao`, depois busque os nomes em `Produto` com `WHERE id IN (...)`.
+
 ---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
