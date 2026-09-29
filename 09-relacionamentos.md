@@ -444,7 +444,7 @@ CREATE TABLE Promocao (
     - Valor Nulo: o topo da hierarquia (como o presidente da empresa) fica com o campo da chave estrangeira nulo (NULL), pois não tem um superior.
 
 <p style="text-align: center;">
-  <img src="./img/funcionario.png" alt="Tabela Funcionario" width="240">
+  <img src="./img/funcionario.png" alt="Tabela Funcionario" width="230">
 </p>
 
 ---
