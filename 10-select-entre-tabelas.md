@@ -44,13 +44,51 @@ WHERE cnpj_fornecedor = (
 
 ### Quais produtos possuem preço maior que o do produto 3?  
     
-    SELECT empno, nome
-    FROM   emp
-    WHERE  salario > = 
-                   (SELECT salario
-                    FROM   emp
-                    WHERE  empno > 7749)
-            
+```sql
+SELECT id_produto, preco
+FROM   Estoque
+WHERE  preco >= (
+                  SELECT preco
+                  FROM   Estoque
+                  WHERE  id_produto > 3
+                );
+```
+
+Se, nos dados de exemplo, mais de um produto tiver `id_produto > 3` (o que é o caso — temos os produtos 4, 5 e 6), esse comando falha com o erro:
+
+```text
+ERROR 1242 (21000): Subquery returns more than 1 row
+```
+
+O operador `>=` espera comparar `preco` com um único valor, mas a subquery retorna vários preços (um para cada produto com `id_produto > 3`). O MySQL não sabe com qual desses valores comparar.
+
+### ANY
+
+Com `ANY`, aceita a linha se `preco` for maior ou igual a pelo menos um dos valores retornados pela subquery:
+
+```sql
+SELECT id_produto, preco
+FROM   Estoque
+WHERE  preco >= ANY (
+                       SELECT preco
+                       FROM   Estoque
+                       WHERE  id_produto > 3
+                     );
+```
+
+### ALL
+
+Com ALL, aceita a linha só se `preco` for maior ou igual a todos os valores retornados pela subquery (ou seja, maior ou igual ao maior preço do grupo):
+
+```sql
+SELECT id_produto, preco
+FROM   Estoque
+WHERE  preco >= ALL (
+                       SELECT preco
+                       FROM   Estoque
+                       WHERE  id_produto > 3
+                     );            
+```
     
     SELECT codDVD, nome
 FROM   DVD 
