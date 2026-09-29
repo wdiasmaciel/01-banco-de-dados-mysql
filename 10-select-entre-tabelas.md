@@ -28,6 +28,9 @@ Principais Funções de Agregação:
 1. `COUNT()`:
 
 ```sql
+SELECT COUNT(*)
+FROM Estoque
+WHERE quantidade = 0;
 ```
 
 2. `SUM()`:
