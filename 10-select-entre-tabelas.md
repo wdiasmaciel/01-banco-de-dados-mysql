@@ -277,6 +277,14 @@ FROM Fornecedor f, Produto p
 WHERE f.cnpj = p.cnpj_fornecedor;
 ```
 
+Para saber a quantidade de fornecedores que **realmente têm** produtos cadastrados (sem repetir o mesmo fornecedor várias vezes, caso ele tenha mais de um produto):
+
+```sql
+SELECT COUNT(DISTINCT f.nome)
+FROM Fornecedor f, Produto p
+WHERE f.cnpj = p.cnpj_fornecedor;
+```
+
 # Exercícios
 
 ## Agregações, DISTINCT e Subqueries
