@@ -120,6 +120,8 @@ WHERE  e1.preco = (
 
 ### Subquery Correlacionando Consigo Mesma
 
+A versão abaixo não exclui o próprio produto referência "Arroz Tipo 1 5kg": ele aparece no resultado, porque satisfaz a própria condição.
+
 ```sql
 SELECT id, nome, cnpj_fornecedor
 FROM   Produto
@@ -128,6 +130,18 @@ WHERE  cnpj_fornecedor = (
                            FROM   Produto
                            WHERE  nome = 'Arroz Tipo 1 5kg'
                          );
+```
+Se for necessário ver só os outros produtos do mesmo fornecedor, sem incluir o produto de referência, basta adicionar uma segunda condição:
+
+```sql
+SELECT id, nome, cnpj_fornecedor
+FROM   Produto
+WHERE  cnpj_fornecedor = (
+                           SELECT cnpj_fornecedor
+                           FROM   Produto
+                           WHERE  nome = 'Arroz Tipo 1 5kg'
+                         )
+  AND  nome <> 'Arroz Tipo 1 5kg'; -- <> e != são os operadores 'diferente'.
 ```
 
 Qual o empregado possui o maior salário na empresa?   
