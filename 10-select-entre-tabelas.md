@@ -42,8 +42,7 @@ WHERE cnpj_fornecedor = (
 );
 ```
 
-
-Quais empregados possuem salário maior que o do empregado 7749?  
+### Quais produtos possuem preço maior que o do produto 3?  
     
     SELECT empno, nome
     FROM   emp
