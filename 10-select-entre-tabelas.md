@@ -25,6 +25,31 @@ Principais Funções de Agregação:
 • `MIN()`: retorna o menor valor de um conjunto de dados.
 • `MAX()`: retorna o maior valor de um conjunto de dados.
 
+1. `COUNT()`:
+
+```sql
+```
+
+2. `SUM()`:
+
+```sql
+```
+
+3. `AVG()`:
+
+```sql
+```
+
+4. `MIN()`:
+
+```sql
+```
+
+5. `MAX()`:
+
+```sql
+```
+
 
 ### SELECT simples com WHERE e ORDER BY
 
