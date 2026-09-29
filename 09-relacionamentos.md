@@ -429,12 +429,14 @@ CREATE TABLE Promocao (
 );
 ```
 
-  - Estabeleça o relacionamento correto entre a tabela `Promocao`e a tabela `Estoque`.
+  - Cada item do estoque pode aparecer em várias promoções ao longo do tempo. Entretanto, a empresa decidiu que cada promoção é exclusiva para cada item do estoque. Estabeleça o relacionamento correto entre a tabela `Promocao`e a tabela `Estoque`. 
 
   - Crie a tabela `Promocao` no banco de dados `empresa`.
 
   - Insira dados na tabela `Promocao`.
 
+  - Apresente todas as promoções criadas pela empresa.
+  
 ---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
