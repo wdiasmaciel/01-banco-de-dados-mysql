@@ -217,14 +217,22 @@ WHERE  cnpj_fornecedor = (
   AND  nome <> 'Arroz Tipo 1 5kg'; -- <> e != são os operadores 'diferente'.
 ```
 
-Qual o empregado possui o maior salário na empresa?   
-   
-   SELECT empno, nome, salario
-   FROM   emp
-   WHERE  salario =
-       (SELECT MAX(salario)
-        FROM   emp)	
+### Subqueries e Funções de Agregação
 
+Apresentar os dados do produto mais caro em estoque,   
+
+```sql   
+   SELECT *
+   FROM   Produto
+   WHERE  id = (
+                SELECT id_produto
+                FROM   Estoque 
+                WHERE  preco = (
+                                SELECT MAX(preco)
+                                FROM   Estoque
+                               )
+               );	
+```
 
 ### SELECT combinando duas tabelas (sem join)
 
