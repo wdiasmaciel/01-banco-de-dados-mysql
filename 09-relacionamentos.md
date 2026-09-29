@@ -443,7 +443,7 @@ CREATE TABLE Promocao (
     - Chave Estrangeira (Foreign Key, FK): uma coluna criada na própria tabela que aponta para a chave primária da mesma tabela (ex.: cpf_supervisor).
     - Valor Nulo: o topo da hierarquia (como o presidente da empresa) fica com o campo da chave estrangeira nulo (NULL), pois não tem um superior.
 
-<p style="width: 100%; text-align: center; border: 10px solid black">
+<p align="center">
   <img src="./img/funcionario.png" alt="Tabela Funcionario" width="230">
 </p>
 
