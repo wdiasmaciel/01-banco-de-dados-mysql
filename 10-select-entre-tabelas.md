@@ -54,7 +54,7 @@ WHERE  preco >= (
                 );
 ```
 
-Se, nos dados de exemplo, mais de um produto tiver `id_produto > 3` (o que é o caso — temos os produtos 4, 5 e 6), esse comando falha com o erro:
+Se, nos dados de exemplo, mais de um produto tiver `id_produto > 3` (o que é o caso, pois temos os produtos 4, 5 e 6), esse comando falha com o erro:
 
 ```text
 ERROR 1242 (21000): Subquery returns more than 1 row
@@ -89,7 +89,7 @@ WHERE  preco >= ALL (
                        WHERE  id_produto > 3
                      );            
 ```
-    
+
     SELECT codDVD, nome
 FROM   DVD 
 WHERE  cor = 
