@@ -90,16 +90,30 @@ WHERE  preco >= ALL (
                      );            
 ```
 
-    SELECT codDVD, nome
-FROM   DVD 
-WHERE  cor = 
-  (SELECT cor
-   FROM   DVD 
-   WHERE  nome = 'Top Gang')
-AND codgenero =
-   (SELECT codgenero
-    FROM   DVD
-    WHERE  nome = 'O sexto sentido') 
+### Várias Subqueries
+
+Neste exemplo, buscamos itens de estoque cujo `preco` seja igual ao preço do `'Suco de Laranja 1L'` vendido na `Filial Savassi` e cujo `cnpj_filial` seja o da `'Filial Centro'`.
+
+```sql
+SELECT id_produto, preco
+FROM   Estoque e1
+WHERE  e1.preco = (
+                    SELECT preco
+                    FROM   Estoque e2, Produto p
+                    WHERE  p.id = e2.id_produto
+                      AND  p.nome = 'Suco de Laranja 1L'
+                      AND  e2.cnpj_filial = (
+                                              SELECT cnpj
+                                              FROM   Filial
+                                              WHERE  nome = 'Filial Savassi' 
+                                            )
+                  )
+  AND  e1.cnpj_filial = (
+                         SELECT cnpj
+                         FROM   Filial
+                         WHERE  nome = 'Filial Centro'
+                        );
+```
 
 Quais os empregados trabalham no mesmo departamento do
 empregado 7654?
