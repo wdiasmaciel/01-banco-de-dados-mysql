@@ -11,7 +11,7 @@
 
 ---
 
-## Exemplos de SELECT entre tabelas
+## Funções de Agregação e SELECT entre tabelas
 
 
 ### Funções de agregação
