@@ -19,6 +19,7 @@
 Funções de agregação em SQL são comandos que processam várias linhas de dados para retornar apenas um único valor resumido.
 
 Principais Funções de Agregação:
+
 • `COUNT()`: conta o número de linhas ou de valores não nulos em uma coluna.
 • `SUM()`: soma todos os valores numéricos de uma coluna.
 • `AVG()`: calcula a média aritmética dos valores de uma coluna numérica.
