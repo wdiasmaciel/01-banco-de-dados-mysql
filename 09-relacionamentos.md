@@ -437,8 +437,8 @@ CREATE TABLE Promocao (
 
   - Apresente todas as promoções criadas pela empresa.
 
-22. Crie a tabela funcionário. Cada funcionário deve possuir nome, CPF, data de nascimento, data de contratação, endereço, telefone, cargo e salário. Cada funcionário trabalha em um única filial da empresa. Entretanto, cada filial emprega vários funcionários. Cada funcionário possui um gerente, mas um gerente gerencia vários outros funcionários, formando um auto-relacionamento na própria tabela funcionário.
- 
+22. Crie a tabela funcionário. Cada funcionário deve possuir nome, CPF, data de nascimento, data de contratação, endereço, telefone, cargo e salário. Cada funcionário trabalha em uma única filial da empresa. Entretanto, cada filial emprega vários funcionários. Cada funcionário possui um supervisor, mas cada supervisor pode gerenciar vários outros funcionários, formando um auto-relacionamento na própria tabela funcionário.
+
 ---
 
 <table width="100%" style="border: none; border-collapse: collapse;">
