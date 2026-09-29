@@ -115,6 +115,8 @@ WHERE  e1.preco = (
                         );
 ```
 
+**OBS:** com os dados atuais inseridos no banco, neum registro é retornado. Na última subquery, substitua 'Filial Centro' por 'Filial Savassi'. Explique a diferença de resultados.
+
 Quais os empregados trabalham no mesmo departamento do
 empregado 7654?
 
