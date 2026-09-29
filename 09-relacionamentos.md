@@ -419,13 +419,13 @@ CREATE TABLE Promocao (
     id                INT AUTO_INCREMENT,
     data_inicio       DATE NOT NULL,
     data_fim          DATE NOT NULL,
-    preco_normal      DECIMAL(10,2) NOT NULL,
+    preco_custo      DECIMAL(10,2) NOT NULL,
     preco_promocional DECIMAL(10,2) NOT NULL,
     PRIMARY KEY (id),
 
     -- Constraint de tabela referenciando duas colunas:
     CONSTRAINT check_periodo CHECK (data_fim >= data_inicio),
-    CONSTRAINT check_preco   CHECK (preco_promo < preco_normal)
+    CONSTRAINT check_preco   CHECK (preco_promocional >= preco_custo)
 );
 ```
 
