@@ -25,7 +25,9 @@ Principais Funções de Agregação:
 • `MIN()`: retorna o menor valor de um conjunto de dados.
 • `MAX()`: retorna o maior valor de um conjunto de dados.
 
-1. `COUNT()`:
+Exemplos:
+
+1. `COUNT()`: apresentar quantos produtos não estão disponíveis no estoque, estão com quantidade igual a zero. 
 
 ```sql
 SELECT COUNT(*)
@@ -33,9 +35,12 @@ FROM Estoque
 WHERE quantidade = 0;
 ```
 
-2. `SUM()`:
+2. `SUM()`: somar a quantidade de produtos no estoque com preço igual a zero.
 
 ```sql
+SELECT SUM(quantidade)
+FROM Estoque
+WHERE preco = 0;
 ```
 
 3. `AVG()`:
