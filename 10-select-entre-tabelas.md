@@ -234,7 +234,7 @@ Apresentar os dados do produto mais caro em estoque,
                );	
 ```
 
-### SELECT combinando duas tabelas (sem join)
+### SELECT Combinando Duas Tabelas (Sem JOIN)
 
 1. Sem o `JOIN` explícito, é possível combinar tabelas listando-as no `FROM` separadas por vírgula e relacionando-as no `WHERE`. 
 
@@ -248,7 +248,7 @@ WHERE p.cnpj_fornecedor = f.cnpj;
 
 > **OBS:** essa consulta produz exatamente o mesmo resultado que um `INNER JOIN`.
 > Mas é considerada uma forma antiga e menos legível de escrever a mesma coisa. 
-> Hoje em dia, prefira sempre a sintaxe explícita com `JOIN`.
+> Atualmente, prefira sempre a sintaxe explícita com `JOIN`.
 
 ### SELECT combinando três tabelas
 
