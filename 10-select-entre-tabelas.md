@@ -43,9 +43,11 @@ FROM Estoque
 WHERE preco = 0;
 ```
 
-3. `AVG()`:
+3. `AVG()`: calcular a média aritmética dos preços dos itens do estoque.
 
 ```sql
+SELECT AVG(preco)
+FROM Estoque
 ```
 
 4. `MIN()`:
