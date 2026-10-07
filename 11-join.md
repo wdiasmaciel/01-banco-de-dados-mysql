@@ -211,6 +211,19 @@ FROM (
 ) AS resultado_uniao;
 ```
 
+**OBS**:
+
+Pontos importantes:
+
+1. O alias da subquery é obrigatório. O MySQL exige que toda tabela derivada no FROM tenha um nome (`AS resultado_uniao`, nos exemplos). Sem ele, o comando falha com erro de sintaxe.
+
+2. `COUNT(*)` conta todas as linhas, incluindo as que têm `NULL`. Como essa consulta usa `LEFT JOIN` e `RIGHT JOIN`, é provável que apareçam linhas com `produto = NULL` (fornecedores sem produto) ou `fornecedor = NULL` (produtos sem fornecedor, se existissem). 
+
+3. COUNT(*) conta essas linhas normalmente, diferentemente de COUNT(coluna), que ignora NULLs daquela coluna específica.
+
+4. Por que `UNION ALL` e não `UNION`? 
+  - `UNION ALL` mantém linhas duplicadas entre os dois SELECTs (o que provavelmente infla a contagem, já que, como vimos antes, `RIGHT JOIN` e `LEFT JOIN` produzem resultados sobrepostos quando `cnpj_fornecedor` é `NOT NULL`. 
+  - Se você quiser contar apenas combinações distintas, use `UNION` (sem `ALL`) dentro da subquery.
 ---
 
 ---
