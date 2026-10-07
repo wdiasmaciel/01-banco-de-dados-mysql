@@ -228,7 +228,7 @@ Pontos importantes:
 ---
 # Exercícios
 
-Nos exercícios abaixo, empregue `JOIN`.
+Nos exercícios abaixo, empregue a instrução `JOIN`.
 
 ## 1) Joins básicos no banco empresa
 
@@ -275,15 +275,17 @@ Considere as tabelas `Cliente`, `Reserva` e `Destino`:
 19. Exiba os clientes que ainda não fizeram reserva.
 20. Exiba todos os clientes e destinos, com ou sem de reserva.
 
-## 5) Outros cenários: farmácia e clínica
+## 5) Banco de uma farmácia
 
 Considere as tabelas `Medicamento`, `FornecedorFarmacia` e `Compra`:
 
-- `Medicamento(id_medicamento, nome, laboratorio)`
-- `FornecedorFarmacia(id_fornecedor, nome, cidade)`
+- `Medicamento(id_medicamento, nome, preco, validade, laboratorio)`
+- `Fornecedor(id_fornecedor, nome, cidade)`
 - `Compra(id_compra, id_medicamento, id_fornecedor, quantidade, data_compra)`
 
-19. Liste todos os medicamentos com o nome do fornecedor que os forneceu, incluindo medicamentos que ainda não tiveram compra registrada.
+21. Liste todos os medicamentos com o nome do fornecedor que os forneceu, incluindo medicamentos que ainda não tiveram compra registrada.
+
+## 6) Banco de uma clínica
 
 Considere as tabelas `Paciente`, `Consulta` e `Medico`:
 
@@ -291,7 +293,7 @@ Considere as tabelas `Paciente`, `Consulta` e `Medico`:
 - `Medico(id_medico, nome, especialidade)`
 - `Consulta(id_consulta, id_paciente, id_medico, data_consulta, valor)`
 
-20. Liste todos os pacientes e suas consultas, incluindo pacientes sem consultas.
+22. Liste todos os pacientes e suas consultas, incluindo pacientes sem consultas.
 
 > Dica: tente resolver os exercícios primeiro em papel e depois teste as consultas no MySQL, observando como os `NULL`s aparecem em `LEFT JOIN` e `RIGHT JOIN`.
 
