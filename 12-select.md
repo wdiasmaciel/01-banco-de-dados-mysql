@@ -39,6 +39,18 @@ FROM Produto p
 GROUP BY p.nome;
 ```
 
+```sql
+SELECT p.nome
+FROM Produto p
+GROUP BY p.id, p.nome;
+```
+
+```sql
+SELECT p.id, p.nome
+FROM Produto p
+GROUP BY p.id, p.nome;
+```
+
 ### COUNT(): em quantas filiais cada produto é vendido
 
 ```sql
