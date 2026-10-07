@@ -155,8 +155,6 @@ Em cada exercício, escreva uma consulta SQL usando `GROUP BY`. Quando o enuncia
 
 ### 1) Banco empresa
 
-Considere as tabelas `Produto(id, nome)` e `Estoque(id_produto, id_filial, quantidade, preco)`.
-
 1. Mostre cada produto e a quantidade de filiais em que ele está disponível. Exiba somente produtos presentes em pelo menos uma filial.
 2. Calcule a quantidade total em estoque de cada produto e exiba somente aqueles com mais de 100 unidades somando todas as filiais.
 3. Calcule o preço médio de cada produto entre as filiais e ordene o resultado do maior para o menor preço médio.
@@ -166,7 +164,14 @@ Considere as tabelas `Produto(id, nome)` e `Estoque(id_produto, id_filial, quant
 
 ### 2) Banco de uma padaria
 
-Considere as tabelas `Cliente(id_cliente, nome)`, `Pedido(id_pedido, id_cliente, data_pedido, total)`, `Produto(id_produto, nome, preco)` e `ItemPedido(id_pedido, id_produto, quantidade)`.
+Considere as tabelas:
+`Cliente(id_cliente, nome)`, 
+
+`Pedido(id_pedido, id_cliente, data_pedido, total)`, 
+
+`Produto(id_produto, nome, preco)` e 
+
+`ItemPedido(id_pedido, id_produto, quantidade)`.
 
 7. Mostre cada cliente e a quantidade de pedidos realizados. Inclua somente clientes que fizeram pelo menos um pedido.
 8. Calcule o valor total dos pedidos de cada cliente e exiba somente os clientes cujo total ultrapasse R$ 500,00.
@@ -176,7 +181,12 @@ Considere as tabelas `Cliente(id_cliente, nome)`, `Pedido(id_pedido, id_cliente,
 
 ### 3) Banco de uma agência de viagens
 
-Considere as tabelas `Cliente(id_cliente, nome)`, `Reserva(id_reserva, id_cliente, id_destino, data_viagem, valor)` e `Destino(id_destino, nome_destino, pais)`.
+Considere as tabelas:
+`Cliente(id_cliente, nome)`, 
+
+`Reserva(id_reserva, id_cliente, id_destino, data_viagem, valor)` e 
+
+`Destino(id_destino, nome_destino, pais)`.
 
 12. Mostre cada destino e a quantidade de reservas realizadas para ele. Exiba somente destinos com pelo menos cinco reservas.
 13. Calcule o valor total das reservas de cada destino e exiba somente aqueles cujo total seja superior a R$ 5.000,00.
@@ -185,7 +195,13 @@ Considere as tabelas `Cliente(id_cliente, nome)`, `Reserva(id_reserva, id_client
 
 ### 4) Banco de uma clínica médica
 
-Considere as tabelas `Paciente(id_paciente, nome)`, `Medico(id_medico, nome, especialidade)` e `Consulta(id_consulta, id_paciente, id_medico, data_consulta, valor)`.
+Considere as tabelas: 
+
+`Paciente(id_paciente, nome)`, 
+
+`Medico(id_medico, nome, especialidade)` e 
+
+`Consulta(id_consulta, id_paciente, id_medico, data_consulta, valor)`.
 
 16. Conte as consultas realizadas por cada médico e exiba somente médicos com mais de 20 consultas.
 17. Calcule o valor médio das consultas de cada médico e mostre somente aqueles cuja média seja superior a R$ 150,00.
@@ -193,12 +209,16 @@ Considere as tabelas `Paciente(id_paciente, nome)`, `Medico(id_medico, nome, esp
 
 ### 5) Banco de uma farmácia
 
-Considere as tabelas `Medicamento(id_medicamento, nome, preco)`, `Fornecedor(id_fornecedor, nome, cidade)` e `Compra(id_compra, id_medicamento, id_fornecedor, quantidade, data_compra)`.
+Considere as tabelas: 
+
+`Medicamento(id_medicamento, nome, preco)`, 
+
+`Fornecedor(id_fornecedor, nome, cidade)` e 
+
+`Compra(id_compra, id_medicamento, id_fornecedor, quantidade, data_compra)`.
 
 19. Conte quantas compras foram realizadas de cada fornecedor e exiba somente fornecedores com mais de 10 compras.
 20. Calcule a quantidade total comprada de cada medicamento e exiba somente medicamentos com mais de 100 unidades compradas.
-
-
 
 <!--
 SELECT nome, salario, 12*salario+100
