@@ -108,7 +108,11 @@ ORDER BY preco_medio DESC;
 
 ### HAVING: filtrando grupos após a agregação
 
-`HAVING` funciona como um `WHERE`, mas aplicado **depois** do `GROUP BY`: ou seja, filtra grupos com base no resultado da agregação, algo que o `WHERE` não consegue fazer diretamente. Aqui, mostramos apenas os produtos vendidos em **mais de uma** filial:
+`HAVING` funciona como um `WHERE`, mas aplicado **depois** do `GROUP BY`.
+
+Ou seja: filtra grupos com base no resultado da agregação, algo que o `WHERE` não consegue fazer diretamente. 
+
+Aqui, mostramos apenas os produtos vendidos em **mais de uma** filial:
 
 ```sql
 SELECT p.nome AS produto, COUNT(*) AS qtd_filiais
