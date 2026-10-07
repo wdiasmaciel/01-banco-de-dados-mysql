@@ -149,6 +149,54 @@ ORDER BY 'preco médio' DESC;
 
 # Exercícios
 
+## Exercícios sobre GROUP BY e HAVING
+
+Em cada exercício, escreva uma consulta SQL usando `GROUP BY`. Quando o enunciado pedir para filtrar grupos por uma contagem, soma ou média, use `HAVING`.
+
+### 1) Banco empresa
+
+Considere as tabelas `Produto(id, nome)` e `Estoque(id_produto, id_filial, quantidade, preco)`.
+
+1. Mostre cada produto e a quantidade de filiais em que ele está disponível. Exiba somente produtos presentes em pelo menos uma filial.
+2. Calcule a quantidade total em estoque de cada produto e exiba somente aqueles com mais de 100 unidades somando todas as filiais.
+3. Calcule o preço médio de cada produto entre as filiais e ordene o resultado do maior para o menor preço médio.
+4. Mostre o maior e o menor preço de cada produto. Exiba somente os produtos cuja diferença entre esses preços seja maior que R$ 20,00.
+5. Calcule o total de unidades em estoque em cada filial e exiba somente as filiais com mais de 500 unidades.
+6. Conte em quantas filiais cada produto é vendido e exiba somente aqueles disponíveis em pelo menos três filiais.
+
+### 2) Banco de uma padaria
+
+Considere as tabelas `Cliente(id_cliente, nome)`, `Pedido(id_pedido, id_cliente, data_pedido, total)`, `Produto(id_produto, nome, preco)` e `ItemPedido(id_pedido, id_produto, quantidade)`.
+
+7. Mostre cada cliente e a quantidade de pedidos realizados. Inclua somente clientes que fizeram pelo menos um pedido.
+8. Calcule o valor total dos pedidos de cada cliente e exiba somente os clientes cujo total ultrapasse R$ 500,00.
+9. Para cada produto vendido, mostre a quantidade total de unidades vendidas. Exiba somente os produtos com mais de 30 unidades vendidas.
+10. Calcule o valor médio dos pedidos de cada cliente e mostre somente aqueles cuja média seja maior que R$ 80,00.
+11. Conte quantos pedidos foram feitos em cada data e exiba somente as datas com mais de 10 pedidos.
+
+### 3) Banco de uma agência de viagens
+
+Considere as tabelas `Cliente(id_cliente, nome)`, `Reserva(id_reserva, id_cliente, id_destino, data_viagem, valor)` e `Destino(id_destino, nome_destino, pais)`.
+
+12. Mostre cada destino e a quantidade de reservas realizadas para ele. Exiba somente destinos com pelo menos cinco reservas.
+13. Calcule o valor total das reservas de cada destino e exiba somente aqueles cujo total seja superior a R$ 5.000,00.
+14. Calcule o valor médio das reservas por país e exiba somente os países com média superior a R$ 1.000,00.
+15. Mostre cada cliente e o valor da reserva mais cara que realizou. Inclua somente clientes cuja reserva mais cara tenha custado mais de R$ 2.000,00.
+
+### 4) Banco de uma clínica médica
+
+Considere as tabelas `Paciente(id_paciente, nome)`, `Medico(id_medico, nome, especialidade)` e `Consulta(id_consulta, id_paciente, id_medico, data_consulta, valor)`.
+
+16. Conte as consultas realizadas por cada médico e exiba somente médicos com mais de 20 consultas.
+17. Calcule o valor médio das consultas de cada médico e mostre somente aqueles cuja média seja superior a R$ 150,00.
+18. Calcule o valor total das consultas por especialidade e exiba somente especialidades com arrecadação superior a R$ 10.000,00.
+
+### 5) Banco de uma farmácia
+
+Considere as tabelas `Medicamento(id_medicamento, nome, preco)`, `Fornecedor(id_fornecedor, nome, cidade)` e `Compra(id_compra, id_medicamento, id_fornecedor, quantidade, data_compra)`.
+
+19. Conte quantas compras foram realizadas de cada fornecedor e exiba somente fornecedores com mais de 10 compras.
+20. Calcule a quantidade total comprada de cada medicamento e exiba somente medicamentos com mais de 100 unidades compradas.
 
 
 
@@ -457,3 +505,4 @@ INSERT INTO mineiro (codigo, nome, cidade)
     </td>
   </tr>
 </table>
+

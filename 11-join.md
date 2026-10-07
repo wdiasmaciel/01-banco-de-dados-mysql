@@ -4,7 +4,7 @@
       <a href="10-select-entre-tabelas.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="12-select.md">Próximo</a>
+      <a href="12-grup-by-having.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -313,7 +313,7 @@ Considere as tabelas `Paciente`, `Consulta` e `Medico`:
       <a href="10-select-entre-tabelas.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="12-select.md">Próximo</a>
+      <a href="12-grup-by-having.md">Próximo</a>
     </td>
   </tr>
 </table>
