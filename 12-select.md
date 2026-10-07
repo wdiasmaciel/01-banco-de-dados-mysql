@@ -145,6 +145,11 @@ HAVING AVG(e.preco) > 20.00
 ORDER BY 'preco médio' DESC;
 ```
 
+---
+
+# Exercícios
+
+
 
 
 <!--
