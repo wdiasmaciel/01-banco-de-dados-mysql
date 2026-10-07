@@ -4,7 +4,7 @@
       <a href="09-relacionamentos.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="11-select.md">Próximo</a>
+      <a href="11-join.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -349,7 +349,7 @@ WHERE f.cnpj = p.cnpj_fornecedor;
       <a href="09-relacionamentos.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="11-select.md">Próximo</a>
+      <a href="11-join.md">Próximo</a>
     </td>
   </tr>
 </table>
