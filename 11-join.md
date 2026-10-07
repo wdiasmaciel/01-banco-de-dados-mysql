@@ -136,21 +136,27 @@ ORDER BY f.nome, p.nome;
 
 ### 5.5 "FULL OUTER JOIN" no MySQL
 
-O MySQL **não possui** o comando `FULL OUTER JOIN` nativamente (diferente de PostgreSQL e SQL Server). Para simular esse comportamento — trazer tanto os fornecedores sem produto quanto (hipotéticos) produtos sem fornecedor — combinamos um `LEFT JOIN` e um `RIGHT JOIN` com `UNION`:
+O MySQL **não possui** o comando `FULL OUTER JOIN` nativamente (diferente de PostgreSQL e SQL Server). 
+
+Para simular esse comportamento. trazer tanto os fornecedores sem produto quanto (hipotéticos) produtos sem fornecedor, combinamos um `LEFT JOIN` e um `RIGHT JOIN` com `UNION`:
 
 ```sql
 SELECT f.nome AS fornecedor, p.nome AS produto
 FROM Fornecedor f
-LEFT JOIN Produto p ON p.cnpj_fornecedor = f.cnpj
+LEFT JOIN Produto p 
+ON f.cnpj = p.cnpj_fornecedor
 
 UNION
 
 SELECT f.nome AS fornecedor, p.nome AS produto
 FROM Fornecedor f
-RIGHT JOIN Produto p ON p.cnpj_fornecedor = f.cnpj;
+RIGHT JOIN Produto p 
+ON f.cnpj = p.cnpj_fornecedor
 ```
 
-> `UNION` (sem `ALL`) também elimina automaticamente as linhas duplicadas entre os dois resultados — outro conceito que vale reforçar aqui.
+**OBS**:
+
+> `UNION` (sem `ALL`) também elimina automaticamente as linhas duplicadas entre os dois resultados.
 
 ---
 
