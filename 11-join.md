@@ -38,6 +38,7 @@ JOIN Produto p
 ON f.cnpj = p.cnpj_fornecedor 
 ORDER BY f.nome;
 ```
+
 **OBS**:
 
 *Fornecedores sem produto (Epsilon, Zeta, Theta) **não aparecem** no resultado.*
@@ -61,6 +62,8 @@ FROM Fornecedor f
 LEFT OUTER JOIN Produto p ON p.cnpj_fornecedor = f.cnpj
 ORDER BY f.nome;
 ```
+
+**OBS**:
 
 *Agora Epsilon, Zeta e Theta aparecem no resultado, com `produto = NULL`.*
 
