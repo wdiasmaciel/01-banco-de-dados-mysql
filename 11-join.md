@@ -44,7 +44,7 @@ ORDER BY f.nome;
 
 ### 5.2 LEFT JOIN (ou LEFT OUTER JOIN)
 
-Retorna **todas** as linhas da tabela à **esquerda** (`Fornecedor`), mesmo que não haja correspondência em `Produto`. Nesse caso, as colunas vindas de `Produto` aparecem como `NULL`.
+Retorna **todas** as linhas da tabela à **esquerda** (`Fornecedor`), mesmo que não haja correspondência na tabela da direita, que é a tabela `Produto`. Nesse caso, as colunas vindas de `Produto` aparecem como `NULL`.
 
 ```sql
 SELECT f.nome AS fornecedor, p.nome AS produto
