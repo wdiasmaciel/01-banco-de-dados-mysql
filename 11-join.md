@@ -236,6 +236,7 @@ Nos exercícios abaixo, empregue `JOIN`.
 2. Mostre todos os fornecedores e, se existirem, os produtos relacionados. Inclua também os fornecedores sem produto.
 3. Exiba todos os produtos e, quando houver, o nome do fornecedor correspondente.
 4. Verifique quais fornecedores não possuem nenhum produto cadastrado.
+5. Apresente os fornecedores, seus produtos e a identificação dos produtos.
 
 ## 2) Joins com filtros e ordenação
 
@@ -243,7 +244,7 @@ Nos exercícios abaixo, empregue `JOIN`.
 7. Mostre os fornecedores cujo nome começa com "A" e os produtos relacionados, ordenados por fornecedor e produto.
 8. Exiba os fornecedores e produtos em ordem alfabética decrescente por fornecedor.
 9. Liste os fornecedores com seus produtos, mas somente quando o produto tiver preço entre R$ 20,00 e R$ 100,00.
-10. Escreva uma consulta que retorne os nomes dos fornecedores e a quantidade de produtos de cada um, incluindo também os fornecedores sem produtos.
+10. Escreva uma consulta que retorne os nomes dos fornecedores, os nomes dos produtos desses fornecedores, a quantidade desses produtos no estoque e as filiais em que esses produtos são vendidos. Inclua também os fornecedores sem produtos.
 
 ## 3) Banco de uma padaria
 
