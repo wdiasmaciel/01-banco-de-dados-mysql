@@ -158,6 +158,20 @@ ON f.cnpj = p.cnpj_fornecedor
 
 > `UNION` (sem `ALL`) também elimina automaticamente as linhas duplicadas entre os dois resultados.
 
+
+```sql
+SELECT f.nome AS fornecedor, p.nome AS produto
+FROM Fornecedor f
+LEFT JOIN Produto p 
+ON f.cnpj = p.cnpj_fornecedor
+
+UNION ALL
+
+SELECT f.nome AS fornecedor, p.nome AS produto
+FROM Fornecedor f
+RIGHT JOIN Produto p 
+ON f.cnpj = p.cnpj_fornecedor
+```
 ---
 
 ---
