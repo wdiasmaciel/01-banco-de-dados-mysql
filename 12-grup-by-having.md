@@ -151,7 +151,7 @@ ORDER BY 'preco médio' DESC;
 
 ## Exercícios sobre GROUP BY e HAVING
 
-Em cada exercício, escreva uma consulta SQL usando `GROUP BY`. Quando o enunciado pedir para filtrar grupos por uma contagem, soma ou média, use `HAVING`. Empregue a instrução `JOIN`.
+Em cada exercício, escreva uma consulta SQL usando `GROUP BY`. Quando o enunciado pedir para filtrar grupos por uma contagem, soma ou média, use `HAVING`. Empregue a instrução `JOIN`. Crie os `inserts` necessários.
 
 ### 1) Banco empresa
 

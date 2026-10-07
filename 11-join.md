@@ -231,6 +231,8 @@ Pontos importantes:
 Nos exercícios abaixo, empregue a instrução `JOIN`.
 
 > Observe como os `NULL`s aparecem em `LEFT JOIN` e `RIGHT JOIN`.
+>
+> Crie os `inserts` necessários.
 
 ## 1) Joins básicos no banco empresa
 
