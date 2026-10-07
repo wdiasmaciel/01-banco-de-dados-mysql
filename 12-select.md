@@ -31,7 +31,10 @@ FROM Produto
 ORDER BY nome DESC;
 ```
 
-### COUNT() — em quantas filiais cada produto é vendido
+### GROUP BY: agr
+
+
+### COUNT(): em quantas filiais cada produto é vendido
 
 ```sql
 SELECT p.nome AS produto, COUNT(*) AS 'quantidade de filiais'
@@ -41,7 +44,7 @@ ON p.id = e.id_produto
 GROUP BY p.id, p.nome;
 ```
 
-### SUM() — quantidade total em estoque de cada produto (somando todas as filiais)
+### SUM(): quantidade total em estoque de cada produto (somando todas as filiais)
 
 ```sql
 SELECT p.nome AS produto, SUM(e.quantidade) AS quantidade_total
@@ -51,7 +54,7 @@ ON p.id = e.id_produto
 GROUP BY p.id, p.nome;
 ```
 
-### MAX() e MIN() — maior e menor preço praticado para cada produto
+### MAX() e MIN(): maior e menor preço praticado para cada produto
 
 ```sql
 SELECT p.nome AS produto,
@@ -63,7 +66,7 @@ ON p.id = e.id_produto
 GROUP BY p.id, p.nome;
 ```
 
-### AVG() — preço médio de cada produto entre as filiais
+### AVG(): preço médio de cada produto entre as filiais
 
 ```sql
 SELECT p.nome AS produto, AVG(e.preco) AS preco_medio
@@ -75,7 +78,7 @@ GROUP BY p.id, p.nome;
 
 ### GROUP BY com ORDER BY combinados
 
-Podemos ordenar o resultado de uma consulta agregada — por exemplo, mostrar os produtos do mais caro (em média) para o mais barato.
+Podemos ordenar o resultado de uma consulta agregada: por exemplo, mostrar os produtos do mais caro (em média) para o mais barato.
 
 ```sql
 SELECT p.nome AS produto, AVG(e.preco) AS preco_medio
@@ -86,9 +89,9 @@ GROUP BY p.id, p.nome
 ORDER BY preco_medio DESC;
 ```
 
-### HAVING — filtrando grupos após a agregação
+### HAVING: filtrando grupos após a agregação
 
-`HAVING` funciona como um `WHERE`, mas aplicado **depois** do `GROUP BY` — ou seja, filtra grupos com base no resultado da agregação, algo que o `WHERE` não consegue fazer diretamente. Aqui, mostramos apenas os produtos vendidos em **mais de uma** filial:
+`HAVING` funciona como um `WHERE`, mas aplicado **depois** do `GROUP BY`: ou seja, filtra grupos com base no resultado da agregação, algo que o `WHERE` não consegue fazer diretamente. Aqui, mostramos apenas os produtos vendidos em **mais de uma** filial:
 
 ```sql
 SELECT p.nome AS produto, COUNT(*) AS qtd_filiais
@@ -99,7 +102,7 @@ GROUP BY p.id, p.nome
 HAVING COUNT(*) > 1;
 ```
 
-> **Ponto para explorar em aula:** por que não poderíamos escrever `WHERE COUNT(*) > 1` no lugar do `HAVING`? (Resposta: o `WHERE` é avaliado **antes** do agrupamento, linha a linha, então ele ainda não "conhece" o resultado de `COUNT(*)` naquele momento — só o `HAVING`, que roda depois do `GROUP BY`, tem acesso ao valor agregado.)
+> **Ponto para explorar em aula:** por que não poderíamos escrever `WHERE COUNT(*) > 1` no lugar do `HAVING`? (Resposta: o `WHERE` é avaliado **antes** do agrupamento, linha a linha, então ele ainda não "conhece" o resultado de `COUNT(*)` naquele momento: só o `HAVING`, que roda depois do `GROUP BY`, tem acesso ao valor agregado.)
 
 ### HAVING com condição sobre AVG()
 
