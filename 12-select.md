@@ -31,8 +31,13 @@ FROM Produto
 ORDER BY nome DESC;
 ```
 
-### GROUP BY: agr
+### GROUP BY: agrupar produtos por nome
 
+```sql
+SELECT p.*
+FROM Produto p
+GROUP BY p.nome;
+```
 
 ### COUNT(): em quantas filiais cada produto é vendido
 
