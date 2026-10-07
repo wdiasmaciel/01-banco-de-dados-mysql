@@ -1,7 +1,7 @@
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="10-select-entre-tabelas.md">Anterior</a>
+      <a href="11-join.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
       <a href="#">Próximo</a>
@@ -408,7 +408,7 @@ INSERT INTO mineiro (codigo, nome, cidade)
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="10-select-entre-tabelas.md">Anterior</a>
+      <a href="11-join.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
       <a href="#">Próximo</a>
