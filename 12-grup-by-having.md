@@ -165,6 +165,7 @@ Em cada exercício, escreva uma consulta SQL usando `GROUP BY`. Quando o enuncia
 ### 2) Banco de uma padaria
 
 Considere as tabelas:
+
 `Cliente(id_cliente, nome)`, 
 
 `Pedido(id_pedido, id_cliente, data_pedido, total)`, 
@@ -182,6 +183,7 @@ Considere as tabelas:
 ### 3) Banco de uma agência de viagens
 
 Considere as tabelas:
+
 `Cliente(id_cliente, nome)`, 
 
 `Reserva(id_reserva, id_cliente, id_destino, data_viagem, valor)` e 
