@@ -285,6 +285,14 @@ Considere as tabelas `Medicamento`, `FornecedorFarmacia` e `Compra`:
 
 21. Liste todos os medicamentos com o nome do fornecedor que os forneceu, incluindo medicamentos que ainda não tiveram compra registrada.
 
+22. Liste todos os medicamentos sem forecedores e que foram comprados.
+
+22. Liste todos os medicamentos com forecedores e que ainda não foram comprados.
+
+22. Liste todos os medicamentos sem forecedores e que ainda não foram comprados.
+
+22. Liste todos os dados das compras, dos medicamentos e dos fornecedores, com ou sem registro de fornecedor e de compra.
+
 ## 6) Banco de uma clínica
 
 Considere as tabelas `Paciente`, `Consulta` e `Medico`:
