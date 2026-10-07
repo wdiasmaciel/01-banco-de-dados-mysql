@@ -58,7 +58,7 @@ ou
 ```sql
 SELECT f.nome AS fornecedor, p.nome AS produto
 FROM Fornecedor f
-LEFT OUTTER JOIN Produto p ON p.cnpj_fornecedor = f.cnpj
+LEFT OUTER JOIN Produto p ON p.cnpj_fornecedor = f.cnpj
 ORDER BY f.nome;
 ```
 
