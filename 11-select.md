@@ -34,7 +34,7 @@ ORDER BY nome DESC;
 ### 4.3 COUNT() — em quantas filiais cada produto é vendido
 
 ```sql
-SELECT p.nome AS produto, COUNT(*) AS 'quantidade defiliais'
+SELECT p.nome AS produto, COUNT(*) AS 'quantidade de filiais'
 FROM Produto p
 JOIN Estoque e ON e.id_produto = p.id
 GROUP BY p.id, p.nome;
