@@ -36,7 +36,8 @@ ORDER BY nome DESC;
 ```sql
 SELECT p.nome AS produto, COUNT(*) AS 'quantidade de filiais'
 FROM Produto p
-JOIN Estoque e ON e.id_produto = p.id
+JOIN Estoque e 
+ON p.id = e.id_produto
 GROUP BY p.id, p.nome;
 ```
 
@@ -45,7 +46,8 @@ GROUP BY p.id, p.nome;
 ```sql
 SELECT p.nome AS produto, SUM(e.quantidade) AS quantidade_total
 FROM Produto p
-JOIN Estoque e ON e.id_produto = p.id
+JOIN Estoque e 
+ON p.id = e.id_produto
 GROUP BY p.id, p.nome;
 ```
 
@@ -56,7 +58,8 @@ SELECT p.nome AS produto,
        MAX(e.preco) AS maior_preco,
        MIN(e.preco) AS menor_preco
 FROM Produto p
-JOIN Estoque e ON e.id_produto = p.id
+JOIN Estoque e 
+ON p.id = e.id_produto
 GROUP BY p.id, p.nome;
 ```
 
@@ -65,7 +68,8 @@ GROUP BY p.id, p.nome;
 ```sql
 SELECT p.nome AS produto, AVG(e.preco) AS preco_medio
 FROM Produto p
-JOIN Estoque e ON e.id_produto = p.id
+JOIN Estoque e 
+ON p.id = e.id_produto
 GROUP BY p.id, p.nome;
 ```
 
@@ -76,7 +80,8 @@ Podemos ordenar o resultado de uma consulta agregada — por exemplo, mostrar os
 ```sql
 SELECT p.nome AS produto, AVG(e.preco) AS preco_medio
 FROM Produto p
-JOIN Estoque e ON e.id_produto = p.id
+JOIN Estoque e 
+ON p.id = e.id_produto
 GROUP BY p.id, p.nome
 ORDER BY preco_medio DESC;
 ```
@@ -88,7 +93,8 @@ ORDER BY preco_medio DESC;
 ```sql
 SELECT p.nome AS produto, COUNT(*) AS qtd_filiais
 FROM Produto p
-JOIN Estoque e ON e.id_produto = p.id
+JOIN Estoque e 
+ON p.id = e.id_produto
 GROUP BY p.id, p.nome
 HAVING COUNT(*) > 1;
 ```
@@ -102,7 +108,8 @@ Produtos cujo preço médio ultrapassa `R$ 20,00`:
 ```sql
 SELECT p.nome AS produto, AVG(e.preco) AS preco_medio
 FROM Produto p
-JOIN Estoque e ON e.id_produto = p.id
+JOIN Estoque e 
+ON p.id = e.id_produto
 GROUP BY p.id, p.nome
 HAVING AVG(e.preco) > 20.00
 ORDER BY preco_medio DESC;
