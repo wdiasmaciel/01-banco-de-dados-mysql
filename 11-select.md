@@ -18,7 +18,8 @@ Nesta seção, o foco é a tabela `Produto` relacionada com a tabela `Estoque`. 
 ### 4.1 ORDER BY simples (uma coluna)
 
 ```sql
-SELECT nome FROM Produto
+SELECT nome 
+FROM Produto
 ORDER BY nome ASC;
 ```
 
