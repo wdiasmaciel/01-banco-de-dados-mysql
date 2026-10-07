@@ -127,6 +127,12 @@ FROM Fornecedor f, Produto p
 ORDER BY f.nome, p.nome;
 ```
 
+```sql
+SELECT count(*)
+FROM Fornecedor f, Produto p
+ORDER BY f.nome, p.nome;
+```
+
 
 ### 5.5 "FULL OUTER JOIN" no MySQL
 
