@@ -115,7 +115,7 @@ Ou seja: filtra grupos com base no resultado da agregação, algo que o `WHERE` 
 Aqui, mostramos apenas os produtos vendidos em **mais de uma** filial:
 
 ```sql
-SELECT p.nome AS produto, COUNT(*) AS qtd_filiais
+SELECT p.nome AS produto, COUNT(*) AS 'quantidade de filiais'
 FROM Produto p
 JOIN Estoque e 
 ON p.id = e.id_produto
