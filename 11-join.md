@@ -228,7 +228,7 @@ Pontos importantes:
 ---
 # Exercícios
 
-## 1) Joins básicos no banco de fornecedores
+## 1) Joins básicos no banco empresa
 
 1. Liste o nome do fornecedor e o nome do produto para todos os fornecedores que possuem produtos cadastrados.
 2. Mostre todos os fornecedores e, se existirem, os produtos relacionados. Inclua também os fornecedores sem produto.
