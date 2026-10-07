@@ -230,6 +230,8 @@ Pontos importantes:
 
 Nos exercícios abaixo, empregue a instrução `JOIN`.
 
+> Observe como os `NULL`s aparecem em `LEFT JOIN` e `RIGHT JOIN`.
+
 ## 1) Joins básicos no banco empresa
 
 1. Liste o nome do fornecedor e o nome do produto para todos os fornecedores que possuem produtos cadastrados.
@@ -287,11 +289,11 @@ Considere as tabelas `Medicamento`, `FornecedorFarmacia` e `Compra`:
 
 22. Liste todos os medicamentos sem forecedores e que foram comprados.
 
-22. Liste todos os medicamentos com forecedores e que ainda não foram comprados.
+23. Liste todos os medicamentos com forecedores e que ainda não foram comprados.
 
-22. Liste todos os medicamentos sem forecedores e que ainda não foram comprados.
+24. Liste todos os medicamentos sem forecedores e que ainda não foram comprados.
 
-22. Liste todos os dados das compras, dos medicamentos e dos fornecedores, com ou sem registro de fornecedor e de compra.
+25. Liste todos os dados das compras, dos medicamentos e dos fornecedores, com ou sem registro de fornecedor e de compra.
 
 ## 6) Banco de uma clínica
 
@@ -301,9 +303,7 @@ Considere as tabelas `Paciente`, `Consulta` e `Medico`:
 - `Medico(id_medico, nome, especialidade)`
 - `Consulta(id_consulta, id_paciente, id_medico, data_consulta, valor)`
 
-22. Liste todos os pacientes e suas consultas, incluindo pacientes sem consultas.
-
-> Dica: tente resolver os exercícios primeiro em papel e depois teste as consultas no MySQL, observando como os `NULL`s aparecem em `LEFT JOIN` e `RIGHT JOIN`.
+26. Liste todos os pacientes e suas consultas, incluindo pacientes sem consultas.
 
 ---
 
