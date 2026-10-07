@@ -69,7 +69,11 @@ ORDER BY f.nome;
 
 ### 5.3 RIGHT JOIN (ou RIGHT OUTER JOIN)
 
-O espelho do `LEFT JOIN`: retorna **todas** as linhas da tabela à direita (`Produto`), mesmo sem correspondência em `Fornecedor`. Como, no nosso projeto, `cnpj_fornecedor` é `NOT NULL` (todo produto obrigatoriamente tem um fornecedor), esse exemplo específico produz o **mesmo resultado** de um `INNER JOIN` — mas o comando serve para ilustrar a sintaxe e o conceito.
+O espelho do `LEFT JOIN`: retorna **todas** as linhas da tabela à **direita** (`Produto`), mesmo sem correspondência na tabela da esquerda, que é a tabela `Fornecedor`. 
+
+**OBS**:
+
+Como, no nosso projeto, `cnpj_fornecedor` é `NOT NULL` (todo produto obrigatoriamente tem um fornecedor), esse exemplo específico produz o **mesmo resultado** de um `INNER JOIN` — mas o comando serve para ilustrar a sintaxe e o conceito.
 
 ```sql
 SELECT f.nome AS fornecedor, p.nome AS produto
@@ -77,6 +81,16 @@ FROM Fornecedor f
 RIGHT JOIN Produto p ON p.cnpj_fornecedor = f.cnpj
 ORDER BY p.nome;
 ```
+
+ou
+
+```sql
+SELECT f.nome AS fornecedor, p.nome AS produto
+FROM Fornecedor f
+RIGHT OUTER JOIN Produto p ON p.cnpj_fornecedor = f.cnpj
+ORDER BY p.nome;
+```
+
 
 > **Ponto para explorar em aula:** peça aos alunos para explicarem por que, nesse caso específico, `RIGHT JOIN` e `INNER JOIN` dão o mesmo resultado — e em que situação (se `cnpj_fornecedor` pudesse ser `NULL`) o resultado seria diferente.
 
