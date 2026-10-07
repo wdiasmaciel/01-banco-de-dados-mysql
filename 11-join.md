@@ -29,6 +29,16 @@ ON f.cnpj = p.cnpj_fornecedor
 ORDER BY f.nome;
 ```
 
+ou
+
+```sql
+SELECT f.nome AS fornecedor, p.nome AS produto
+FROM Fornecedor f
+JOIN Produto p 
+ON f.cnpj = p.cnpj_fornecedor 
+ORDER BY f.nome;
+```
+
 *Fornecedores sem produto (Epsilon, Zeta, Theta) **não aparecem** no resultado.*
 
 ### 5.2 LEFT JOIN (ou LEFT OUTER JOIN)
