@@ -75,7 +75,7 @@ O espelho do `LEFT JOIN`: retorna **todas** as linhas da tabela à **direita** (
 
 **OBS**:
 
-Como, no nosso projeto, `cnpj_fornecedor` é `NOT NULL` (todo produto obrigatoriamente tem um fornecedor), esse exemplo específico produz o **mesmo resultado** de um `INNER JOIN` — mas o comando serve para ilustrar a sintaxe e o conceito.
+Como, no nosso projeto, `cnpj_fornecedor` é `NOT NULL` (todo produto obrigatoriamente tem um fornecedor), esse exemplo específico produz o **mesmo resultado** de um `INNER JOIN`, mas o comando serve para ilustrar a sintaxe e o conceito.
 
 ```sql
 SELECT f.nome AS fornecedor, p.nome AS produto
