@@ -112,6 +112,13 @@ ORDER BY f.nome, p.nome;
 
 > Com 8 fornecedores e 6 produtos, esse `CROSS JOIN` retorna `8 x 6 = 48` linhas, a maioria delas sem sentido no contexto do projeto (um produto "combinado" com um fornecedor que não é o dele). Exemplifica a importância de **sempre** usarmos uma condição `ON` nos outros tipos de `JOIN`.
 
+```sql
+SELECT count(*)
+FROM Fornecedor f
+CROSS JOIN Produto p
+ORDER BY f.nome, p.nome;
+```
+
 O produto cartesiano também pode ser obtido da seguinte forma:
 
 ```sql
