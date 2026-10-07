@@ -11,11 +11,11 @@
 
 ---
 
-## 5. JOIN (Junção)
+## JOIN (Junção)
 
 Para simplificar, todos os exemplos desta seção usam apenas duas tabelas: **Fornecedor** e **Produto**. 
 
-### 5.1 INNER JOIN
+### INNER JOIN
 
 Retorna **apenas** as linhas em que há correspondência nas duas tabelas.
 
@@ -43,7 +43,7 @@ ORDER BY f.nome;
 
 *Fornecedores sem produto (Epsilon, Zeta, Theta) **não aparecem** no resultado.*
 
-### 5.2 LEFT JOIN (ou LEFT OUTER JOIN)
+### LEFT JOIN (ou LEFT OUTER JOIN)
 
 Retorna **todas** as linhas da tabela à **esquerda** (`Fornecedor`), mesmo que não haja correspondência na tabela da direita, que é a tabela `Produto`. Nesse caso, as colunas vindas de `Produto` aparecem como `NULL`.
 
@@ -69,7 +69,7 @@ ORDER BY f.nome;
 
 *Agora Epsilon, Zeta e Theta aparecem no resultado, com `produto = NULL`.*
 
-### 5.3 RIGHT JOIN (ou RIGHT OUTER JOIN)
+### RIGHT JOIN (ou RIGHT OUTER JOIN)
 
 O espelho do `LEFT JOIN`: retorna **todas** as linhas da tabela à **direita** (`Produto`), mesmo sem correspondência na tabela da esquerda, que é a tabela `Fornecedor`. 
 
@@ -97,7 +97,7 @@ ORDER BY p.nome;
 
 > **OBS:** explique por que, nesse caso específico, `RIGHT JOIN` e `INNER JOIN` dão o mesmo resultado. Em que situação (se `cnpj_fornecedor` pudesse ser `NULL`) o resultado seria diferente.
 
-### 5.4 CROSS JOIN
+### CROSS JOIN
 
 Retorna o **produto cartesiano** entre as duas tabelas. Cada linha de uma tabela combinada com **todas** as linhas da outra, sem nenhuma condição de correspondência. 
 
@@ -134,7 +134,7 @@ ORDER BY f.nome, p.nome;
 ```
 
 
-### 5.5 "FULL OUTER JOIN" no MySQL
+### "FULL OUTER JOIN" no MySQL
 
 O MySQL **não possui** o comando `FULL OUTER JOIN` nativamente (diferente de PostgreSQL e SQL Server). 
 
