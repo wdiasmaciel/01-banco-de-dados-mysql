@@ -136,7 +136,7 @@ HAVING COUNT(*) > 1;
 Produtos cujo preço médio ultrapassa `R$ 20,00`:
 
 ```sql
-SELECT p.nome AS produto, AVG(e.preco) AS preco_medio
+SELECT p.nome AS produto, AVG(e.preco) AS "preco médio"
 FROM Produto p
 JOIN Estoque e 
 ON p.id = e.id_produto
