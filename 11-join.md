@@ -95,8 +95,7 @@ ON f.cnpj = p.cnpj_fornecedor
 ORDER BY p.nome;
 ```
 
-
-> **Ponto para explorar em aula:** peça aos alunos para explicarem por que, nesse caso específico, `RIGHT JOIN` e `INNER JOIN` dão o mesmo resultado — e em que situação (se `cnpj_fornecedor` pudesse ser `NULL`) o resultado seria diferente.
+> **OBS:** explique por que, nesse caso específico, `RIGHT JOIN` e `INNER JOIN` dão o mesmo resultado. Em que situação (se `cnpj_fornecedor` pudesse ser `NULL`) o resultado seria diferente.
 
 ### 5.4 CROSS JOIN
 
