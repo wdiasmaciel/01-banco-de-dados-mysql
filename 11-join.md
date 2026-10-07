@@ -224,7 +224,10 @@ Pontos importantes:
 4. Por que `UNION ALL` e não `UNION`? 
   - `UNION ALL` mantém linhas duplicadas entre os dois SELECTs (o que provavelmente infla a contagem, já que, como vimos antes, `RIGHT JOIN` e `LEFT JOIN` produzem resultados sobrepostos quando `cnpj_fornecedor` é `NOT NULL`. 
   - Se você quiser contar apenas combinações distintas, use `UNION` (sem `ALL`) dentro da subquery.
+
 ---
+# Exercícios
+
 
 ---
 
