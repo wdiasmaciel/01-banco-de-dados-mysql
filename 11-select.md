@@ -11,6 +11,103 @@
 
 ---
 
+## 4. ORDER BY, funções agregadas, GROUP BY e HAVING
+
+Nesta seção, o foco é a tabela `Produto` relacionada com a tabela `Estoque`. Como o preço não está na própria tabela `Produto` (ele varia por filial), é necessário relacionar as duas tabelas. 
+
+### 4.1 ORDER BY simples (uma coluna)
+
+```sql
+SELECT nome FROM Produto
+ORDER BY nome ASC;
+```
+
+### 4.2 ORDER BY decrescente
+
+```sql
+SELECT nome FROM Produto
+ORDER BY nome DESC;
+```
+
+### 4.3 COUNT() — em quantas filiais cada produto é vendido
+
+```sql
+SELECT p.nome AS produto, COUNT(*) AS qtd_filiais
+FROM Produto p
+JOIN Estoque e ON e.id_produto = p.id
+GROUP BY p.id, p.nome;
+```
+
+### 4.4 SUM() — quantidade total em estoque de cada produto (somando todas as filiais)
+
+```sql
+SELECT p.nome AS produto, SUM(e.quantidade) AS quantidade_total
+FROM Produto p
+JOIN Estoque e ON e.id_produto = p.id
+GROUP BY p.id, p.nome;
+```
+
+### 4.5 MAX() e MIN() — maior e menor preço praticado para cada produto
+
+```sql
+SELECT p.nome AS produto,
+       MAX(e.preco) AS maior_preco,
+       MIN(e.preco) AS menor_preco
+FROM Produto p
+JOIN Estoque e ON e.id_produto = p.id
+GROUP BY p.id, p.nome;
+```
+
+### 4.6 AVG() — preço médio de cada produto entre as filiais
+
+```sql
+SELECT p.nome AS produto, AVG(e.preco) AS preco_medio
+FROM Produto p
+JOIN Estoque e ON e.id_produto = p.id
+GROUP BY p.id, p.nome;
+```
+
+### 4.7 GROUP BY com ORDER BY combinados
+
+Podemos ordenar o resultado de uma consulta agregada — por exemplo, mostrar os produtos do mais caro (em média) para o mais barato.
+
+```sql
+SELECT p.nome AS produto, AVG(e.preco) AS preco_medio
+FROM Produto p
+JOIN Estoque e ON e.id_produto = p.id
+GROUP BY p.id, p.nome
+ORDER BY preco_medio DESC;
+```
+
+### 4.8 HAVING — filtrando grupos após a agregação
+
+`HAVING` funciona como um `WHERE`, mas aplicado **depois** do `GROUP BY` — ou seja, filtra grupos com base no resultado da agregação, algo que o `WHERE` não consegue fazer diretamente. Aqui, mostramos apenas os produtos vendidos em **mais de uma** filial:
+
+```sql
+SELECT p.nome AS produto, COUNT(*) AS qtd_filiais
+FROM Produto p
+JOIN Estoque e ON e.id_produto = p.id
+GROUP BY p.id, p.nome
+HAVING COUNT(*) > 1;
+```
+
+> **Ponto para explorar em aula:** por que não poderíamos escrever `WHERE COUNT(*) > 1` no lugar do `HAVING`? (Resposta: o `WHERE` é avaliado **antes** do agrupamento, linha a linha, então ele ainda não "conhece" o resultado de `COUNT(*)` naquele momento — só o `HAVING`, que roda depois do `GROUP BY`, tem acesso ao valor agregado.)
+
+### 4.9 HAVING com condição sobre AVG()
+
+Produtos cujo preço médio ultrapassa `R$ 20,00`:
+
+```sql
+SELECT p.nome AS produto, AVG(e.preco) AS preco_medio
+FROM Produto p
+JOIN Estoque e ON e.id_produto = p.id
+GROUP BY p.id, p.nome
+HAVING AVG(e.preco) > 20.00
+ORDER BY preco_medio DESC;
+```
+
+
+
 <!--
 SELECT nome, salario, 12*salario+100
 FROM   emp
