@@ -124,7 +124,9 @@ HAVING COUNT(*) > 1;
 ```
 
 > **OBS:** por que não poderíamos escrever `WHERE COUNT(*) > 1` no lugar do `HAVING`? 
+>
 > Resposta: o `WHERE` é avaliado **antes** do agrupamento, linha a linha, então ele ainda não "conhece" o resultado de `COUNT(*)` naquele momento: 
+>
 > Só o `HAVING`, que roda depois do `GROUP BY`, tem acesso ao valor agregado.
 
 ### HAVING com condição sobre AVG()
