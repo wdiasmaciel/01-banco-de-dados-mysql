@@ -50,7 +50,8 @@ Retorna **todas** as linhas da tabela à **esquerda** (`Fornecedor`), mesmo que 
 ```sql
 SELECT f.nome AS fornecedor, p.nome AS produto
 FROM Fornecedor f
-LEFT JOIN Produto p ON p.cnpj_fornecedor = f.cnpj
+LEFT JOIN Produto p 
+ON f.cnpj = p.cnpj_fornecedor
 ORDER BY f.nome;
 ```
 
@@ -59,7 +60,8 @@ ou
 ```sql
 SELECT f.nome AS fornecedor, p.nome AS produto
 FROM Fornecedor f
-LEFT OUTER JOIN Produto p ON p.cnpj_fornecedor = f.cnpj
+LEFT OUTER JOIN Produto p 
+ON f.cnpj = p.cnpj_fornecedor
 ORDER BY f.nome;
 ```
 
@@ -78,7 +80,8 @@ Como, no nosso projeto, `cnpj_fornecedor` é `NOT NULL` (todo produto obrigatori
 ```sql
 SELECT f.nome AS fornecedor, p.nome AS produto
 FROM Fornecedor f
-RIGHT JOIN Produto p ON p.cnpj_fornecedor = f.cnpj
+RIGHT JOIN Produto p 
+ON f.cnpj = p.cnpj_fornecedor
 ORDER BY p.nome;
 ```
 
@@ -87,7 +90,8 @@ ou
 ```sql
 SELECT f.nome AS fornecedor, p.nome AS produto
 FROM Fornecedor f
-RIGHT OUTER JOIN Produto p ON p.cnpj_fornecedor = f.cnpj
+RIGHT OUTER JOIN Produto p 
+ON f.cnpj = p.cnpj_fornecedor
 ORDER BY p.nome;
 ```
 
