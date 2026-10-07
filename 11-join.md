@@ -228,6 +228,8 @@ Pontos importantes:
 ---
 # Exercícios
 
+Nos exercícios abaixo, empregue `JOIN`.
+
 ## 1) Joins básicos no banco empresa
 
 1. Liste o nome do fornecedor e o nome do produto para todos os fornecedores que possuem produtos cadastrados.
