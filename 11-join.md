@@ -99,7 +99,7 @@ ORDER BY p.nome;
 
 ### 5.4 CROSS JOIN
 
-Retorna o **produto cartesiano** entre as duas tabelas — cada linha de uma tabela combinada com **todas** as linhas da outra, sem nenhuma condição de correspondência. É raramente usado no dia a dia, mas importante entender o conceito.
+Retorna o **produto cartesiano** entre as duas tabelas. Cada linha de uma tabela combinada com **todas** as linhas da outra, sem nenhuma condição de correspondência. É raramente usado no dia a dia, mas importante entender o conceito.
 
 ```sql
 SELECT f.nome AS fornecedor, p.nome AS produto
@@ -108,7 +108,16 @@ CROSS JOIN Produto p
 ORDER BY f.nome, p.nome;
 ```
 
-> Com 8 fornecedores e 6 produtos, esse `CROSS JOIN` retorna `8 x 6 = 48` linhas — a maioria delas sem sentido no contexto do projeto (um produto "combinado" com um fornecedor que não é o dele). Bom exemplo para mostrar por que **sempre** usamos uma condição `ON` nos outros tipos de `JOIN`.
+> Com 8 fornecedores e 6 produtos, esse `CROSS JOIN` retorna `8 x 6 = 48` linhas, a maioria delas sem sentido no contexto do projeto (um produto "combinado" com um fornecedor que não é o dele). Exemplifica a importância de **sempre** usarmos uma condição `ON` nos outros tipos de `JOIN`.
+
+O produto cartesiano também pode ser obtido da seguinte forma:
+
+```sql
+SELECT f.nome AS fornecedor, p.nome AS produto
+FROM Fornecedor f, Produto p
+ORDER BY f.nome, p.nome;
+```
+
 
 ### 5.5 "FULL OUTER JOIN" no MySQL
 
