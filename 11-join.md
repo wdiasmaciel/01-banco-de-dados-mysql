@@ -228,6 +228,68 @@ Pontos importantes:
 ---
 # Exercícios
 
+## 1) Joins básicos no banco de fornecedores
+
+1. Liste o nome do fornecedor e o nome do produto para todos os fornecedores que possuem produtos cadastrados.
+2. Mostre todos os fornecedores e, se existirem, os produtos relacionados. Inclua também os fornecedores sem produto.
+3. Exiba todos os produtos e, quando houver, o nome do fornecedor correspondente.
+4. Determine quantos produtos existem para cada fornecedor, mostrando somente os fornecedores com ao menos um produto.
+5. Verifique quais fornecedores não possuem nenhum produto cadastrado.
+
+## 2) Joins com filtros e ordenação
+
+6. Liste somente os produtos cujo preço seja maior que R$ 50,00 junto com o nome do fornecedor.
+7. Mostre os fornecedores cujo nome começa com "A" e os produtos relacionados, ordenados por fornecedor e produto.
+8. Exiba os fornecedores e produtos em ordem alfabética decrescente por fornecedor.
+9. Liste os fornecedores com seus produtos, mas somente quando o produto tiver preço entre R$ 20,00 e R$ 100,00.
+10. Escreva uma consulta que retorne os nomes dos fornecedores e a quantidade de produtos de cada um, incluindo também os fornecedores sem produtos.
+
+## 3) Banco de uma padaria
+
+Considere as tabelas `Cliente`, `Pedido` e `Produto`:
+
+- `Cliente(id_cliente, nome, telefone)`
+- `Pedido(id_pedido, id_cliente, data_pedido, total)`
+- `Produto(id_produto, nome, preco)`
+- `ItemPedido(id_pedido, id_produto, quantidade)`
+
+11. Liste todos os clientes e os pedidos realizados por eles, incluindo clientes que ainda não fizeram pedidos.
+12. Mostre cada pedido com o nome do cliente e o valor total do pedido.
+13. Liste todos os produtos vendidos em cada pedido, com o nome do produto, quantidade e valor total do item.
+14. Descubra quais clientes nunca fizeram nenhum pedido.
+15. Gere uma consulta que mostre o nome do cliente, o número do pedido e o total do pedido, considerando apenas pedidos com valor acima de R$ 80,00.
+
+## 4) Banco de uma agência de viagens
+
+Considere as tabelas `Cliente`, `Reserva` e `Destino`:
+
+- `Cliente(id_cliente, nome, email)`
+- `Reserva(id_reserva, id_cliente, id_destino, data_viagem, valor)`
+- `Destino(id_destino, nome_destino, pais)`
+
+16. Liste todos os clientes e suas reservas, incluindo clientes sem reservas.
+17. Mostre cada reserva com o nome do cliente e o nome do destino.
+18. Exiba os destinos que ainda não receberam nenhuma reserva.
+
+## 5) Outros cenários: farmácia e clínica
+
+Considere as tabelas `Medicamento`, `FornecedorFarmacia` e `Compra`:
+
+- `Medicamento(id_medicamento, nome, laboratorio)`
+- `FornecedorFarmacia(id_fornecedor, nome, cidade)`
+- `Compra(id_compra, id_medicamento, id_fornecedor, quantidade, data_compra)`
+
+19. Liste todos os medicamentos com o nome do fornecedor que os forneceu, incluindo medicamentos que ainda não tiveram compra registrada.
+
+Considere as tabelas `Paciente`, `Consulta` e `Medico`:
+
+- `Paciente(id_paciente, nome, telefone)`
+- `Medico(id_medico, nome, especialidade)`
+- `Consulta(id_consulta, id_paciente, id_medico, data_consulta, valor)`
+
+20. Liste todos os pacientes e suas consultas, incluindo pacientes sem consultas.
+
+> Dica: tente resolver os exercícios primeiro em papel e depois teste as consultas no MySQL, observando como os `NULL`s aparecem em `LEFT JOIN` e `RIGHT JOIN`.
 
 ---
 
