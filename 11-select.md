@@ -26,14 +26,15 @@ ORDER BY nome ASC;
 ### 4.2 ORDER BY decrescente
 
 ```sql
-SELECT nome FROM Produto
+SELECT nome 
+FROM Produto
 ORDER BY nome DESC;
 ```
 
 ### 4.3 COUNT() — em quantas filiais cada produto é vendido
 
 ```sql
-SELECT p.nome AS produto, COUNT(*) AS qtd_filiais
+SELECT p.nome AS produto, COUNT(*) AS 'quantidade defiliais'
 FROM Produto p
 JOIN Estoque e ON e.id_produto = p.id
 GROUP BY p.id, p.nome;

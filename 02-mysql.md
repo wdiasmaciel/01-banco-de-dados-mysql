@@ -138,6 +138,20 @@ EXIT;
 
 ---
 
+# Serviços do Windows
+
+Se você estiver no `Windows` e a opção de iniciar o servidor do `MySQL` do Workbench não estiver disponível:
+
+1. Aperte as teclas `Windows + R`, digite `services.msc` e pressione a tecla `Enter`.
+
+2. Na lista de serviços, procure por `MySQL` (ex: `MySQL80` ou similar).
+
+3. Clique com o botão direito sobre ele e selecione `Iniciar` (ou `Start`).
+
+4. Depois, retorne ao `MySQL Workbench` e clique para abrir a sua conexão normalmente
+
+---
+
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
