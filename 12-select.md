@@ -142,7 +142,7 @@ JOIN Estoque e
 ON p.id = e.id_produto
 GROUP BY p.id, p.nome
 HAVING AVG(e.preco) > 20.00
-ORDER BY preco_medio DESC;
+ORDER BY 'preco médio' DESC;
 ```
 
 
