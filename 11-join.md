@@ -11,18 +11,21 @@
 
 ---
 
-## 5. Tipos de JOIN
+## 5. JOIN (Junção)
 
-Para simplificar, todos os exemplos desta seção usam apenas duas tabelas: **Fornecedor** e **Produto**. Lembre-se de que, no conjunto de dados inserido, **3 fornecedores** não têm nenhum produto cadastrado (`Epsilon`, `Zeta` e `Theta`) — isso é o que vai tornar visível a diferença entre os tipos de `JOIN`.
+Para simplificar, todos os exemplos desta seção usam apenas duas tabelas: **Fornecedor** e **Produto**. 
 
 ### 5.1 INNER JOIN
 
-Retorna **apenas** as linhas em que há correspondência nas duas tabelas — ou seja, só aparecem fornecedores que **têm** pelo menos um produto, e só aparecem produtos que **têm** um fornecedor correspondente.
+Retorna **apenas** as linhas em que há correspondência nas duas tabelas.
+
+Ou seja: só aparecem fornecedores que **têm** pelo menos um produto, e só aparecem produtos que **têm** um fornecedor correspondente.
 
 ```sql
 SELECT f.nome AS fornecedor, p.nome AS produto
 FROM Fornecedor f
-INNER JOIN Produto p ON p.cnpj_fornecedor = f.cnpj
+INNER JOIN Produto p 
+ON f.cnpj = p.cnpj_fornecedor 
 ORDER BY f.nome;
 ```
 
