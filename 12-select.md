@@ -34,7 +34,7 @@ ORDER BY nome DESC;
 ### GROUP BY: agrupar produtos por nome
 
 ```sql
-SELECT p.*
+SELECT p.nome
 FROM Produto p
 GROUP BY p.nome;
 ```
