@@ -258,7 +258,7 @@ Considere as tabelas `Cliente`, `Pedido` e `Produto`:
 11. Liste todos os clientes e os pedidos realizados por eles, incluindo clientes que ainda não fizeram pedidos.
 12. Mostre cada pedido com o nome do cliente e o valor total do pedido.
 13. Liste todos os produtos vendidos em cada pedido, com o nome do produto, quantidade e valor total do item.
-14. Descubra quais clientes nunca fizeram nenhum pedido.
+14. Descubra quais clientes nunca fizeram pedido.
 15. Gere uma consulta que mostre o nome do cliente, o número do pedido e o total do pedido, considerando apenas pedidos com valor acima de R$ 80,00.
 
 ## 4) Banco de uma agência de viagens
@@ -271,7 +271,9 @@ Considere as tabelas `Cliente`, `Reserva` e `Destino`:
 
 16. Liste todos os clientes e suas reservas, incluindo clientes sem reservas.
 17. Mostre cada reserva com o nome do cliente e o nome do destino.
-18. Exiba os destinos que ainda não receberam nenhuma reserva.
+18. Exiba os destinos que ainda não receberam reserva.
+19. Exiba os clientes que ainda não fizeram reserva.
+20. Exiba todos os clientes e destinos, com ou sem de reserva.
 
 ## 5) Outros cenários: farmácia e clínica
 
