@@ -164,7 +164,7 @@ FROM (
     LEFT JOIN Produto p 
     ON f.cnpj = p.cnpj_fornecedor
 
-    UNION ALL
+    UNION
 
     SELECT f.nome AS fornecedor, p.nome AS produto
     FROM Fornecedor f
