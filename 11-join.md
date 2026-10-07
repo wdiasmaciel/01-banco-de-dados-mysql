@@ -154,6 +154,25 @@ RIGHT JOIN Produto p
 ON f.cnpj = p.cnpj_fornecedor
 ```
 
+Contanto o número de registros retornados:
+
+```sql
+SELECT COUNT(*) AS total_linhas
+FROM (
+    SELECT f.nome AS fornecedor, p.nome AS produto
+    FROM Fornecedor f
+    LEFT JOIN Produto p 
+    ON f.cnpj = p.cnpj_fornecedor
+
+    UNION ALL
+
+    SELECT f.nome AS fornecedor, p.nome AS produto
+    FROM Fornecedor f
+    RIGHT JOIN Produto p 
+    ON f.cnpj = p.cnpj_fornecedor
+) AS resultado_uniao;
+```
+
 **OBS**:
 
 > `UNION` (sem `ALL`) também elimina automaticamente as linhas duplicadas entre os dois resultados.
@@ -172,6 +191,26 @@ FROM Fornecedor f
 RIGHT JOIN Produto p 
 ON f.cnpj = p.cnpj_fornecedor
 ```
+
+Contanto o número de registros retornados:
+
+```sql
+SELECT COUNT(*) AS total_linhas
+FROM (
+    SELECT f.nome AS fornecedor, p.nome AS produto
+    FROM Fornecedor f
+    LEFT JOIN Produto p 
+    ON f.cnpj = p.cnpj_fornecedor
+
+    UNION ALL
+
+    SELECT f.nome AS fornecedor, p.nome AS produto
+    FROM Fornecedor f
+    RIGHT JOIN Produto p 
+    ON f.cnpj = p.cnpj_fornecedor
+) AS resultado_uniao;
+```
+
 ---
 
 ---
