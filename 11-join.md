@@ -233,8 +233,7 @@ Pontos importantes:
 1. Liste o nome do fornecedor e o nome do produto para todos os fornecedores que possuem produtos cadastrados.
 2. Mostre todos os fornecedores e, se existirem, os produtos relacionados. Inclua também os fornecedores sem produto.
 3. Exiba todos os produtos e, quando houver, o nome do fornecedor correspondente.
-4. Determine quantos produtos existem para cada fornecedor, mostrando somente os fornecedores com ao menos um produto.
-5. Verifique quais fornecedores não possuem nenhum produto cadastrado.
+4. Verifique quais fornecedores não possuem nenhum produto cadastrado.
 
 ## 2) Joins com filtros e ordenação
 
