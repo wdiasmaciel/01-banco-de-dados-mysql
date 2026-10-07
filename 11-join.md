@@ -99,7 +99,9 @@ ORDER BY p.nome;
 
 ### 5.4 CROSS JOIN
 
-Retorna o **produto cartesiano** entre as duas tabelas. Cada linha de uma tabela combinada com **todas** as linhas da outra, sem nenhuma condição de correspondência. É raramente usado no dia a dia, mas importante entender o conceito.
+Retorna o **produto cartesiano** entre as duas tabelas. Cada linha de uma tabela combinada com **todas** as linhas da outra, sem nenhuma condição de correspondência. 
+
+É raramente usado no dia a dia, mas importante entender o conceito.
 
 ```sql
 SELECT f.nome AS fornecedor, p.nome AS produto
