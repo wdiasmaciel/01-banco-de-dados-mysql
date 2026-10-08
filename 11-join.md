@@ -114,8 +114,8 @@ ORDER BY f.nome;
 2. Todo produto cadastrado (id 1 a 6) tem uma `Identificacao` correspondente. Então, um `JOIN` com `Identificacao` também não gera `NULL`, com os dados atuais.
 
 3. A combinação que de fato gera `NULL` é `Fornecedor → Produto → Estoque`, porque:
-  - 3 dos 8 fornecedores (Epsilon, Zeta, Theta) não têm nenhum produto.
-  - Como consequência, também não têm nenhuma linha em `Estoque`.
+    - 3 dos 8 fornecedores (Epsilon, Zeta, Theta) não têm nenhum produto.
+    - Como consequência, também não têm nenhuma linha em `Estoque`.
 
 ```sql
 SELECT
