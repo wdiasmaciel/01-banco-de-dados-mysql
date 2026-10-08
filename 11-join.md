@@ -158,6 +158,13 @@ ORDER BY p.nome;
 
 > **OBS:** explique por que, nesse caso específico, `RIGHT JOIN` e `INNER JOIN` dão o mesmo resultado. Em que situação (se `cnpj_fornecedor` pudesse ser `NULL`) o resultado seria diferente.
 
+### RIGHT JOIN com 3 tabelas
+
+Em relação ao `LEFT JOIN` com 3 tabelas, é preciso inverter a ordem das tabelas no `FROM`.
+
+`RIGHT JOIN` "olha para trás": mantém tudo da tabela à direita do `JOIN`, então a tabela que você quer preservar por completo (`Fornecedor`) precisa vir depois no encadeamento.
+
+
 
 ```sql
 SELECT
