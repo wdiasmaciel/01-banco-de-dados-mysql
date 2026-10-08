@@ -61,6 +61,25 @@ INNER JOIN Filial        fl ON fl.cnpj      = e.cnpj_filial
 ORDER BY f.nome, p.nome, fl.nome;
 ```
 
+ou
+
+```sql
+SELECT
+    f.nome        AS fornecedor,
+    p.nome        AS produto,
+    i.descricao   AS descricao_produto,
+    fl.nome       AS filial,
+    e.preco,
+    e.quantidade,
+    e.validade
+FROM      Produto p
+JOIN Fornecedor    f  ON f.cnpj       = p.cnpj_fornecedor
+JOIN Identificacao i  ON i.id         = p.id
+JOIN Estoque       e  ON e.id_produto = p.id
+JOIN Filial        fl ON fl.cnpj      = e.cnpj_filial
+ORDER BY f.nome, p.nome, fl.nome;
+```
+
 
 ### LEFT JOIN (ou LEFT OUTER JOIN)
 
