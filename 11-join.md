@@ -107,6 +107,19 @@ ORDER BY f.nome;
 
 *Agora Epsilon, Zeta e Theta aparecem no resultado, com `produto = NULL`.*
 
+
+```sql
+SELECT
+    f.nome        AS fornecedor,
+    p.nome        AS produto,
+    e.quantidade,
+    e.preco
+FROM       Fornecedor f
+LEFT JOIN  Produto p ON f.cnpj = p.cnpj_fornecedor
+LEFT JOIN  Estoque e ON p.id   = e.id_produto
+ORDER BY f.nome, p.nome;
+```
+
 ### RIGHT JOIN (ou RIGHT OUTER JOIN)
 
 O espelho do `LEFT JOIN`: retorna **todas** as linhas da tabela à **direita** (`Produto`), mesmo sem correspondência na tabela da esquerda, que é a tabela `Fornecedor`. 
