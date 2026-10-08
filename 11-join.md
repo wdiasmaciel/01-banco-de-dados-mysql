@@ -221,6 +221,7 @@ SELECT f.nome AS fornecedor, p.nome AS produto
 FROM Fornecedor f, Produto p
 ORDER BY f.nome, p.nome;
 ```
+Contando os registros do produto cartesiano:
 
 ```sql
 SELECT count(*)
