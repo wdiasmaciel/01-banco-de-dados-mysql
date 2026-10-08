@@ -53,11 +53,11 @@ SELECT
     e.preco,
     e.quantidade,
     e.validade
-FROM      Produto p
-INNER JOIN Fornecedor    f  ON f.cnpj       = p.cnpj_fornecedor
-INNER JOIN Identificacao i  ON i.id         = p.id
-INNER JOIN Estoque       e  ON e.id_produto = p.id
-INNER JOIN Filial        fl ON fl.cnpj      = e.cnpj_filial
+FROM       Produto p
+INNER JOIN Fornecedor    f  ON p.cnpj_fornecedor = f.cnpj
+INNER JOIN Identificacao i  ON p.id              = i.id
+INNER JOIN Estoque       e  ON p.id              = e.id_produto
+INNER JOIN Filial        fl ON e.cnpj_filial     = fl.cnpj
 ORDER BY f.nome, p.nome, fl.nome;
 ```
 
@@ -72,11 +72,11 @@ SELECT
     e.preco,
     e.quantidade,
     e.validade
-FROM      Produto p
-JOIN Fornecedor    f  ON f.cnpj       = p.cnpj_fornecedor
-JOIN Identificacao i  ON i.id         = p.id
-JOIN Estoque       e  ON e.id_produto = p.id
-JOIN Filial        fl ON fl.cnpj      = e.cnpj_filial
+FROM       Produto p
+JOIN Fornecedor    f  ON p.cnpj_fornecedor = f.cnpj
+JOIN Identificacao i  ON p.id              = i.id
+JOIN Estoque       e  ON p.id              = e.id_produto
+JOIN Filial        fl ON e.cnpj_filial     = fl.cnpj
 ORDER BY f.nome, p.nome, fl.nome;
 ```
 
@@ -134,6 +134,25 @@ ORDER BY p.nome;
 ```
 
 > **OBS:** explique por que, nesse caso específico, `RIGHT JOIN` e `INNER JOIN` dão o mesmo resultado. Em que situação (se `cnpj_fornecedor` pudesse ser `NULL`) o resultado seria diferente.
+
+
+```sql
+SELECT
+    f.nome        AS fornecedor,
+    p.nome        AS produto,
+    i.descricao   AS descricao_produto,
+    fl.nome       AS filial,
+    e.preco,
+    e.quantidade,
+    e.validade
+FROM      Produto p
+INNER JOIN Fornecedor    f  ON f.cnpj       = p.cnpj_fornecedor
+INNER JOIN Identificacao i  ON i.id         = p.id
+LEFT JOIN Estoque       e  ON e.id_produto = p.id
+INNER JOIN Filial        fl ON fl.cnpj      = e.cnpj_filial
+ORDER BY f.nome, p.nome, fl.nome;
+```
+
 
 ### CROSS JOIN
 
