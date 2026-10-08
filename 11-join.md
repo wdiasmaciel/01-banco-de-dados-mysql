@@ -192,7 +192,7 @@ RIGHT JOIN  Fornecedor f ON f.cnpj       = p.cnpj_fornecedor
 ORDER BY f.nome, p.nome;
 ```
 
-### CROSS JOIN
+### CROSS JOIN: Produto Cartesiano
 
 Retorna o **produto cartesiano** entre as duas tabelas. Cada linha de uma tabela combinada com **todas** as linhas da outra, sem nenhuma condição de correspondência. 
 
