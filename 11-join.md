@@ -116,6 +116,7 @@ ORDER BY f.nome;
 3. A combinação que de fato gera `NULL` é `Fornecedor → Produto → Estoque`, porque:
     - 3 dos 8 fornecedores (Epsilon, Zeta, Theta) não têm nenhum produto.
     - Como consequência, também não têm nenhuma linha em `Estoque`.
+    - O `NULL` "se propaga": como não há produto para esses fornecedores, o segundo `LEFT JOIN` (com `Estoque`) também não encontra algo para combinar, então quantidade e preco ficam `NULL` igualmente.
 
 ```sql
 SELECT
