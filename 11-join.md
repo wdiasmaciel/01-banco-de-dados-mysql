@@ -168,9 +168,9 @@ Em relação ao `LEFT JOIN` com 3 tabelas, é preciso inverter a ordem das tabel
 
 ```sql
 SELECT
-    p.nome        AS produto,
-    e.quantidade,
     e.preco,
+    e.quantidade,
+    p.nome        AS produto,
     f.nome        AS fornecedor
 FROM        Estoque e
 RIGHT JOIN  Produto p    ON e.id_produto      = p.id
