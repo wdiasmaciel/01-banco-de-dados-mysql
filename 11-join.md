@@ -43,6 +43,25 @@ ORDER BY f.nome;
 
 *Fornecedores sem produto (Epsilon, Zeta, Theta) **não aparecem** no resultado.*
 
+
+```sql
+SELECT
+    f.nome        AS fornecedor,
+    p.nome        AS produto,
+    i.descricao   AS descricao_produto,
+    fl.nome       AS filial,
+    e.preco,
+    e.quantidade,
+    e.validade
+FROM      Produto p
+INNER JOIN Fornecedor    f  ON f.cnpj       = p.cnpj_fornecedor
+INNER JOIN Identificacao i  ON i.id         = p.id
+INNER JOIN Estoque       e  ON e.id_produto = p.id
+INNER JOIN Filial        fl ON fl.cnpj      = e.cnpj_filial
+ORDER BY f.nome, p.nome, fl.nome;
+```
+
+
 ### LEFT JOIN (ou LEFT OUTER JOIN)
 
 Retorna **todas** as linhas da tabela à **esquerda** (`Fornecedor`), mesmo que não haja correspondência na tabela da direita, que é a tabela `Produto`. Nesse caso, as colunas vindas de `Produto` aparecem como `NULL`.
