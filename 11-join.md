@@ -166,7 +166,7 @@ Em relação ao `LEFT JOIN` com 3 tabelas, é preciso inverter a ordem das tabel
 
 **OBS**:
 
-  - A ordem das colunas no `SELECT` é puramente visual/cosmética: ela não interfere em quais linhas são retornadas, nem em onde os `JOINs` colocam `NULL`. Quem decide isso é a lógica do `JOIN` (`LEFT`/`RIGHT` + a condição do `ON`), não a posição das colunas na consulta.
+  - A ordem das colunas no `SELECT` é puramente `visual`/`cosmética`: ela não interfere em quais linhas são retornadas, nem em onde os `JOINs` colocam `NULL`. Quem decide isso é a lógica do `JOIN` (`LEFT`/`RIGHT` + a condição do `ON`), não a posição das colunas na consulta.
 
 ```sql
 SELECT
