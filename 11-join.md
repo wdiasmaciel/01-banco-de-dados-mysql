@@ -136,24 +136,6 @@ ORDER BY p.nome;
 > **OBS:** explique por que, nesse caso específico, `RIGHT JOIN` e `INNER JOIN` dão o mesmo resultado. Em que situação (se `cnpj_fornecedor` pudesse ser `NULL`) o resultado seria diferente.
 
 
-```sql
-SELECT
-    f.nome        AS fornecedor,
-    p.nome        AS produto,
-    i.descricao   AS descricao_produto,
-    fl.nome       AS filial,
-    e.preco,
-    e.quantidade,
-    e.validade
-FROM      Produto p
-INNER JOIN Fornecedor    f  ON f.cnpj       = p.cnpj_fornecedor
-INNER JOIN Identificacao i  ON i.id         = p.id
-LEFT JOIN Estoque       e  ON e.id_produto = p.id
-INNER JOIN Filial        fl ON fl.cnpj      = e.cnpj_filial
-ORDER BY f.nome, p.nome, fl.nome;
-```
-
-
 ### CROSS JOIN
 
 Retorna o **produto cartesiano** entre as duas tabelas. Cada linha de uma tabela combinada com **todas** as linhas da outra, sem nenhuma condição de correspondência. 
