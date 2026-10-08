@@ -164,6 +164,8 @@ Em relação ao `LEFT JOIN` com 3 tabelas, é preciso inverter a ordem das tabel
 
 `RIGHT JOIN` "olha para trás": mantém tudo da tabela à direita do `JOIN`, então a tabela que você quer preservar por completo (`Fornecedor`) precisa vir depois no encadeamento.
 
+**OBS**:
+
   - A ordem das colunas no `SELECT` é puramente visual/cosmética: ela não interfere em quais linhas são retornadas, nem em onde os `JOINs` colocam `NULL`. Quem decide isso é a lógica do `JOIN` (`LEFT`/`RIGHT` + a condição do `ON`), não a posição das colunas na consulta.
 
 ```sql
