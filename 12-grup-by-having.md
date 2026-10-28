@@ -4,7 +4,7 @@
       <a href="11-join.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="#">Próximo</a>
+      <a href="13-select.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -523,7 +523,7 @@ INSERT INTO mineiro (codigo, nome, cidade)
       <a href="11-join.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="#">Próximo</a>
+      <a href="13-select.md">Próximo</a>
     </td>
   </tr>
 </table>
