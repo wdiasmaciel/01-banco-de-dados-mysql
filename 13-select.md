@@ -26,12 +26,10 @@ SELECT id_produto, id_filial, preco, 12 * (preco + 100)
 FROM   Estoque;
 ```
 
-> Ambas as consultas têm erro: `nome` não existe em `Estoque`. Corrigindo com subquery (sem `JOIN`, mantendo o padrão combinado desta disciplina):
-
 ```sql
 SELECT (SELECT nome FROM Produto WHERE id = e.id_produto) AS nome,
-       e.preco,
-       12 * e.preco + 100 AS projecao_simples
+       e.preco AS "preço",
+       12 * e.preco + 100 AS "novo preço"
 FROM   Estoque e;
 ```
 
