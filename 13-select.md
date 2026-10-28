@@ -35,8 +35,8 @@ FROM   Estoque e;
 
 ```sql
 SELECT (SELECT nome FROM Produto WHERE id = e.id_produto) AS nome,
-       e.preco,
-       12 * (e.preco + 100) AS projecao_com_parenteses
+       e.preco As "preço",
+       12 * (e.preco + 100) AS "novo preço"
 FROM   Estoque e;
 ```
 
