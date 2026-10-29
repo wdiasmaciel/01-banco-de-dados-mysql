@@ -97,12 +97,19 @@ WHERE  nome LIKE '_o%'; -- nome tem que iniciar com uma única letra qualquer an
 
 ## 5. ESCAPE no LIKE
 
-Usado para procurar literalmente pelo caractere `%` ou `_` dentro de um texto (em vez de tratá-los como curinga). A sintaxe `ESCAPE` é idêntica no MySQL. Como nenhum dado do projeto contém `%` ou `_` no nome, inserimos um registro de teste para demonstrar:
+Usado para procurar literalmente pelo caractere `%` ou `_` dentro de um texto (em vez de tratá-los como curinga). 
+
+No MySQL, a sintaxe `ESCAPE` é `\`. 
+
+Como nenhum dado do projeto contém `%` (`\%`) ou `_` (`\_`) no nome, inserimos registros de teste para demonstrar:
 
 ```sql
-INSERT INTO Produto (id, cnpj_fornecedor, nome)
-VALUES (7, '55555555000105', 'Kit_Degustacao');
+INSERT INTO Produto (id, cnpj_fornecedor, nome) VALUES 
+(7, '55555555000105', 'Kit_Degustação'),
+(8, '55555555000105', 'Iogurte 0% Lactose');
+``` 
 
+```sql
 SELECT nome
 FROM   Produto
 WHERE  nome LIKE '%\_%' ESCAPE '\\';
