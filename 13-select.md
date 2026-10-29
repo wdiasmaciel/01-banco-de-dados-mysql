@@ -192,6 +192,27 @@ FROM   Estoque
 ORDER BY 'novo preço';
 ```
 
+**OBS**:
+No MySQL padrão, aspas duplas ("), por padrão, podem representar strings literais, da mesma forma que aspas simples ('), quando o modo `SQL ANSI_QUOTES` não está ativo.
+
+Exemplo:
+```sql
+SELECT "Produto";  -- Tratado como string literal: Produto
+```
+```sql
+SELECT "nome";     -- Em alguns casos, também pode funcionar como identificador
+```
+
+Por isso, para gerar aliases com espaços ou caracteres especiais, é mais seguro usar aspas simples ou, preferencialmente, crases para identificadores:
+
+```sql
+SELECT nome AS 'Nome do produto';  -- Aliases com string
+```
+
+```sql
+SELECT nome AS `Nome do produto`;  -- Aliases como identificador MySQL
+```
+
 2. **Por posição da coluna no SELECT:**
 
 ```sql
