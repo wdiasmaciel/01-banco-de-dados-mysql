@@ -30,8 +30,8 @@ Também é possível executar várias operações em um único comando, separand
 
 ```sql
 ALTER TABLE Produto
-    ADD COLUMN codigo_barras VARCHAR(20) NULL,
-    ADD COLUMN ativo BOOLEAN NOT NULL DEFAULT TRUE;
+        ADD COLUMN codigo_barras VARCHAR(20) NULL,
+        ADD COLUMN ativo BOOLEAN NOT NULL DEFAULT TRUE;
 ```
 
 ---
@@ -42,7 +42,7 @@ A cláusula `ADD COLUMN` cria uma nova coluna na tabela.
 
 ```sql
 ALTER TABLE Produto
-    ADD COLUMN peso DECIMAL(8,3) NULL;
+        ADD COLUMN peso DECIMAL(8,3) NULL;
 ```
 
 Por padrão, a nova coluna é adicionada ao final da tabela.
@@ -51,8 +51,14 @@ Para posicionar uma coluna, o MySQL permite usar `FIRST`, que coloca o campo no 
 
 ```sql
 ALTER TABLE Produto
-    ADD COLUMN unidade_medida VARCHAR(20) NOT NULL DEFAULT 'unidade'
-    AFTER nome;
+        ADD COLUMN codigo VARCHAR(20) NULL
+      FIRST;
+```
+
+```sql
+ALTER TABLE Produto
+        ADD COLUMN unidade_medida VARCHAR(20) NOT NULL DEFAULT 'unidade'
+      AFTER nome;
 ```
 
 > **OBS:** `FIRST` e `AFTER` são recursos específicos do MySQL.
@@ -67,12 +73,12 @@ Em `ALTER COLUMN`, é possível alterar o valor padrão ou remover o valor padr�
 
 ```sql
 ALTER TABLE Produto
-    ALTER COLUMN unidade_medida SET DEFAULT 'caixa';
+      ALTER COLUMN unidade_medida SET DEFAULT 'caixa';
 ```
 
 ```sql
 ALTER TABLE Produto
-    ALTER COLUMN unidade_medida DROP DEFAULT;
+      ALTER COLUMN unidade_medida DROP DEFAULT;
 ```
 
 ### MODIFY COLUMN
@@ -81,7 +87,7 @@ ALTER TABLE Produto
 
 ```sql
 ALTER TABLE Produto
-    MODIFY COLUMN nome VARCHAR(150) NOT NULL;
+     MODIFY COLUMN nome VARCHAR(150) NULL;
 ```
 
 ### CHANGE COLUMN
@@ -89,11 +95,13 @@ ALTER TABLE Produto
 `CHANGE COLUMN` altera o tipo da coluna e permite renomeá-la ao mesmo tempo.
 
 ```sql
-ALTER TABLE Produto
-    CHANGE COLUMN peso peso_gramas INT NULL;
+  ALTER TABLE Produto
+CHANGE COLUMN peso peso_gramas INT NULL;
 ```
 
-Antes de executar mudanças de tipo, verifique se os valores existentes podem ser convertidos sem perda de dados. Por exemplo, converter texto em número pode falhar ou gerar resultados inesperados.
+Antes de executar mudanças de tipo, verifique se os valores existentes podem ser convertidos sem perda de dados. 
+
+Por exemplo, converter texto em número pode falhar ou gerar resultados inesperados.
 
 ---
 
@@ -102,15 +110,15 @@ Antes de executar mudanças de tipo, verifique se os valores existentes podem se
 O uso de `CHANGE COLUMN` com o mesmo nome conserva o campo, mas altera sua definição.
 
 ```sql
-ALTER TABLE Produto
-    CHANGE COLUMN codigo_barras codigo VARCHAR(20) NULL;
+  ALTER TABLE Produto
+CHANGE COLUMN codigo_barras codigo_barras VARCHAR(30) NULL;
 ```
 
 Para alterar apenas o nome e manter o mesmo tipo e as mesmas restrições, o MySQL também permite:
 
 ```sql
-ALTER TABLE Produto
-    RENAME COLUMN codigo_barras TO codigo_produto;
+  ALTER TABLE Produto
+RENAME COLUMN codigo_barras TO codigo_produto;
 ```
 
 ---
@@ -121,10 +129,12 @@ A cláusula `DROP COLUMN` remove a coluna e seus dados.
 
 ```sql
 ALTER TABLE Produto
-    DROP COLUMN unidade_medida;
+       DROP COLUMN unidade_medida;
 ```
 
-> **ATENÇÃO:** `DROP COLUMN` é uma operação destrutiva. Antes de executá-la, confirme que a coluna não é usada por consultas, índices, chaves estrangeiras ou aplicações.
+> **OBS:** 
+1. `DROP COLUMN` é uma operação destrutiva. 
+2. Antes de executá-la, confirme que a coluna não é usada por consultas, índices, chaves estrangeiras ou aplicações.
 
 ---
 
@@ -136,7 +146,7 @@ Para aplicar `NOT NULL`, todos os registros existentes devem ter valor nessa col
 
 ```sql
 ALTER TABLE Produto
-    MODIFY COLUMN peso_gramas INT NOT NULL;
+     MODIFY COLUMN peso_gramas INT NOT NULL;
 ```
 
 Se registros existentes estiverem nulos, preencha esses valores antes de executar a alteração:
@@ -153,15 +163,15 @@ O MySQL permite criar uma restrição `CHECK` com um nome específico:
 
 ```sql
 ALTER TABLE Produto
-    ADD CONSTRAINT chk_produto_peso
-    CHECK (peso_gramas >= 0);
+        ADD CONSTRAINT check_produto_peso
+      CHECK (peso_gramas >= 0);
 ```
 
 Para remover essa restrição:
 
 ```sql
 ALTER TABLE Produto
-    DROP CHECK chk_produto_peso;
+       DROP CHECK check_produto_peso;
 ```
 
 ### UNIQUE
@@ -170,15 +180,15 @@ Uma restrição de unicidade impede valores repetidos na coluna.
 
 ```sql
 ALTER TABLE Produto
-    ADD CONSTRAINT uq_produto_codigo
-    UNIQUE (codigo_produto);
+        ADD CONSTRAINT unique_produto_codigo
+     UNIQUE (codigo_produto);
 ```
 
 Para remover essa restrição:
 
 ```sql
 ALTER TABLE Produto
-    DROP INDEX uq_produto_codigo;
+ DROP INDEX unique_produto_codigo;
 ```
 
 ---
