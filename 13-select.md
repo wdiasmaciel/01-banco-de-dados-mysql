@@ -552,6 +552,10 @@ FROM   Estoque;
 Para formatar datas, o MySQL usa `DATE_FORMAT()` com máscaras de formato:
 
 ```sql
+SELECT DATE_FORMAT(DATE '2026-10-05', '%d/%m/%Y');
+```
+
+```sql
 SELECT id_produto, 
        cnpj_filial, 
        validade,
@@ -571,6 +575,10 @@ FROM   Estoque;
 ```
 
 ```sql
+SELECT DATE_FORMAT(DATE '2026-10-05', '%Y-%m-%d');
+```
+
+```sql
 -- Dia da semana, dia, mês por extenso e ano:
 SELECT id_produto, 
        cnpj_filial, 
@@ -580,12 +588,20 @@ FROM   Estoque;
 ```
 
 ```sql
+SELECT DATE_FORMAT(DATE '2026-10-05', '%W, %d de %M de %Y');
+```
+
+```sql
 -- Dia, mês abreviado e ano:
 SELECT id_produto, 
        cnpj_filial, 
        validade,
        DATE_FORMAT(validade, '%d/%b/%Y') AS data_abreviada
 FROM   Estoque;
+```
+
+```sql
+SELECT DATE_FORMAT(DATE '2026-10-05', '%d/%b/%Y');
 ```
 
 ---
