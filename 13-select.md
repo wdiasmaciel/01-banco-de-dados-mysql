@@ -439,9 +439,7 @@ FROM   Estoque;
 
 ---
 
-## 15. INSERT INTO ... SELECT
-
-No T-SQL do material original, o `SELECT` aparece entre parênteses depois do `INSERT INTO`. No MySQL, **não se usa parênteses** ao redor do `SELECT` nesse caso.
+## INSERT INTO ... SELECT
 
 ```sql
 CREATE TABLE FornecedorBH (
