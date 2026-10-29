@@ -487,9 +487,9 @@ FROM Fornecedor;
 
 9. Aplique parênteses em uma consulta que atenda às duas regras: preço até 12 ou validade posterior a `'2026-12-31'`, mas somente em itens com quantidade diferente de zero.
 
-10. Mostre os produtos cujo CNPJ de filial apareça antes de cada nome e ordene o resultado pelo CNPJ e pelo nome do produto em ordem crescente.
+10. Mostre os produtos com o respectivo CNPJ e nome de suas filiais e ordene o resultado pelo CNPJ e pelo nome do produto em ordem crescente.
 
-11. Converta o nome de cada produto para maiúsculas antes de contar quantos caracteres ele possui.
+11. Converta o nome de cada produto para maiúsculas antes de contar quantos caracteres ele possui. Apresente os resultados.
 
 12. Exiba a posição da primeira vogal `a` do nome dos produtos, pesquisando a partir da quarta posição.
 
@@ -507,7 +507,11 @@ FROM Fornecedor;
 
 19. Substitua um desconto ausente por 10% do preço e apresente o valor líquido após essa regra de negócio.
 
-20. Crie uma lista com validade formatada como `aaaa`, `mês/ano` e `nome do dia por extenso`.
+20. Crie uma lista com validade formatada como `aaaa` ('%Y'), `mês/ano` ('%m/%Y') e `nome do dia por extenso` ('%W').
+
+* Ano: %Y
+* Mês e ano: %m/%Y
+* Nome do dia da semana por extenso: %W
 
 ---
 
