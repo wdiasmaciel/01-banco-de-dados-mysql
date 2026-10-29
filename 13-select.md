@@ -113,6 +113,14 @@ INSERT INTO Produto (id, cnpj_fornecedor, nome) VALUES
 SELECT nome
 FROM   Produto
 WHERE  nome LIKE '%\_%' ESCAPE '\\';
+-- Retorna: Iogurte 0% Lactose (o '\' antes do '%' indica que ele deve
+-- ser tratado como caractere literal, não como curinga)
+```
+
+```sql
+SELECT nome
+FROM   Produto
+WHERE  nome LIKE '%\%%' ESCAPE '\\';
 -- Retorna: Kit_Degustacao (o '\' antes do '_' indica que ele deve
 -- ser tratado como caractere literal, não como curinga)
 ```
