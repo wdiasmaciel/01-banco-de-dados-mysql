@@ -240,6 +240,13 @@ ALTER TABLE Produto
 
 Remover uma chave primária pode permitir valores duplicados ou nulos. Sempre confira os dados antes dessa operação.
 
+Remover a chave estrangeira:
+
+```sql
+ALTER TABLE Produto
+       DROP FOREIGN KEY fk_produto_fornecedor;
+```
+
 Remover o `AUTO_INCREMENT` e depois a chave primária:
 
 ```sql
