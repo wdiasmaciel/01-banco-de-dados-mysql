@@ -15,7 +15,9 @@
 
 # Comando ALTER TABLE
 
-O comando `ALTER TABLE` pertence à DDL e altera a estrutura de uma tabela já existente. Ele pode adicionar, remover ou modificar colunas, alterar restrições, índices e nomes de objetos.
+O comando `ALTER TABLE` pertence à Data Definition Language (DDL) e altera a estrutura de uma tabela já existente. 
+
+Ele pode adicionar, remover ou modificar colunas, alterar restrições (constraints), índices e nomes de objetos.
 
 Antes de alterar uma tabela importante, consulte seus dados, faça um backup e analise como as alterações podem afetar consultas, aplicações e outros objetos relacionados.
 
