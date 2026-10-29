@@ -40,13 +40,11 @@ SELECT (SELECT nome FROM Produto WHERE id = e.id_produto) AS nome,
 FROM   Estoque e;
 ```
 
-**Ponto para explorar em aula:** peça aos alunos para calcularem manualmente os dois resultados para o mesmo `preco` e explicarem por que são diferentes — é o exemplo clássico de precedência de operadores (`*` antes de `+`, a menos que parênteses mudem a ordem).
-
 ---
 
 ## 2. Concatenação de strings
 
-No T-SQL, `+` concatena strings. No MySQL, `+` é **somente aritmético** — usar `+` entre strings tenta convertê-las para número e provavelmente retorna `0` ou erro. A função correta é `CONCAT()`.
+No MySQL, `+` é **somente aritmético**. A função correta é `CONCAT()`.
 
 ```sql
 SELECT CONCAT(nome, ' está localizado em ', endereco) AS "Detalhes do Fornecedor"
@@ -57,7 +55,7 @@ FROM   Fornecedor;
 
 ## 3. Operações com datas
 
-No T-SQL, `data + 5` soma 5 dias a uma data. No MySQL, isso precisa da função `DATE_ADD()`.
+No MySQL, a função `DATE_ADD()` soma dias a uma data. 
 
 ```sql
 SELECT id_produto, cnpj_filial, validade,
