@@ -14,7 +14,7 @@
 # Select 
 
 
-## 1. Operadores aritméticos e precedência
+## Operadores aritméticos e precedência
 
 ```sql
 SELECT id_produto, id_filial, preco, 12 * preco + 100
@@ -42,7 +42,7 @@ FROM   Estoque e;
 
 ---
 
-## 2. Concatenação de strings
+## Concatenação de strings
 
 No MySQL, `+` é **somente aritmético**. A função correta é `CONCAT()`.
 
@@ -53,7 +53,7 @@ FROM   Fornecedor;
 
 ---
 
-## 3. Operações com datas
+## Operações com datas
 
 No MySQL, a função `DATE_ADD()` soma dias a uma data. 
 
@@ -66,7 +66,7 @@ WHERE  validade >= '2026-07-01';
 
 ---
 
-## 4. Operador LIKE e curingas
+## Operador LIKE e curingas
 
 Caracteres curingas no MySQL: 
 1. `%` representa zero ou vários caracteres.
@@ -95,7 +95,7 @@ WHERE  nome LIKE '_o%'; -- nome tem que iniciar com uma única letra qualquer an
 
 ---
 
-## 5. ESCAPE no LIKE
+## ESCAPE no LIKE
 
 Usado para procurar literalmente pelo caractere `%` ou `_` dentro de um texto (em vez de tratá-los como curinga). 
 
@@ -133,7 +133,7 @@ WHERE  nome LIKE '%\%%' ESCAPE '\\';
 
 ---
 
-## 6. NOT IN
+## NOT IN
 
 Encontrar fornecedores que **não têm** algum produto associado:
 
@@ -143,9 +143,7 @@ FROM   Fornecedor
 WHERE  cnpj NOT IN (SELECT DISTINCT cnpj_fornecedor FROM Produto);
 ```
 
----
-
-## 7. NOT IN
+Encontrar o nome das filiais que não estejam entre ('Filial Centro', 'Filial Savassi'):
 
 ```sql
 SELECT nome
