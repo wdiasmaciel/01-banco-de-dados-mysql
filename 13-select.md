@@ -463,7 +463,17 @@ WHERE  endereco LIKE '%Belo Horizonte%';
 
 2. Calcule 15% de imposto sobre o preço unitário e depois some esse valor ao próprio preço.
 
-3. Exiba o endereço de cada fornecedor seguido de duas barras e do respectivo nome, utilizando `CONCAT_WS()`.
+3. Exiba o endereço de cada fornecedor seguido de duas barras e do respectivo nome, utilizando `CONCAT_WS()`. `CONCAT_WS()` significa Concatenate With Separator: concatena vários textos, inserindo um separador entre eles. Sintaxe: 
+
+```sql
+CONCAT_WS(separador, valor1, valor2, ...);
+```
+Exemplo:
+
+```sql
+SELECT CONCAT_WS(' - ', nome, endereco)
+FROM Fornecedor;
+```
 
 4. Consulte os produtos cuja validade no estoque vencerá em exatamente 30 dias a partir da data `'2026-10-29'`, usando `DATE_ADD()`.
 
