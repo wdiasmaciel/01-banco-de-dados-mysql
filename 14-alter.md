@@ -240,6 +240,13 @@ ALTER TABLE Produto
 
 Remover uma chave primária pode permitir valores duplicados ou nulos. Sempre confira os dados antes dessa operação.
 
+Remover o `AUTO_INCREMENT` e depois a chave primária:
+
+```sql
+ALTER TABLE Produto
+    MODIFY COLUMN id INT NOT NULL;
+```
+
 ```sql
 ALTER TABLE Produto
        DROP PRIMARY KEY;
