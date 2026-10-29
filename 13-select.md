@@ -92,6 +92,11 @@ FROM   Estoque
 WHERE  validade >= '2026-07-01';
 ```
 
+```sql
+SELECT NOW() AS hora_atual,
+       DATE_ADD(NOW(), INTERVAL 30 MINUTE) AS daqui_a_30_minutos;
+```
+ 
 ---
 
 ## Operador LIKE e curingas
