@@ -154,7 +154,15 @@ WHERE  nome NOT IN ('Filial Centro', 'Filial Savassi');
 
 ---
 
-## 8. Precedência de AND / OR
+## Precedência de AND / OR
+
+**OBS:** 
+1. O `AND` tem precedência maior que o `OR`. 
+
+2. Na primeira consulta, a condição é avaliada como `preco < 10 OR (quantidade > 50 AND cnpj_filial = '10101010000110')`. Ou seja: 
+    * Qualquer item com `preco < 10` aparece, **mesmo que não seja da Filial Centro**. 
+
+3. Na segunda consulta, os parênteses forçam que a filial seja sempre `'Filial Centro'`. 
 
 ```sql
 SELECT id_produto, cnpj_filial, preco, quantidade
@@ -171,8 +179,6 @@ WHERE  (preco < 10
 OR      quantidade > 50)
 AND     cnpj_filial = '10101010000110';
 ```
-
-**Ponto para explorar em aula:** assim como no original, o `AND` tem precedência maior que o `OR`. Na primeira consulta, a condição é avaliada como `preco < 10 OR (quantidade > 50 AND cnpj_filial = '...')` — ou seja, qualquer item com `preco < 10` aparece, **mesmo que não seja da Filial Centro**. Na segunda, os parênteses forçam que a filial seja sempre `'Filial Centro'`. Peça aos alunos para rodar as duas e comparar os resultados.
 
 ---
 
