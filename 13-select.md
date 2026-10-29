@@ -17,12 +17,12 @@
 ## Operadores aritméticos e precedência
 
 ```sql
-SELECT id_produto, id_filial, preco, 12 * preco + 100
+SELECT id_produto, cnpj_filial, preco, 12 * preco + 100
 FROM   Estoque;
 ```
 
 ```sql
-SELECT id_produto, id_filial, preco, 12 * (preco + 100)
+SELECT id_produto, cnpj_filial, preco, 12 * (preco + 100)
 FROM   Estoque;
 ```
 
