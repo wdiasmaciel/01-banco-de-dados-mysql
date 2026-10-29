@@ -429,6 +429,25 @@ SELECT id_produto,
 FROM   Estoque;
 ```
 
+Para preço baixo, médio e alto:
+
+```sql
+SELECT id_produto,
+       cnpj_filial,
+       preco,
+       CASE
+           WHEN preco < 10 THEN 'Baixo'
+           WHEN preco <= 20 THEN 'Médio'
+           ELSE 'Alto'
+       END AS "Faixa de Preço",
+       CASE cnpj_filial
+           WHEN '10101010000110' THEN 'Filial Centro'
+           WHEN '20202020000120' THEN 'Filial Savassi'
+           WHEN '30303030000130' THEN 'Filial Contagem'
+       END AS "Nome da Filial"
+FROM Estoque;
+```
+
 Classificando a validade por mês de vencimento:
 
 ```sql
