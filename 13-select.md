@@ -182,17 +182,17 @@ AND     cnpj_filial = '10101010000110';
 
 ---
 
-## 9. ORDER BY
+## ORDER BY
 
-**Por alias** (sem aspas duplas, que no MySQL têm outro significado por padrão):
+1. **Por alias** (sem aspas duplas, que no MySQL têm outro significado por padrão):
 
 ```sql
-SELECT id_produto, preco * 1.5 AS novo_preco
+SELECT id_produto, preco, preco * 1.5 AS 'novo preço'
 FROM   Estoque
-ORDER BY novo_preco;
+ORDER BY 'novo preço';
 ```
 
-**Por posição da coluna no SELECT:**
+2. **Por posição da coluna no SELECT:**
 
 ```sql
 SELECT id, descricao
@@ -200,7 +200,7 @@ FROM   Identificacao
 ORDER BY 2;
 ```
 
-**Por mais de uma coluna:**
+3. **Por mais de uma coluna:**
 
 ```sql
 SELECT nome, cnpj_fornecedor
@@ -208,7 +208,7 @@ FROM   Produto
 ORDER BY cnpj_fornecedor, nome;
 ```
 
-**Por uma coluna que não está no SELECT** (válido tanto em T-SQL quanto em MySQL):
+4. **Por uma coluna que não está no SELECT**:
 
 ```sql
 SELECT nome, endereco
@@ -216,7 +216,7 @@ FROM   Filial
 ORDER BY cnpj;
 ```
 
-**Múltiplas colunas com direções diferentes:**
+5. **Múltiplas colunas com direções diferentes:**
 
 ```sql
 SELECT id_produto, cnpj_filial
@@ -226,16 +226,16 @@ ORDER BY cnpj_filial, id_produto DESC;
 
 ---
 
-## 10. Funções de manipulação de caracteres
+## Funções de manipulação de caracteres
 
-| T-SQL | MySQL | Observação |
-|---|---|---|
-| `LEN()` | `LENGTH()` / `CHAR_LENGTH()` | `LENGTH()` conta bytes; `CHAR_LENGTH()` conta caracteres (importante com acentos) |
-| `CHARINDEX(busca, texto, pos)` | `LOCATE(busca, texto, pos)` | mesma ordem de argumentos |
-| `LEFT()` / `RIGHT()` | `LEFT()` / `RIGHT()` | sintaxe idêntica |
-| `LTRIM()` / `RTRIM()` | `LTRIM()` / `RTRIM()` | sintaxe idêntica (só removem espaços em branco) |
-| `REPLACE()` | `REPLACE()` | sintaxe idêntica |
-| `SUBSTRING()` | `SUBSTRING()` | sintaxe idêntica |
+| Função | Observação |
+|---|---|
+| `LENGTH()` / `CHAR_LENGTH()` | `LENGTH()` conta bytes; `CHAR_LENGTH()` conta caracteres (importante com acentos) |
+| `LOCATE(busca, texto, pos)` | mesma ordem de argumentos |
+| `LEFT()` / `RIGHT()` | sintaxe idêntica |
+| `LTRIM()` / `RTRIM()` | sintaxe idêntica (só removem espaços em branco) |
+| `REPLACE()` | sintaxe idêntica |
+| `SUBSTRING()` | sintaxe idêntica |
 
 ```sql
 SELECT nome, SUBSTRING(nome, 1, 5) AS sub
