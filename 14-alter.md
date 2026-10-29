@@ -234,6 +234,34 @@ ALTER TABLE Produto
  DROP INDEX idx_produto_nome;
 ```
 
+Para listar todos os índices existentes em uma tabela, use `SHOW INDEX`:
+
+```sql
+SHOW INDEX FROM Produto;
+```
+
+A coluna `Key_name` identifica o nome de cada índice. Por exemplo, a chave primária aparece com o nome `PRIMARY`.
+
+Também é possível consultar os índices pelas metainformações do MySQL. A função `DATABASE()` retorna o banco de dados selecionado:
+
+```sql
+SELECT index_name,
+       column_name,
+       seq_in_index,
+       non_unique,
+       index_type
+FROM   information_schema.statistics
+WHERE  table_schema = DATABASE()
+AND    table_name = 'Produto'
+ORDER BY index_name, seq_in_index;
+```
+
+- `index_name`: nome do índice;
+- `column_name`: coluna indexada;
+- `seq_in_index`: posição da coluna em índices compostos;
+- `non_unique = 0`: índice único;
+- `non_unique = 1`: índice não único.
+
 ---
 
 ## Modificando a chave primária
