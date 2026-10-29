@@ -609,6 +609,12 @@ SELECT DATE_FORMAT(DATE '2026-10-05', '%d/%b/%Y');
 ## INSERT INTO ... SELECT
 
 ```sql
+INSERT INTO Fornecedor (cnpj, nome, telefone, endereco) VALUES
+('99999999000109', 'Distribuidora Contagem Ltda.', '3133330001', 'Rua das Indústrias, 100 - Contagem/MG'),
+('00000000000100', 'Comercial Betim Ltda.', '3133330002', 'Avenida Juscelino Kubitschek, 200 - Betim/MG');
+```
+
+```sql
 CREATE TABLE FornecedorBH (
     cnpj      VARCHAR(14)  NOT NULL,
     nome      VARCHAR(100) NOT NULL,
