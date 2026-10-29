@@ -234,6 +234,10 @@ ALTER TABLE Produto
  DROP INDEX idx_produto_nome;
 ```
 
+--- 
+
+## Listar Índices
+
 Para listar todos os índices existentes em uma tabela, use `SHOW INDEX`:
 
 ```sql
