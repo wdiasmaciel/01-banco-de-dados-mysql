@@ -97,6 +97,14 @@ SELECT NOW() AS hora_atual,
        DATE_ADD(NOW(), INTERVAL 30 MINUTE) AS daqui_a_30_minutos;
 ```
  
+```sql
+SELECT DATE_FORMAT(NOW(), '%d/%m/%Y %H:%i:%s') AS hora_atual,
+       DATE_FORMAT(
+           DATE_ADD(NOW(), INTERVAL 30 MINUTE),
+           '%d/%m/%Y %H:%i:%s'
+       ) AS daqui_a_30_minutos;
+```
+
 ---
 
 ## Operador LIKE e curingas
