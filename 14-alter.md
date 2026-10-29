@@ -163,7 +163,7 @@ O MySQL permite criar uma restrição `CHECK` com um nome específico:
 
 ```sql
 ALTER TABLE Produto
-        ADD CONSTRAINT check_produto_peso
+        ADD CONSTRAINT chk_produto_peso
       CHECK (peso_gramas >= 0);
 ```
 
@@ -171,7 +171,7 @@ Para remover essa restrição:
 
 ```sql
 ALTER TABLE Produto
-       DROP CHECK check_produto_peso;
+       DROP CHECK chk_produto_peso;
 ```
 
 ### UNIQUE
@@ -180,7 +180,7 @@ Uma restrição de unicidade impede valores repetidos na coluna.
 
 ```sql
 ALTER TABLE Produto
-        ADD CONSTRAINT unique_produto_codigo
+        ADD CONSTRAINT uq_produto_codigo
      UNIQUE (codigo_produto);
 ```
 
@@ -188,7 +188,7 @@ Para remover essa restrição:
 
 ```sql
 ALTER TABLE Produto
- DROP INDEX unique_produto_codigo;
+ DROP INDEX uq_produto_codigo;
 ```
 
 ---
@@ -199,23 +199,23 @@ Uma chave estrangeira exige que os valores da coluna referenciada exista na tabe
 
 ```sql
 ALTER TABLE Produto
-    ADD CONSTRAINT fk_produto_fornecedor
-    FOREIGN KEY (cnpj_fornecedor)
-    REFERENCES Fornecedor (cnpj);
+        ADD CONSTRAINT fk_produto_fornecedor
+            FOREIGN KEY (cnpj_fornecedor)
+            REFERENCES Fornecedor (cnpj);
 ```
 
 Para remover a chave estrangeira:
 
 ```sql
 ALTER TABLE Produto
-    DROP FOREIGN KEY fk_produto_fornecedor;
+       DROP FOREIGN KEY fk_produto_fornecedor;
 ```
 
 Após remover uma chave estrangeira, o índice criado pelo MySQL pode continuar existindo e, se necessário, deve ser removido separadamente:
 
 ```sql
 ALTER TABLE Produto
-    DROP INDEX fk_produto_fornecedor;
+ DROP INDEX fk_produto_fornecedor;
 ```
 
 ---
@@ -226,12 +226,12 @@ ALTER TABLE Produto
 
 ```sql
 ALTER TABLE Produto
-    ADD INDEX idx_produto_nome (nome);
+  ADD INDEX idx_produto_nome (nome);
 ```
 
 ```sql
 ALTER TABLE Produto
-    DROP INDEX idx_produto_nome;
+ DROP INDEX idx_produto_nome;
 ```
 
 ---
@@ -242,14 +242,14 @@ Remover uma chave primária pode permitir valores duplicados ou nulos. Sempre co
 
 ```sql
 ALTER TABLE Produto
-    DROP PRIMARY KEY;
+       DROP PRIMARY KEY;
 ```
 
 Se os registros forem únicos e válidos, uma nova chave primária pode ser criada:
 
 ```sql
 ALTER TABLE Produto
-    ADD PRIMARY KEY (id);
+        ADD PRIMARY KEY (id);
 ```
 
 ---
@@ -260,7 +260,7 @@ O comando `RENAME TO` altera o nome da tabela sem mover ou copiar seus dados.
 
 ```sql
 ALTER TABLE Produto
-    RENAME TO Item;
+     RENAME TO Item;
 ```
 
 Nomes usados por aplicações e consultas também precisam ser atualizados.
