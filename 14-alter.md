@@ -268,12 +268,9 @@ ORDER BY index_name, seq_in_index;
 
 Remover uma chave primária pode permitir valores duplicados ou nulos. Sempre confira os dados antes dessa operação.
 
-Remover a chave estrangeira:
+**OBS**:
+1. É necessário remover todas as chaves estrangeiras que referenciam a chave primária.
 
-```sql
-ALTER TABLE Produto
-       DROP FOREIGN KEY fk_produto_fornecedor;
-```
 
 Remover o `AUTO_INCREMENT` e depois a chave primária:
 
