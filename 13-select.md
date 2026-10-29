@@ -319,6 +319,10 @@ ORDER BY cnpj_filial, id_produto DESC;
 | `SUBSTRING()` | Extrai uma parte do texto a partir de uma posição inicial e, opcionalmente, com um comprimento definido |
 
 ```sql
+SELECT "pão novo", LENGTH("pão novo") AS bytes, CHAR_LENGTH("pão novo") AS tamanho;
+```
+
+```sql
 SELECT nome, LENGTH(nome) AS bytes, CHAR_LENGTH(nome) AS tamanho
 FROM   Fornecedor;
 ```
