@@ -335,7 +335,7 @@ Classificar o preço dos itens de estoque e traduzir o código da filial para o 
 SELECT id_produto,
        cnpj_filial,
        preco,
-       CASE preco
+       CASE 
            WHEN preco < 10 THEN 'Baixo'
            ELSE 'Alto'
        END AS "Faixa de Preço",
@@ -347,7 +347,7 @@ SELECT id_produto,
 FROM   Estoque;
 ```
 
-Classificando a validade por mês de vencimento (equivalente ao exemplo original de `datadevolucao BETWEEN ...`):
+Classificando a validade por mês de vencimento:
 
 ```sql
 SELECT id_produto, cnpj_filial, validade,
@@ -362,22 +362,35 @@ FROM   Estoque;
 
 ---
 
-## 13. IFNULL (equivalente ao ISNULL do T-SQL)
+## IFNULL 
 
-O projeto não tem, hoje, nenhuma coluna numérica que aceite `NULL`. Para demonstrar `IFNULL()` de forma prática, adicionamos temporariamente uma coluna opcional `desconto` a `Estoque`:
+O projeto não tem, no momento, nenhuma coluna numérica que aceite `NULL`. 
+
+Para demonstrar `IFNULL()` de forma prática, adicionamos temporariamente uma coluna opcional `desconto` a `Estoque`:
 
 ```sql
-ALTER TABLE Estoque ADD COLUMN desconto DECIMAL(10,2) NULL;
+ALTER 
+TABLE Estoque 
+  ADD COLUMN desconto DECIMAL(10,2) NULL;
+```
 
-UPDATE Estoque SET desconto = 2.00 WHERE id_produto = 1 AND cnpj_filial = '10101010000110';
+```sql
+UPDATE Estoque 
+   SET desconto = 2.00 
+ WHERE id_produto = 1 
+   AND cnpj_filial = '10101010000110';
 -- Os demais registros permanecem com desconto = NULL
+```
 
+```sql
 SELECT id_produto, cnpj_filial, preco, desconto,
        preco - IFNULL(desconto, 0) AS preco_final
 FROM   Estoque;
 ```
 
-> **Ponto para explorar em aula:** sem o `IFNULL()`, `preco - desconto` resultaria em `NULL` para todas as linhas em que `desconto` não foi informado (qualquer operação aritmética com `NULL` retorna `NULL`) — o mesmo comportamento discutido na aula sobre a diferença entre `NULL` e string vazia.
+> **OBS:** 
+1. Sem o `IFNULL()`, `preco - desconto` resultaria em `NULL` para todas as linhas em que `desconto` não foi informado.
+2. Porém, qualquer operação aritmética com `NULL` retorna `NULL`.
 
 ---
 
