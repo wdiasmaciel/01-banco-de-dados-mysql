@@ -459,45 +459,45 @@ WHERE  endereco LIKE '%Belo Horizonte%';
 
 # Exercício
 
-1. Calcule o valor de 12 unidades do preço de cada item do estoque, adicionando R$ 100,00 ao resultado.
+1. Calcule o valor do estoque multiplicando o preço pela quantidade disponível; em seguida, adicione uma taxa fixa de embalagem de R$ 25,00 ao total.
 
-2. Calcule o mesmo valor do exercício anterior, mas aplique primeiro o acréscimo de R$ 100,00 ao preço unitário, usando parênteses para alterar a precedência.
+2. Calcule 15% de imposto sobre o preço unitário e depois some esse valor ao próprio preço.
 
-3. Liste o nome do produto, o preço do estoque e o preço acrescido de 50%, atribuindo nomes significativos aos resultados.
+3. Exiba o endereço de cada fornecedor seguido de duas barras e do respectivo nome, utilizando `CONCAT_WS()`.
 
-4. Utilize `CONCAT()` para criar uma descrição contendo o nome de cada fornecedor e seu endereço.
+4. Consulte os produtos cuja validade no estoque vencerá em exatamente 30 dias a partir da data `'2026-10-29'`, usando `DATE_ADD()`.
 
-5. Utilizando `DATE_ADD()`, calcule uma nova data de validade somando 5 dias à validade de cada item.
+5. Liste os fornecedores cujo nome termine com `Ltda.` e tenha qualquer quantidade de caracteres antes dessa expressão.
 
-6. Liste os produtos cujo nome comece com a letra `S`.
+6. Liste os fornecedores cujo endereço comece com `Rua`, mas termine com uma cidade diferente de Belo Horizonte, utilizando `LIKE`.
 
-7. Liste os produtos cujo nome tenha exatamente uma letra antes da letra `o`, seguida de qualquer quantidade de caracteres.
+7. Localize o caractere literal `%` no nome dos produtos com `LIKE`, preparando o padrão com `ESCAPE`.
 
-8. Liste os produtos cujo nome contenha o caractere literal `_` em qualquer posição.
+8. Consulte os fornecedores cujo CNPJ não esteja associado a nenhum produto.
 
-9. Liste os produtos cujo nome contenha o caractere literal `%` em qualquer posição.
+9. Aplique parênteses em uma consulta que atenda às duas regras: preço até 12 ou validade posterior a `'2026-12-31'`, mas somente em itens com quantidade diferente de zero.
 
-10. Liste o nome dos fornecedores que não tenham nenhum produto associado.
+10. Mostre os produtos cujo CNPJ de filial apareça antes de cada nome e ordene o resultado pelo CNPJ e pelo nome do produto em ordem crescente.
 
-11. Escreva uma consulta com `AND`, `OR` e parênteses que retorne os produtos com preço inferior a 10 ou com quantidade superior a 50, mas limitados à filial Centro.
+11. Converta o nome de cada produto para maiúsculas antes de contar quantos caracteres ele possui.
 
-12. Liste os itens do estoque ordenados pela filial e, dentro de cada filial, pelo identificador do produto em ordem decrescente.
+12. Exiba a posição da primeira vogal `a` do nome dos produtos, pesquisando a partir da quarta posição.
 
-13. Liste o nome dos produtos, o tamanho de cada nome em bytes e o número de caracteres.
+13. Substitua a palavra `carioca` por `especial` nos nomes dos produtos e combine o resultado com suas cinco primeiras letras.
 
-14. Localize, a partir da terceira posição, a letra `i` em cada nome de produto.
+14. Remova os espaços laterais do texto `'   Produtos em promoção   '` e apresente o resultado ao lado do texto original.
 
-15. Utilizando uma única consulta, liste os nomes dos produtos com suas três primeiras letras à esquerda e suas três últimas letras à direita.
+15. Arredonde o número 1234,567 para duas casas decimais, para a unidade e para a centena mais próximas.
 
-16. Mostre o valor absoluto, o teto, o piso e o sinal dos números negativos, zero e positivos fornecidos nos exemplos da aula.
+16. Determine o teto e o piso de 19,01 e informe o sinal de `-24`, `0` e `150`.
 
-17. Arredonde o número 748,58 com uma casa decimal, nenhuma casa decimal e para a dezena e a centena mais próximas.
+17. Classifique cada item do estoque como `Esgotado`, `Baixa`, `Normal` ou `Alta`, conforme a quantidade: zero, até 20, até 50 ou acima de 50.
 
-18. Exiba a faixa de preço e o nome da filial de cada item utilizando `CASE WHEN`.
+18. Consulte os itens de estoque e classifique seu prazo como `Vencido`, `Vence em breve` ou `Prazo regular`, comparando as datas com `'2026-10-29'`.
 
-19. Calcule o preço final de cada item considerando o desconto armazenado na coluna `desconto`, substituindo valores nulos por zero com `IFNULL()`.
+19. Substitua um desconto ausente por 10% do preço e apresente o valor líquido após essa regra de negócio.
 
-20. Formate a validade dos itens do estoque nos padrões `dd/mm/aaaa`, `aaaa-mm-dd` e `dia, mês por extenso e ano`.
+20. Crie uma lista com validade formatada como `aaaa`, `mês/ano` e `nome do dia por extenso`.
 
 ---
 
