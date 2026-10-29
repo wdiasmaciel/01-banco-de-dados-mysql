@@ -133,17 +133,15 @@ WHERE  nome LIKE '%\%%' ESCAPE '\\';
 
 ---
 
-## 6. IS NULL
+## 6. NOT IN
 
-No projeto atual, **não há colunas que aceitem `NULL`** (todas são `NOT NULL`), então o exemplo original não tem equivalente direto. A situação mais próxima, no nosso contexto, é usar uma subquery para encontrar fornecedores que **não têm** nenhum produto associado — o mesmo resultado que apareceria como `produto IS NULL` caso fizéssemos um `LEFT JOIN` entre `Fornecedor` e `Produto`:
+Encontrar fornecedores que **não têm** algum produto associado:
 
 ```sql
 SELECT nome
 FROM   Fornecedor
-WHERE  cnpj NOT IN (SELECT cnpj_fornecedor FROM Produto);
+WHERE  cnpj NOT IN (SELECT DISTINCT cnpj_fornecedor FROM Produto);
 ```
-
-**Ponto para explorar em aula:** essa é uma boa ponte para comparar com o `LEFT JOIN ... WHERE produto IS NULL` que vocês viram na aula de `JOIN`s — duas formas diferentes de responder à mesma pergunta ("quem não tem correspondência?"), uma com subquery e outra com junção externa.
 
 ---
 
