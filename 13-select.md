@@ -55,11 +55,39 @@ FROM   Fornecedor;
 
 ## Operações com datas
 
-No MySQL, a função `DATE_ADD()` soma dias a uma data. 
+No MySQL, a função `DATE_ADD()` soma um intervalo de tempo a uma data. 
 
 ```sql
 SELECT id_produto, cnpj_filial, validade,
        DATE_ADD(validade, INTERVAL 5 DAY) AS "Data limite para descarte"
+FROM   Estoque
+WHERE  validade >= '2026-07-01';
+```
+
+```sql
+SELECT id_produto, cnpj_filial, validade,
+       DATE_ADD(validade, INTERVAL -5 DAY) AS "Data limite para descarte"
+FROM   Estoque
+WHERE  validade >= '2026-07-01';
+```
+
+```sql
+SELECT id_produto, cnpj_filial, validade,
+       DATE_ADD(validade, INTERVAL 1 MONTH) AS "Data limite para descarte"
+FROM   Estoque
+WHERE  validade >= '2026-07-01';
+```
+
+```sql
+SELECT id_produto, cnpj_filial, validade,
+       DATE_ADD(validade, INTERVAL 2 YEAR) AS "Data limite para descarte"
+FROM   Estoque
+WHERE  validade >= '2026-07-01';
+```
+
+```sql
+SELECT id_produto, cnpj_filial, validade,
+       DATE_ADD(validade, INTERVAL 30 MINUTE) AS "Data limite para descarte"
 FROM   Estoque
 WHERE  validade >= '2026-07-01';
 ```
