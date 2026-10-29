@@ -231,11 +231,11 @@ ORDER BY cnpj_filial, id_produto DESC;
 | Função | Observação |
 |---|---|
 | `LENGTH()` / `CHAR_LENGTH()` | `LENGTH()` conta bytes; `CHAR_LENGTH()` conta caracteres (importante com acentos) |
-| `LOCATE(busca, texto, pos)` | mesma ordem de argumentos |
-| `LEFT()` / `RIGHT()` | sintaxe idêntica |
-| `LTRIM()` / `RTRIM()` | sintaxe idêntica (só removem espaços em branco) |
-| `REPLACE()` | sintaxe idêntica |
-| `SUBSTRING()` | sintaxe idêntica |
+| `LOCATE(busca, texto, pos)` | Localiza a primeira ocorrência da substring `busca` em `texto`, começando pela posição `pos`; retorna 0 se não encontrar |
+| `LEFT()` / `RIGHT()` | Retorna a quantidade de caracteres indicada à esquerda (`LEFT`) ou à direita (`RIGHT`) de um texto |
+| `LTRIM()` / `RTRIM()` | Remove espaços em branco do início (`LTRIM`) ou do fim (`RTRIM`) de um texto |
+| `REPLACE()` | Substitui todas as ocorrências de um trecho por outro dentro do texto informado |
+| `SUBSTRING()` | Extrai uma parte do texto a partir de uma posição inicial e, opcionalmente, com um comprimento definido |
 
 ```sql
 SELECT nome, SUBSTRING(nome, 1, 5) AS sub
