@@ -448,6 +448,51 @@ SELECT id_produto,
 FROM Estoque;
 ```
 
+### Diferença entre as formas de `CASE`
+
+No exemplo anterior, usamos o **`CASE` pesquisado**:
+
+```sql
+CASE
+    WHEN preco < 10 THEN 'Baixo'
+    WHEN preco <= 20 THEN 'Médio'
+    ELSE 'Alto'
+END
+```
+
+Nesse formato, cada condição escrita depois de `WHEN` é avaliada separadamente.
+
+Já este formato inicia um **`CASE` simples**:
+
+```sql
+CASE preco
+    WHEN preco < 10 THEN 'Baixo'
+    WHEN preco <= 20 THEN 'Médio'
+    ELSE 'Alto'
+END
+```
+
+Ao escrever `CASE preco`, o MySQL compara o valor de `preco` com cada expressão escrita em `WHEN`. Assim, ele tenta equivalências semelhantes a estas:
+
+```text
+preco = (preco < 10)
+preco = (preco <= 20)
+```
+
+Como essas expressões podem gerar resultados booleanos (`0` ou `1`), esse formato não produz corretamente as classificações de preço baixas, médias e altas. 
+
+Para condições comparativas, deve-se omitir a expressão entre `CASE` e o primeiro `WHEN`.
+
+O `CASE` simples é adequado quando a expressão possui valores conhecidos, por exemplo:
+
+```sql
+CASE preco
+    WHEN 10 THEN 'Preço igual a dez'
+    WHEN 20 THEN 'Preço igual a vinte'
+    ELSE 'Outro preço'
+END
+```
+
 Classificando a validade por mês de vencimento:
 
 ```sql
