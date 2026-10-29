@@ -264,11 +264,13 @@ SELECT "nome";     -- Em alguns casos, também pode funcionar como identificador
 Por isso, para gerar aliases com espaços ou caracteres especiais, é mais seguro usar aspas simples ou, preferencialmente, crases para identificadores:
 
 ```sql
-SELECT nome AS 'Nome do produto';  -- Aliases com string
+SELECT nome AS 'Nome do produto'  -- Aliases com string
+  FROM produto;
 ```
 
 ```sql
-SELECT nome AS `Nome do produto`;  -- Aliases como identificador MySQL
+SELECT nome AS `Nome do produto`  -- Aliases como identificador MySQL
+  FROM produto; 
 ```
 
 2. **Por posição da coluna no SELECT:**
