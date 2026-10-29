@@ -554,7 +554,8 @@ Para formatar datas, o MySQL usa `DATE_FORMAT()` com máscaras de formato:
 ```sql
 SELECT id_produto, 
        cnpj_filial, 
-      DATE_FORMAT(validade, '%d/%m/%Y') AS data_formatada
+       validade,
+       DATE_FORMAT(validade, '%d/%m/%Y') AS data_formatada
 FROM   Estoque;
 ```
 
@@ -564,6 +565,7 @@ Outros formatos úteis:
 -- Ano-mês-dia, adequado para exibição internacional (padrão ISO):
 SELECT id_produto, 
        cnpj_filial, 
+       validade,
        DATE_FORMAT(validade, '%Y-%m-%d') AS data_iso
 FROM   Estoque;
 ```
@@ -572,6 +574,7 @@ FROM   Estoque;
 -- Dia da semana, dia, mês por extenso e ano:
 SELECT id_produto, 
        cnpj_filial, 
+       validade,
        DATE_FORMAT(validade, '%W, %d de %M de %Y') AS data_por_extenso
 FROM   Estoque;
 ```
@@ -580,6 +583,7 @@ FROM   Estoque;
 -- Dia, mês abreviado e ano:
 SELECT id_produto, 
        cnpj_filial, 
+       validade,
        DATE_FORMAT(validade, '%d/%b/%Y') AS data_abreviada
 FROM   Estoque;
 ```
