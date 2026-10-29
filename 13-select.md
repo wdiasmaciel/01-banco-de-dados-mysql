@@ -626,6 +626,8 @@ WHERE  endereco LIKE '%Belo Horizonte%';
 
 ```sql
 SELECT * FROM FornecedorBH;
+```
+
 ---
 
 # Exercício
