@@ -243,8 +243,8 @@ Remover uma chave primária pode permitir valores duplicados ou nulos. Sempre co
 Remover o `AUTO_INCREMENT` e depois a chave primária:
 
 ```sql
-ALTER TABLE Produto
-    MODIFY COLUMN id INT NOT NULL;
+  ALTER TABLE Produto
+MODIFY COLUMN id INT NOT NULL;
 ```
 
 ```sql
