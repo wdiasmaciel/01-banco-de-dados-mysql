@@ -615,13 +615,17 @@ CREATE TABLE FornecedorBH (
     endereco  VARCHAR(200) NOT NULL,
     PRIMARY KEY (cnpj)
 );
+```
 
+```sql
 INSERT INTO FornecedorBH (cnpj, nome, endereco)
 SELECT cnpj, nome, endereco
 FROM   Fornecedor
 WHERE  endereco LIKE '%Belo Horizonte%';
 ```
 
+```sql
+SELECT * FROM FornecedorBH;
 ---
 
 # Exercício
