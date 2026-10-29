@@ -187,9 +187,9 @@ AND     cnpj_filial = '10101010000110';
 1. **Por alias** (sem aspas duplas, que no MySQL têm outro significado por padrão):
 
 ```sql
-SELECT id_produto, preco, preco * 1.5 AS 'novo preço'
+SELECT id_produto, preco, preco * 1.5 AS `novo preço`
 FROM   Estoque
-ORDER BY 'novo preço';
+ORDER BY `novo preço`;
 ```
 
 **OBS**:
@@ -458,6 +458,46 @@ WHERE  endereco LIKE '%Belo Horizonte%';
 ---
 
 # Exercício
+
+1. Calcule o valor de 12 unidades do preço de cada item do estoque, adicionando R$ 100,00 ao resultado.
+
+2. Calcule o mesmo valor do exercício anterior, mas aplique primeiro o acréscimo de R$ 100,00 ao preço unitário, usando parênteses para alterar a precedência.
+
+3. Liste o nome do produto, o preço do estoque e o preço acrescido de 50%, atribuindo nomes significativos aos resultados.
+
+4. Utilize `CONCAT()` para criar uma descrição contendo o nome de cada fornecedor e seu endereço.
+
+5. Utilizando `DATE_ADD()`, calcule uma nova data de validade somando 5 dias à validade de cada item.
+
+6. Liste os produtos cujo nome comece com a letra `S`.
+
+7. Liste os produtos cujo nome tenha exatamente uma letra antes da letra `o`, seguida de qualquer quantidade de caracteres.
+
+8. Liste os produtos cujo nome contenha o caractere literal `_` em qualquer posição.
+
+9. Liste os produtos cujo nome contenha o caractere literal `%` em qualquer posição.
+
+10. Liste o nome dos fornecedores que não tenham nenhum produto associado.
+
+11. Escreva uma consulta com `AND`, `OR` e parênteses que retorne os produtos com preço inferior a 10 ou com quantidade superior a 50, mas limitados à filial Centro.
+
+12. Liste os itens do estoque ordenados pela filial e, dentro de cada filial, pelo identificador do produto em ordem decrescente.
+
+13. Liste o nome dos produtos, o tamanho de cada nome em bytes e o número de caracteres.
+
+14. Localize, a partir da terceira posição, a letra `i` em cada nome de produto.
+
+15. Utilizando uma única consulta, liste os nomes dos produtos com suas três primeiras letras à esquerda e suas três últimas letras à direita.
+
+16. Mostre o valor absoluto, o teto, o piso e o sinal dos números negativos, zero e positivos fornecidos nos exemplos da aula.
+
+17. Arredonde o número 748,58 com uma casa decimal, nenhuma casa decimal e para a dezena e a centena mais próximas.
+
+18. Exiba a faixa de preço e o nome da filial de cada item utilizando `CASE WHEN`.
+
+19. Calcule o preço final de cada item considerando o desconto armazenado na coluna `desconto`, substituindo valores nulos por zero com `IFNULL()`.
+
+20. Formate a validade dos itens do estoque nos padrões `dd/mm/aaaa`, `aaaa-mm-dd` e `dia, mês por extenso e ano`.
 
 ---
 
