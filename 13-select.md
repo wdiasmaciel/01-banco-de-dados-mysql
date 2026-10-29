@@ -544,7 +544,8 @@ FROM   Estoque;
 
 ```sql
 SELECT id_produto, 
-       CONCAT('O preço é ', CAST(preco AS CHAR)) AS preco_formatado
+       preco,
+       CONCAT('O preço é R$ ', CAST(preco AS CHAR)) AS preco_formatado
 FROM   Estoque;
 ```
 
