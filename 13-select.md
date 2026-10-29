@@ -4,7 +4,7 @@
       <a href="12-grup-by-having.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="#">Próximo</a>
+      <a href="14-alter.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -700,7 +700,7 @@ FROM Fornecedor;
       <a href="12-grup-by-having.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="#">Próximo</a>
+      <a href="14-alter.md">Próximo</a>
     </td>
   </tr>
 </table>
