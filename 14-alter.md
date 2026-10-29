@@ -314,7 +314,7 @@ Nomes usados por aplicações e consultas também precisam ser atualizados.
 
 1. Faça backup antes de mudanças estruturais relevantes.
 
-2. Verifique se há dados que impedem a aplicação de `NOT NULL`, `UNIQUE`, `CHECK` ou chave estrangeira.
+2. Verifique se há dados que impedem a aplicação de `NOT NULL`, `UNIQUE`, `CHECK`, chave estrangeira ou chave primária.
 
 3. Prefira executar uma alteração por vez quando estiver aprendendo.
 
