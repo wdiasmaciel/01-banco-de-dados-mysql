@@ -394,19 +394,46 @@ FROM   Estoque;
 
 ---
 
-## 14. CAST, CONVERT e formatação de datas
+## CAST, CONVERT e formatação de datas
 
 ```sql
-SELECT id_produto, CONCAT('O preço é ', CAST(preco AS CHAR)) AS preco_formatado
+SELECT id_produto, 
+       CONCAT('O preço é ', CAST(preco AS CHAR)) AS preco_formatado
 FROM   Estoque;
 ```
 
-> No T-SQL seria `CAST(valor AS varchar)`; no MySQL o tipo correto para converter número em texto é `CHAR`.
-
-Para formatar datas (equivalente ao `CONVERT(VARCHAR, data, estilo)` do T-SQL, que usa códigos numéricos de estilo), o MySQL usa `DATE_FORMAT()` com máscaras de formato:
+Para formatar datas, o MySQL usa `DATE_FORMAT()` com máscaras de formato:
 
 ```sql
-SELECT id_produto, cnpj_filial, DATE_FORMAT(validade, '%d/%m/%Y') AS data_formatada
+SELECT id_produto, 
+       cnpj_filial, 
+      DATE_FORMAT(validade, '%d/%m/%Y') AS data_formatada
+FROM   Estoque;
+```
+
+Outros formatos úteis:
+
+```sql
+-- Ano-mês-dia, adequado para exibição internacional (padrão ISO):
+SELECT id_produto, 
+       cnpj_filial, 
+       DATE_FORMAT(validade, '%Y-%m-%d') AS data_iso
+FROM   Estoque;
+```
+
+```sql
+-- Dia da semana, dia, mês por extenso e ano:
+SELECT id_produto, 
+       cnpj_filial, 
+       DATE_FORMAT(validade, '%W, %d de %M de %Y') AS data_por_extenso
+FROM   Estoque;
+```
+
+```sql
+-- Dia, mês abreviado e ano:
+SELECT id_produto, 
+       cnpj_filial, 
+       DATE_FORMAT(validade, '%d/%b/%Y') AS data_abreviada
 FROM   Estoque;
 ```
 
