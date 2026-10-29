@@ -68,26 +68,28 @@ WHERE  validade >= '2026-07-01';
 
 ## 4. Operador LIKE e curingas
 
-A explicação dos curingas continua igual no MySQL: `%` representa zero ou vários caracteres, `_` representa exatamente um caractere.
+Caracteres curingas no MySQL: 
+1. `%` representa zero ou vários caracteres.
+2. `_` representa exatamente um caractere.
 
 ```sql
 SELECT cnpj, nome
 FROM   Fornecedor
-WHERE  nome LIKE 'D%';
--- Retorna: Distribuidora Alfa Ltda, Delta Bebidas Ltda
+WHERE  nome LIKE 'D%'; -- nome tem que iniciar com a letra maiúscula D seguida de qualquer coisa.
+-- Retorna: Distribuidora Alfa Ltda, Delta Bebidas Ltda.
 ```
 
 ```sql
 SELECT nome
 FROM   Produto
-WHERE  nome LIKE 'S%L';
+WHERE  nome LIKE 'S%L'; -- nome tem que iniciar com a letra maiúscula S seguida de qualquer coisa e terminar com a letra maiúscula L.
 -- Retorna: Suco de Laranja 1L (começa com S, termina com L)
 ```
 
 ```sql
 SELECT nome
 FROM   Produto
-WHERE  nome LIKE '_o%';
+WHERE  nome LIKE '_o%'; -- nome tem que iniciar com uma única letra qualquer antes da letra minúscula "o" seguida de qualquer coisa. 
 -- Retorna: Fone de Ouvido Bluetooth (segunda letra = 'o')
 ```
 
