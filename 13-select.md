@@ -161,7 +161,24 @@ WHERE  nome LIKE '%\_%' ESCAPE '\\';
 ```sql
 SELECT nome
 FROM   Produto
+WHERE  nome LIKE '%#_%' ESCAPE '\#';
+-- Retorna: Kit_Degustacao (o '\' antes do '_' indica que ele deve
+-- ser tratado como caractere literal, não como curinga)
+```
+
+
+```sql
+SELECT nome
+FROM   Produto
 WHERE  nome LIKE '%\%%' ESCAPE '\\';
+-- Retorna: Iogurte 0% Lactose (o '\' antes do '%' indica que ele deve
+-- ser tratado como caractere literal, não como curinga)
+```
+
+```sql
+SELECT nome
+FROM   Produto
+WHERE  nome LIKE '%@%%' ESCAPE '\@';
 -- Retorna: Iogurte 0% Lactose (o '\' antes do '%' indica que ele deve
 -- ser tratado como caractere literal, não como curinga)
 ```
