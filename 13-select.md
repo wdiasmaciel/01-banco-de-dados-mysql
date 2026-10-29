@@ -289,9 +289,16 @@ FROM   Produto;
 
 ---
 
-## 11. Funções numéricas
+## Funções numéricas
 
-`ABS()`, `CEILING()`, `FLOOR()` e `SIGN()` têm sintaxe idêntica no MySQL. `ROUND()` também existe, mas **não aceita um terceiro parâmetro para truncar** como no T-SQL — para truncar, o MySQL usa a função `TRUNCATE()`.
+| Função | Descrição |
+|---|---|
+| `ABS()` | Retorna o valor absoluto de um número, ou seja, o mesmo número sem sinal negativo. |
+| `CEILING()` | Arredonda um número para cima, retornando o menor inteiro maior ou igual ao valor informado. |
+| `FLOOR()` | Arredonda um número para baixo, retornando o maior inteiro menor ou igual ao valor informado. |
+| `SIGN()` | Retorna `-1` para números negativos, `0` para zero e `1` para números positivos. |
+| `ROUND()` | Arredonda um número para uma quantidade específica de casas decimais. |
+| `TRUNCATE()` | Remove casas decimais de um número sem realizar arredondamento. |
 
 ```sql
 SELECT ROUND(748.58, -1) AS r1, ROUND(748.58, -2) AS r2,
