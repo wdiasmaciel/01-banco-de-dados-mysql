@@ -301,17 +301,7 @@ FROM   Produto;
 | `TRUNCATE()` | Remove casas decimais de um número sem realizar arredondamento. |
 
 ```sql
-SELECT ROUND(748.58, -1) AS r1, ROUND(748.58, -2) AS r2,
-       ROUND(748.58, 0)  AS r3, ROUND(748.58, 1)  AS r4;
-```
-
-```sql
--- Truncamento: no T-SQL seria ROUND(150.98, 0, 1) e ROUND(150.98, 1, 1)
-SELECT TRUNCATE(150.98, 0) AS t1, TRUNCATE(150.98, 1) AS t2;
-```
-
-```sql
-SELECT ABS(-1.0) AS a1, ABS(0.0) AS a2, ABS(1.0) AS a3;
+SELECT ABS(-1.0) AS abs1, ABS(0.0) AS abs2, ABS(1.0) AS abs3;
 ```
 
 ```sql
@@ -320,20 +310,32 @@ FROM   Estoque;
 ```
 
 ```sql
-SELECT SIGN(-10.0) AS neg, SIGN(0.0) AS zero, SIGN(10.0) AS pos;
+SELECT SIGN(-10.0) AS negativo, SIGN(0.0) AS zero, SIGN(10.0) AS positivo;
+```
+
+```sql
+SELECT ROUND(748.58, -1) AS round1, 
+       ROUND(748.58, -2) AS round2,
+       ROUND(748.58, 0)  AS round3, 
+       ROUND(748.58, 1)  AS round4;
+```
+
+```sql
+SELECT TRUNCATE(150.98, 0) AS truncate1, 
+       TRUNCATE(150.98, 1) AS truncate2;
 ```
 
 ---
 
-## 12. CASE WHEN
+## CASE WHEN
 
-A sintaxe de `CASE` é a mesma em T-SQL e MySQL. Adaptamos o conteúdo para classificar o preço dos itens de estoque e traduzir o código da filial para o nome:
+Classificar o preço dos itens de estoque e traduzir o código da filial para o nome:
 
 ```sql
 SELECT id_produto,
        cnpj_filial,
        preco,
-       CASE
+       CASE preco
            WHEN preco < 10 THEN 'Baixo'
            ELSE 'Alto'
        END AS "Faixa de Preço",
