@@ -384,6 +384,24 @@ SELECT ROUND(748.58, -1) AS round1,
        ROUND(748.58, 1)  AS round4;
 ```
 
+**OBS**:
+1. `ROUND()` usa casas decimais negativas para arredondar partes inteiras. Exemplo:
+```sql
+ROUND(748.58, -1);  -- dezenas: 750
+ROUND(748.58, -2);  -- centenas: 700
+ROUND(748.58, 0);   -- unidades: 749
+ROUND(748.58, 1);   -- uma casa decimal: 748.6
+```
+2. No caso do exemplo:
+
+```sql
+SELECT ROUND(748.58, -1) AS round1;
+```
+
+* 748.58: número a arredondar.
+* -1: arredonda à esquerda da vírgula decimal, ou seja, para dezenas.
+* Como 748,58 está mais próximo de 750 do que de 740, o resultado é: 750.
+
 ```sql
 SELECT TRUNCATE(150.98, 0) AS truncate1, 
        TRUNCATE(150.98, 1) AS truncate2;
