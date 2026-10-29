@@ -125,7 +125,11 @@ WHERE  nome LIKE '%\%%' ESCAPE '\\';
 -- ser tratado como caractere literal, não como curinga)
 ```
 
-> **Observação:** no MySQL, a barra invertida (`\`) já é o caractere de escape padrão, então `ESCAPE '\\'` costuma ser redundante — o exemplo acima funcionaria mesmo sem a cláusula `ESCAPE`. Ainda assim, vale mostrar a sintaxe explícita, já que ela é exigida em outros bancos (como o SQL Server do material original).
+> **OBS:** 
+1. No MySQL, a barra invertida (`\`) já é o caractere de escape padrão.
+2. Então, `ESCAPE '\\'` costuma ser redundante.
+3. O exemplo acima funcionaria mesmo sem a cláusula `ESCAPE`. 
+4. Ainda assim, vale mostrar a sintaxe explícita, já que ela é exigida em outros bancos (como o SQL Server).
 
 ---
 
