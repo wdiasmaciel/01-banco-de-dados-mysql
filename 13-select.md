@@ -259,12 +259,7 @@ ORDER BY cnpj_filial, id_produto DESC;
 | `SUBSTRING()` | Extrai uma parte do texto a partir de uma posição inicial e, opcionalmente, com um comprimento definido |
 
 ```sql
-SELECT nome, SUBSTRING(nome, 1, 5) AS sub
-FROM   Produto;
-```
-
-```sql
-SELECT nome, CHAR_LENGTH(nome) AS tamanho
+SELECT nome, LENGTH(nome) AS bytes, CHAR_LENGTH(nome) AS tamanho
 FROM   Fornecedor;
 ```
 
@@ -279,11 +274,16 @@ FROM   Produto;
 ```
 
 ```sql
-SELECT LTRIM('   Arroz   ') AS esq, RTRIM('   Feijao   ') AS dir;
+SELECT LTRIM('   Arroz   ') AS esquerda, RTRIM('   Feijao   ') AS direita;
 ```
 
 ```sql
 SELECT nome, REPLACE(nome, 'a', 'o') AS troca
+FROM   Produto;
+```
+
+```sql
+SELECT nome, SUBSTRING(nome, 1, 5) AS substring
 FROM   Produto;
 ```
 
