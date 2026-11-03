@@ -279,7 +279,8 @@ Em visões encadeadas, `LOCAL` verifica somente a condição da visão atual; `C
 CREATE VIEW vw_produtos_baratos_ativos AS
 SELECT e.id_produto, e.cnpj_filial, p.nome, e.preco
 FROM   vw_produtos_baratos e
-JOIN   Produto p ON p.id = e.id_produto
+JOIN   Produto p 
+ON     p.id = e.id_produto
 WHERE  p.ativo = TRUE
 WITH LOCAL CHECK OPTION;
 ```
