@@ -294,11 +294,13 @@ FROM   vw_produtos_baratos_ativos;
 
 ## Consultando e removendo visões
 
-`SHOW TABLES` lista também as visões. A consulta a `information_schema.views` fornece a definição:
+`SHOW TABLES` lista também as visões. 
 
 ```sql
 SHOW FULL TABLES;
 ```
+
+A consulta a `information_schema.views` fornece a definição:
 
 ```sql
 SELECT table_name, view_definition
