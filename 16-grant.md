@@ -77,7 +77,7 @@ Conceder `ALL PRIVILEGES ON *.*` é uma operação administrativa sensível. Em 
 
 ## Privilégios em nível de banco
 
-O exemplo concede permissões em todas as tabelas atuais e futuras do banco no nível indicado:
+O exemplo concede permissões em todas as tabelas do banco:
 
 ```sql
 GRANT SELECT, INSERT, UPDATE
@@ -85,7 +85,7 @@ ON empresa.*
 TO 'atendente'@'localhost';
 ```
 
-Não use o curinga `*` como parte de uma intenção de acesso amplo sem verificar cuidadosamente quais bancos serão alcançados.
+Não conceda privilégios mais amplos do que o necessário sem verificar cuidadosamente quais bancos serão alcançados.
 
 ---
 

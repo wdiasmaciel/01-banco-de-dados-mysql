@@ -113,7 +113,7 @@ ALTER TABLE Produto
 DROP INDEX idx_produto_nome;
 ```
 
-Algumas versões também permitem remover determinados índices com `DROP INDEX` independente:
+Também é possível remover um índice com `DROP INDEX`:
 
 ```sql
 DROP INDEX idx_produto_nome ON Produto;

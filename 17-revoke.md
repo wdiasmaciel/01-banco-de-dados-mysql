@@ -157,7 +157,7 @@ REVOKE ALL PRIVILEGES, GRANT OPTION
 FROM 'ex_usuario'@'localhost';
 ```
 
-Essa forma é útil antes de desativar ou excluir uma conta. Para remover completamente uma conta:
+Os privilégios `ALL PRIVILEGES` e `GRANT OPTION` são retirados sem indicar um objeto específico. Essa forma é útil antes de desativar ou excluir uma conta. Para remover completamente uma conta:
 
 ```sql
 DROP USER 'ex_usuario'@'localhost';

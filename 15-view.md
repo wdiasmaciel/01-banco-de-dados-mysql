@@ -19,13 +19,17 @@ Uma visão (`VIEW`) é uma tabela virtual definida por uma consulta `SELECT`. El
 
 Uma visão pode simplificar consultas, esconder colunas sensíveis e padronizar a forma como determinadas informações são apresentadas.
 
+Os exemplos desta aula usam as tabelas `Produto` e `Estoque` do projeto. A coluna `ativo` pode representar um campo adicional criado em atividades anteriores de `ALTER TABLE`.
+
 ```sql
 CREATE VIEW vw_produtos_ativos AS
-SELECT id,
-       nome,
-       preco
-FROM   Produto
-WHERE  ativo = TRUE;
+SELECT p.id,
+       p.nome,
+       e.cnpj_filial,
+       e.preco
+FROM   Produto p
+JOIN   Estoque e ON e.id_produto = p.id
+WHERE  p.ativo = TRUE;
 ```
 
 A visão pode ser usada em uma consulta como uma tabela:
@@ -40,12 +44,14 @@ Para substituir uma visão já existente, mantendo o mesmo nome, usamos `CREATE 
 
 ```sql
 CREATE OR REPLACE VIEW vw_produtos_ativos AS
-SELECT id,
-       nome,
-       preco,
-       categoria
-FROM   Produto
-WHERE  ativo = TRUE;
+SELECT p.id,
+       p.nome,
+       e.cnpj_filial,
+       e.preco,
+       p.cnpj_fornecedor
+FROM   Produto p
+JOIN   Estoque e ON e.id_produto = p.id
+WHERE  p.ativo = TRUE;
 ```
 
 Se o nome já estiver sendo usado por outro tipo de objeto, o comando não será executado.
@@ -135,19 +141,24 @@ Normalmente são atualizáveis visões simples que não usam:
 Exemplo:
 
 ```sql
-CREATE VIEW vw_produtos_em_promocao AS
-SELECT id, nome, preco
-FROM   Produto
-WHERE  promocao = TRUE;
+CREATE VIEW vw_produtos_em_destaque AS
+SELECT p.id,
+       p.nome,
+       e.cnpj_filial,
+       e.preco
+FROM   Produto p
+JOIN   Estoque e ON e.id_produto = p.id
+WHERE  p.ativo = TRUE;
 ```
 
 ```sql
-UPDATE vw_produtos_em_promocao
+UPDATE Estoque
 SET    preco = 20.00
-WHERE  id = 1;
+WHERE  id_produto = 1
+AND    cnpj_filial = '10101010000110';
 ```
 
-As mudanças são aplicadas à tabela base.
+Como esta visão utiliza `JOIN`, ela pode não ser atualizável. Neste caso, a alteração deve ser feita diretamente na tabela base `Estoque`, que é onde a coluna `preco` está armazenada.
 
 ### WITH CHECK OPTION
 
@@ -155,8 +166,8 @@ As mudanças são aplicadas à tabela base.
 
 ```sql
 CREATE VIEW vw_produtos_baratos AS
-SELECT id, nome, preco
-FROM   Produto
+SELECT id_produto, cnpj_filial, preco
+FROM   Estoque
 WHERE  preco < 50
 WITH CHECK OPTION;
 ```
@@ -166,16 +177,18 @@ Tentar alterar `preco` para um valor maior ou igual a 50 será rejeitado:
 ```sql
 UPDATE vw_produtos_baratos
 SET    preco = 60
-WHERE  id = 1;
+WHERE  id_produto = 1
+AND    cnpj_filial = '10101010000110';
 ```
 
 Em visões encadeadas, `LOCAL` verifica somente a condição da visão atual; `CASCADED`, que é o padrão, verifica também as condições das visões das quais ela depende:
 
 ```sql
 CREATE VIEW vw_produtos_baratos_ativos AS
-SELECT id, nome, preco
-FROM   vw_produtos_baratos
-WHERE  ativo = TRUE
+SELECT e.id_produto, e.cnpj_filial, p.nome, e.preco
+FROM   vw_produtos_baratos e
+JOIN   Produto p ON p.id = e.id_produto
+WHERE  p.ativo = TRUE
 WITH LOCAL CHECK OPTION;
 ```
 
