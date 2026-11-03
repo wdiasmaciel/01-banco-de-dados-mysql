@@ -179,7 +179,8 @@ CREATE VIEW vw_total_por_fornecedor AS
 SELECT cnpj_fornecedor,
        COUNT(*) AS quantidade_produtos
 FROM   Produto
-GROUP BY cnpj_fornecedor;
+GROUP BY cnpj_fornecedor
+ORDER BY quantidade_produtos DESC;
 ```
 
 ```sql
