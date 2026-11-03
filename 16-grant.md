@@ -317,6 +317,10 @@ Se `consulta_fornecedor` tiver acesso à visão, mas não tiver acesso às colun
 O nome `DEFINER` não concede automaticamente os privilégios da tabela base. Ele indica quais privilégios serão usados; esses privilégios ainda precisam existir. Da mesma forma, criar uma visão não concede acesso a quem a utiliza: é preciso executar `GRANT SELECT` sobre a própria visão.
 
 
+Boa Prácica:
+
+1. Revise permissões e testes de segurança ao usar `SQL SECURITY DEFINER`.
+
 
 ---
 
