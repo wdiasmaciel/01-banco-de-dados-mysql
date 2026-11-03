@@ -71,7 +71,7 @@ O MySQL pode usar os nomes definidos pela consulta. Também é possível definir
 
 ```sql
 CREATE VIEW vw_resumo_fornecedor
-    (codigo, nome_fornecedor, quantidade_produtos) AS
+            (codigo, nome_fornecedor, quantidade_produtos) AS
 SELECT    f.cnpj,
           f.nome,
           COUNT(p.id)
@@ -94,7 +94,7 @@ DROP VIEW vw_resumo_fornecedor;
 
 ```sql
 CREATE VIEW vw_resumo_fornecedor
-    (`còdigo`, `nome do fornecedor`, `quantidade de produtos`) AS
+            (`còdigo`, `nome do fornecedor`, `quantidade de produtos`) AS
 SELECT    f.cnpj,
           f.nome,
           COUNT(p.id)
