@@ -299,7 +299,9 @@ Uma visão pode ser executada com dois conjuntos de privilégios diferentes:
 - `SQL SECURITY DEFINER`: a consulta usa os privilégios do usuário definido como criador da visão.
 - `SQL SECURITY INVOKER`: a consulta usa os privilégios de quem executa o `SELECT` na visão.
 
-Criador (*definer*) é o usuário responsável por criar o objeto. Invocador (*invoker*) é a conta que consulta a visão depois que ela já foi criada.
+Criador (*definer*) é o usuário responsável por criar o objeto. 
+
+Invocador (*invoker*) é a conta que consulta a visão depois que ela já foi criada.
 
 ### SQL SECURITY DEFINER
 
