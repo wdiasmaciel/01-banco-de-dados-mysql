@@ -255,7 +255,7 @@ FROM   vw_produtos_em_destaque;
 CREATE VIEW vw_produtos_baratos AS
 SELECT id_produto, cnpj_filial, preco
 FROM   Estoque
-WHERE  preco < 50
+WHERE  preco < 10
 WITH CHECK OPTION;
 ```
 
