@@ -327,6 +327,17 @@ Nesse exemplo:
 - Ao consultar a visão, o MySQL executa internamente o `JOIN` com os privilégios desse criador;
 - O usuário que consulta a visão precisa possuir pelo menos `SELECT` sobre a própria visão, mas normalmente não precisa possuir acesso direto às tabelas `Produto` e `Estoque`.
 
+Na identificação `'consulta_produto'@'localhost'`, `consulta_produto` é o nome da conta de usuário criada no MySQL, e `localhost` indica que ela pode se conectar a partir do próprio servidor, ou seja, a máquina local.
+
+Por exemplo, o nome pode ser escolhido de acordo com a finalidade da conta:
+
+```sql
+CREATE USER 'consulta_produto'@'localhost'
+IDENTIFIED BY 'SenhaForte123!';
+```
+
+Os nomes das contas podem variar. Em vez de `consulta_produto`, poderia ser usado, por exemplo, `'joao'@'localhost'`. O nome `consulta_produto` apenas indica, neste exemplo didático, que essa conta será utilizada para consultar produtos. Ele não concede automaticamente nenhuma permissão.
+
 Primeiro, o usuário administrador concede acesso à visão:
 
 ```sql
