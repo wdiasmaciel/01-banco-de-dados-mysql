@@ -161,7 +161,8 @@ SELECT p.id,
        e.quantidade,
        e.preco
 FROM   Produto p
-JOIN   Estoque e ON e.id_produto = p.id;
+JOIN   Estoque e 
+ON     e.id_produto = p.id;
 ```
 
 ```sql
