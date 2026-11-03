@@ -264,7 +264,7 @@ SELECT *
 FROM   vw_produtos_baratos;
 ```
 
-Tentar alterar `preco` para um valor maior ou igual a 50 será rejeitado:
+Tentar alterar `preco` para um valor maior ou igual a 10 será rejeitado:
 
 ```sql
 UPDATE vw_produtos_baratos
