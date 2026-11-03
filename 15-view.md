@@ -305,7 +305,9 @@ Invocador (*invoker*) é a conta que consulta a visão depois que ela já foi cr
 
 ### SQL SECURITY DEFINER
 
-No MySQL, `DEFINER` informa qual usuário representa o criador da visão. Em uma sessão comum, `CURRENT_USER` corresponde ao usuário conectado que executa o `CREATE VIEW`.
+No MySQL, `DEFINER` informa qual usuário representa o criador da visão. 
+
+Em uma sessão comum, `CURRENT_USER` corresponde ao usuário conectado que executa o `CREATE VIEW`.
 
 Por exemplo, suponha que o administrador tenha criado esta visão:
 
@@ -320,10 +322,10 @@ JOIN   Estoque e ON e.id_produto = p.id;
 
 Nesse exemplo:
 
-- o criador da visão é o usuário atual da sessão;
-- a visão guarda o usuário criador como seu `DEFINER`;
-- ao consultar a visão, o MySQL executa internamente o `JOIN` com os privilégios desse criador;
-- o usuário que consulta a visão precisa possuir pelo menos `SELECT` sobre a própria visão, mas normalmente não precisa possuir acesso direto às tabelas `Produto` e `Estoque`.
+- O criador da visão é o usuário atual da sessão;
+- A visão guarda o usuário criador como seu `DEFINER`;
+- Ao consultar a visão, o MySQL executa internamente o `JOIN` com os privilégios desse criador;
+- O usuário que consulta a visão precisa possuir pelo menos `SELECT` sobre a própria visão, mas normalmente não precisa possuir acesso direto às tabelas `Produto` e `Estoque`.
 
 Primeiro, o usuário administrador concede acesso à visão:
 
@@ -340,7 +342,9 @@ SELECT *
 FROM   vw_produto_estoque_publico;
 ```
 
-Para criar e consultar a visão com sucesso, o criador normalmente precisa possuir `SELECT` nas tabelas que a compõem. Caso o criador não tenha esses privilégios, o MySQL impede a criação ou o uso do objeto.
+Para criar e consultar a visão com sucesso, o criador normalmente precisa possuir `SELECT` nas tabelas que a compõem. 
+
+Caso o criador não tenha esses privilégios, o MySQL impede a criação ou o uso do objeto.
 
 ### SQL SECURITY INVOKER
 
@@ -359,7 +363,9 @@ O proprietário da conta `consulta_fornecedor` precisa receber os dois tipos de 
 GRANT SELECT
 ON empresa.vw_fornecedores_ativos
 TO 'consulta_fornecedor'@'localhost';
+```
 
+```sql
 GRANT SELECT (cnpj, nome, telefone)
 ON empresa.Fornecedor
 TO 'consulta_fornecedor'@'localhost';
@@ -372,7 +378,9 @@ SELECT *
 FROM   vw_fornecedores_ativos;
 ```
 
-Se `consulta_fornecedor` tiver acesso à visão, mas não tiver acesso às colunas `cnpj`, `nome` ou `telefone` da tabela `Fornecedor`, o `SELECT` deverá ser negado. Em geral, o acesso por uma visão não permite contornar os privilégios das tabelas quando `SQL SECURITY INVOKER` está ativo.
+Se `consulta_fornecedor` tiver acesso à visão, mas não tiver acesso às colunas `cnpj`, `nome` ou `telefone` da tabela `Fornecedor`, o `SELECT` deverá ser negado. 
+
+Em geral, o acesso por uma visão não permite contornar os privilégios das tabelas quando `SQL SECURITY INVOKER` está ativo.
 
 ### Resumo
 
