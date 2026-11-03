@@ -222,7 +222,7 @@ FROM   vw_produtos_em_destaque;
 ```
 
 ```sql
-UPDATE Estoque
+UPDATE vw_produtos_em_destaque
 SET    preco = 20.00
 WHERE  id_produto = 1
 AND    cnpj_filial = '10101010000110';
@@ -233,15 +233,18 @@ SELECT *
 FROM   vw_produtos_em_destaque;
 ```
 
-Como esta visão utiliza `JOIN`, ela pode não ser atualizável. Neste caso, a alteração deve ser feita diretamente na tabela base `Estoque`, que é onde a coluna `preco` está armazenada.
-
-A atualização abaixo disparará uma mensagem de erro:
+No caso de um visão não poder ser atualizada, a alteração deve ser feita diretamente na tabela base (no exemplo: `Estoque`, que é onde a coluna `preco` está armazenada):
 
 ```sql
-UPDATE vw_produtos_em_destaque
-SET    preco = 20.00
+UPDATE Estoque
+SET    preco = 25.00
 WHERE  id_produto = 1
 AND    cnpj_filial = '10101010000110';
+```
+
+```sql
+SELECT *
+FROM   vw_produtos_em_destaque;
 ```
 
 ### WITH CHECK OPTION
