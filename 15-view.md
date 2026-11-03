@@ -224,7 +224,7 @@ FROM   vw_produtos_em_destaque;
 ```sql
 UPDATE vw_produtos_em_destaque
 SET    preco = 20.00
-WHERE  id_produto = 1
+WHERE  id = 1
 AND    cnpj_filial = '10101010000110';
 ```
 
