@@ -19,7 +19,7 @@ Uma visão (`VIEW`) é uma tabela virtual definida por uma consulta `SELECT`. El
 
 Uma visão pode simplificar consultas, esconder colunas sensíveis e padronizar a forma como determinadas informações são apresentadas.
 
-Os exemplos desta aula usam as tabelas `Produto` e `Estoque` do projeto. A coluna `ativo` pode representar um campo adicional criado em atividades anteriores de `ALTER TABLE`.
+Os exemplos desta aula usam as tabelas `Produto` e `Estoque` do projeto. A coluna `ativo` corresponde um campo adicional criado na aula prática anterior sobre `ALTER TABLE`.
 
 ```sql
 CREATE VIEW vw_produtos_ativos AS
