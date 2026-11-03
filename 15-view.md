@@ -81,6 +81,11 @@ ON        p.cnpj_fornecedor = f.cnpj
 GROUP BY  f.cnpj, f.nome;
 ```
 
+```sql
+SELECT *
+FROM vw_resumo_fornecedor
+```
+
 Todas as expressões devem possuir nomes ou aliases. Por exemplo, uma função de agregação precisa ser identificada:
 
 ```sql
