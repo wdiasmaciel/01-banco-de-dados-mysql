@@ -72,12 +72,13 @@ O MySQL pode usar os nomes definidos pela consulta. Também é possível definir
 ```sql
 CREATE VIEW vw_resumo_fornecedor
     (codigo, nome_fornecedor, quantidade_produtos) AS
-SELECT f.cnpj,
-       f.nome,
-       COUNT(p.id)
-FROM   Fornecedor f
-LEFT JOIN Produto p ON p.cnpj_fornecedor = f.cnpj
-GROUP BY f.cnpj, f.nome;
+SELECT    f.cnpj,
+          f.nome,
+          COUNT(p.id)
+FROM      Fornecedor f
+LEFT JOIN Produto p 
+ON        p.cnpj_fornecedor = f.cnpj
+GROUP BY  f.cnpj, f.nome;
 ```
 
 Todas as expressões devem possuir nomes ou aliases. Por exemplo, uma função de agregação precisa ser identificada:
