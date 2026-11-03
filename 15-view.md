@@ -28,7 +28,8 @@ SELECT p.id,
        e.cnpj_filial,
        e.preco
 FROM   Produto p
-JOIN   Estoque e ON e.id_produto = p.id
+JOIN   Estoque e 
+ON     e.id_produto = p.id
 WHERE  p.ativo = TRUE;
 ```
 
