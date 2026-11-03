@@ -308,6 +308,13 @@ FROM   information_schema.views
 WHERE  table_schema = DATABASE();
 ```
 
+**OBS**:
+> DATABASE() retorna o banco de dados corrente:
+
+```sql
+SELECT DATABASE();
+```
+
 Para consultar a definição completa de uma visão criada no MySQL:
 
 ```sql
