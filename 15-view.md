@@ -86,6 +86,29 @@ SELECT *
 FROM vw_resumo_fornecedor
 ```
 
+Usar a crase para carcteres espeiciais:
+
+```sql
+DROP VIEW vw_resumo_fornecedor;
+```
+
+```sql
+CREATE VIEW vw_resumo_fornecedor
+    (`còdigo`, `nome do fornecedor`, `quantidade de produtos`) AS
+SELECT    f.cnpj,
+          f.nome,
+          COUNT(p.id)
+FROM      Fornecedor f
+LEFT JOIN Produto p 
+ON        p.cnpj_fornecedor = f.cnpj
+GROUP BY  f.cnpj, f.nome;
+```
+
+```sql
+SELECT *
+FROM vw_resumo_fornecedor
+```
+
 Todas as expressões devem possuir nomes ou aliases. Por exemplo, uma função de agregação precisa ser identificada:
 
 ```sql
