@@ -116,7 +116,8 @@ CREATE VIEW vw_valor_estoque AS
 SELECT id_produto,
        SUM(quantidade * preco) AS valor_total
 FROM   Estoque
-GROUP BY id_produto;
+GROUP BY id_produto
+ORDER BY valor_total DESC;
 ```
 
 ```sql
