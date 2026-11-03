@@ -374,7 +374,7 @@ Nomes usados por aplicações e consultas também precisam ser atualizados.
       <a href="13-select.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="#">Próximo</a>
+      <a href="15-view.md">Próximo</a>
     </td>
   </tr>
 </table>
