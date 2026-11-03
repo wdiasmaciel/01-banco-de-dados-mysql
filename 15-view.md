@@ -336,7 +336,7 @@ CREATE USER 'consulta_produto'@'localhost'
 IDENTIFIED BY 'SenhaForte123!';
 ```
 
-Os nomes das contas podem variar. Em vez de `consulta_produto`, poderia ser usado, por exemplo, `'joao'@'localhost'`. O nome `consulta_produto` apenas indica, neste exemplo didático, que essa conta será utilizada para consultar produtos. Ele não concede automaticamente nenhuma permissão.
+Os nomes das contas podem variar. Em vez de `consulta_produto`, poderia ser usado, por exemplo, `'joao'@'localhost'`. O nome `consulta_produto` apenas indica, neste exemplo, que essa conta será utilizada para consultar produtos. Ele não concede automaticamente nenhuma permissão.
 
 Primeiro, o usuário administrador concede acesso à visão:
 
