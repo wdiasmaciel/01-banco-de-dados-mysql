@@ -41,6 +41,10 @@ ON empresa.Produto
 FROM 'ana'@'localhost';
 ```
 
+```sql
+SHOW GRANTS FOR 'ana'@'localhost';
+```
+
 Caso existam dois privilégios separados e o usuário já possua apenas um deles, o MySQL remove somente aquele que foi solicitado.
 
 ---
@@ -63,6 +67,10 @@ Essa operação não remove privilégios concedidos diretamente em nível global
 REVOKE DELETE
 ON empresa.Produto
 FROM 'estoquista'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'estoquista'@'localhost';
 ```
 
 ```sql
@@ -130,6 +138,10 @@ Para retirar um papel de uma conta:
 ```sql
 REVOKE 'perfil_estoque'
 FROM 'lucas'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'lucas'@'localhost';
 ```
 
 Para remover os privilégios associados ao próprio papel:

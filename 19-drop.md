@@ -33,6 +33,12 @@ O comando remove permanentemente o banco e todos os objetos nele contidos. Para 
 DROP DATABASE IF EXISTS empresa;
 ```
 
+Verifique se o banco ainda aparece na lista de bancos acessíveis:
+
+```sql
+SHOW DATABASES;
+```
+
 Antes da execução, faça backup e confirme o banco selecionado:
 
 ```sql
@@ -51,6 +57,15 @@ Ao excluir uma tabela com registros, todos os dados são removidos com ela:
 
 ```sql
 DROP TABLE IF EXISTS Produto;
+```
+
+Confirme a remoção consultando o banco no catálogo:
+
+```sql
+SELECT table_name
+FROM   information_schema.tables
+WHERE  table_schema = DATABASE()
+AND    table_name = 'Produto';
 ```
 
 É possível remover várias tabelas em uma única instrução:
@@ -100,6 +115,13 @@ DROP TEMPORARY TABLE IF EXISTS clientes_relatorio;
 DROP VIEW IF EXISTS vw_produto_estoque;
 ```
 
+```sql
+SELECT table_name
+FROM   information_schema.views
+WHERE  table_schema = DATABASE()
+AND    table_name = 'vw_produto_estoque';
+```
+
 Remover uma visão não remove os dados e a tabela que servem como base da consulta.
 
 ---
@@ -119,6 +141,11 @@ Também é possível remover um índice com `DROP INDEX`:
 DROP INDEX idx_produto_nome ON Produto;
 ```
 
+```sql
+SHOW INDEX FROM Produto
+WHERE  Key_name = 'idx_produto_nome';
+```
+
 Chaves estrangeiras, restrições únicas ou índices usados por outras estruturas podem exigir retirada planejada.
 
 ---
@@ -131,6 +158,12 @@ DROP USER 'ana'@'localhost';
 
 ```sql
 DROP ROLE 'perfil_estoque';
+```
+
+```sql
+SELECT user, host
+FROM   mysql.user
+WHERE  user = 'perfil_estoque';
 ```
 
 Para remover vários objetos de usuário ou papel, cada objeto é separado por vírgula:
@@ -150,7 +183,21 @@ DROP PROCEDURE IF EXISTS calcular_desconto;
 ```
 
 ```sql
+SELECT routine_name
+FROM   information_schema.routines
+WHERE  routine_schema = DATABASE()
+AND    routine_name = 'calcular_desconto';
+```
+
+```sql
 DROP FUNCTION IF EXISTS calcular_frete;
+```
+
+```sql
+SELECT routine_name
+FROM   information_schema.routines
+WHERE  routine_schema = DATABASE()
+AND    routine_name = 'calcular_frete';
 ```
 
 ---
@@ -159,6 +206,13 @@ DROP FUNCTION IF EXISTS calcular_frete;
 
 ```sql
 DROP TRIGGER IF EXISTS atualizar_estoque;
+```
+
+```sql
+SELECT trigger_name
+FROM   information_schema.triggers
+WHERE  trigger_schema = DATABASE()
+AND    trigger_name = 'atualizar_estoque';
 ```
 
 O gatilho pode ter sido criado para outro banco; confirme o contexto antes da remoção:
@@ -174,6 +228,13 @@ DROP TRIGGER IF EXISTS atualizar_estoque;
 
 ```sql
 DROP EVENT IF EXISTS fechar_dia;
+```
+
+```sql
+SELECT event_name
+FROM   information_schema.events
+WHERE  event_schema = DATABASE()
+AND    event_name = 'fechar_dia';
 ```
 
 ---

@@ -33,6 +33,11 @@ ON     e.id_produto = p.id
 WHERE  p.ativo = TRUE;
 ```
 
+```sql
+SELECT *
+FROM   vw_produtos_ativos;
+```
+
 A visão pode ser usada em uma consulta como uma tabela:
 
 ```sql
@@ -60,7 +65,7 @@ Se o nome já estiver sendo usado por outro tipo de objeto, o comando não será
 
 ```sql
 SELECT *
-FROM vw_produtos_ativos
+FROM   vw_produtos_ativos;
 ```
 
 ---
@@ -83,10 +88,10 @@ GROUP BY  f.cnpj, f.nome;
 
 ```sql
 SELECT *
-FROM vw_resumo_fornecedor
+FROM   vw_resumo_fornecedor;
 ```
 
-Usar a crase para carcteres espeiciais:
+Usar crases para nomes de colunas com caracteres especiais:
 
 ```sql
 DROP VIEW vw_resumo_fornecedor;
@@ -94,7 +99,7 @@ DROP VIEW vw_resumo_fornecedor;
 
 ```sql
 CREATE VIEW vw_resumo_fornecedor
-            (`còdigo`, `nome do fornecedor`, `quantidade de produtos`) AS
+            (`codigo`, `nome do fornecedor`, `quantidade de produtos`) AS
 SELECT    f.cnpj,
           f.nome,
           COUNT(p.id)
@@ -106,7 +111,7 @@ GROUP BY  f.cnpj, f.nome;
 
 ```sql
 SELECT *
-FROM vw_resumo_fornecedor
+FROM   vw_resumo_fornecedor;
 ```
 
 Todas as expressões devem possuir nomes ou aliases. Por exemplo, uma função de agregação precisa ser identificada:
@@ -122,7 +127,7 @@ ORDER BY valor_total DESC;
 
 ```sql
 SELECT *
-FROM vw_valor_estoque
+FROM   vw_valor_estoque;
 ```
 
 ---
@@ -137,6 +142,11 @@ Uma visão simples consulta diretamente uma única tabela e apresenta colunas ex
 CREATE VIEW vw_contatos_fornecedor AS
 SELECT cnpj, nome, telefone
 FROM   Fornecedor;
+```
+
+```sql
+SELECT *
+FROM   vw_contatos_fornecedor;
 ```
 
 ### Visão por junção
@@ -154,6 +164,11 @@ FROM   Produto p
 JOIN   Estoque e ON e.id_produto = p.id;
 ```
 
+```sql
+SELECT *
+FROM   vw_produto_estoque;
+```
+
 ### Visão agregada
 
 Visões agregadas podem usar `SUM`, `COUNT`, `AVG`, `MIN` ou `MAX`. Elas são úteis para relatórios:
@@ -164,6 +179,11 @@ SELECT cnpj_fornecedor,
        COUNT(*) AS quantidade_produtos
 FROM   Produto
 GROUP BY cnpj_fornecedor;
+```
+
+```sql
+SELECT *
+FROM   vw_total_por_fornecedor;
 ```
 
 ---
@@ -194,6 +214,11 @@ WHERE  p.ativo = TRUE;
 ```
 
 ```sql
+SELECT *
+FROM   vw_produtos_em_destaque;
+```
+
+```sql
 UPDATE Estoque
 SET    preco = 20.00
 WHERE  id_produto = 1
@@ -212,6 +237,11 @@ SELECT id_produto, cnpj_filial, preco
 FROM   Estoque
 WHERE  preco < 50
 WITH CHECK OPTION;
+```
+
+```sql
+SELECT *
+FROM   vw_produtos_baratos;
 ```
 
 Tentar alterar `preco` para um valor maior ou igual a 50 será rejeitado:
@@ -234,6 +264,11 @@ WHERE  p.ativo = TRUE
 WITH LOCAL CHECK OPTION;
 ```
 
+```sql
+SELECT *
+FROM   vw_produtos_baratos_ativos;
+```
+
 ---
 
 ## Definidor e usuário da visão
@@ -251,6 +286,11 @@ FROM   Produto p
 JOIN   Estoque e ON e.id_produto = p.id;
 ```
 
+```sql
+SELECT *
+FROM   vw_produto_estoque_publico;
+```
+
 A opção `SQL SECURITY INVOKER` faz a consulta ser executada com os privilégios de quem usa a visão:
 
 ```sql
@@ -258,6 +298,11 @@ CREATE SQL SECURITY INVOKER VIEW vw_fornecedores_ativos AS
 SELECT cnpj, nome, telefone
 FROM   Fornecedor
 WHERE  ativo = TRUE;
+```
+
+```sql
+SELECT *
+FROM   vw_fornecedores_ativos;
 ```
 
 ---

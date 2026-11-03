@@ -51,6 +51,10 @@ ON empresa.Fornecedor
 TO 'ana'@'localhost';
 ```
 
+```sql
+SHOW GRANTS FOR 'ana'@'localhost';
+```
+
 ---
 
 ## Privilégios em nível global
@@ -61,6 +65,10 @@ Privilégios globais usam `*.*` e normalmente ficam restritos ao administrador d
 GRANT PROCESS
 ON *.*
 TO 'monitor'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'monitor'@'localhost';
 ```
 
 O privilégio `ALL PRIVILEGES` concede todos os privilégios aplicáveis ao objeto indicado:
@@ -181,6 +189,10 @@ TO 'perfil_estoque';
 
 CREATE USER 'lucas'@'localhost' IDENTIFIED BY 'SenhaForte456!';
 GRANT 'perfil_estoque' TO 'lucas'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'lucas'@'localhost';
 ```
 
 O usuário pode ativar seus papéis na sessão:

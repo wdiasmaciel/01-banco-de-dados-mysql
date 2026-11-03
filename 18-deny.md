@@ -49,6 +49,10 @@ ON empresa.Fornecedor
 FROM 'leitura_fornecedor'@'localhost';
 ```
 
+```sql
+SHOW GRANTS FOR 'leitura_fornecedor'@'localhost';
+```
+
 ---
 
 ## Verificando as concessões
@@ -77,6 +81,10 @@ CREATE ROLE 'perfil_estoque';
 GRANT SELECT, UPDATE
 ON empresa.Produto
 TO 'perfil_estoque';
+```
+
+```sql
+SHOW GRANTS FOR 'perfil_estoque';
 ```
 
 Para impedir o papel de alterar produtos sem apagar todo o papel:
