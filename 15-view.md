@@ -270,7 +270,7 @@ Tentar alterar `preco` para um valor maior ou igual a 10 será rejeitado:
 UPDATE vw_produtos_baratos
 SET    preco = 60
 WHERE  id_produto = 1
-AND    cnpj_filial = '10101010000110';
+AND    cnpj_filial = '30303030000130';
 ```
 
 Em visões encadeadas, `LOCAL` verifica somente a condição da visão atual; `CASCADED`, que é o padrão, verifica também as condições das visões das quais ela depende:
