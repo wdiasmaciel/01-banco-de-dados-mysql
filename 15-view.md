@@ -228,6 +228,11 @@ WHERE  id_produto = 1
 AND    cnpj_filial = '10101010000110';
 ```
 
+```sql
+SELECT *
+FROM   vw_produtos_em_destaque;
+```
+
 Como esta visão utiliza `JOIN`, ela pode não ser atualizável. Neste caso, a alteração deve ser feita diretamente na tabela base `Estoque`, que é onde a coluna `preco` está armazenada.
 
 ### WITH CHECK OPTION
