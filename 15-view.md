@@ -119,6 +119,11 @@ FROM   Estoque
 GROUP BY id_produto;
 ```
 
+```sql
+SELECT *
+FROM vw_valor_estoque
+```
+
 ---
 
 ## Tipos de visão
