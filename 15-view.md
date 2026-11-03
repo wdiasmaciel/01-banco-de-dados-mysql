@@ -58,6 +58,11 @@ WHERE  p.ativo = TRUE;
 
 Se o nome já estiver sendo usado por outro tipo de objeto, o comando não será executado.
 
+```sql
+SELECT *
+FROM vw_produtos_ativos
+```
+
 ---
 
 ## Nomes de colunas da visão
