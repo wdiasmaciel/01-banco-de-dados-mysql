@@ -419,6 +419,16 @@ Para visualizar o comando usado na criação:
 SHOW CREATE PROCEDURE consultar_produto;
 ```
 
+Os metadados das procedures também podem ser consultados em `information_schema.routines`:
+
+```sql
+SELECT routine_name, routine_type, data_type
+FROM   information_schema.routines
+WHERE  routine_schema = DATABASE()
+AND    routine_type = 'PROCEDURE'
+ORDER BY routine_name;
+```
+
 Para remover uma procedure:
 
 ```sql
