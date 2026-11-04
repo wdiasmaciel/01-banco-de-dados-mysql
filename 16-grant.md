@@ -269,6 +269,33 @@ Esse recurso deve ser usado com cuidado, pois distribui autoridade para terceiro
 14. Configure o papel de operador para ser ativado automaticamente em novas sessões de `joao`.
 15. Conceda a um gerente o privilégio de consulta na tabela de fornecedores com a opção de repassar essa permissão.
 16. Crie uma conta com acesso global apenas ao privilégio `PROCESS` para monitorar processos.
+
+<!--
+CREATE USER 'monitor_processos'@'localhost'
+IDENTIFIED BY 'SenhaForte123!';
+
+GRANT PROCESS
+ON *.*
+TO 'monitor_processos'@'localhost';
+
+SHOW GRANTS
+FOR 'monitor_processos'@'localhost';
+
+*.* indica todos os bancos e todas as tabelas, configurando o privilégio em nível global. O privilégio PROCESS permite visualizar informações sobre processos e threads, mas não concede privilégios de consulta ou alteração em tabelas.
+
+Para entrar com essa conta e testar os privilégios:
+
+mysql -u monitor_processos -p
+
+Dentro da sessão:
+
+SHOW PROCESSLIST;
+
+Para conferir, a saída de SHOW GRANTS deverá conter aproximadamente:
+
+GRANT PROCESS ON *.* TO 'monitor_processos'@'localhost'
+-->
+
 17. Consulte todos os privilégios concedidos ao usuário de relatórios do supermercado.
 18. Explique por que não é adequado conceder `ALL PRIVILEGES ON *.*` a um vendedor.
 19. Conceda privilégio de consulta e atualização em uma visão de clientes sem conceder acesso direto à tabela de clientes.
