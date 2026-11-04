@@ -423,6 +423,22 @@ END$$
 DELIMITER ;
 ```
 
+```sql
+CALL verificar_preco_obrigatorio(1, '10101010000110',
+                    @preco_local, @registro_encontrado);
+
+SELECT @preco_local AS preco_local,
+       @registro_encontrado AS registro_encontrado;
+```
+
+```sql
+CALL verificar_preco_obrigatorio(1, '10101010000119',
+                    @preco_local, @registro_encontrado);
+
+SELECT @preco_local AS preco_local,
+       @registro_encontrado AS registro_encontrado;
+```
+
 O uso de `SIGNAL` dentro de `CONTINUE HANDLER` provoca uma exceção porque o comando interrompe a execução da rotina. Para escolher entre as duas abordagens, considere: `OUT + handler` permite continuar e decidir como tratar o resultado; `SIGNAL` informa diretamente ao chamador que a operação não pode continuar.
 
 ---
