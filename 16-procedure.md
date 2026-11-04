@@ -424,16 +424,14 @@ DELIMITER ;
 ```
 
 ```sql
-CALL verificar_preco_obrigatorio(1, '10101010000110',
-                    @preco_local, @registro_encontrado);
+CALL verificar_preco_obrigatorio(1, '10101010000110', @preco_local);
 
 SELECT @preco_local AS preco_local,
        @registro_encontrado AS registro_encontrado;
 ```
 
 ```sql
-CALL verificar_preco_obrigatorio(1, '10101010000119',
-                    @preco_local, @registro_encontrado);
+CALL verificar_preco_obrigatorio(1, '10101010000119', @preco_local);
 
 SELECT @preco_local AS preco_local,
        @registro_encontrado AS registro_encontrado;
