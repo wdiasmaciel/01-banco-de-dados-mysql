@@ -554,26 +554,34 @@ DROP VIEW IF EXISTS vw_produtos_ativos;
 
 # Exercícios
 
+### Padaria
 1. Crie uma visão chamada `vw_pao_disponivel` que liste o nome e o preço dos pães cadastrados como disponíveis.
 2. Consulte a visão criada por você e ordene os pães pelo nome.
-3. Crie uma visão que mostre apenas o código, o nome e o telefone dos clientes de uma padaria.
+3. Crie uma visão que mostre apenas o código, o nome e o telefone dos clientes da padaria.
 4. O dono da padaria precisa ver o nome dos ingredientes e suas quantidades em estoque. Crie uma visão para esse relatório.
-5. Crie uma visão agregada com o valor vendido por dia em uma padaria.
+5. Crie uma visão agregada com o valor vendido por dia na padaria.
 6. Crie uma visão que calcule o preço médio dos produtos da categoria “Bebidas”.
+
+### Farmácia
 7. Crie uma visão que mostre medicamentos com validade superior à data atual em uma farmácia.
 8. Crie uma visão que junte venda e medicamento, exibindo o nome do remédio e a quantidade vendida.
+
+### Agência de Viagens
 9. Crie uma visão com nomes explícitos para um relatório de passagens aéreas.
-10. Crie uma visão atualizável que permita corrigir telefones dos clientes de uma agência de viagens.
+10. Crie uma visão atualizável que permita corrigir telefones dos clientes da agência de viagens.
 11. Crie uma visão que permita atualizar somente pacotes turísticos com vagas disponíveis.
 12. Restrinja essa visão de pacotes com `WITH CHECK OPTION` para impedir alterações que removam pacotes da visualização.
-13. Crie uma visão com `SQL SECURITY INVOKER` para a tabela de clientes de um supermercado.
+<!-- 13. Crie uma visão com `SQL SECURITY INVOKER` para a tabela de clientes de um supermercado.-->
+
+### Empresa (projeto desenvolvido nos exemplos das aulas)
+13. Crie uma visão relacionando `Produto`, `Estoque` e `Filial`.
 14. Explique por que uma visão baseada em `SUM(valor)` normalmente não deve receber `UPDATE`.
 15. Liste todas as visões do banco de dados atual usando metadados.
 16. Obtenha o texto completo da visão que mostra os fornecedores e seus produtos.
 17. Tente substituir uma visão existente com `CREATE OR REPLACE VIEW` para incluir uma nova coluna de relatório.
 18. Remova uma visão de produtos de baixo estoque sem apagar a tabela de estoque.
 19. Crie uma visão de auditoria que nunca permita atualizações, pois contém `GROUP BY` e `COUNT`.
-20. Crie uma visão para um relatório gerencial de vendas e decida quais privilégios ela deve ter.
+20. Crie uma visão para um relatório gerencial de vendas. <!-- e decida quais privilégios ela deve ter.-->
 
 ---
 
