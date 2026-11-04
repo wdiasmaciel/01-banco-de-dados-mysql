@@ -243,6 +243,10 @@ END$$
 DELIMITER ;
 ```
 
+```sql
+CALL classificar_produto(1);
+```
+
 ## Estruturas de repetição
 
 ### WHILE
