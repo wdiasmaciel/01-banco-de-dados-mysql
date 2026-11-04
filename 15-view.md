@@ -317,7 +317,8 @@ CREATE DEFINER = CURRENT_USER
 VIEW vw_produto_estoque_publico AS
 SELECT p.id, p.nome, e.quantidade
 FROM   Produto p
-JOIN   Estoque e ON e.id_produto = p.id;
+JOIN   Estoque e 
+ON     e.id_produto = p.id;
 ```
 
 Nesse exemplo:
