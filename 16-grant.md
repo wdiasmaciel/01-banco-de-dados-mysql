@@ -246,14 +246,21 @@ Esse recurso deve ser usado com cuidado, pois distribui autoridade para terceiro
 
 # Exercícios
 
-1. Crie uma conta de leitura para a padaria chamada `consulta_pao` e conceda `SELECT` na tabela de produtos.
+### Padaria
+1. Crie uma conta de leitura para uma padaria chamada `consulta_pao` e conceda `SELECT` na tabela de produtos.
 2. Conceda à conta de um caixa da padaria acesso de consulta e inserção na tabela de vendas.
 3. Permita que um estoquista atualize a quantidade de produtos em uma tabela de estoque.
-4. Conceda a apenas um vendedor da farmácia privilégios de consulta sobre `vw_medicamentos_disponiveis`.
+
+### Farmácia
+4. Conceda a apenas um vendedor de uma farmácia privilégios de consulta sobre `vw_medicamentos_disponiveis`.
 5. Crie uma conta para um supervisor de farmácia com `SELECT` e `UPDATE` na tabela de medicamentos.
+
+### Agência de Viagens
 6. Conceda ao atendente de uma agência privilégios de inserção na tabela de reservas.
 7. Permita que um analista turístico consulte apenas as colunas de código, destino e preço de pacotes.
 8. Conceda ao analista da agência privilégio de atualização somente na coluna `preco`.
+
+### Supermercado
 9. Crie uma conta que possa consultar todas as tabelas de um banco chamado `supermercado`.
 10. Conceda privilégio de execução em uma procedure chamada `fechar_venda` para o usuário do caixa.
 11. Conceda privilégio de execução em uma função chamada `calcular_frete` para um atendente.
@@ -262,10 +269,10 @@ Esse recurso deve ser usado com cuidado, pois distribui autoridade para terceiro
 14. Configure o papel de operador para ser ativado automaticamente em novas sessões de `joao`.
 15. Conceda a um gerente o privilégio de consulta na tabela de fornecedores com a opção de repassar essa permissão.
 16. Crie uma conta com acesso global apenas ao privilégio `PROCESS` para monitorar processos.
-17. Consulte todos os privilégios concedidos ao usuário de relatórios da padaria.
+17. Consulte todos os privilégios concedidos ao usuário de relatórios do supermercado.
 18. Explique por que não é adequado conceder `ALL PRIVILEGES ON *.*` a um vendedor.
 19. Conceda privilégio de consulta e atualização em uma visão de clientes sem conceder acesso direto à tabela de clientes.
-20. Crie um conjunto de contas e privilégios para os perfis caixa, estoque e gerente de uma loja.
+20. Crie um conjunto de contas e privilégios para os perfis caixa, estoque e gerente do supermercado.
 
 ---
 
