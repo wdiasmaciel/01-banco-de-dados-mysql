@@ -53,7 +53,8 @@ TO 'ana'@'localhost';
 ```
 
 ```sql
-SHOW GRANTS FOR 'ana'@'localhost';
+SHOW GRANTS 
+FOR 'ana'@'localhost';
 ```
 
 ---
