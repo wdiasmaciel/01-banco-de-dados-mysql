@@ -170,9 +170,11 @@ SELECT *
 FROM   vw_produto_estoque;
 ```
 
-### Visão agregada (visão baseada em agregação)
+### Visão baseada em agregação (visão agregada)
 
-Visões agregadas podem usar `SUM`, `COUNT`, `AVG`, `MIN` ou `MAX`. Elas são úteis para relatórios:
+Visões baseadas em agregações podem usar `SUM`, `COUNT`, `AVG`, `MIN` ou `MAX`. 
+
+Elas são úteis para relatórios:
 
 ```sql
 CREATE VIEW vw_total_por_fornecedor AS
