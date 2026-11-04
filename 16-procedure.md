@@ -239,6 +239,70 @@ END$$
 DELIMITER ;
 ```
 
+## Estruturas de repetição
+
+### WHILE
+
+A estrutura `WHILE` repete os comandos enquanto a condição definida estiver verdadeira. A condição é testada antes da primeira execução:
+
+```sql
+DELIMITER $$
+
+CREATE PROCEDURE somar_numeros(IN limite INT)
+BEGIN
+    DECLARE contador INT DEFAULT 1;
+    DECLARE total INT DEFAULT 0;
+
+    WHILE contador <= limite DO
+        SET total = total + contador;
+        SET contador = contador + 1;
+    END WHILE;
+
+    SELECT total AS resultado;
+END$$
+
+DELIMITER ;
+```
+
+```sql
+CALL somar_numeros(5);
+```
+
+Nesse exemplo, quando o valor do `contador` supera o limite, a condição deixa de ser verdadeira e o `WHILE` termina. Se o limite for menor que 1, os comandos internos não serão executados.
+
+### LOOP
+
+A estrutura `LOOP` repete os comandos indefinidamente até que um `LEAVE` encerre o bloco identificado pelo rótulo. Portanto, é necessário definir uma condição de saída:
+
+```sql
+DELIMITER $$
+
+CREATE PROCEDURE somar_numeros_com_loop(IN limite INT)
+BEGIN
+    DECLARE contador INT DEFAULT 1;
+    DECLARE total INT DEFAULT 0;
+
+    repetir_numeros: LOOP
+        IF contador > limite THEN
+            LEAVE repetir_numeros;
+        END IF;
+
+        SET total = total + contador;
+        SET contador = contador + 1;
+    END LOOP;
+
+    SELECT total AS resultado;
+END$$
+
+DELIMITER ;
+```
+
+```sql
+CALL somar_numeros_com_loop(5);
+```
+
+`LEAVE` interrompe o `LOOP` identificado pelo rótulo `repetir_numeros`. O mesmo princípio pode ser aplicado a outros tipos de loop, mas deve-se evitar executar repetições que nunca alcancem a condição de saída.
+
 ---
 
 ## Procedure com alteração de dados
