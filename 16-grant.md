@@ -82,7 +82,8 @@ ON empresa.* -- banco empresa e qualquer tabela.
 TO 'administrador_loja'@'localhost';
 ```
 
-Conceder `ALL PRIVILEGES ON *.*` é uma operação administrativa sensível. Em aulas, prefira privilégios específicos.
+**OBS**:
+> Conceder `ALL PRIVILEGES ON *.*` é uma operação administrativa sensível. Prefira privilégios específicos.
 
 ---
 
