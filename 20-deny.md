@@ -1,12 +1,12 @@
-# 18 - Controle de Negação de Permissões: DENY
+# 20 - Controle de Negação de Permissões: DENY
 
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="17-revoke.md">Anterior</a>
+      <a href="19-revoke.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="19-drop.md">Próximo</a>
+      <a href="21-drop.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -209,10 +209,10 @@ A ausência da autorização é o mecanismo de bloqueio do MySQL. Não existe um
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="17-revoke.md">Anterior</a>
+      <a href="19-revoke.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="19-drop.md">Próximo</a>
+      <a href="21-drop.md">Próximo</a>
     </td>
   </tr>
 </table>

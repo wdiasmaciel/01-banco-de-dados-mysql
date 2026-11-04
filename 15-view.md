@@ -6,7 +6,7 @@
       <a href="14-alter.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="16-grant.md">Próximo</a>
+      <a href="16-procedure.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -591,7 +591,7 @@ DROP VIEW IF EXISTS vw_produtos_ativos;
       <a href="14-alter.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="16-grant.md">Próximo</a>
+      <a href="16-procedure.md">Próximo</a>
     </td>
   </tr>
 </table>

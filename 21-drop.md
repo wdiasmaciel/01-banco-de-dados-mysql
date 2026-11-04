@@ -1,9 +1,9 @@
-# 19 - Remoção de Objetos com DROP
+# 21 - Remoção de Objetos com DROP
 
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="18-deny.md">Anterior</a>
+      <a href="20-deny.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
       <a href="#">Próximo</a>
@@ -292,7 +292,7 @@ AND    event_name = 'fechar_dia';
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="18-deny.md">Anterior</a>
+      <a href="20-deny.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
       <a href="#">Próximo</a>

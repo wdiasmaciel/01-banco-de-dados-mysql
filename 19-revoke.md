@@ -1,12 +1,12 @@
-# 17 - Remoção de Permissões com REVOKE
+# 19 - Remoção de Permissões com REVOKE
 
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="16-grant.md">Anterior</a>
+      <a href="18-grant.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="18-deny.md">Próximo</a>
+      <a href="20-deny.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -217,10 +217,10 @@ Não é necessário executar `FLUSH PRIVILEGES` após os comandos comuns `GRANT`
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="16-grant.md">Anterior</a>
+      <a href="18-grant.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="18-deny.md">Próximo</a>
+      <a href="20-deny.md">Próximo</a>
     </td>
   </tr>
 </table>

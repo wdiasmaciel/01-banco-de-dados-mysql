@@ -1,12 +1,12 @@
-# 16 - Concessão de Permissões com GRANT
+# 18 - Concessão de Permissões com GRANT
 
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="15-view.md">Anterior</a>
+      <a href="17-function.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="17-revoke.md">Próximo</a>
+      <a href="19-revoke.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -306,10 +306,10 @@ GRANT PROCESS ON *.* TO 'monitor_processos'@'localhost'
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="15-view.md">Anterior</a>
+      <a href="17-function.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="17-revoke.md">Próximo</a>
+      <a href="19-revoke.md">Próximo</a>
     </td>
   </tr>
 </table>
