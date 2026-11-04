@@ -490,6 +490,8 @@ WHERE routine_schema = DATABASE()
   AND routine_type = 'PROCEDURE';
 ```
 
+O MySQL não disponibiliza CREATE OR REPLACE PROCEDURE na mesma forma de CREATE OR REPLACE VIEW. Portanto, a remoção precede uma nova criação.
+
 ---
 
 ## Boas práticas
