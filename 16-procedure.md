@@ -167,6 +167,15 @@ END$$
 DELIMITER ;
 ```
 
+**OBS**:
+`COALESCE` retorna o primeiro valor diferente de `NULL`.
+
+1. Se `quantidade_total` possuir um valor, esse valor será exibido.
+2. Se for `NULL`, será exibido `0`.
+3. `AS` `quantidade_total` define o nome da coluna no resultado.
+4. Sem o `COALESCE`, uma consulta sem registros poderia retornar `NULL`. Isso costuma acontecer quando o produto não possui itens cadastrados em `Estoque`.
+
+
 ```sql
 CALL mostrar_quantidade_produto(1);
 ```
