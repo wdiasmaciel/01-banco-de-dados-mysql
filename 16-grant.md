@@ -59,6 +59,70 @@ FOR 'ana'@'localhost';
 
 ---
 
+## Papéis
+
+O MySQL permite agrupar privilégios em papéis:
+
+```sql
+CREATE ROLE 'perfil_estoque';
+```
+
+```sql
+GRANT SELECT, INSERT, UPDATE
+ON empresa.Produto
+TO 'perfil_estoque';
+```
+
+```sql
+CREATE USER 'lucas'@'localhost' 
+IDENTIFIED BY 'SenhaForte456!';
+```
+
+```sql
+GRANT 'perfil_estoque' 
+TO 'lucas'@'localhost';
+```
+
+```sql
+SHOW GRANTS 
+FOR 'lucas'@'localhost';
+```
+
+O usuário pode ativar seus papéis na sessão:
+
+```sql
+SET ROLE 'perfil_estoque';
+```
+
+Para ativar todos os papéis concedidos automaticamente em novas sessões:
+
+```sql
+SET DEFAULT 
+ROLE ALL 
+TO 'lucas'@'localhost';
+```
+
+---
+
+## Verificando privilégios
+
+Para consultar os privilégios de uma conta:
+
+```sql
+SHOW GRANTS 
+FOR 'ana'@'localhost';
+```
+
+Para consultar a própria conta:
+
+```sql
+SHOW GRANTS;
+```
+
+O MySQL aplica privilégios considerando contas específicas, papéis ativos e a hierarquia dos objetos.
+
+---
+
 ## Privilégios em nível global
 
 Privilégios globais usam `*.*` e normalmente ficam restritos ao administrador do banco:
@@ -177,58 +241,6 @@ WITH GRANT OPTION;
 ```
 
 Esse recurso deve ser usado com cuidado, pois distribui autoridade para terceiros.
-
----
-
-## Papéis
-
-O MySQL permite agrupar privilégios em papéis:
-
-```sql
-CREATE ROLE 'perfil_estoque';
-
-GRANT SELECT, INSERT, UPDATE
-ON empresa.Produto
-TO 'perfil_estoque';
-
-CREATE USER 'lucas'@'localhost' IDENTIFIED BY 'SenhaForte456!';
-GRANT 'perfil_estoque' TO 'lucas'@'localhost';
-```
-
-```sql
-SHOW GRANTS FOR 'lucas'@'localhost';
-```
-
-O usuário pode ativar seus papéis na sessão:
-
-```sql
-SET ROLE 'perfil_estoque';
-```
-
-Para ativar todos os papéis concedidos automaticamente em novas sessões:
-
-```sql
-SET DEFAULT ROLE ALL TO 'lucas'@'localhost';
-```
-
----
-
-## Verificando privilégios
-
-Para consultar os privilégios de uma conta:
-
-```sql
-SHOW GRANTS FOR 'ana'@'localhost';
-```
-
-Para consultar a própria conta:
-
-```sql
-SHOW GRANTS;
-```
-
-O MySQL aplica privilégios considerando contas específicas, papéis ativos e a hierarquia dos objetos.
-
 
 ---
 
