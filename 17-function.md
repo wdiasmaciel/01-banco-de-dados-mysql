@@ -169,6 +169,76 @@ SELECT id_produto,
 FROM   Estoque;
 ```
 
+## Estruturas de repetição em funções
+
+Uma função pode usar estruturas de repetição para calcular um único valor que será devolvido pelo `RETURN`. Diferentemente das procedures, não é necessário usar `OUT`.
+
+### WHILE
+
+O `WHILE` repete o bloco enquanto sua condição estiver verdadeira:
+
+```sql
+DELIMITER $$
+
+CREATE FUNCTION somar_numeros(limite INT)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    DECLARE contador INT DEFAULT 1;
+    DECLARE total INT DEFAULT 0;
+
+    WHILE contador <= limite DO
+        SET total = total + contador;
+        SET contador = contador + 1;
+    END WHILE;
+
+    RETURN total;
+END$$
+
+DELIMITER ;
+```
+
+```sql
+SELECT somar_numeros(5) AS resultado;
+```
+
+A função percorre os números de 1 até 5 e devolve `15`. Se a função receber um limite menor que 1, ela não executa o bloco e retorna `0`, pois esse é o valor inicial de `total`.
+
+### LOOP
+
+O `LOOP` repete o bloco até que a instrução `LEAVE` interrompa o loop identificado por um rótulo:
+
+```sql
+DELIMITER $$
+
+CREATE FUNCTION somar_numeros_com_loop(limite INT)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    DECLARE contador INT DEFAULT 1;
+    DECLARE total INT DEFAULT 0;
+
+    repetir_numeros: LOOP
+        IF contador > limite THEN
+            LEAVE repetir_numeros;
+        END IF;
+
+        SET total = total + contador;
+        SET contador = contador + 1;
+    END LOOP repetir_numeros;
+
+    RETURN total;
+END$$
+
+DELIMITER ;
+```
+
+```sql
+SELECT somar_numeros_com_loop(5) AS resultado;
+```
+
+No loop, `LEAVE repetir_numeros` encerra explicitamente a repetição quando `contador` ultrapassa o limite. Em seguida, a função retorna o total calculado. Em funções como esta, o loop deve sempre possuir uma condição que permita atingir a saída, evitando repetições infinitas.
+
 ---
 
 ## Substituindo uma função existente
