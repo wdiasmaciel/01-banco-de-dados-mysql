@@ -339,6 +339,13 @@ DELIMITER ;
 CALL ajustar_preco(1, '10101010000110', 25.95);
 ```
 
+```sql
+SELECT *
+FROM Estoque
+WHERE id_produto = 1 AND
+      cnpj_filial = '10101010000110';
+```
+
 Antes de chamar uma procedure que altera dados, é importante confirmar os parâmetros e validar condições de negócio.
 
 ---
