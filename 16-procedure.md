@@ -484,7 +484,7 @@ DROP PROCEDURE IF EXISTS consultar_produto;
 Apagar todas as stored procedures:
 
 ```sql
-SELECT CONCAT('DROP PROCEDURE IF EXISTS `', routine_name, '`;') AS drop_command
+SELECT CONCAT('DROP PROCEDURE IF EXISTS ', routine_name, ';') AS drop_command
 FROM information_schema.routines
 WHERE routine_schema = DATABASE() 
   AND routine_type = 'PROCEDURE';
