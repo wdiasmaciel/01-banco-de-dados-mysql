@@ -273,7 +273,7 @@ Antes de chamar uma procedure que altera dados, é importante confirmar os parâ
 
 ## Tratamento de ausência de resultados
 
-Ao buscar um único valor, é possível verificar se ele existe antes de utilizá-lo:
+Ao buscar um único valor, é importante tratar o caso em que nenhuma linha corresponde aos parâmetros. A saída pode ser inicializada como `NULL`, e o handler `NOT FOUND` pode indicar que o registro não foi localizado:
 
 ```sql
 DELIMITER $$
@@ -281,9 +281,16 @@ DELIMITER $$
 CREATE PROCEDURE verificar_preco(
     IN codigo INT,
     IN filial CHAR(14),
-    OUT preco_local DECIMAL(10,2)
+    OUT preco_local DECIMAL(10,2),
+    OUT registro_encontrado BOOLEAN
 )
 BEGIN
+    DECLARE CONTINUE HANDLER FOR NOT FOUND
+        SET registro_encontrado = FALSE;
+
+    SET preco_local = NULL;
+    SET registro_encontrado = TRUE;
+
     SELECT preco
     INTO   preco_local
     FROM   Estoque
@@ -294,7 +301,42 @@ END$$
 DELIMITER ;
 ```
 
-Se não houver correspondência, o parâmetro pode permanecer sem valor definido. Em aplicações maiores, esse caso pode ser tratado com `SIGNAL`, handlers e validações adicionais.
+```sql
+CALL verificar_preco(1, '10101010000110',
+                    @preco_local, @registro_encontrado);
+
+SELECT @preco_local AS preco_local,
+       @registro_encontrado AS registro_encontrado;
+```
+
+Quando nenhuma linha é encontrada, o `handler` altera `registro_encontrado` para `FALSE`. Assim, o chamador pode decidir como tratar o resultado, por exemplo exibindo uma mensagem ou interrompendo a operação.
+
+Outra alternativa é interromper a execução com `SIGNAL`:
+
+```sql
+DELIMITER $$
+
+CREATE PROCEDURE verificar_preco_obrigatorio(
+    IN codigo INT,
+    IN filial CHAR(14),
+    OUT preco_local DECIMAL(10,2)
+)
+BEGIN
+    DECLARE CONTINUE HANDLER FOR NOT FOUND
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Registro de preço não encontrado';
+
+    SELECT preco
+    INTO   preco_local
+    FROM   Estoque
+    WHERE  id_produto = codigo
+    AND    cnpj_filial = filial;
+END$$
+
+DELIMITER ;
+```
+
+O uso de `SIGNAL` dentro de `CONTINUE HANDLER` provoca uma exceção porque o comando interrompe a execução da rotina. Para escolher entre as duas abordagens, considere: `OUT + handler` permite continuar e decidir como tratar o resultado; `SIGNAL` informa diretamente ao chamador que a operação não pode continuar.
 
 ---
 
