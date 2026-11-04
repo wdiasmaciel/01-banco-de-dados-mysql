@@ -248,7 +248,9 @@ DELIMITER ;
 SELECT somar_numeros_com_loop(5) AS resultado;
 ```
 
-No loop, `LEAVE repetir_numeros` encerra explicitamente a repetição quando `contador` ultrapassa o limite. Em seguida, a função retorna o total calculado. Em funções como esta, o loop deve sempre possuir uma condição que permita atingir a saída, evitando repetições infinitas.
+No loop, `LEAVE repetir_numeros` encerra explicitamente a repetição quando `contador` ultrapassa o limite. Em seguida, a função retorna o total calculado. 
+
+Em funções como esta, o loop deve sempre possuir uma condição que permita atingir a saída, evitando repetições infinitas.
 
 ---
 
