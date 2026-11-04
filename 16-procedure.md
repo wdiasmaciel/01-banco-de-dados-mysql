@@ -58,6 +58,10 @@ END$$
 DELIMITER ;
 ```
 
+---
+
+## Executar
+
 Para executar a procedure, usamos `CALL`:
 
 ```sql
