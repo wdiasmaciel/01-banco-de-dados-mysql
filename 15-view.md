@@ -547,8 +547,8 @@ DROP VIEW IF EXISTS vw_produtos_ativos;
 1. Use nomes claros, como `vw_cliente_resumo`, para diferenciar visões de tabelas.
 2. Evite visões aninhadas desnecessárias.
 3. Não espere que toda visão seja atualizável.
-4. Revise permissões e testes de segurança ao usar `SQL SECURITY DEFINER`.
-5. Confira a documentação da versão do MySQL utilizada, pois recursos e comportamentos podem variar.
+<!-- 4. Revise permissões e testes de segurança ao usar `SQL SECURITY DEFINER`. -->
+4. Confira a documentação da versão do MySQL utilizada, pois recursos e comportamentos podem variar.
 
 ---
 
