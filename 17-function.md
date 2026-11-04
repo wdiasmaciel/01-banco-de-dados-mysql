@@ -279,8 +279,7 @@ DELIMITER ;
 ```
 
 ```sql
-SELECT * 
-FROM calcular_valor_estoque(2, 10);
+SELECT calcular_valor_estoque(2, 10);
 ```
 
 O MySQL não disponibiliza `CREATE OR REPLACE FUNCTION` na mesma forma de `CREATE OR REPLACE VIEW`. Portanto, a remoção precede uma nova criação.
