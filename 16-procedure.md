@@ -153,15 +153,15 @@ DELIMITER $$
 
 CREATE PROCEDURE mostrar_quantidade_produto(IN codigo INT)
 BEGIN
-    DECLARE quantidade_total INT DEFAULT 0;
+    DECLARE total INT DEFAULT 0;
 
     SELECT SUM(e.quantidade)
-    INTO   quantidade_total
+    INTO   total
     FROM   Estoque e
     WHERE  e.id_produto = codigo;
 
     SELECT codigo AS id_produto,
-           COALESCE(quantidade_total, 0) AS quantidade_total;
+           COALESCE(total, 0) AS quantidade_total;
 END$$
 
 DELIMITER ;
@@ -170,7 +170,7 @@ DELIMITER ;
 **OBS**:
 `COALESCE` retorna o primeiro valor diferente de `NULL`.
 
-1. Se `quantidade_total` possuir um valor, esse valor será exibido.
+1. Se `total` possuir um valor, esse valor será exibido.
 2. Se for `NULL`, será exibido `0`.
 3. `AS` `quantidade_total` define o nome da coluna no resultado.
 4. Sem o `COALESCE`, uma consulta sem registros poderia retornar `NULL`. Isso costuma acontecer quando o produto não possui itens cadastrados em `Estoque`.
