@@ -73,6 +73,7 @@ Uma chamada simples também pode ser feita com `SELECT`:
 SELECT calcular_valor_estoque(12, 15.50) AS resultado;
 ```
 
+**OBS**:
 `DETERMINISTIC` informa que, para os mesmos argumentos, o resultado da função não muda. Ele deve ser usado somente quando essa afirmação é verdadeira.
 
 ---
