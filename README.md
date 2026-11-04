@@ -40,6 +40,32 @@ A DDL define e altera a estrutura do banco de dados e de seus objetos (como tabe
 
 4. `TRUNCATE`: apaga todos os registros de uma tabela rapidamente, mantendo sua estrutura.
 
+## Segurança em visões (`VIEW`)
+
+Uma visão (`VIEW`) pode ser criada com um dos seguintes modos de segurança:
+
+- `SQL SECURITY DEFINER`: a consulta interna usa os privilégios do usuário definido como criador da visão.
+- `SQL SECURITY INVOKER`: a consulta interna usa os privilégios de quem executa o `SELECT` na visão.
+
+Ao criar uma visão sem informar o modo, o MySQL usa `SQL SECURITY DEFINER` por padrão. O criador da visão também pode ser indicado explicitamente com `DEFINER`, por exemplo:
+
+```sql
+CREATE DEFINER = CURRENT_USER
+    SQL SECURITY DEFINER
+VIEW vw_exemplo AS
+SELECT codigo, nome
+FROM   Produto;
+```
+
+`DEFINER` não é automaticamente mais seguro nem mais restritivo que `INVOKER`. Cada modo atende a um objetivo diferente:
+
+- Em uma visão com `DEFINER`, o usuário precisa possuir normalmente apenas acesso à própria visão, pois a consulta interna utiliza os privilégios do criador.
+- Em uma visão com `INVOKER`, o usuário precisa possuir privilégios sobre a visão e sobre os objetos usados pela consulta interna.
+
+A escolha depende da política de acesso. `DEFINER` permite que uma conta administrativa controle os dados disponibilizados por meio da visão, mas pode ser arriscado se o criador possuir privilégios excessivos. `INVOKER` tende a respeitar melhor os privilégios individuais, mas exige um gerenciamento mais detalhado das tabelas base.
+
+Esse assunto deve ser apresentado junto das visões porque criar uma view não concede automaticamente acesso a ela nem às tabelas base. A view reúne DDL, consultas DQL e controle de privilégios DCL: a definição decide quais dados serão calculados, enquanto o criador ou invocador determina quais privilégios serão usados nessa consulta.
+
 ---
 
 # DML (Data Manipulation Language)
