@@ -292,6 +292,7 @@ FROM   vw_produtos_baratos_ativos;
 
 ---
 
+<!--
 ## Definidor e usuário da visão
 
 Uma visão pode ser executada com dois conjuntos de privilégios diferentes:
@@ -431,7 +432,66 @@ A escolha depende da política de acesso. `DEFINER` permite que uma conta admini
 
 Esse assunto é apresentado junto das visões porque criar uma view não concede automaticamente acesso a ela nem às tabelas base. A view reúne a definição de objetos (`CREATE VIEW`), consultas (`SELECT`) e controle de privilégios (`GRANT` e `REVOKE`): a definição decide quais dados serão calculados, enquanto o criador ou invocador determina quais privilégios serão usados nessa consulta.
 
+
+
+Qual segurança é usada por padrão ao criar uma view?
+No MySQL, o padrão é SQL SECURITY DEFINER.
+
+Na prática, se apenas CREATE VIEW ... for utilizado, a view é criada de forma equivalente a:
+
+CREATE DEFINER = <usuário_atual>
+SQL SECURITY DEFINER
+VIEW vw_exemplo AS
+SELECT ...;
+
+DEFINER é mais seguro que INVOKER?
+Não necessariamente.
+
+DEFINER centraliza os privilégios no usuário que criou a view.
+INVOKER exige que cada usuário consulte a view com seus próprios privilégios também nas tabelas base.
+Cada modo pode ser adequado em situações diferentes:
+
+Use DEFINER quando quiser fornecer acesso controlado aos dados de uma view sem conceder acesso direto às tabelas.
+Use INVOKER quando quiser que o MySQL respeite integralmente os privilégios individuais de quem consulta.
+É importante não interpretar DEFINER como sinônimo de “mais seguro”. Um criador com privilégios excessivos pode permitir a um usuário consultar dados além do necessário.
+
+Por exemplo, conceder SELECT sobre uma view não concede automaticamente acesso às tabelas base, mas a view pode expor dados que não deveriam ser visíveis se houver DEFINER com privilégios elevados.
+
+DEFINER é mais restritivo que INVOKER?
+Também não necessariamente.
+
+DEFINER é mais restritivo para quem consulta quanto à consulta às tabelas base, mas não exige que essa pessoa tenha privilégios diretamente nelas. Em vez disso, o criador da view precisa possuir os privilégios necessários.
+
+Já INVOKER geralmente é mais restritivo para quem consulta: ele precisa possuir privilégio tanto sobre a view quanto sobre os objetos usados pela consulta interna.
+
+Portanto, a diferença pode ser resumida assim:
+
+Comando	Consulta interna executada como	Usuário da view precisa acessar tabelas base?
+DEFINER	Criador da view	Normalmente não
+INVOKER	Quem consulta a view	Sim
+Em ambos os casos, o usuário normalmente precisa possuir pelo menos SELECT sobre a própria view.
+
+Por que apresentar esse assunto nesta aula?
+O assunto introduz uma compreensão importante sobre segurança de banco de dados e vem logo após o conteúdo sobre criação e uso de views.
+
+Os alunos podem aprender que uma view não é apenas uma consulta reutilizável. Ela também pode representar um limite entre dados internos e usuários externos.
+
+Neste momento, eles já conhecem:
+
+criação de tabelas;
+consultas com várias tabelas;
+restrições e privilégios;
+o funcionamento das views;
+formas de impedir alterações com WITH CHECK OPTION.
+Assim, podem relacionar views com autenticação e autorização, entendendo que:
+
+uma view pode ocultar colunas;
+a segurança pode depender de privilégios;
+o criador e o usuário não precisam possuir as mesmas permissões;
+uma view mal configurada pode produzir um risco de acesso indevido.
+O conteúdo também prepara os próximos assuntos de administração de banco de dados, como GRANT, REVOKE e DENY, permitindo que os alunos compreendam mais do que apenas conceder e remover privilégios.
 ---
+-->
 
 ## Consultando e removendo visões
 
