@@ -105,6 +105,7 @@ DELIMITER ;
 ```sql
 SELECT nome_produto(1) AS nome;
 ```
+**OBS**: `READS SQL DATA` informa que a função lê dados do banco, mas não os altera.
 
 Se não houver produto com o código informado, a consulta pode terminar com `NULL`. Funções chamadas em consultas podem deixar o resultado indefinido nesse caso, portanto é importante validar a entrada ou prever esse resultado na aplicação.
 
