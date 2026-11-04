@@ -28,7 +28,8 @@ Uma conta no MySQL pode conter usuário e origem da conexão, por exemplo:
 Antes de conceder privilégios, recomenda-se criar a conta separadamente:
 
 ```sql
-CREATE USER 'ana'@'localhost' IDENTIFIED BY 'SenhaForte123!';
+CREATE USER 'ana'@'localhost' 
+IDENTIFIED BY 'SenhaForte123!';
 ```
 
 ---
