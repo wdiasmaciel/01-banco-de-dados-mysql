@@ -65,12 +65,13 @@ Privilégios globais usam `*.*` e normalmente ficam restritos ao administrador d
 
 ```sql
 GRANT PROCESS
-ON *.*
+ON *.* -- qualquer banco e qualquer tabela.
 TO 'monitor'@'localhost';
 ```
 
 ```sql
-SHOW GRANTS FOR 'monitor'@'localhost';
+SHOW GRANTS 
+FOR 'monitor'@'localhost';
 ```
 
 O privilégio `ALL PRIVILEGES` concede todos os privilégios aplicáveis ao objeto indicado:
