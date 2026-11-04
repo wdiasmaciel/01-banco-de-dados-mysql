@@ -89,7 +89,7 @@ TO 'administrador_loja'@'localhost';
 
 ## Privilégios em nível de banco
 
-O exemplo concede permissões em todas as tabelas do banco:
+O exemplo concede permissões em todas as tabelas do banco `empresa`:
 
 ```sql
 GRANT SELECT, INSERT, UPDATE
