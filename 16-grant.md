@@ -78,7 +78,7 @@ O privilégio `ALL PRIVILEGES` concede todos os privilégios aplicáveis ao obje
 
 ```sql
 GRANT ALL PRIVILEGES
-ON empresa.*
+ON empresa.* -- banco empresa e qualquer tabela.
 TO 'administrador_loja'@'localhost';
 ```
 
