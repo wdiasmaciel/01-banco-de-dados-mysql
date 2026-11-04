@@ -29,6 +29,11 @@ RETURNS tipo
 corpo_da_função;
 ```
 
+**OBS**:
+1. No MySQL, não é possível utilizar os modificadores `IN`, `OUT` ou `INOUT` em parâmetros de uma FUNCTION.
+2. Em Funções (CREATE FUNCTION), todos os parâmetros são obrigatoriamente do tipo `IN`. Entretanto, você sequer pode declarar as palavras-chave `IN`, `OUT` ou `INOUT` antes do nome do parâmetro; se colocar, o MySQL gerará um erro de sintaxe. 
+3. A função sempre recebe valores de entrada e devolve um único valor através da cláusula `RETURNS` e da instrução `RETURN`.
+
 ---
 
 ## Configuração necessária
