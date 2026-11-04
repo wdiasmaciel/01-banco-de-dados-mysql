@@ -481,6 +481,7 @@ Use `IF EXISTS` quando o objeto pode não existir:
 ```sql
 DROP PROCEDURE IF EXISTS consultar_produto;
 ```
+
 Apagar todas as stored procedures (**OBS**: com grandes poderes, vêm grandes responsabilidades):
 
 ```sql
