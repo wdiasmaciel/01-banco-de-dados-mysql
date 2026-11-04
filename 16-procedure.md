@@ -13,9 +13,9 @@
 
 ---
 
-# Rotinas armazenadas no MySQL
+# Rotinas armazenadas no MySQL  (stored procedure)
 
-Uma **procedure armazenada** é um conjunto de comandos SQL associado ao banco de dados. Ela permite executar várias operações por meio de uma única chamada, facilitando a reutilização e padronização de tarefas.
+Uma **procedure armazenada** (stored procedure, ou procedimento armazenado) é um conjunto de comandos SQL associado ao banco de dados. Ela permite executar várias operações por meio de uma única chamada, facilitando a reutilização e padronização de tarefas.
 
 Procedures podem receber parâmetros, consultar dados, alterar registros e controlar o fluxo da execução com estruturas como `IF`, `CASE`, `WHILE` e `LOOP`.
 
