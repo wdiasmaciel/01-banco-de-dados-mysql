@@ -39,13 +39,15 @@ DELIMITER ;
 ```
 
 **OBS**:
-DELIMITER $$: muda temporariamente o delimitador padrão do MySQL, de ; para $$.
+`DELIMITER $$`: muda temporariamente o delimitador padrão do MySQL, de `;` para `$$`.
 
-END$$: indica o término da procedure ou função usando o novo delimitador.
+`END$$`: indica o término da procedure ou função usando o novo delimitador.
 
-DELIMITER ;: restaura o ; como delimitador padrão.
+`DELIMITER ;`: restaura o `;` como delimitador padrão.
 
-Isso é necessário porque vários comandos internos de uma procedure terminam com ;. Sem alterar o delimitador, o MySQL poderia encerrar a criação antes de chegar ao END.
+Isso é necessário porque vários comandos internos de uma procedure terminam com `;`. 
+
+Sem alterar o delimitador, o MySQL poderia encerrar a criação antes de chegar ao `END`.
 
 ```sql
 DELIMITER $$
