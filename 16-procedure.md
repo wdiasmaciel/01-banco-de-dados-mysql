@@ -390,6 +390,14 @@ SELECT @preco_local AS preco_local,
 
 Quando nenhuma linha é encontrada, o `handler` altera `registro_encontrado` para `FALSE`. Assim, o chamador pode decidir como tratar o resultado, por exemplo exibindo uma mensagem ou interrompendo a operação.
 
+```sql
+CALL verificar_preco(1, '10101010000119',
+                    @preco_local, @registro_encontrado);
+
+SELECT @preco_local AS preco_local,
+       @registro_encontrado AS registro_encontrado;
+```
+
 Outra alternativa é interromper a execução com `SIGNAL`:
 
 ```sql
