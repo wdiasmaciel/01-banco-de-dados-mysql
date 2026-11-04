@@ -320,7 +320,7 @@ DROP FUNCTION IF EXISTS calcular_valor_estoque;
 Apagar todas as functions (**OBS**: com grandes poderes, vêm grandes responsabilidades):
 
 ```sql
-SELECT CONCAT('DROP PROCEDURE IF EXISTS ', routine_name, ';') AS drop_command
+SELECT CONCAT('DROP FUNCTION IF EXISTS ', routine_name, ';') AS drop_command
 FROM information_schema.routines
 WHERE routine_schema = DATABASE() 
   AND routine_type = 'FUNCTION';
