@@ -54,7 +54,7 @@ DELIMITER $$
 
 CREATE PROCEDURE exemplo()
 BEGIN
-    SELECT 1;
+    SELECT 1 AS valor;
 END$$
 
 DELIMITER ;
@@ -68,6 +68,10 @@ Para executar a procedure, usamos `CALL`:
 
 ```sql
 CALL listar_produtos();
+```
+
+```sql
+CALL exemplo();
 ```
 
 Não é necessário utilizar `CALL` se a procedure estiver definida para ser executada por uma aplicação externamente, mas essa é a forma usada diretamente pelo cliente MySQL.
