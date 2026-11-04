@@ -19,7 +19,9 @@ Uma **função armazenada** é uma rotina que recebe argumentos e retorna um ún
 
 Diferentemente das procedures, as funções podem ser chamadas dentro de expressões SQL, por exemplo em `SELECT`, `WHERE` ou `ORDER BY`.
 
-A sintaxe básica informa o tipo do valor retornado com `RETURNS` e contém o valor que deverá ser devolvido por meio de `RETURN`:
+A sintaxe básica informa:
+1. O tipo do valor retornado com `RETURNS`.
+2. E contém o valor que deverá ser devolvido por meio de `RETURN`:
 
 ```text
 CREATE FUNCTION nome(parâmetros)
