@@ -403,6 +403,34 @@ Em geral, o acesso por uma visão não permite contornar os privilégios das tab
 
 O nome `DEFINER` não concede automaticamente os privilégios da tabela base. Ele indica quais privilégios serão usados; esses privilégios ainda precisam existir. Da mesma forma, criar uma visão não concede acesso a quem a utiliza: é preciso executar `GRANT SELECT` sobre a própria visão.
 
+### Qual modo de segurança é usado por padrão?
+
+Uma visão pode ser criada com um dos seguintes modos de segurança:
+
+- `SQL SECURITY DEFINER`: a consulta interna usa os privilégios do usuário definido como criador da visão.
+- `SQL SECURITY INVOKER`: a consulta interna usa os privilégios de quem executa o `SELECT` na visão.
+
+Ao criar uma visão sem informar o modo, o MySQL usa `SQL SECURITY DEFINER` por padrão. O criador da visão também pode ser indicado explicitamente com `DEFINER`, por exemplo:
+
+```sql
+CREATE DEFINER = CURRENT_USER
+    SQL SECURITY DEFINER
+VIEW vw_exemplo AS
+SELECT codigo, nome
+FROM   Produto;
+```
+
+### Definer é mais seguro ou mais restritivo que Invoker?
+
+Não necessariamente. Os modos atendem a objetivos diferentes:
+
+- Em uma visão com `DEFINER`, o usuário precisa possuir normalmente apenas acesso à própria visão, pois a consulta interna utiliza os privilégios do criador.
+- Em uma visão com `INVOKER`, o usuário precisa possuir privilégios sobre a visão e sobre os objetos usados pela consulta interna.
+
+A escolha depende da política de acesso. `DEFINER` permite que uma conta administrativa controle os dados disponibilizados por meio da visão, mas pode ser arriscado se o criador possuir privilégios excessivos. `INVOKER` tende a respeitar melhor os privilégios individuais, mas exige um gerenciamento mais detalhado das tabelas base.
+
+Esse assunto é apresentado junto das visões porque criar uma view não concede automaticamente acesso a ela nem às tabelas base. A view reúne a definição de objetos (`CREATE VIEW`), consultas (`SELECT`) e controle de privilégios (`GRANT` e `REVOKE`): a definição decide quais dados serão calculados, enquanto o criador ou invocador determina quais privilégios serão usados nessa consulta.
+
 ---
 
 ## Consultando e removendo visões
