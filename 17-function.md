@@ -29,7 +29,7 @@ corpo_da_função;
 
 ## Configuração necessária
 
-Em algumas instalações do MySQL, a criação de funções pode exigir privilégios adicionais ou a configuração de segurança para rotinas que realizam alterações. O usuário de aula deve possuir os privilégios administrativos concedidos pelo professor.
+Em algumas instalações do MySQL, a criação de funções pode exigir privilégios adicionais ou a configuração de segurança para rotinas que realizam alterações. O usuário deve possuir privilégios administrativos (admin).
 
 ---
 
