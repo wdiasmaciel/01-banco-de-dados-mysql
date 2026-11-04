@@ -500,6 +500,10 @@ O conteúdo também prepara os próximos assuntos de administração de banco de
 `SHOW TABLES` lista também as visões. 
 
 ```sql
+SHOW TABLES;
+```
+
+```sql
 SHOW FULL TABLES;
 ```
 
