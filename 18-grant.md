@@ -260,7 +260,7 @@ FOR 'consulta_produto';
 Várias operações podem ser concedidas para uma tabela:
 
 ```sql
-CREATE ROLE 'estoquista';
+CREATE ROLE 'estoquista'@'localhost';
 ```
 
 ```sql
