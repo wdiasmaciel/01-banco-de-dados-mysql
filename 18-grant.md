@@ -89,6 +89,11 @@ TO 'perfil_estoque';
 ```
 
 ```sql
+SHOW GRANTS 
+FOR 'perfil_estoque';
+```
+
+```sql
 CREATE USER 'lucas'@'localhost' 
 IDENTIFIED BY 'SenhaForte456!';
 ```
