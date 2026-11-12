@@ -459,7 +459,7 @@ FOR 'ana'@'localhost';
 Alterar o papel ativo:
 
 ```sql
-SET DEFAULT ROLE 'consulta_produto'@'localhost'
+SET DEFAULT ROLE 'consulta_produto'@'%'
 TO 'ana'@'localhost';
 ```
 
