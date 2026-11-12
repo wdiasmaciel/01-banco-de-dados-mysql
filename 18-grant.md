@@ -227,7 +227,7 @@ FROM mysql.user;
 
 ```sql
 GRANT SELECT, INSERT, UPDATE
-ON empresa.*
+ON empresa.* -- Concede as permissões em todas as tabelas do banco empresa.
 TO 'atendente'@'localhost';
 ```
 
