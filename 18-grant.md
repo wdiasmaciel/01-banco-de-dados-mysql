@@ -63,6 +63,10 @@ SHOW GRANTS
 FOR 'ana'@'localhost';
 ```
 
+```sql
+SHOW GRANTS;
+```
+
 ---
 
 ## Papéis
