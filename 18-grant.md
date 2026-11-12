@@ -439,7 +439,7 @@ Esse recurso deve ser usado com cuidado, pois distribui autoridade para terceiro
 Conceder vários papéis ao mesmo usuário em um único comando, separados por vírgula:
 
 ```sql
-GRANT 'consulta_produto'@'localhost',
+GRANT 'consulta_produto'@'%',
       'perfil_estoque'@'localhost'
 TO 'ana'@'localhost';
 ```
