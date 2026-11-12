@@ -13,7 +13,7 @@
 
 ---
 
-# GRANT e Data Control Language
+# Data Control Language: GRANT
 
 `GRANT` é um comando de Data Control Language (DCL). Ele concede privilégios a contas de usuário ou a papéis do MySQL.
 
