@@ -216,6 +216,16 @@ FOR 'administrador_loja'@'localhost';
 O exemplo abaixo concede permissões em todas as tabelas do banco `empresa`:
 
 ```sql
+CREATE USER 'atendente'@'localhost' 
+IDENTIFIED BY 'SenhaForte123!';
+```
+
+```sql
+SELECT User, Host
+FROM mysql.user;
+```
+
+```sql
 GRANT SELECT, INSERT, UPDATE
 ON empresa.*
 TO 'atendente'@'localhost';
