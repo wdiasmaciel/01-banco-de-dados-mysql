@@ -463,6 +463,15 @@ SET DEFAULT ROLE 'consulta_produto'@'%'
 TO 'ana'@'localhost';
 ```
 
+## Alteração
+
+Alterar a senha do usuário:
+
+```sql
+ALTER USER 'ana'@'localhost'
+IDENTIFIED BY 'NovaSenhaForte1234!';
+``` 
+
 ---
 
 # Exercícios
