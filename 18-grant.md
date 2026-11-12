@@ -391,6 +391,10 @@ DELIMITER ;
 ```
 
 ```sql
+SELECT * FROM empresa.calcular_desconto(100);
+```
+
+```sql
 GRANT EXECUTE
 ON FUNCTION empresa.calcular_desconto
 TO 'vendas'@'localhost';
