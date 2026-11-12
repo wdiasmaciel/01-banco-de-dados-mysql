@@ -298,12 +298,12 @@ JOIN empresa.Estoque AS e
 ```sql
 GRANT SELECT
 ON empresa.vw_produto_estoque_publico
-TO 'consulta_produto'@'localhost';
+TO 'consulta_produto'@'%';
 ```
 
 ```sql
 SHOW GRANTS 
-FOR 'consulta_produto'@'localhost';
+FOR 'consulta_produto'@'%';
 ```
 
 ---
