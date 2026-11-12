@@ -156,6 +156,11 @@ O MySQL aplica privilégios considerando contas específicas, papéis ativos e a
 Privilégios globais usam `*.*` e normalmente ficam restritos ao administrador do banco:
 
 ```sql
+CREATE USER 'monitor'@'localhost' 
+IDENTIFIED BY 'SenhaForte789!';
+```
+
+```sql
 GRANT PROCESS
 ON *.* -- qualquer banco e qualquer tabela.
 TO 'monitor'@'localhost';
