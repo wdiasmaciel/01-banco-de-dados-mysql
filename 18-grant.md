@@ -254,7 +254,7 @@ TO 'consulta_produto'@'%';
 
 ```sql
 SHOW GRANTS 
-FOR 'consulta_produto'@'localhost';
+FOR 'consulta_produto';
 ```
 
 Várias operações podem ser concedidas para uma tabela:
