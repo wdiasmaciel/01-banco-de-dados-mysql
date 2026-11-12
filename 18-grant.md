@@ -313,6 +313,15 @@ FOR 'consulta_produto'@'%';
 É possível conceder permissões para determinadas colunas:
 
 ```sql
+CREATE ROLE 'suporte'@'localhost';
+```
+
+```sql
+SELECT User, Host
+FROM mysql.user;
+```
+
+```sql
 GRANT SELECT (cnpj, nome, telefone)
 ON empresa.Fornecedor
 TO 'suporte'@'localhost';
@@ -322,6 +331,11 @@ TO 'suporte'@'localhost';
 GRANT UPDATE (telefone)
 ON empresa.Fornecedor
 TO 'suporte'@'localhost';
+```
+
+```sql
+SHOW GRANTS 
+FOR 'suporte'@'%';
 ```
 
 Para operações que exigem outras colunas, os privilégios adicionais devem ser concedidos separadamente.
