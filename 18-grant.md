@@ -99,6 +99,11 @@ IDENTIFIED BY 'SenhaForte456!';
 ```
 
 ```sql
+SELECT User, Host
+FROM mysql.user;
+```
+
+```sql
 GRANT 'perfil_estoque' 
 TO 'lucas'@'localhost';
 ```
