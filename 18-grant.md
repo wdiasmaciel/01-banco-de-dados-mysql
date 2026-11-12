@@ -58,11 +58,14 @@ ON empresa.Fornecedor
 TO 'ana'@'localhost';
 ```
 
+Para consultar os privilégios concedidos a um usuário:
+
 ```sql
 SHOW GRANTS 
 FOR 'ana'@'localhost';
 ```
 
+Para consultar os privilégios concedidos ao usuário corrente:
 ```sql
 SHOW GRANTS;
 ```
