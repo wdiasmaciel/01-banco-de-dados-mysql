@@ -456,6 +456,13 @@ SHOW GRANTS
 FOR 'ana'@'localhost';
 ```
 
+Alterar o papel ativo:
+
+```sql
+SET DEFAULT ROLE 'consulta_produto'@'localhost'
+TO 'ana'@'localhost';
+```
+
 ---
 
 # Exercícios
