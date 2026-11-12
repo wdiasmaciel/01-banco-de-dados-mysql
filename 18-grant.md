@@ -78,6 +78,12 @@ CREATE ROLE 'perfil_estoque';
 ```
 
 ```sql
+SELECT User, Host
+FROM mysql.user
+WHERE is_role = 'Y';
+```
+
+```sql
 GRANT SELECT, INSERT, UPDATE
 ON empresa.Produto
 TO 'perfil_estoque';
