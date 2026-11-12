@@ -201,6 +201,11 @@ ON empresa.* -- banco empresa e qualquer tabela.
 TO 'administrador_loja'@'localhost';
 ```
 
+```sql
+SHOW GRANTS 
+FOR 'administrador_loja'@'localhost';
+```
+
 **OBS**:
 > Conceder `ALL PRIVILEGES ON *.*` é uma operação administrativa sensível. Prefira privilégios específicos.
 
