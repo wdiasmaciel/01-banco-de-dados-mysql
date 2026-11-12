@@ -368,7 +368,7 @@ DELIMITER ;
 ```
 
 ```sql
-CALL empresa.calcular_total_estoque();
+CALL empresa.calcular_valor_estoque();
 ```
 
 ```sql
