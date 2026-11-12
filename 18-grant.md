@@ -32,6 +32,12 @@ CREATE USER 'ana'@'localhost'
 IDENTIFIED BY 'SenhaForte123!';
 ```
 
+
+```sql
+SELECT User, Host
+FROM mysql.user;
+```
+
 ---
 
 ## Sintaxe geral
