@@ -434,6 +434,29 @@ FOR 'gerente'@'localhost';
 Esse recurso deve ser usado com cuidado, pois distribui autoridade para terceiros.
 
 ---
+## Conceder vários papéis ao mesmo usuário
+
+Conceder vários papéis ao mesmo usuário em um único comando, separados por vírgula:
+
+```sql
+GRANT 'consulta_produto'@'localhost',
+      'perfil_estoque'@'localhost'
+TO 'ana'@'localhost';
+```
+
+Para ativar todos os papéis concedidos por padrão em novas sessões:
+
+```sql
+SET DEFAULT ROLE ALL
+TO 'ana'@'localhost';
+```
+
+```sql
+SHOW GRANTS 
+FOR 'ana'@'localhost';
+```
+
+---
 
 # Exercícios
 
