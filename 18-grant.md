@@ -335,7 +335,7 @@ TO 'suporte'@'localhost';
 
 ```sql
 SHOW GRANTS 
-FOR 'suporte'@'%';
+FOR 'suporte'@'localhost';
 ```
 
 Para operações que exigem outras colunas, os privilégios adicionais devem ser concedidos separadamente.
