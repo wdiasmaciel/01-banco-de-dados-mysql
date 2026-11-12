@@ -161,6 +161,11 @@ IDENTIFIED BY 'SenhaForte789!';
 ```
 
 ```sql
+SELECT User, Host
+FROM mysql.user;
+```
+
+```sql
 GRANT PROCESS
 ON *.* -- qualquer banco e qualquer tabela.
 TO 'monitor'@'localhost';
@@ -179,6 +184,16 @@ SHOW PROCESSLIST;
 ```
 
 O privilégio `ALL PRIVILEGES` concede todos os privilégios aplicáveis ao objeto indicado:
+
+```sql
+CREATE USER 'administrador_loja'@'localhost' 
+IDENTIFIED BY 'SenhaForte123!';
+```
+
+```sql
+SELECT User, Host
+FROM mysql.user;
+```
 
 ```sql
 GRANT ALL PRIVILEGES
