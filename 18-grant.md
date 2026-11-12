@@ -440,7 +440,7 @@ Conceder vários papéis ao mesmo usuário em um único comando, separados por v
 
 ```sql
 GRANT 'consulta_produto'@'%',
-      'perfil_estoque'@'localhost'
+      'gerente'@'localhost'
 TO 'ana'@'localhost';
 ```
 
