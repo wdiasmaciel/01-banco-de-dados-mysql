@@ -249,7 +249,7 @@ FROM mysql.user;
 ```sql
 GRANT SELECT
 ON empresa.Produto
-TO 'consulta_produto'@'localhost';
+TO 'consulta_produto'@'%';
 ```
 
 ```sql
