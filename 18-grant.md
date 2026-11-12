@@ -487,6 +487,7 @@ DROP USER IF EXISTS 'ana'@'localhost';
 ```
 
 Isso remove a conta e seus privilégios, mas não exclui os bancos de dados dela.
+
 ---
 
 # Exercícios
