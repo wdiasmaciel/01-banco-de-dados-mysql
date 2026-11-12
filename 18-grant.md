@@ -411,10 +411,24 @@ FOR 'vendas'@'localhost';
 `WITH GRANT OPTION` permite que o usuário repasse os privilégios que recebeu, desde que esses privilégios estejam dentro de seu próprio conjunto autorizado:
 
 ```sql
+CREATE ROLE 'gerente'@'localhost';
+```
+
+```sql
+SELECT User, Host
+FROM mysql.user;
+```
+
+```sql
 GRANT SELECT
 ON empresa.Produto
 TO 'gerente'@'localhost'
 WITH GRANT OPTION;
+```
+
+```sql
+SHOW GRANTS 
+FOR 'gerente'@'localhost';
 ```
 
 Esse recurso deve ser usado com cuidado, pois distribui autoridade para terceiros.
