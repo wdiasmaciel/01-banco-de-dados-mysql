@@ -358,9 +358,9 @@ FROM mysql.user;
 ```sql
 DELIMITER //
 
-CREATE PROCEDURE empresa.calcular_valor_estoque()
+CREATE PROCEDURE empresa.calcular_total_estoque()
 BEGIN
-    SELECT COALESCE(SUM(quantidade * preco), 0) AS valor
+    SELECT COALESCE(SUM(quantidade * preco), 0) AS total
     FROM empresa.Estoque;
 END//
 
@@ -368,20 +368,26 @@ DELIMITER ;
 ```
 
 ```sql
-CALL empresa.calcular_valor_estoque();
+CALL empresa.calcular_total_estoque();
 ```
 
 ```sql
 GRANT EXECUTE
-ON PROCEDURE empresa.calcular_valor_estoque
+ON PROCEDURE empresa.calcular_total_estoque
 TO 'vendas'@'localhost';
 ```
 
 ```sql
+DELIMITER //
+
 CREATE FUNCTION empresa.calcular_desconto(valor DECIMAL(10,2))
 RETURNS DECIMAL(10,2)
 DETERMINISTIC
-RETURN valor * 0.90;
+BEGIN
+    RETURN valor * 0.90;
+END//
+
+DELIMITER ;
 ```
 
 ```sql
