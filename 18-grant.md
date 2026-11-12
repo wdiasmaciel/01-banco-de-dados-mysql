@@ -260,9 +260,28 @@ FOR 'consulta_produto';
 Várias operações podem ser concedidas para uma tabela:
 
 ```sql
+CREATE ROLE 'estoquista';
+```
+
+```sql
+SELECT User, Host
+FROM mysql.user;
+```
+
+```sql
 GRANT SELECT, INSERT, UPDATE, DELETE
 ON empresa.Produto
 TO 'estoquista'@'localhost';
+```
+
+```sql
+GRANT 'estoquista' 
+TO 'lucas'@'localhost';
+```
+
+```sql
+SHOW GRANTS 
+FOR 'lucas'@'localhost';
 ```
 
 Para permitir execução de consultas por uma visão e não por suas tabelas internas, conceda privilégio sobre a visão:
