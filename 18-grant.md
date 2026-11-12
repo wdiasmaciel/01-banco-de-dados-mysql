@@ -347,9 +347,41 @@ Para operações que exigem outras colunas, os privilégios adicionais devem ser
 Procedures e funções também podem receber privilégios específicos:
 
 ```sql
+CREATE ROLE 'vendas'@'localhost';
+```
+
+```sql
+SELECT User, Host
+FROM mysql.user;
+```
+
+```sql
+DELIMITER //
+
+CREATE PROCEDURE empresa.calcular_valor_estoque()
+BEGIN
+    SELECT COALESCE(SUM(quantidade * preco), 0) AS valor
+    FROM empresa.Estoque;
+END//
+
+DELIMITER ;
+```
+
+```sql
+CALL empresa.calcular_total_estoque();
+```
+
+```sql
 GRANT EXECUTE
-ON PROCEDURE empresa.calcular_total_pedido
+ON PROCEDURE empresa.calcular_valor_estoque
 TO 'vendas'@'localhost';
+```
+
+```sql
+CREATE FUNCTION empresa.calcular_desconto(valor DECIMAL(10,2))
+RETURNS DECIMAL(10,2)
+DETERMINISTIC
+RETURN valor * 0.90;
 ```
 
 ```sql
@@ -358,6 +390,10 @@ ON FUNCTION empresa.calcular_desconto
 TO 'vendas'@'localhost';
 ```
 
+```sql
+SHOW GRANTS 
+FOR 'vendas'@'localhost';
+```
 ---
 
 ## WITH GRANT OPTION
