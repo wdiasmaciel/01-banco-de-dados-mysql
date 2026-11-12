@@ -213,7 +213,7 @@ FOR 'administrador_loja'@'localhost';
 
 ## Privilégios em nível de banco
 
-O exemplo concede permissões em todas as tabelas do banco `empresa`:
+O exemplo abaixo concede permissões em todas as tabelas do banco `empresa`:
 
 ```sql
 GRANT SELECT, INSERT, UPDATE
