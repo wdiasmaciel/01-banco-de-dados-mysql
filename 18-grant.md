@@ -238,9 +238,23 @@ Não conceda privilégios mais amplos do que o necessário sem verificar cuidado
 ## Privilégios em nível de tabela
 
 ```sql
+CREATE ROLE 'consulta_produto';
+```
+
+```sql
+SELECT User, Host
+FROM mysql.user;
+```
+
+```sql
 GRANT SELECT
 ON empresa.Produto
 TO 'consulta_produto'@'localhost';
+```
+
+```sql
+SHOW GRANTS 
+FOR 'consulta_produto'@'localhost';
 ```
 
 Várias operações podem ser concedidas para uma tabela:
