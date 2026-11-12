@@ -286,10 +286,24 @@ FOR 'lucas'@'localhost';
 
 Para permitir execução de consultas por uma visão e não por suas tabelas internas, conceda privilégio sobre a visão:
 
+
+```sql
+CREATE VIEW empresa.vw_produto_estoque_publico AS
+SELECT p.id, p.nome, e.quantidade, e.preco, e.validade
+FROM empresa.Produto AS p
+JOIN empresa.Estoque AS e
+  ON e.id_produto = p.id;
+```
+
 ```sql
 GRANT SELECT
 ON empresa.vw_produto_estoque_publico
 TO 'consulta_produto'@'localhost';
+```
+
+```sql
+SHOW GRANTS 
+FOR 'consulta_produto'@'localhost';
 ```
 
 ---
