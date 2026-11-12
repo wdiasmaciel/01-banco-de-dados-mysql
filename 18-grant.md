@@ -472,6 +472,21 @@ ALTER USER 'ana'@'localhost'
 IDENTIFIED BY 'NovaSenhaForte1234!';
 ``` 
 
+## Exclusão
+
+Para remover um usuário no MySQL, use `DROP USER`, indicando o nome e o host da conta:
+
+```sql
+DROP USER 'ana'@'localhost';
+```
+
+Para evitar erro caso a conta não exista:
+
+```sql
+DROP USER IF EXISTS 'ana'@'localhost';
+```
+
+Isso remove a conta e seus privilégios, mas não exclui os bancos de dados dela.
 ---
 
 # Exercícios
