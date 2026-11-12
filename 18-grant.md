@@ -171,6 +171,13 @@ SHOW GRANTS
 FOR 'monitor'@'localhost';
 ```
 
+**OBS**:
+> PROCESS é um privilégio global do MySQL. Ele permite que a conta veja informações sobre as conexões e consultas em execução no servidor, inclusive as de outros usuários. Sem esse privilégio, em geral, a conta só consegue ver seus próprios processos. PROCESS não concede acesso para consultar ou alterar dados das tabelas. Exemplo:
+
+```sql
+SHOW PROCESSLIST;
+```
+
 O privilégio `ALL PRIVILEGES` concede todos os privilégios aplicáveis ao objeto indicado:
 
 ```sql
