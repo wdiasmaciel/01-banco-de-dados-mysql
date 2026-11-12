@@ -391,7 +391,7 @@ DELIMITER ;
 ```
 
 ```sql
-SELECT * FROM empresa.calcular_desconto(100);
+SELECT empresa.calcular_desconto(100) AS desconto;
 ```
 
 ```sql
