@@ -495,15 +495,12 @@ SHOW GRANTS FOR 'mauro'@'localhost';
 ```
 
 ```sql
-RENAME USER 'usuario'@'localhost'
-TO 'ex_usuario'@'localhost';
-
 RENAME USER 'mauro'@'localhost'
 TO 'mauro_desabilitado'@'localhost';
 ```
 
 ```sql
-SHOW GRANTS FOR 'ex_usuario'@'localhost';
+SHOW GRANTS FOR 'usuario'@'localhost';
 ```
 
 ```sql
@@ -514,11 +511,11 @@ Quando uma conta ainda existe, mas não deve possuir privilégio algum:
 
 ```sql
 REVOKE ALL PRIVILEGES, GRANT OPTION
-FROM 'ex_usuario'@'localhost';
+FROM 'usuario'@'localhost';
 ```
 
 ```sql
-SHOW GRANTS FOR 'ex_usuario'@'localhost';
+SHOW GRANTS FOR 'usuario'@'localhost';
 ```
 
 ```sql
@@ -528,7 +525,7 @@ SHOW GRANTS FOR 'mauro_desabilitado'@'localhost';
 Os privilégios `ALL PRIVILEGES` e `GRANT OPTION` são retirados sem indicar um objeto específico. Essa forma é útil antes de desativar ou excluir uma conta. Para remover completamente uma conta:
 
 ```sql
-DROP USER IF EXISTS 'ex_usuario'@'localhost';
+DROP USER IF EXISTS 'usuario'@'localhost';
 ```
 
 ```sql
