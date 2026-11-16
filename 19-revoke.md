@@ -185,7 +185,7 @@ Para desbloquear:
 
 ```sql
 ALTER USER 'atendente'@'localhost' ACCOUNT UNLOCK;
-``
+```
 
 ```sql
 ALTER USER 'atendente' ACCOUNT UNLOCK; -- Neste caso, o host é qualquer um (%).
