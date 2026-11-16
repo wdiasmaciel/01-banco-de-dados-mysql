@@ -207,6 +207,12 @@ ALTER USER 'atendente'@'localhost' IDENTIFIED BY 'uma_nova_senha';
 ALTER USER 'atendente' IDENTIFIED BY 'uma_nova_senha'; -- Neste caso, o host é qualquer um (%).
 ```
 
+```sql
+SELECT user, host, account_locked, password_expired
+FROM mysql.user
+WHERE password_expired = 'Y';
+```
+
 Para bloquear:
 
 ```sql
