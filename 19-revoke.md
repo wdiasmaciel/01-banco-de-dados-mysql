@@ -400,7 +400,8 @@ SHOW GRANTS FOR 'caixa'@'localhost';
 DROP ROLE IF EXISTS 'perfil_estoque'@'localhost';
 DROP USER IF EXISTS 'lucas'@'localhost';
 
-CREATE ROLE IF NOT EXISTS 'perfil_estoque'@'localhost';
+CREATE ROLE IF NOT EXISTS 'perfil_estoque'@'localhost'
+IDENTIFIED BY 'senha-do-pefil-estoque';
 CREATE USER IF NOT EXISTS 'lucas'@'localhost' 
 IDENTIFIED BY 'senha-do-lucas';
 
