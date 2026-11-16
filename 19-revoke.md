@@ -275,6 +275,17 @@ WHERE account_locked = 'Y';
 
 ## Removendo WITH GRANT OPTION
 
+```sql
+DROP ROLE IF EXISTS 'gerente'@'localhost';
+
+CREATE ROLE IF NOT EXISTS 'gerente'@'localhost';
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON empresa.Produto
+TO 'gerente'@'localhost'
+WITH GRANT OPTION;
+```
+
 A opção de repassar privilégios pode ser retirada separadamente:
 
 ```sql
@@ -283,7 +294,9 @@ ON empresa.Produto
 FROM 'gerente'@'localhost';
 ```
 
-Essa forma remove a capacidade de conceder; ela não necessariamente remove os privilégios próprios da conta.
+**OBS**:
+1. Essa forma remove a capacidade de conceder.
+2. Ela não necessariamente remove os privilégios próprios da conta.
 
 ---
 
