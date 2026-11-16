@@ -341,6 +341,33 @@ ON PROCEDURE empresa.fechar_venda
 FROM 'caixa'@'localhost';
 ```
 
+---
+
+```sql
+DELIMITER //
+
+CREATE FUNCTION empresa.calcular_frete()
+BEGIN
+    SELECT 'Frete calculado!' AS mensagem;
+END//
+
+DELIMITER ;
+```
+
+```sql
+SELECT empresa.calcular_frete();
+```
+
+```sql
+DROP ROLE IF EXISTS 'caixa'@'localhost';
+
+CREATE ROLE IF NOT EXISTS 'caixa'@'localhost';
+
+GRANT EXECUTE
+ON FUNCTION empresa.calcular_frete
+TO 'caixa'@'localhost';
+```
+
 ```sql
 REVOKE EXECUTE
 ON FUNCTION empresa.calcular_frete
