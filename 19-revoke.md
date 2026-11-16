@@ -170,7 +170,7 @@ FROM 'suporte'@'localhost';
 ```
 
 ```sql
-REVOKE ALL PRIVILEGES (telefone)
+REVOKE SELECT (telefone), INSERT (telefone), UPDATE (telefone)
 ON empresa.Fornecedor
 FROM 'suporte'@'localhost';
 ```
