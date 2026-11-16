@@ -347,8 +347,9 @@ FROM 'caixa'@'localhost';
 DELIMITER //
 
 CREATE FUNCTION empresa.calcular_frete()
+RETURNS VARCHAR(16)
 BEGIN
-    SELECT 'Frete calculado!' AS mensagem;
+    RETURN 'Frete calculado!' AS mensagem;
 END//
 
 DELIMITER ;
