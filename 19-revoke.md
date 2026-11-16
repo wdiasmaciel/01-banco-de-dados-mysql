@@ -52,7 +52,7 @@ Para remover privilégios concedidos em uma tabela:
 
 ```sql
 REVOKE INSERT, UPDATE
-ON empresa.Produto
+ON empresa.Fornecedor
 FROM 'ana'@'localhost';
 ```
 
