@@ -139,11 +139,21 @@ FROM 'estoquista'@'localhost';
 
 ```sql
 DROP ROLE IF EXISTS 'suporte'@'localhost';
-CREATE ROLE IF NOT EXISTS 'suporte'@'localhost'; 
-GRANT SELECT, INSERT, UPDATE, DELETE
-ON empresa.Fornecedor (telefone) 
-TO 'suporte'@'localhost'; 
+
+CREATE ROLE IF NOT EXISTS 'suporte'@'localhost';
+
+GRANT SELECT (telefone), INSERT (telefone), UPDATE (telefone)
+ON empresa.Fornecedor
+TO 'suporte'@'localhost';
+
+GRANT DELETE
+ON empresa.Fornecedor
+TO 'suporte'@'localhost';
 ```
+
+**OBS**:
+> 1. A lista de colunas deve vir junto de cada privilégio que aceita escopo por coluna, como SELECT, INSERT e UPDATE, e não depois do nome da tabela.
+> 2. DELETE não pode ser concedido por coluna: ele permite excluir linhas da tabela.
 
 ```sql
 REVOKE UPDATE (telefone)
