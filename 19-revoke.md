@@ -201,6 +201,16 @@ ALTER USER 'atendente'@'localhost' IDENTIFIED BY 'uma_nova_senha';
 ALTER USER 'atendente' IDENTIFIED BY 'uma_nova_senha'; -- Neste caso, o host é qualquer um (%).
 ```
 
+Para bloquear:
+
+```sql
+ALTER USER 'atendente'@'localhost' ACCOUNT LOCK;
+```
+
+```sql
+ALTER USER 'atendente' ACCOUNT LOCK; -- Neste caso, o host é qualquer um (%).
+```
+
 ---
 
 ## Removendo WITH GRANT OPTION
