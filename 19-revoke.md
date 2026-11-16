@@ -435,12 +435,12 @@ SHOW GRANTS FOR 'perfil_estoque'@'localhost';
 SHOW GRANTS FOR 'lucas'@'localhost';
 ```
 
-Para remover os privilégios associados ao próprio papel:
+Para remover privilégios associados a um papel:
 
 ```sql
 REVOKE SELECT, UPDATE
 ON empresa.Produto
-FROM 'perfil_estoque';
+FROM 'perfil_estoque'@'localhost';
 ```
 
 Para excluir o papel após avaliar dependências:
