@@ -213,6 +213,12 @@ FROM mysql.user
 WHERE password_expired = 'Y';
 ```
 
+```sql
+SELECT user, host, account_locked, password_expired
+FROM mysql.user
+WHERE password_expired = 'N';
+```
+
 Para bloquear:
 
 ```sql
