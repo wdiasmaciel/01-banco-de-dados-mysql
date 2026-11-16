@@ -286,12 +286,20 @@ TO 'gerente'@'localhost'
 WITH GRANT OPTION;
 ```
 
+```sql
+SHOW GRANTS FOR 'gerente'@'localhost';
+```
+
 A opção de repassar privilégios pode ser retirada separadamente:
 
 ```sql
 REVOKE GRANT OPTION
 ON empresa.Produto
 FROM 'gerente'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'gerente'@'localhost';
 ```
 
 **OBS**:
