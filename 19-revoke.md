@@ -78,7 +78,7 @@ Concedendo privilégios ao perfil criado:
 ```sql
 GRANT SELECT, INSERT, UPDATE
 ON empresa.*
-TO 'atendente';
+TO 'atendente'; -- Neste caso, o host é qualquer um (%).
 ```
 
 Verificando os privilégios do perfil criado:
@@ -92,7 +92,7 @@ Revogando os privilégios concedidos:
 ```sql
 REVOKE SELECT, INSERT, UPDATE
 ON empresa.*
-FROM 'atendente'@'localhost';
+FROM 'atendente'; -- Neste caso, o host é qualquer um (%).
 ```
 
 Essa operação não remove privilégios concedidos diretamente em nível global. Para auditar um usuário, examine os resultados de `SHOW GRANTS`.
