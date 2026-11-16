@@ -553,8 +553,8 @@ Não é necessário executar `FLUSH PRIVILEGES` após os comandos comuns `GRANT`
 
 # Exercícios
 
-1. Remova o privilégio de inserção da conta de um caixa da padaria.
-2. Remova simultaneamente os privilégios de inserir e excluir vendas do usuário da padaria.
+1. Remova o privilégio de inserção da conta de um caixa de uma padaria.
+2. Remova simultaneamente os privilégios de inserir e excluir vendas do usuário de uma padaria.
 3. Retire o privilégio de alteração da quantidade de produtos de um estoquista.
 4. Remova o acesso direto à tabela de fornecedores de um analista que deve usar uma visão.
 5. Remova o privilégio de consulta sobre uma visão de medicamentos de uma conta temporária.
@@ -562,17 +562,17 @@ Não é necessário executar `FLUSH PRIVILEGES` após os comandos comuns `GRANT`
 7. Remova o privilégio de atualização da coluna `telefone` de um atendente.
 8. Remova a opção de repassar privilégios de uma gerente de viagens.
 9. Confira os privilégios de uma conta antes de retirar sua permissão de exclusão.
-10. Retire todos os privilégios aplicáveis à tabela de reservas de uma agência.
+10. Retire todos os privilégios aplicáveis à tabela de reservas de uma agência de viagens.
 11. Revogue o papel `perfil_caixa` de um colaborador que mudou de setor.
 12. Remova os privilégios de consulta e inserção associados ao papel `perfil_atendente`.
-13. Exclua o papel do setor de estoque depois de retirar todas as suas associações.
-14. Deixe uma conta de auditoria sem privilégios de banco, mas sem excluir a conta.
-15. Revogue apenas privilégios concedidos em nível de banco, preservando um privilégio em nível global.
+13. Exclua o papel do setor de estoque depois de retirar todas as suas associações, atribuições do papel a usuários ou a outros papéis.
+14. Crie uma conta de auditoria sem privilégios de banco, mas sem excluir a conta.
+15. Para um papel de supervisor, revogue apenas privilégios concedidos em nível de banco, preservando um privilégio em nível global.
 16. Retire o acesso de atualização de uma conta enquanto mantém o acesso de consulta.
-17. Remova o acesso à função `calcular_comissao` de uma conta que não deve fechar vendas.
+17. Remova o acesso à função `calcular_comissao` de uma conta que não deve excluir vendas.
 18. Explique por que `REVOKE SELECT` pode não ser suficiente quando o usuário recebeu privilégios por um papel.
-19. Planeje a remoção segura dos privilégios de uma conta de funcionário desligado.
-20. Depois de revogar e atualizar os privilégios, escreva um comando que confirme o resultado.
+19. Remova os privilégios de uma conta de funcionário desligado.
+20. Depois de revogar e atualizar os privilégios de um papel (perfil), escreva um comando que confirme o resultado.
 
 ---
 
