@@ -70,7 +70,7 @@ SHOW GRANTS FOR 'ana'@'localhost';
 Criando um papel (perfil):
 
 ```sql
-CREATE ROLE 'atendente';
+CREATE ROLE 'atendente'; -- Neste caso, o host é qualquer um (%).
 ```
 
 Concedendo privilégios ao perfil criado:
