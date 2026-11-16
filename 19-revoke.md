@@ -428,6 +428,10 @@ FROM 'lucas'@'localhost';
 ```
 
 ```sql
+SHOW GRANTS FOR 'perfil_estoque'@'localhost';
+```
+
+```sql
 SHOW GRANTS FOR 'lucas'@'localhost';
 ```
 
