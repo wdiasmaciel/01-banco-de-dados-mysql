@@ -331,7 +331,7 @@ DROP ROLE IF EXISTS 'caixa'@'localhost';
 CREATE ROLE IF NOT EXISTS 'caixa'@'localhost';
 
 GRANT EXECUTE
-ON empresa.fechar_venda
+ON PROCEDURE empresa.fechar_venda
 TO 'caixa'@'localhost';
 ```
 
