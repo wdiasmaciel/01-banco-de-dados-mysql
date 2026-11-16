@@ -138,6 +138,14 @@ FROM 'estoquista'@'localhost';
 ## Removendo privilégio de coluna
 
 ```sql
+DROP ROLE IF EXISTS 'suporte'@'localhost';
+CREATE ROLE IF NOT EXISTS 'suporte'@'localhost'; 
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON empresa.Fornecedor (telefone) 
+TO 'suporte'@'localhost'; 
+```
+
+```sql
 REVOKE UPDATE (telefone)
 ON empresa.Fornecedor
 FROM 'suporte'@'localhost';
@@ -147,6 +155,12 @@ Para remover privilégios de consulta em colunas específicas:
 
 ```sql
 REVOKE SELECT (telefone)
+ON empresa.Fornecedor
+FROM 'suporte'@'localhost';
+```
+
+```sql
+REVOKE ALL PRIVILEGES (telefone)
 ON empresa.Fornecedor
 FROM 'suporte'@'localhost';
 ```
