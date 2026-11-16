@@ -157,9 +157,9 @@ TO 'atendente'; -- Neste caso, o host é qualquer um (%).
 
 Os estados (status) de um usuário ou pefil são:
 
-1. Lock: indica que a conta está bloqueada para login. 
-2. Unlock: indica que a conta está desbloqueada para login. 
-3. Expired: a senha está expirada. A senha precisa ser redefinida.
+1. **Lock**: indica que a conta está bloqueada para login. 
+2. **Unlock**: indica que a conta está desbloqueada para login. 
+3. **Expired**: a senha está expirada. A senha precisa ser redefinida.
 
 Se você quiser consultar o status da conta do usuário (atendente), execute a consulta:
 
