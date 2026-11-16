@@ -322,6 +322,10 @@ DELIMITER ;
 ```
 
 ```sql
+CALL empresa.fechar_venda();
+```
+
+```sql
 DROP ROLE IF EXISTS 'caixa'@'localhost';
 
 CREATE ROLE IF NOT EXISTS 'caixa'@'localhost';
