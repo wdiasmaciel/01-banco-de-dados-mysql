@@ -336,9 +336,17 @@ TO 'caixa'@'localhost';
 ```
 
 ```sql
+SHOW GRANTS FOR 'gerente'@'localhost';
+```
+
+```sql
 REVOKE EXECUTE
 ON PROCEDURE empresa.fechar_venda
 FROM 'caixa'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'gerente'@'localhost';
 ```
 
 ---
@@ -371,9 +379,17 @@ TO 'caixa'@'localhost';
 ```
 
 ```sql
+SHOW GRANTS FOR 'gerente'@'localhost';
+```
+
+```sql
 REVOKE EXECUTE
 ON FUNCTION empresa.calcular_frete
 FROM 'atendente'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'gerente'@'localhost';
 ```
 
 ---
