@@ -170,6 +170,10 @@ FROM 'suporte'@'localhost';
 ```
 
 ```sql
+GRANT SELECT (telefone), INSERT (telefone), UPDATE (telefone)
+ON empresa.Fornecedor
+TO 'suporte'@'localhost';
+
 REVOKE SELECT (telefone), INSERT (telefone), UPDATE (telefone)
 ON empresa.Fornecedor
 FROM 'suporte'@'localhost';
