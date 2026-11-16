@@ -336,7 +336,7 @@ TO 'caixa'@'localhost';
 ```
 
 ```sql
-SHOW GRANTS FOR 'gerente'@'localhost';
+SHOW GRANTS FOR 'caixa'@'localhost';
 ```
 
 ```sql
@@ -346,7 +346,7 @@ FROM 'caixa'@'localhost';
 ```
 
 ```sql
-SHOW GRANTS FOR 'gerente'@'localhost';
+SHOW GRANTS FOR 'caixa'@'localhost';
 ```
 
 ---
@@ -379,7 +379,7 @@ TO 'caixa'@'localhost';
 ```
 
 ```sql
-SHOW GRANTS FOR 'gerente'@'localhost';
+SHOW GRANTS FOR 'caixa'@'localhost';
 ```
 
 ```sql
@@ -389,7 +389,7 @@ FROM 'atendente'@'localhost';
 ```
 
 ```sql
-SHOW GRANTS FOR 'gerente'@'localhost';
+SHOW GRANTS FOR 'caixa'@'localhost';
 ```
 
 ---
