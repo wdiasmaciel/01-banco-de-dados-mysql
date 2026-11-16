@@ -450,7 +450,7 @@ SHOW GRANTS FOR 'perfil_estoque'@'localhost';
 Para excluir o papel após avaliar dependências:
 
 ```sql
-DROP ROLE IF EXISTS 'perfil_estoque';
+DROP ROLE IF EXISTS 'perfil_estoque'@'localhost';
 ```
 
 ---
