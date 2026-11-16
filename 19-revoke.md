@@ -348,6 +348,7 @@ DELIMITER //
 
 CREATE FUNCTION empresa.calcular_frete()
 RETURNS VARCHAR(16)
+DETERMINISTIC
 BEGIN
     RETURN 'Frete calculado!';
 END//
