@@ -181,6 +181,19 @@ SHOW CREATE USER 'atendente'@'localhost';
 SHOW CREATE USER 'atendente';  -- Neste caso, o host é qualquer um (%).
 ```
 
+Para desbloquear:
+
+```sql
+ALTER USER 'atendente'@'localhost' ACCOUNT UNLOCK;
+``
+
+```sql
+ALTER USER 'atendente' ACCOUNT UNLOCK; -- Neste caso, o host é qualquer um (%).
+``
+
+
+```sql
+```
 
 ---
 
