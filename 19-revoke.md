@@ -84,7 +84,7 @@ TO 'atendente';
 Verificando os privilégios do perfil criado:
 
 ```sql
-SHOW GRANTS FOR 'atentendente'
+SHOW GRANTS FOR 'atendente';
 ```
 
 Revogando os privilégios concedidos:
