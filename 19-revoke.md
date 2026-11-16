@@ -453,6 +453,11 @@ Para excluir o papel após avaliar dependências:
 DROP ROLE IF EXISTS 'perfil_estoque'@'localhost';
 ```
 
+```sql
+SELECT User, Host
+FROM mysql.user;
+```
+
 ---
 
 ## Revogando todos os privilégios
