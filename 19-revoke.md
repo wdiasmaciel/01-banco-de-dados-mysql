@@ -349,14 +349,14 @@ DELIMITER //
 CREATE FUNCTION empresa.calcular_frete()
 RETURNS VARCHAR(16)
 BEGIN
-    RETURN 'Frete calculado!' AS mensagem;
+    RETURN 'Frete calculado!';
 END//
 
 DELIMITER ;
 ```
 
 ```sql
-SELECT empresa.calcular_frete();
+SELECT empresa.calcular_frete() AS mensagem;
 ```
 
 ```sql
