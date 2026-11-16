@@ -482,7 +482,7 @@ ON empresa.Produto
 TO 'usuario'@'localhost'
 WITH GRANT OPTION;
 
-GRANT 'usuario' 
+GRANT 'usuario'@'localhost' 
 TO 'mauro'@'localhost';
 ```
 
