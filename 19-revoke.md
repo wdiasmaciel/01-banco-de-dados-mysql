@@ -397,7 +397,7 @@ SHOW GRANTS FOR 'caixa'@'localhost';
 ## Revogando papéis
 
 ```sql
-DROP ROLE IF EXISTS 'perfil_estoque'@'localhost',
+DROP ROLE IF EXISTS 'perfil_estoque'@'localhost';
 DROP USER IF EXISTS 'lucas'@'localhost';
 
 CREATE ROLE IF NOT EXISTS 'perfil_estoque'@'localhost';
