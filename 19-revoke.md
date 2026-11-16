@@ -97,6 +97,12 @@ FROM 'atendente'; -- Neste caso, o host é qualquer um (%).
 
 Essa operação não remove privilégios concedidos diretamente em nível global. Para auditar um usuário, examine os resultados de `SHOW GRANTS`.
 
+Verificando os privilégios do perfil:
+
+```sql
+SHOW GRANTS FOR 'atendente';
+```
+
 ---
 
 ## Removendo privilégio de tabela
