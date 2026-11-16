@@ -17,6 +17,21 @@
 
 `REVOKE` é um comando de Data Control Language (DCL) usado para retirar privilégios concedidos anteriormente. Ele não exclui a conta nem apaga dados.
 
+Criar o usuário:
+
+```sql
+CREATE USER 'ana'@'localhost' 
+IDENTIFIED BY 'SenhaForte123!';
+```
+
+Conceder autorizações:
+
+```sql
+GRANT SELECT, INSERT, UPDATE
+ON empresa.Fornecedor
+TO 'ana'@'localhost';
+```
+
 Antes de remover privilégios, confira os privilégios atuais:
 
 ```sql
