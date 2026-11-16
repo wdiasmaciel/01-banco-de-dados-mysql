@@ -400,14 +400,13 @@ SHOW GRANTS FOR 'caixa'@'localhost';
 DROP ROLE IF EXISTS 'perfil_estoque'@'localhost';
 DROP USER IF EXISTS 'lucas'@'localhost';
 
-CREATE ROLE IF NOT EXISTS 'perfil_estoque'@'localhost'
-IDENTIFIED BY 'senha-do-pefil-estoque';
+CREATE ROLE IF NOT EXISTS 'perfil_estoque'@'localhost';
 CREATE USER IF NOT EXISTS 'lucas'@'localhost' 
 IDENTIFIED BY 'senha-do-lucas';
 
 GRANT SELECT, INSERT, UPDATE
 ON empresa.Produto
-TO 'perfil_estoque';
+TO 'perfil_estoque'@'localhost';
 
 GRANT 'perfil_estoque' 
 TO 'lucas'@'localhost';
