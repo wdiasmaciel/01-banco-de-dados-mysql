@@ -191,8 +191,14 @@ ALTER USER 'atendente'@'localhost' ACCOUNT UNLOCK;
 ALTER USER 'atendente' ACCOUNT UNLOCK; -- Neste caso, o host é qualquer um (%).
 ```
 
+Para redefinir a senha:
 
 ```sql
+ALTER USER 'atendente'@'localhost' IDENTIFIED BY 'uma_nova_senha';
+```
+
+```sql
+ALTER USER 'atendente' IDENTIFIED BY 'uma_nova_senha'; -- Neste caso, o host é qualquer um (%).
 ```
 
 ---
