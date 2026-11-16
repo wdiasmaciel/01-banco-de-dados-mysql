@@ -60,7 +60,8 @@ FROM 'ana'@'localhost';
 SHOW GRANTS FOR 'ana'@'localhost';
 ```
 
-Caso existam dois privilégios separados e o usuário já possua apenas um deles, o MySQL remove somente aquele que foi solicitado.
+**OBS**:
+> O MySQL exige que os privilégios informados em `REVOKE` estejam concedidos à conta no escopo indicado. Se algum deles não estiver, a instrução pode falhar com o erro 1147 (`There is no such grant defined...`), em vez de remover apenas o privilégio existente. Confira o resultado de `SHOW GRANTS` e informe em `REVOKE` somente os privilégios que aparecem entre as concessões dessa conta.
 
 ---
 
