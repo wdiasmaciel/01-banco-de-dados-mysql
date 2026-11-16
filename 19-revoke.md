@@ -396,7 +396,7 @@ SHOW GRANTS FOR 'caixa'@'localhost';
 
 ## Revogando papéis
 
-`` sql
+```sql
 DROP ROLE IF EXISTS 'perfil_estoque'@'localhost',
 DROP USER IF EXISTS 'lucas'@'localhost';
 
