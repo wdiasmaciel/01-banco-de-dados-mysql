@@ -145,6 +145,32 @@ FROM 'suporte'@'localhost';
 
 ---
 
+## Lock, Unlock, Expired
+
+```sql
+DROP ROLE 'atendente';
+CREATE ROLE IF NOT EXISTS 'atendente'; -- Neste caso, o host é qualquer um (%).
+GRANT SELECT, INSERT, UPDATE
+ON empresa.*
+TO 'atendente'; -- Neste caso, o host é qualquer um (%).
+```
+
+Os estados (status) de um usuário ou pefil são:
+
+1. Lock: indica que a conta está bloqueada para login. 
+2. Unlock: indica que a conta está desbloqueada para login. 
+3. Expired: a senha está expirada. A senha precisa ser redefinida.
+
+Se você quiser consultar o status da conta do usuário (atendente), execute a consulta:
+
+```sql
+SELECT user, host, account_locked, password_expired
+FROM mysql.user
+WHERE user = 'atendente';
+```
+
+---
+
 ## Removendo WITH GRANT OPTION
 
 A opção de repassar privilégios pode ser retirada separadamente:
