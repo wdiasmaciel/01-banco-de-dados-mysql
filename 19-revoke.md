@@ -13,9 +13,9 @@
 
 ---
 
-# REVOKE e Data Control Language
+# Data Control Language: REVOKE
 
-`REVOKE` é um comando de DCL usado para retirar privilégios concedidos anteriormente. Ele não exclui a conta nem apaga dados.
+`REVOKE` é um comando de Data Control Language (DCL) usado para retirar privilégios concedidos anteriormente. Ele não exclui a conta nem apaga dados.
 
 Antes de remover privilégios, confira os privilégios atuais:
 
