@@ -169,6 +169,19 @@ FROM mysql.user
 WHERE user = 'atendente';
 ```
 
+No MySQL, **locked** indica que a conta está bloqueada para login. Isso não apaga o usuário nem remove seus privilégios; apenas impede que ele se conecte ao MySQL.
+
+Para verificar o estado e os detalhes da conta:
+
+```sql
+SHOW CREATE USER 'atendente'@'localhost';
+```
+
+```sql
+SHOW CREATE USER 'atendente';  -- Neste caso, o host é qualquer um (%).
+```
+
+
 ---
 
 ## Removendo WITH GRANT OPTION
