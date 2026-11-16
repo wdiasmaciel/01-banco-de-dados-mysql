@@ -108,6 +108,14 @@ SHOW GRANTS FOR 'atendente';
 ## Removendo privilégio de tabela
 
 ```sql
+DROP ROLE IF EXISTS 'estoquista';
+CREATE ROLE IF NOT EXISTS 'estoquista'@'localhost'; 
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON empresa.Produto
+TO 'estoquista'@'localhost'; 
+```
+
+```sql
 REVOKE DELETE
 ON empresa.Produto
 FROM 'estoquista'@'localhost';
