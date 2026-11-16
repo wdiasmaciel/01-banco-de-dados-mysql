@@ -438,15 +438,19 @@ SHOW GRANTS FOR 'lucas'@'localhost';
 Para remover privilégios associados a um papel:
 
 ```sql
-REVOKE SELECT, UPDATE
+REVOKE INSERT, UPDATE
 ON empresa.Produto
 FROM 'perfil_estoque'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'perfil_estoque'@'localhost';
 ```
 
 Para excluir o papel após avaliar dependências:
 
 ```sql
-DROP ROLE 'perfil_estoque';
+DROP ROLE IF EXISTS 'perfil_estoque';
 ```
 
 ---
