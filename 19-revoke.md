@@ -90,7 +90,7 @@ SHOW GRANTS FOR 'atendente';
 Revogando os privilégios concedidos:
 
 ```sql
-REVOKE SELECT, INSERT
+REVOKE SELECT, INSERT, UPDATE
 ON empresa.*
 FROM 'atendente'@'localhost';
 ```
