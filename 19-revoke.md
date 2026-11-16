@@ -191,6 +191,12 @@ ALTER USER 'atendente'@'localhost' ACCOUNT UNLOCK;
 ALTER USER 'atendente' ACCOUNT UNLOCK; -- Neste caso, o host é qualquer um (%).
 ```
 
+```sql
+SELECT user, host, account_locked, password_expired
+FROM mysql.user
+WHERE account_locked = 'N';
+```
+
 Para redefinir a senha:
 
 ```sql
@@ -209,6 +215,12 @@ ALTER USER 'atendente'@'localhost' ACCOUNT LOCK;
 
 ```sql
 ALTER USER 'atendente' ACCOUNT LOCK; -- Neste caso, o host é qualquer um (%).
+```
+
+```sql
+SELECT user, host, account_locked, password_expired
+FROM mysql.user
+WHERE account_locked = 'Y';
 ```
 
 ---
