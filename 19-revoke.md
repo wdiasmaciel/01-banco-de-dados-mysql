@@ -458,6 +458,13 @@ SELECT User, Host
 FROM mysql.user;
 ```
 
+```sql
+SELECT User, Host
+FROM mysql.user
+WHERE User like 'perfil_estoque'
+  AND Host like 'localhost';
+```
+
 ---
 
 ## Revogando todos os privilégios
