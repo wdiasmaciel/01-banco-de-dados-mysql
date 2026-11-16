@@ -311,6 +311,27 @@ SHOW GRANTS FOR 'gerente'@'localhost';
 ## Removendo privilégios de rotina
 
 ```sql
+DELIMITER //
+
+CREATE PROCEDURE empresa.fechar_venda()
+BEGIN
+    SELECT 'Venda fechada!' AS mensagem;
+END//
+
+DELIMITER ;
+```
+
+```sql
+DROP ROLE IF EXISTS 'caixa'@'localhost';
+
+CREATE ROLE IF NOT EXISTS 'caixa'@'localhost';
+
+GRANT EXECUTE
+ON empresa.fechar_venda
+TO 'caixa'@'localhost';
+```
+
+```sql
 REVOKE EXECUTE
 ON PROCEDURE empresa.fechar_venda
 FROM 'caixa'@'localhost';
