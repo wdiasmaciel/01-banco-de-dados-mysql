@@ -385,7 +385,7 @@ SHOW GRANTS FOR 'caixa'@'localhost';
 ```sql
 REVOKE EXECUTE
 ON FUNCTION empresa.calcular_frete
-FROM 'atendente'@'localhost';
+FROM 'caixa'@'localhost';
 ```
 
 ```sql
