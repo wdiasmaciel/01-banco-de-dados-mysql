@@ -547,7 +547,7 @@ O MySQL normalmente aplica alterações de privilégios imediatamente. Em situa�
 FLUSH PRIVILEGES;
 ```
 
-Não é necessário executar `FLUSH PRIVILEGES` após os comandos comuns `GRANT` e `REVOKE`. Seu uso é típico ao manipular diretamente tabelas de concessão.
+Não é necessário executar `FLUSH PRIVILEGES` após os comandos comuns `GRANT` e `REVOKE`. Seu uso é típico ao manipular diretamente tabelas de concessão (alterar as tabelas internas de privilégios do MySQL diretamente).
 
 ---
 
