@@ -67,6 +67,28 @@ SHOW GRANTS FOR 'ana'@'localhost';
 
 ## Removendo privilégios de banco
 
+Criando um papel (perfil):
+
+```sql
+CREATE ROLE 'atendente';
+```
+
+Concedendo privilégios ao perfil criado:
+
+```sql
+GRANT SELECT, INSERT, UPDATE
+ON empresa.*
+TO 'atendente';
+```
+
+Verificando os privilégios do perfil criado:
+
+```sql
+SHOW GRANTS FOR 'atentendente'
+```
+
+Revogando os privilégios concedidos:
+
 ```sql
 REVOKE SELECT, INSERT
 ON empresa.*
