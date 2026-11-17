@@ -106,12 +106,19 @@ ON empresa.Produto
 FROM 'joana';
 ```
 
-Depois, atribua ao papel somente o privilégio necessário:
+Para revogar demais privilégios:
+
+```sql
+REVOKE ALL PRIVILEGES, GRANT OPTION
+FROM 'joana';
+```
+
+Depois, atribua ao usuário somente o privilégio necessário:
 
 ```sql
 GRANT SELECT
 ON empresa.Produto
-TO 'perfil_estoque';
+TO 'joana';
 ```
 
 ---
