@@ -40,7 +40,9 @@ ON empresa.Produto
 TO 'usuario'@'localhost';
 ```
 
-Para impedir acesso, o MySQL não cria uma regra negativa correspondente chamada `DENY`. Em vez disso, revisam-se ou removem-se as concessões com `REVOKE`, e atribuem-se privilégios menores por meio de contas, papéis, visões e privilégios por coluna.
+Para impedir acesso, o MySQL não cria uma regra negativa correspondente chamada `DENY`. 
+
+* Em vez disso, revisam-se ou removem-se as concessões com `REVOKE`, e atribuem-se privilégios menores por meio de contas, papéis, visões e privilégios por coluna.
 
 ---
 
