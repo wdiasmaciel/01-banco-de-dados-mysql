@@ -35,6 +35,10 @@ TO 'usuario'@'localhost';
 ```
 
 ```sql
+SHOW GRANTS FOR 'estoquista'@'localhost';
+```
+
+```sql
 DENY DELETE -- Gera uma mensagem de erro.
 ON empresa.Produto 
 TO 'usuario'@'localhost';
@@ -54,7 +58,7 @@ Suponha que uma conta possa consultar todos os fornecedores, mas não deva modif
 ```sql
 GRANT SELECT
 ON empresa.Fornecedor
-TO 'leitura_fornecedor'@'localhost';
+TO 'usuario'@'localhost';
 ```
 
 Como não foi concedido `UPDATE`, esse usuário não deve conseguir alterar os registros da tabela.
