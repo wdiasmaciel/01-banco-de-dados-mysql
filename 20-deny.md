@@ -13,11 +13,15 @@
 
 ---
 
-# DENY não existe no MySQL
+# Data Control Language: DENY
 
-No MySQL, o comando `DENY` não é um comando DCL disponível.
+## DENY não existe no MySQL
 
-Essa instrução existe, por exemplo, em Microsoft SQL Server, onde pode negar explicitamente um privilégio a um usuário. No MySQL, o controle é baseado no princípio de concessão explícita: o usuário recebe privilégios por `GRANT`, e os privilégios não concedidos não estão disponíveis.
+No MySQL, o comando `DENY` não é um Data Control Language (DCL) disponível.
+
+Essa instrução existe, por exemplo, no Microsoft SQL Server, em que se pode negar explicitamente um privilégio a um usuário. 
+
+No MySQL, o controle é baseado no princípio de concessão explícita: o usuário recebe privilégios por `GRANT`, os privilégios não concedidos não ficam disponíveis e os privilégios concedidos são revogados por `REVOKE`.
 
 Portanto, o comando abaixo não pode ser executado no MySQL:
 
