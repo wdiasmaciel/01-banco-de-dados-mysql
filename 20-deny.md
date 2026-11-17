@@ -35,7 +35,7 @@ TO 'usuario'@'localhost';
 ```
 
 ```sql
-DENY DELETE 
+DENY DELETE -- Gera uma mensagem de erro.
 ON empresa.Produto 
 TO 'usuario'@'localhost';
 ```
