@@ -71,7 +71,7 @@ Para revogar explicitamente permissões concedida anteriormente a um papel ou co
 
 ```sql
 REVOKE INSERT, UPDATE, DELETE
-ON empresa.Fornecedor
+ON empresa.Produto
 FROM 'usuario'@'localhost';
 ```
 
