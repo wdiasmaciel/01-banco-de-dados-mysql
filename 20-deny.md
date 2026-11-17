@@ -106,11 +106,19 @@ ON empresa.Produto
 FROM 'joana';
 ```
 
+```sql
+SHOW GRANTS FOR 'joana';
+```
+
 Para revogar demais privilégios:
 
 ```sql
 REVOKE ALL PRIVILEGES, GRANT OPTION
 FROM 'joana';
+```
+
+```sql
+SHOW GRANTS FOR 'joana';
 ```
 
 Depois, atribua ao usuário somente o privilégio necessário:
@@ -119,6 +127,10 @@ Depois, atribua ao usuário somente o privilégio necessário:
 GRANT SELECT
 ON empresa.Produto
 TO 'joana';
+```
+
+```sql
+SHOW GRANTS FOR 'joana';
 ```
 
 ---
