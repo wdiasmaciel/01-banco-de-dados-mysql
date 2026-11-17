@@ -23,10 +23,21 @@ Essa instrução existe, por exemplo, no Microsoft SQL Server, em que se pode ne
 
 No MySQL, o controle é baseado no princípio de concessão explícita: o usuário recebe privilégios por `GRANT`, os privilégios não concedidos não ficam disponíveis e os privilégios concedidos são revogados por `REVOKE`.
 
+
 Portanto, o comando abaixo não pode ser executado no MySQL:
 
 ```sql
-DENY SELECT ON empresa.Produto TO 'usuario'@'localhost';
+DROP ROLE IF EXISTS 'usuario'@'localhost';
+CREATE ROLE IF NOT EXISTS 'usuario'@'localhost'; 
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON empresa.Produto
+TO 'usuario'@'localhost'; 
+```
+
+```sql
+DENY DELETE 
+ON empresa.Produto 
+TO 'usuario'@'localhost';
 ```
 
 Para impedir acesso, o MySQL não cria uma regra negativa correspondente chamada `DENY`. Em vez disso, revisam-se ou removem-se as concessões com `REVOKE`, e atribuem-se privilégios menores por meio de contas, papéis, visões e privilégios por coluna.
