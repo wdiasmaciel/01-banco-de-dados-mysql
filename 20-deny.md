@@ -67,16 +67,16 @@ SHOW GRANTS FOR 'usuario'@'localhost';
 
 Como não foi concedido `UPDATE`, esse usuário não conseguirá alterar os registros da tabela. Também não conseguirá inserir e nem excluir.
 
-Para impedir explicitamente uma permissão recebida anteriormente por um papel ou por outra conta:
+Para revogar explicitamente permissões concedida anteriormente a um papel ou conta:
 
 ```sql
-REVOKE UPDATE
+REVOKE INSERT, UPDATE, DELETE
 ON empresa.Fornecedor
-FROM 'leitura_fornecedor'@'localhost';
+FROM 'usuario'@'localhost';
 ```
 
 ```sql
-SHOW GRANTS FOR 'leitura_fornecedor'@'localhost';
+SHOW GRANTS FOR 'usuario'@'localhost';
 ```
 
 ---
