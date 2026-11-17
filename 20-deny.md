@@ -81,22 +81,6 @@ SHOW GRANTS FOR 'usuario'@'localhost';
 
 ---
 
-## Verificando as concessões
-
-```sql
-SHOW GRANTS FOR 'leitura_fornecedor'@'localhost';
-```
-
-A conta também pode receber privilégios por papéis ativos. Por isso, verifique o papel e seus privilégios:
-
-```sql
-SHOW GRANTS FOR 'leitura_fornecedor'@'localhost' USING 'perfil_operador';
-```
-
-Se o usuário não tiver o privilégio esperado, a operação será negada naturalmente pelo servidor.
-
----
-
 ## Removendo o privilégio de um papel
 
 Considere que um papel concede alteração em produtos:
@@ -194,6 +178,22 @@ TO 'operador'@'localhost';
 ```
 
 A ausência da autorização é o mecanismo de bloqueio do MySQL. Não existe uma entrada `DENY` que sobreponha todas as concessões recebidas.
+
+---
+
+## Verificando as concessões
+
+```sql
+SHOW GRANTS FOR 'leitura_fornecedor'@'localhost';
+```
+
+A conta também pode receber privilégios por papéis ativos. Por isso, verifique o papel e seus privilégios:
+
+```sql
+SHOW GRANTS FOR 'leitura_fornecedor'@'localhost' USING 'perfil_operador';
+```
+
+Se o usuário não tiver o privilégio esperado, a operação será negada naturalmente pelo servidor.
 
 ---
 
