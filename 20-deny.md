@@ -35,7 +35,7 @@ TO 'usuario'@'localhost';
 ```
 
 ```sql
-SHOW GRANTS FOR 'estoquista'@'localhost';
+SHOW GRANTS FOR 'usuario'@'localhost';
 ```
 
 ```sql
