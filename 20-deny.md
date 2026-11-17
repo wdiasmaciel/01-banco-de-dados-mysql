@@ -61,6 +61,11 @@ ON empresa.Fornecedor
 TO 'usuario'@'localhost';
 ```
 
+
+```sql
+SHOW GRANTS FOR 'usuario'@'localhost';
+```
+
 Como não foi concedido `UPDATE`, esse usuário não deve conseguir alterar os registros da tabela.
 
 Para impedir explicitamente uma permissão recebida anteriormente por um papel ou por outra conta:
