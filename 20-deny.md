@@ -81,28 +81,29 @@ SHOW GRANTS FOR 'usuario'@'localhost';
 
 ---
 
-## Removendo o privilégio de um papel
+## Removendo privilégio de um usuário
 
-Considere que um papel concede alteração em produtos:
+Considere que um usuário receba privilégio de alteração em produtos:
 
 ```sql
-CREATE ROLE 'perfil_estoque';
+DROP USER IF EXISTS 'joana';
+CREATE USER IF NOT EXISTS 'joana';
 
-GRANT SELECT, UPDATE
+GRANT SELECT, INSERT, UPDATE, DELETE
 ON empresa.Produto
-TO 'perfil_estoque';
+TO 'joana';
 ```
 
 ```sql
-SHOW GRANTS FOR 'perfil_estoque';
+SHOW GRANTS FOR 'joana';
 ```
 
-Para impedir o papel de alterar produtos sem apagar todo o papel:
+Para impedir que o usuário altere produtos sem que seja necessário excluí-lo:
 
 ```sql
 REVOKE UPDATE
 ON empresa.Produto
-FROM 'perfil_estoque';
+FROM 'joana';
 ```
 
 Depois, atribua ao papel somente o privilégio necessário:
