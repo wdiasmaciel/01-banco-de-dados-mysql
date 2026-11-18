@@ -172,6 +172,50 @@ TO 'admin'@'localhost';
 SHOW GRANTS FOR 'gerson'@'localhost';
 ```
 
+2. Em nível global (superusuário):
+> Concede controle irrestrito sobre todos os bancos de dados e configurações do servidor.
+
+```sql
+DROP USER IF EXISTS 'fatima'@'localhost';
+CREATE USER IF NOT EXISTS 'fatima'@'localhost'
+IDENTIFIED BY 'senha-da-fatima';
+```
+
+```sql
+SHOW GRANTS FOR 'fatima'@'localhost';
+```
+
+```sql
+GRANT ALL PRIVILEGES 
+ON *.* 
+TO 'fatima'@'localhost' 
+WITH GRANT OPTION;
+```
+
+```sql
+SHOW GRANTS FOR 'fatima'@'localhost';
+```
+
+```sql
+DROP ROLE IF EXISTS 'superusuario'@'localhost';
+CREATE ROLE IF NOT EXISTS 'superusuario'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'superusuario'@'localhost';
+```
+
+```sql
+GRANT ALL PRIVILEGES 
+ON *.* 
+TO 'superusuario'@'localhost' 
+WITH GRANT OPTION;
+```
+
+```sql
+SHOW GRANTS FOR 'superusuario'@'localhost';
+```
+
 ---
 
 ## Restringindo por objetos
