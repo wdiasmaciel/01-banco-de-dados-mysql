@@ -375,6 +375,53 @@ No MySQL, não é possível conceder privilégios (como `SELECT`, `UPDATE`, `INS
 GRANT SELECT 
 ON empresa.* 
 TO 'user1'@'localhost', 'user2'@'localhost'; -- Isso gerará um erro de sintaxe.
+```
+
+---
+
+A melhor prática no MySQL é criar um role (papel), conceder os privilégios a essa role, e depois atribuir o role a todos os usuários desejados:
+
+```sql
+DROP USER IF EXISTS 'usuario1';
+CREATE USER IF NOT EXISTS 'usuario1'
+IDENTIFIED BY 'senha-do-usuario1';
+
+DROP USER IF EXISTS 'usuario2'@'%';
+CREATE USER IF NOT EXISTS 'usuario2'@'%'
+IDENTIFIED BY 'senha-do-usuario2';
+
+DROP USER IF EXISTS 'usuario3'@'localhost';
+CREATE USER IF NOT EXISTS 'usuario3'@'localhost'
+IDENTIFIED BY 'senha-do-usuario3';
+```
+
+```sql
+SHOW GRANTS FOR 'usuario1', 'usuario2'@'%', 'usuario3'@'localhost';
+```
+
+```sql
+-- 1. Criar o papel (role):
+DROP ROLE IF EXISTS 'diretor'
+CREATE ROLE IF NOT EXISTS 'diretor';
+
+-- 2. Conceder os privilégios ao papel:
+GRANT SELECT, INSERT, UPDATE, DELETE 
+ON empresa.* 
+TO 'diretor';
+
+-- 3. Atribuir o papel a múltiplos usuários:
+GRANT 'diretor' TO 'usuario1'@'localhost';
+GRANT 'diretor' TO 'usuario2'@'%', 'usuario3'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'diretor';
+```
+
+```sql
+SHOW GRANTS FOR 'usuario1', 'usuario2'@'%', 'usuario3'@'localhost';
+```
+
 ---
 
 ## Verificando as concessões
