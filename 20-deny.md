@@ -366,6 +366,17 @@ SHOW GRANTS FOR 'operador'@'localhost';
 
 ---
 
+## Múltiplos papéis
+
+No MySQL, não é possível conceder privilégios (como `SELECT`, `UPDATE`, `INSERT`, `DELETE`) a múltiplos usuários ou papéis (roles) em uma única instrução `GRANT`.
+* Exemplo:
+
+```sql
+GRANT SELECT 
+ON empresa.* 
+TO 'user1'@'localhost', 'user2'@'localhost'; -- Isso gerará um erro de sintaxe.
+---
+
 ## Verificando as concessões
 
 ```sql
