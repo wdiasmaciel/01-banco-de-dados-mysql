@@ -600,6 +600,10 @@ SET DEFAULT ROLE 'diretor'
 TO 'usuario1', 'usuario2'@'%', 'usuario3'@'localhost';
 ```
 
+```sql
+SELECT CURRENT_ROLE();
+```
+
 Depois, desconecte e reconecte cada usuário no Workbench e atualize (refresh) a lista de schemas. 
 
 ```sql
