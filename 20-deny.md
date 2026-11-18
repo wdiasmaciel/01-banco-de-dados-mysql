@@ -321,18 +321,48 @@ O usuário não recebe concessão para consultar ou alterar outras colunas dessa
 Em vez de conceder:
 
 ```sql
-GRANT ALL PRIVILEGES ON empresa.* TO 'operador'@'localhost';
+DROP ROLE IF EXISTS 'operador'@'localhost';
+CREATE ROLE IF NOT EXISTS 'operador'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'operador'@'localhost';
+```
+
+```sql
+GRANT ALL PRIVILEGES 
+ON empresa.* 
+TO 'operador'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'operador'@'localhost';
 ```
 
 Prefira conceder apenas o necessário:
 
 ```sql
+DROP ROLE IF EXISTS 'operador'@'localhost';
+CREATE ROLE IF NOT EXISTS 'operador'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'operador'@'localhost';
+```
+
+```sql
 GRANT SELECT, INSERT
-ON empresa.Venda
+ON empresa.Produto
 TO 'operador'@'localhost';
 ```
 
-A ausência da autorização é o mecanismo de bloqueio do MySQL. Não existe uma entrada `DENY` que sobreponha todas as concessões recebidas.
+```sql
+SHOW GRANTS FOR 'operador'@'localhost';
+```
+
+**OBS**:
+> A ausência da autorização é o mecanismo de bloqueio do MySQL. 
+> Não existe uma entrada `DENY` que sobreponha todas as concessões recebidas.
 
 ---
 
