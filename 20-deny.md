@@ -563,10 +563,22 @@ O próprio usuário executa esse comando após fazer login:
 SET ROLE 'diretor';
 ```
 
+**OBS**: para verificar o papel que está ativo:
+
+Se o usuário quiser conferir quais roles estão ativos na sua conexão atual, basta rodar:
+
+```sql
+SELECT CURRENT_ROLE();
+```
+
 * Ativar todas as roles que o usuário possui na sessão atual:
 
 ```sql
 SET ROLE ALL;
+```
+
+```sql
+SELECT CURRENT_ROLE();
 ```
 
 * Voltar para as roles padrão (desativar as temporárias):
@@ -575,9 +587,6 @@ SET ROLE ALL;
 SET ROLE DEFAULT;
 ```
 
-**OBS**: para verificar o papel que está ativo:
-
-Se o usuário quiser conferir quais roles estão ativos na sua conexão atual, basta rodar:
 ```sql
 SELECT CURRENT_ROLE();
 ```
