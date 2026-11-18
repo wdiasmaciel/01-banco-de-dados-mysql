@@ -545,6 +545,12 @@ Se você quiser que o comportamento padrão do servidor MySQL seja ativar automa
 SET PERSIST activate_all_roles_on_login = ON;
 ```
 
+Para desativar:
+
+```sql
+SET PERSIST activate_all_roles_on_login = OFF;
+```
+
 ### 2. Ativar manualmente na sessão atual (`SET ROLE`):
 
 Esta abordagem é útil quando um usuário tem privilégios administrativos elevados e você quer que ele os ative apenas quando realmente precisar, evitando acidentes na rotina. 
