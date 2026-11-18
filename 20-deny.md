@@ -87,7 +87,8 @@ Considere que um usuário receba privilégio de alteração em produtos:
 
 ```sql
 DROP USER IF EXISTS 'joana';
-CREATE USER IF NOT EXISTS 'joana';
+CREATE USER IF NOT EXISTS 'joana'
+IDENTIFIED BY 'senha-da-joana';
 
 GRANT SELECT, INSERT, UPDATE, DELETE
 ON empresa.Produto
