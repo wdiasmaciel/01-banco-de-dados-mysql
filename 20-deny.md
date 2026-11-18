@@ -493,6 +493,33 @@ SELECT CURRENT_USER();
 SHOW GRANTS;
 ```
 
+
+--- 
+
+### SET DEFAULT ROLE e SET ROLE
+
+Atribuir um papel não garante que ele seja ativado automaticamente ao conectar. 
+
+Sem o papel ativo, os privilégios dele podem não estar disponíveis, e o Workbench pode não listar o banco.
+
+Como administrador, defina `diretor` como papel padrão para as contas `usuario1`, `usuario2` e `usuario3`:
+
+```sql
+SET DEFAULT ROLE 'diretor'
+TO 'usuario1', 'usuario2'@'%', 'usuario3'@'localhost';
+```
+
+Depois, desconecte e reconecte cada usuário no Workbench e atualize a lista de schemas. 
+
+Para testar sem reconectar, o usuário pode executar:
+
+```sql
+SET ROLE 'diretor';
+```
+
+Se não aparecer, confira qual conta o MySQL reconheceu `SELECT CURRENT_USER();` e verifique as concessões com `SHOW GRANTS` para essa conta e para o papel `diretor`.
+
+
 ---
 
 ## Verificando as concessões
