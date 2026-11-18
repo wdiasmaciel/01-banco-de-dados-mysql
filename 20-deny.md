@@ -655,26 +655,26 @@ Se o usuário não tiver o privilégio esperado, a operação será negada natur
 
 # Exercícios
 
-1. Explique por que o comando `DENY SELECT` não deve ser usado em um roteiro MySQL.
-2. Conceda apenas consulta na tabela de produtos para um funcionário da padaria.
-3. Retire um privilégio de exclusão que tenha sido concedido anteriormente ao usuário da padaria.
-4. Verifique se uma conta possui privilégio de alteração antes de concluir que ela está proibida.
-5. Crie uma conta que não possa alterar vendas, mas possa consultá-las.
+1. Explique por que o comando `DENY SELECT` não deve ser usado em MySQL.
+2. Conceda apenas consulta na tabela de produtos para os funcionário de uma padaria.
+3. Retire o privilégio de exclusão que tenha sido concedido anteriormente aos usuários da padaria.
+4. Verifique se uma conta possui privilégio de alteração antes de revogá-lo.
+5. Crie uma conta que não possa alterar vendas na padaria, mas que possa consultá-las.
 6. Remova o privilégio de atualização de uma pessoa que usa o papel `perfil_estoque`.
-7. Crie uma visão para mostrar nome e quantidade de medicamentos, sem mostrar preços de aquisição.
-8. Conceda ao atendente de farmácia acesso à visão criada no exercício anterior.
+7. Crie uma visão para mostrar nome e quantidade de medicamentos de uma farmácia, sem mostrar preços de aquisição.
+8. Conceda ao atendente da farmácia acesso à visão criada no exercício anterior.
 9. Remova da conta de atendimento o acesso direto à tabela de medicamentos.
-10. Conceda privilégio de consulta apenas para nome, destino e data em uma tabela de viagens.
-11. Permita que uma agência atualize somente o telefone de um cliente.
+10. Em uma empresa de turismo, conceda privilégio de consulta apenas para nome, destino e data em uma tabela de viagens.
+11. Permita que um funcionário da empresa de turismo atualize somente o telefone de um cliente.
 12. Desative um papel na sessão atual sem excluir o papel do banco.
-13. Explique por que uma conta pode permanecer proibida de excluir dados mesmo antes de ser executado qualquer `DENY`.
+13. Explique como impedir que uma conta de usuário consiga excluir dados da tabela de viagens.
 14. Conceda a um caixa o mínimo necessário para registrar uma venda.
-15. Revise os privilégios globais, de banco e de tabela de uma conta administrativa temporária.
+15. Revise os privilégios de uma conta administrativa em um supermercado.
 16. Crie um papel com consulta a produtos e remova dele o privilégio de atualização.
-17. Planeje a restrição de acesso aos dados pessoais dos clientes de um supermercado.
+17. Planeje a restrição de acesso aos dados pessoais dos clientes do supermercado.
 18. Explique como privar o acesso direto a uma tabela sensível usando uma visão.
 19. Verifique quais papéis ativos podem conceder privilégios indevidos a um usuário.
-20. Compare em uma tabela os comportamentos de `DENY`, `REVOKE` e ausência de privilégio no contexto do MySQL.
+20. Crie dois papeis com privilégios distintos e os atribua a três contas de usuário diferentes. As contas de usuário devem ser criadas com as respectivas senhas. Torne os papeis ativos por default quando os usuários logarem no sistema.
 
 ---
 
