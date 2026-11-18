@@ -443,11 +443,14 @@ SHOW GRANTS FOR 'usuario3'@'localhost';
 ```sql
 -- 1. Criar outro papel (role):
 DROP ROLE IF EXISTS 'atendente';
+DROP ROLE IF EXISTS 'comercial'@'localhost';
 CREATE ROLE IF NOT EXISTS 'atendente';
+CREATE ROLE IF NOT EXISTS 'comercial'@'localhost';
 ```
 
 ```sql
 SHOW GRANTS FOR 'atendente';
+SHOW GRANTS FOR 'comercial'@'localhost';
 ```
 
 ```sql
@@ -455,22 +458,28 @@ SHOW GRANTS FOR 'atendente';
 GRANT UPDATE, DELETE 
 ON empresa.* 
 TO 'atendente';
+
+GRANT SELECT 
+ON empresa.* 
+TO 'comercial'@'localhost';
 ```
 
 ```sql
 SHOW GRANTS FOR 'diretor';
 SHOW GRANTS FOR 'atendente';
+SHOW GRANTS FOR 'comercial'@'localhost';
 ```
 
 ```sql
 -- 3. Atribuir os papéis a múltiplos usuários:
-GRANT 'diretor', 'atendente' 
+GRANT 'diretor', 'atendente', 'comercial'@'localhost';
 TO    'usuario1', 'usuario2'@'%', 'usuario3'@'localhost';
 ```
 
 ```sql
 SHOW GRANTS FOR 'diretor';
 SHOW GRANTS FOR 'atendente';
+SHOW GRANTS FOR 'comercial'@'localhost';
 ```
 
 ```sql
