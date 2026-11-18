@@ -243,7 +243,11 @@ SHOW GRANTS FOR 'gestor'@'localhost';
 ```
 
 ```sql
-REVOKE ALL PRIVILEGES, GRANT OPTION
+REVOKE ALL PRIVILEGES
+ON empresa.Fornecedor
+FROM 'gestor'@'localhost';
+
+REVOKE GRANT OPTION
 ON empresa.Fornecedor
 FROM 'gestor'@'localhost';
 ```
