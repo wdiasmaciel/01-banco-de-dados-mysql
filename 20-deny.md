@@ -403,7 +403,7 @@ SHOW GRANTS FOR 'usuario3'@'localhost';
 
 ```sql
 -- 1. Criar o papel (role):
-DROP ROLE IF EXISTS 'diretor'
+DROP ROLE IF EXISTS 'diretor';
 CREATE ROLE IF NOT EXISTS 'diretor';
 ```
 
