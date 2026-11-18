@@ -136,6 +136,45 @@ SHOW GRANTS FOR 'joana';
 
 ---
 
+É possível usar o comando `GRANT ALL PRIVILEGES` no MySQL, tanto para usuários individuais quanto para papéis (roles).
+
+1. Em um banco de dados específico (mais comum):
+> Concede controle total apenas sobre as tabelas, views e rotinas daquele banco, sem dar acesso administrativo ao servidor inteiro.
+
+```sql
+DROP USER IF EXISTS 'gerson'@'localhost';
+CREATE USER IF NOT EXISTS 'gerson'@'localhost'
+IDENTIFIED BY 'senha-do-gerson';
+```
+
+```sql
+GRANT ALL PRIVILEGES 
+ON empresa.* 
+TO 'gerson'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'gerson'@'localhost';
+```
+
+```sql
+DROP ROLE IF EXISTS 'admin'@'localhost';
+CREATE ROLE IF NOT EXISTS 'admin'@'localhost'
+IDENTIFIED BY 'senha-do-admin';
+```
+
+```sql
+GRANT ALL PRIVILEGES 
+ON empresa.* 
+TO 'admin'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'gerson'@'localhost';
+```
+
+---
+
 ## Restringindo por objetos
 
 Quando o usuário não deve consultar informações diretamente em uma tabela, retire o acesso a essa tabela:
