@@ -649,7 +649,7 @@ Se o usuário não tiver o privilégio esperado, a operação será negada natur
 4. Use visões e privilégios por coluna para informações sensíveis.
 5. Não confunda `DENY` com `REVOKE` em MySQL.
 6. O comando `GRANT` tem efeito imediato. Você só precisa rodar `FLUSH PRIVILEGES;` se alterar as tabelas do sistema (`mysql.user`) diretamente via `INSERT` ou `UPDATE`.
-
+7. Evite usar `ALL PRIVILEGES` para usuários de aplicações `web` ou sistemas em produção. Se a aplicação sofrer um ataque de `SQL Injection`, o invasor poderá apagar tabelas (`DROP`), alterar estruturas (`ALTER`) ou até manipular outros bancos. Reserve esse comando apenas para contas de administração ou manutenção.
 
 ---
 
