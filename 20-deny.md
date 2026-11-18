@@ -284,14 +284,23 @@ Essa visão pode evitar que dados como CPF ou observações internas sejam acess
 O acesso pode ser limitado à coluna necessária:
 
 ```sql
-GRANT SELECT (id, nome, telefone)
-ON empresa.Cliente
+DROP ROLE IF EXISTS 'atendente'@'localhost';
+CREATE ROLE IF NOT EXISTS 'atendente'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'atendente'@'localhost';
+```
+
+```sql
+GRANT SELECT (nome, telefone, endereco)
+ON empresa.Fornecedor
 TO 'atendente'@'localhost';
 ```
 
 ```sql
 GRANT UPDATE (telefone)
-ON empresa.Cliente
+ON empresa.Fornecedor
 TO 'atendente'@'localhost';
 ```
 
