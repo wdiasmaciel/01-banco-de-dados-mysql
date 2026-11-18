@@ -616,6 +616,10 @@ SHOW GRANTS;
 SET ROLE 'atendente';
 ```
 
+```sql
+SELECT CURRENT_ROLE();
+```
+
 Se não aparecer, confira qual conta o MySQL reconheceu, executando `SELECT CURRENT_USER();` e verifique as concessões com `SHOW GRANTS` para essa conta e para o papel `diretor`, `atendente` e `comercial@localhost`.
 
 
