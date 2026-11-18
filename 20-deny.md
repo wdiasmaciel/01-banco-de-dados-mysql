@@ -396,7 +396,9 @@ IDENTIFIED BY 'senha-do-usuario3';
 ```
 
 ```sql
-SHOW GRANTS FOR 'usuario1', 'usuario2'@'%', 'usuario3'@'localhost';
+SHOW GRANTS FOR 'usuario1';
+SHOW GRANTS FOR 'usuario2'@'%';
+SHOW GRANTS FOR 'usuario3'@'localhost';
 ```
 
 ```sql
