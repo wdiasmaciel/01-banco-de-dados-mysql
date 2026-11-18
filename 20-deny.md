@@ -488,6 +488,11 @@ SHOW GRANTS FOR 'usuario2'@'%';
 SHOW GRANTS FOR 'usuario3'@'localhost';
 ```
 
+```sql
+SELECT CURRENT_USER();
+SHOW GRANTS;
+```
+
 ---
 
 ## Verificando as concessões
