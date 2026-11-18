@@ -628,13 +628,13 @@ Se não aparecer, confira qual conta o MySQL reconheceu, executando `SELECT CURR
 ## Verificando as concessões
 
 ```sql
-SHOW GRANTS FOR 'leitura_fornecedor'@'localhost';
+SHOW GRANTS FOR 'usuario3'@'localhost';
 ```
 
 A conta também pode receber privilégios por papéis ativos. Por isso, verifique o papel e seus privilégios:
 
 ```sql
-SHOW GRANTS FOR 'leitura_fornecedor'@'localhost' USING 'perfil_operador';
+SHOW GRANTS FOR 'usario3'@'localhost' USING 'comercial';
 ```
 
 Se o usuário não tiver o privilégio esperado, a operação será negada naturalmente pelo servidor.
