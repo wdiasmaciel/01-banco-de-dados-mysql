@@ -1,0 +1,174 @@
+# 21 - Tabelas Temporárias no MySQL
+
+<table width="100%" style="border: none; border-collapse: collapse;">
+  <tr style="border: none;">
+    <td align="left" style="border: none;">
+      <a href="20-deny.md">Anterior</a>
+    </td>
+    <td align="right" style="border: none;">
+      <a href="22-trigger.md">Próximo</a>
+    </td>
+  </tr>
+</table>
+
+---
+
+# Tabelas temporárias
+
+Uma tabela temporária armazena dados de trabalho durante uma conexão. Ela é útil para preparar resultados intermediários sem manter uma tabela auxiliar permanente no banco.
+
+No MySQL, a tabela é visível somente na sessão que a criou. Ao encerrar essa conexão, o servidor remove a tabela automaticamente. Duas sessões podem criar tabelas temporárias com o mesmo nome sem compartilhar os dados.
+
+---
+
+## Criando uma tabela temporária
+
+No modelo da empresa, a quantidade em estoque pertence à relação entre `Produto` e `Filial`, representada pela tabela `Estoque`. Este exemplo reúne os produtos cuja quantidade em alguma filial está abaixo de 10:
+
+```sql
+CREATE TEMPORARY TABLE tmp_reposicao_estoque AS
+SELECT p.id AS id_produto,
+       p.nome AS produto,
+       e.cnpj_filial,
+       e.quantidade
+FROM   empresa.Produto p
+JOIN   empresa.Estoque e ON e.id_produto = p.id
+WHERE  e.quantidade < 10;
+```
+
+Consulte a tabela como qualquer outra tabela da conexão:
+
+```sql
+SELECT *
+FROM   tmp_reposicao_estoque
+ORDER BY cnpj_filial, quantidade;
+```
+
+A cláusula `AS SELECT` cria a estrutura com base nas colunas retornadas pela consulta e copia as linhas encontradas naquele momento. Alterações posteriores na tabela de origem não atualizam automaticamente a tabela temporária.
+
+---
+
+## Definindo a estrutura manualmente
+
+Também é possível declarar as colunas e inserir os dados em etapas:
+
+```sql
+CREATE TEMPORARY TABLE tmp_estoque_por_filial (
+    cnpj_filial VARCHAR(14) NOT NULL,
+    filial VARCHAR(100) NOT NULL,
+    quantidade_total BIGINT NOT NULL,
+    valor_estimado DECIMAL(14,2) NOT NULL
+);
+```
+
+```sql
+INSERT INTO tmp_estoque_por_filial
+    (cnpj_filial, filial, quantidade_total, valor_estimado)
+SELECT f.cnpj,
+       f.nome,
+       SUM(e.quantidade),
+       SUM(e.quantidade * e.preco)
+FROM   empresa.Filial f
+JOIN   empresa.Estoque e ON e.cnpj_filial = f.cnpj
+GROUP BY f.cnpj, f.nome;
+```
+
+Os tipos de dados e restrições da tabela são definidos como em uma tabela comum. Índices também podem ser criados quando forem necessários para as consultas da sessão:
+
+```sql
+CREATE INDEX idx_tmp_estoque_filial
+ON tmp_estoque_por_filial (cnpj_filial);
+```
+
+---
+
+## Escopo e ciclo de vida
+
+- A tabela temporária existe apenas na conexão que executou `CREATE TEMPORARY TABLE`.
+- Outra conexão não consegue consultar essa tabela, mesmo que use o mesmo usuário.
+- Ao fechar a conexão, a tabela temporária é removida automaticamente.
+- Uma tabela temporária não é uma tabela permanente e não aparece como objeto compartilhado por todas as conexões.
+- Se uma tabela temporária e uma tabela permanente tiverem o mesmo nome, a tabela temporária oculta a permanente para a sessão que criou a temporária.
+
+Uma tabela temporária pode ser removida antes do fim da conexão:
+
+```sql
+DROP TEMPORARY TABLE IF EXISTS tmp_reposicao_estoque;
+```
+
+Use `DROP TEMPORARY TABLE` para deixar claro que a intenção é remover somente a tabela temporária. Essa instrução não remove uma tabela permanente que tenha o mesmo nome.
+
+---
+
+## Permissão necessária
+
+Para criar tabelas temporárias em um banco, a conta precisa do privilégio `CREATE TEMPORARY TABLES` nesse banco. Um administrador pode concedê-lo assim:
+
+```sql
+GRANT CREATE TEMPORARY TABLES
+ON empresa.*
+TO 'analista'@'localhost';
+```
+
+O privilégio permite criar tabelas temporárias, mas não concede automaticamente acesso às tabelas permanentes consultadas. Para executar o exemplo que lê `empresa.Produto`, a conta também precisa dos privilégios adequados de leitura nessa tabela.
+
+---
+
+## Tabela temporária não é tabela permanente
+
+Use uma tabela temporária quando o resultado for intermediário e pertencer a uma conexão. Para compartilhar dados entre conexões ou mantê-los após o encerramento da sessão, crie uma tabela permanente.
+
+```sql
+SELECT id_produto, cnpj_filial, preco, quantidade, validade
+FROM   empresa.Estoque;
+```
+
+`empresa.Estoque` é uma tabela permanente do modelo. Já `tmp_reposicao_estoque` é apenas um resultado de trabalho da conexão, que pode ser descartado ao fechá-la. A tabela temporária não substitui os dados originais de `Estoque`.
+
+---
+
+## Boas práticas
+
+1. Use nomes que indiquem que a tabela é de apoio, como `tmp_resumo_estoque`.
+2. Remova a tabela temporária quando ela não for mais necessária, especialmente em conexões que permanecem abertas por muito tempo.
+3. Não dependa de uma tabela temporária criada por outra conexão.
+4. Verifique os privilégios da conta e o acesso às tabelas permanentes consultadas.
+5. Não use o mesmo nome de uma tabela permanente, para evitar que ela fique oculta na sessão.
+
+---
+
+# Exercícios
+
+1. Crie uma tabela temporária chamada `tmp_reservas_abertas` com os números e as datas das reservas de viagem que ainda não foram confirmadas.
+2. A partir de uma tabela `farmacia.Medicamento`, crie `tmp_validade_proxima` com os medicamentos que vencem nos próximos 60 dias.
+3. Declare manualmente uma tabela temporária `tmp_precos_revisados` com código do produto, preço atual e preço sugerido.
+4. Insira na tabela do exercício anterior os produtos de um supermercado cujo preço atual esteja acima de um limite informado.
+5. Crie uma tabela temporária com o total de itens vendidos por categoria em uma padaria.
+6. Consulte os dados de `tmp_validade_proxima` em ordem crescente de vencimento.
+7. Crie um índice na coluna de data de vencimento de `tmp_validade_proxima`.
+8. Atualize uma linha de uma tabela temporária e explique por que a tabela permanente de origem não muda.
+9. Exclua `tmp_reservas_abertas` antes de encerrar a conexão, sem afetar uma tabela permanente de mesmo nome.
+10. Use `SHOW TABLES LIKE 'tmp_precos_revisados'` na mesma sessão para verificar se a tabela temporária existe.
+11. Explique por que um usuário conectado em outra sessão não consegue consultar a sua tabela temporária.
+12. Descreva o que acontece com as tabelas temporárias ao desconectar o cliente MySQL.
+13. Duas sessões criam uma tabela temporária chamada `tmp_contagem`. Explique se uma sessão vê os registros da outra.
+14. Explique qual tabela será consultada se a sessão tiver uma tabela temporária e uma permanente com o mesmo nome.
+15. Identifique o privilégio necessário para criar uma tabela temporária no banco `empresa`.
+16. Explique por que conceder `CREATE TEMPORARY TABLES` não concede, por si só, permissão para ler `empresa.Produto`.
+17. Crie uma tabela temporária a partir de uma consulta que selecione somente viagens com lugares disponíveis.
+18. Compare a finalidade de uma tabela temporária com a de uma tabela permanente de histórico de estoque.
+19. Escreva um roteiro SQL que crie, consulte e remova uma tabela temporária de resumo diário de vendas.
+20. Analise um processo que precisa compartilhar resultados entre conexões e justifique por que uma tabela temporária não é adequada.
+
+---
+
+<table width="100%" style="border: none; border-collapse: collapse;">
+  <tr style="border: none;">
+    <td align="left" style="border: none;">
+      <a href="20-deny.md">Anterior</a>
+    </td>
+    <td align="right" style="border: none;">
+      <a href="22-trigger.md">Próximo</a>
+    </td>
+  </tr>
+</table>

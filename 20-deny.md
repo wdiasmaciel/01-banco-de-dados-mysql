@@ -6,7 +6,7 @@
       <a href="19-revoke.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="21-drop.md">Próximo</a>
+      <a href="21-tabela-temporaria.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -684,7 +684,7 @@ Se o usuário não tiver o privilégio esperado, a operação será negada natur
       <a href="19-revoke.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="21-drop.md">Próximo</a>
+      <a href="21-tabela-temporaria.md">Próximo</a>
     </td>
   </tr>
 </table>
