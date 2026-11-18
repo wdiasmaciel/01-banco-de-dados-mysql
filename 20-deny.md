@@ -613,10 +613,10 @@ SHOW GRANTS;
 **OBS**: para testar sem reconectar, o usuário pode executar:
 
 ```sql
-SET ROLE 'diretor';
+SET ROLE 'atendente';
 ```
 
-Se não aparecer, confira qual conta o MySQL reconheceu, executando `SELECT CURRENT_USER();` e verifique as concessões com `SHOW GRANTS` para essa conta e para o papel `diretor`.
+Se não aparecer, confira qual conta o MySQL reconheceu, executando `SELECT CURRENT_USER();` e verifique as concessões com `SHOW GRANTS` para essa conta e para o papel `diretor`, `atendente` e `comercial@localhost`.
 
 
 ---
