@@ -223,21 +223,51 @@ SHOW GRANTS FOR 'superusuario'@'localhost';
 Quando o usuário não deve consultar informações diretamente em uma tabela, retire o acesso a essa tabela:
 
 ```sql
+DROP ROLE IF EXISTS 'gestor'@'localhost';
+CREATE ROLE IF NOT EXISTS 'gestor'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'gestor'@'localhost';
+```
+
+```sql
+GRANT ALL PRIVILEGES 
+ON empresa.* 
+TO 'gestor'@'localhost' 
+WITH GRANT OPTION;
+```
+
+```sql
+SHOW GRANTS FOR 'gestor'@'localhost';
+```
+
+```sql
 REVOKE ALL PRIVILEGES
-ON empresa.Cliente
-FROM 'atendente'@'localhost';
+ON empresa.Fornecedor
+FROM 'gestor'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'gestor'@'localhost';
 ```
 
 Depois, conceda acesso somente à visão:
 
 ```sql
-CREATE VIEW vw_clientes_atendimento AS
-SELECT id, nome, telefone
-FROM   Cliente;
+CREATE VIEW vw_fornecedor_gestao AS
+SELECT      nome, telefone, endereco
+FROM        empresa.Fornecedor;
+```
 
+```sql
 GRANT SELECT
-ON empresa.vw_clientes_atendimento
-TO 'atendente'@'localhost';
+ON empresa.vw_fornecedor_gestao
+TO 'gestor'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'gestor'@'localhost';
 ```
 
 Essa visão pode evitar que dados como CPF ou observações internas sejam acessados.
