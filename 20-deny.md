@@ -405,12 +405,16 @@ SHOW GRANTS FOR 'usuario3'@'localhost';
 -- 1. Criar o papel (role):
 DROP ROLE IF EXISTS 'diretor'
 CREATE ROLE IF NOT EXISTS 'diretor';
+```
 
+```sql
 -- 2. Conceder os privilégios ao papel:
 GRANT SELECT, INSERT, UPDATE, DELETE 
 ON empresa.* 
 TO 'diretor';
+```
 
+```sql
 -- 3. Atribuir o papel a múltiplos usuários:
 GRANT 'diretor' TO 'usuario1'@'localhost';
 GRANT 'diretor' TO 'usuario2'@'%', 'usuario3'@'localhost';
@@ -421,8 +425,11 @@ SHOW GRANTS FOR 'diretor';
 ```
 
 ```sql
-SHOW GRANTS FOR 'usuario1', 'usuario2'@'%', 'usuario3'@'localhost';
+SHOW GRANTS FOR 'usuario1';
+SHOW GRANTS FOR 'usuario2'@'%';
+SHOW GRANTS FOR 'usuario3'@'localhost';
 ```
+
 
 ---
 
