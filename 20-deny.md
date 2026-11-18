@@ -259,7 +259,8 @@ SHOW GRANTS FOR 'gestor'@'localhost';
 Depois, conceda acesso somente à visão:
 
 ```sql
-CREATE VIEW vw_fornecedor_gestao AS
+DROP VIEW IF EXISTS empresa.vw_fornecedor_gestao;
+CREATE VIEW IF NOT EXISTS empresa.vw_fornecedor_gestao AS
 SELECT      nome, telefone, endereco
 FROM        empresa.Fornecedor;
 ```
