@@ -495,13 +495,82 @@ SHOW GRANTS;
 
 --- 
 
-### SET DEFAULT ROLE e SET ROLE
+## SET DEFAULT ROLE e SET ROLE
 
 Atribuir um papel não garante que ele seja ativado automaticamente ao conectar. 
 
 Sem o papel ativo, os privilégios dele podem não estar disponíveis, e o Workbench pode não listar o banco.
 
 Para que os usuários comecem a usar os privilégios do role automaticamente ou sob demanda, pode ser necessário ajustar o `DEFAULT ROLE` ou executar `SET ROLE`.
+
+Para que os privilégios de um role funcionem, você precisa ativá-lo, pois por padrão, os papéis atribuídos a um usuário no MySQL vêm inativos no momento do login.
+
+Você pode gerenciar essa ativação de duas maneiras principais:
+
+### 1. Tornar o role padrão no login (`SET DEFAULT ROLE`):
+
+Esta é a abordagem mais comum para aplicações e usuários do dia a dia. 
+
+Você define que, sempre que o usuário se conectar ao banco, aquele role já estará ativo automaticamente. 
+
+Este comando deve ser executado por um administrador (como `root`).
+
+* Ativar um role específico como padrão:
+
+```sql
+SET DEFAULT 
+ROLE 'diretor' 
+TO 'usuario3'@'localhost';
+```
+
+* Ativar TODOS os roles atribuídos ao usuário automaticamente:
+
+```sql
+SET DEFAULT 
+ROLE ALL 
+TO 'usuario1', 'usuario2'@'%', 'usuario3'@'localhost';
+```
+
+* Ativar para TODOS os usuários do banco (Configuração Global):
+
+Se você quiser que o comportamento padrão do servidor MySQL seja ativar automaticamente qualquer role atribuído a qualquer usuário no momento do login, altere a variável global (requer privilégio SYSTEM_VARIABLES_ADMIN):
+
+```sql
+SET PERSIST activate_all_roles_on_login = ON;
+```
+
+### 2. Ativar manualmente na sessão atual (`SET ROLE`):
+
+Esta abordagem é útil quando um usuário tem privilégios administrativos elevados e você quer que ele os ative apenas quando realmente precisar, evitando acidentes na rotina. 
+
+O próprio usuário executa esse comando após fazer login:
+
+* Ativar uma role específica apenas para a sessão atual:
+
+```sql
+SET ROLE 'diretor';
+```
+
+* Ativar todas as roles que o usuário possui na sessão atual:
+
+```sql
+SET ROLE ALL;
+```
+
+* Voltar para as roles padrão (desativar as temporárias):
+
+```sql
+SET ROLE DEFAULT;
+```
+
+**OBS**: para verificar o papel que está ativo:
+
+Se o usuário quiser conferir quais roles estão ativos na sua conexão atual, basta rodar:
+```sql
+SELECT CURRENT_ROLE();
+```
+
+---
 
 Como administrador (`root`), defina `diretor` como papel padrão para as contas `usuario1`, `usuario2` e `usuario3`:
 
