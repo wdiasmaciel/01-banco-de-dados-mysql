@@ -233,7 +233,7 @@ SHOW GRANTS FOR 'gestor'@'localhost';
 
 ```sql
 GRANT ALL PRIVILEGES 
-ON empresa.* 
+ON empresa.Fornecedor
 TO 'gestor'@'localhost' 
 WITH GRANT OPTION;
 ```
@@ -243,7 +243,7 @@ SHOW GRANTS FOR 'gestor'@'localhost';
 ```
 
 ```sql
-REVOKE ALL PRIVILEGES
+REVOKE ALL PRIVILEGES, WITH GRANT OPTION
 ON empresa.Fornecedor
 FROM 'gestor'@'localhost';
 ```
