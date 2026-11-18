@@ -299,9 +299,17 @@ TO 'atendente'@'localhost';
 ```
 
 ```sql
+SHOW GRANTS FOR 'atendente'@'localhost';
+```
+
+```sql
 GRANT UPDATE (telefone)
 ON empresa.Fornecedor
 TO 'atendente'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'atendente'@'localhost';
 ```
 
 O usuário não recebe concessão para consultar ou alterar outras colunas dessa tabela.
