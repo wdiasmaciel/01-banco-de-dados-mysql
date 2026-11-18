@@ -472,7 +472,7 @@ SHOW GRANTS FOR 'comercial'@'localhost';
 
 ```sql
 -- 3. Atribuir os papéis a múltiplos usuários:
-GRANT 'diretor', 'atendente', 'comercial'@'localhost';
+GRANT 'diretor', 'atendente', 'comercial'@'localhost'
 TO    'usuario1', 'usuario2'@'%', 'usuario3'@'localhost';
 ```
 
