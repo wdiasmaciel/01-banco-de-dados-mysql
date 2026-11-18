@@ -408,10 +408,18 @@ CREATE ROLE IF NOT EXISTS 'diretor';
 ```
 
 ```sql
+SHOW GRANTS FOR 'diretor';
+```
+
+```sql
 -- 2. Conceder os privilégios ao papel:
 GRANT SELECT, INSERT, UPDATE, DELETE 
 ON empresa.* 
 TO 'diretor';
+```
+
+```sql
+SHOW GRANTS FOR 'diretor';
 ```
 
 ```sql
@@ -429,7 +437,6 @@ SHOW GRANTS FOR 'usuario1';
 SHOW GRANTS FOR 'usuario2'@'%';
 SHOW GRANTS FOR 'usuario3'@'localhost';
 ```
-
 
 ---
 
