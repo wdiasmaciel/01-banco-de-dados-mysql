@@ -366,7 +366,7 @@ SHOW GRANTS FOR 'operador'@'localhost';
 
 ---
 
-## Grant a múltiplos usuários
+## Grant a múltiplos usuários e múltiplos papéis
 
 No MySQL, não é possível conceder privilégios (como `SELECT`, `UPDATE`, `INSERT`, `DELETE`) a múltiplos usuários ou papéis (roles) em uma única instrução `GRANT`.
 * Exemplo:
@@ -413,7 +413,7 @@ SHOW GRANTS FOR 'diretor';
 
 ```sql
 -- 2. Conceder os privilégios ao papel:
-GRANT SELECT, INSERT, UPDATE, DELETE 
+GRANT SELECT, INSERT 
 ON empresa.* 
 TO 'diretor';
 ```
@@ -430,6 +430,47 @@ TO    'usuario1', 'usuario2'@'%', 'usuario3'@'localhost';
 
 ```sql
 SHOW GRANTS FOR 'diretor';
+```
+
+```sql
+SHOW GRANTS FOR 'usuario1';
+SHOW GRANTS FOR 'usuario2'@'%';
+SHOW GRANTS FOR 'usuario3'@'localhost';
+```
+
+---
+
+```sql
+-- 1. Criar outro papel (role):
+DROP ROLE IF EXISTS 'atendente';
+CREATE ROLE IF NOT EXISTS 'atendente';
+```
+
+```sql
+SHOW GRANTS FOR 'atendente';
+```
+
+```sql
+-- 2. Conceder os privilégios ao papel:
+GRANT UPDATE, DELETE 
+ON empresa.* 
+TO 'atendente';
+```
+
+```sql
+SHOW GRANTS FOR 'diretor';
+SHOW GRANTS FOR 'atendente';
+```
+
+```sql
+-- 3. Atribuir os papéis a múltiplos usuários:
+GRANT 'diretor', 'atendente' 
+TO    'usuario1', 'usuario2'@'%', 'usuario3'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'diretor';
+SHOW GRANTS FOR 'atendente';
 ```
 
 ```sql
