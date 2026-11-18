@@ -634,7 +634,7 @@ SHOW GRANTS FOR 'usuario3'@'localhost';
 A conta também pode receber privilégios por papéis ativos. Por isso, verifique o papel e seus privilégios:
 
 ```sql
-SHOW GRANTS FOR 'usuario3'@'localhost' USING 'comercial';
+SHOW GRANTS FOR 'usuario3'@'localhost' USING 'comercial'@'localhost';
 ```
 
 Se o usuário não tiver o privilégio esperado, a operação será negada naturalmente pelo servidor.
