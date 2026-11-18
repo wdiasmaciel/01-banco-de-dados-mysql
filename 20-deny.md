@@ -648,6 +648,8 @@ Se o usuário não tiver o privilégio esperado, a operação será negada natur
 3. Verifique privilégios individuais e papéis.
 4. Use visões e privilégios por coluna para informações sensíveis.
 5. Não confunda `DENY` com `REVOKE` em MySQL.
+6. O comando `GRANT` tem efeito imediato. Você só precisa rodar `FLUSH PRIVILEGES;` se alterar as tabelas do sistema (`mysql.user`) diretamente via `INSERT` ou `UPDATE`.
+
 
 ---
 
