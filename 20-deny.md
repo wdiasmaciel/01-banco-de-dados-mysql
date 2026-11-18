@@ -501,6 +501,8 @@ Atribuir um papel não garante que ele seja ativado automaticamente ao conectar.
 
 Sem o papel ativo, os privilégios dele podem não estar disponíveis, e o Workbench pode não listar o banco.
 
+Para que os usuários comecem a usar os privilégios do role automaticamente ou sob demanda, pode ser necessário ajustar o `DEFAULT ROLE` ou executar `SET ROLE`.
+
 Como administrador (`root`), defina `diretor` como papel padrão para as contas `usuario1`, `usuario2` e `usuario3`:
 
 ```sql
