@@ -424,8 +424,7 @@ SHOW GRANTS FOR 'diretor';
 
 ```sql
 -- 3. Atribuir o papel a múltiplos usuários:
-GRANT 'diretor' TO 'usuario1'@'localhost';
-GRANT 'diretor' TO 'usuario2'@'%', 'usuario3'@'localhost';
+GRANT 'diretor' TO 'usuario1', 'usuario2'@'%', 'usuario3'@'localhost';
 ```
 
 ```sql
