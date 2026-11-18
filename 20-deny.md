@@ -159,8 +159,7 @@ SHOW GRANTS FOR 'gerson'@'localhost';
 
 ```sql
 DROP ROLE IF EXISTS 'admin'@'localhost';
-CREATE ROLE IF NOT EXISTS 'admin'@'localhost'
-IDENTIFIED BY 'senha-do-admin';
+CREATE ROLE IF NOT EXISTS 'admin'@'localhost';
 ```
 
 ```sql
