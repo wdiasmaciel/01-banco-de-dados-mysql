@@ -361,8 +361,8 @@ SHOW GRANTS FOR 'operador'@'localhost';
 ```
 
 **OBS**:
-> A ausência da autorização é o mecanismo de bloqueio do MySQL. 
-> Não existe uma entrada `DENY` que sobreponha todas as concessões recebidas.
+> * A ausência da autorização é o mecanismo de bloqueio do MySQL. 
+> * Não existe uma entrada `DENY` que sobreponha todas as concessões recebidas.
 
 ---
 
