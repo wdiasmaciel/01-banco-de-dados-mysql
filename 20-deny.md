@@ -523,6 +523,12 @@ ROLE 'diretor'
 TO 'usuario3'@'localhost';
 ```
 
+```sql
+SET DEFAULT 
+ROLE 'diretor' 
+TO 'usuario1', 'usuario2'@'%', 'usuario3'@'localhost';
+```
+
 * Ativar TODOS os roles atribuídos ao usuário automaticamente:
 
 ```sql
