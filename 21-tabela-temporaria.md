@@ -214,7 +214,7 @@ FROM   empresa.Estoque;
 
 1. Crie uma tabela temporária chamada `tmp_reservas_abertas` com os números e as datas das reservas de viagem que ainda não foram confirmadas.
 2. A partir de uma tabela `farmacia.Medicamento`, crie `tmp_validade_proxima` com os medicamentos que vencem nos próximos 60 dias.
-3. Declare manualmente uma tabela temporária `tmp_precos_revisados` com código do produto, preço atual e preço sugerido.
+3. Declare manualmente uma tabela temporária `tmp_precos_revisados` para um supermerado com código do produto, preço atual e preço sugerido.
 4. Insira na tabela do exercício anterior os produtos de um supermercado cujo preço atual esteja acima de um limite informado.
 5. Crie uma tabela temporária com o total de itens vendidos por categoria em uma padaria.
 6. Consulte os dados de `tmp_validade_proxima` em ordem crescente de vencimento.
@@ -230,7 +230,7 @@ FROM   empresa.Estoque;
 16. Explique por que conceder `CREATE TEMPORARY TABLES` não concede, por si só, permissão para ler `empresa.Produto`.
 17. Crie uma tabela temporária a partir de uma consulta que selecione somente viagens com lugares disponíveis.
 18. Compare a finalidade de uma tabela temporária com a de uma tabela permanente de histórico de estoque.
-19. Escreva um roteiro SQL que crie, consulte e remova uma tabela temporária de resumo diário de vendas.
+19. Escreva um script SQL que crie, consulte e remova uma tabela temporária de resumo diário de vendas.
 20. Analise um processo que precisa compartilhar resultados entre conexões e justifique por que uma tabela temporária não é adequada.
 
 ---
