@@ -36,7 +36,8 @@ USE empresa;
 ```
 
 ```sql
-CREATE TEMPORARY TABLE tmp_reposicao_estoque AS
+DROP TEMPORARY TABLE IF EXISTS tmp_reposicao_estoque;
+CREATE TEMPORARY TABLE IF NOT EXISTS tmp_reposicao_estoque AS
 SELECT p.id AS id_produto,
        p.nome AS produto,
        e.cnpj_filial,
