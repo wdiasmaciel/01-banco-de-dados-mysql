@@ -183,20 +183,26 @@ SHOW GRANTS FOR 'analista'@'localhost';
 
 ## Tabela temporária não é tabela permanente
 
-Use uma tabela temporária quando o resultado for intermediário e pertencer a uma conexão. Para compartilhar dados entre conexões ou mantê-los após o encerramento da sessão, crie uma tabela permanente.
+1. Use uma tabela temporária quando o resultado for intermediário e pertencer a uma conexão. 
+
+2. Para compartilhar dados entre conexões ou mantê-los após o encerramento da sessão, crie uma tabela permanente.
 
 ```sql
 SELECT id_produto, cnpj_filial, preco, quantidade, validade
 FROM   empresa.Estoque;
 ```
 
-`empresa.Estoque` é uma tabela permanente do modelo. Já `tmp_reposicao_estoque` é apenas um resultado de trabalho da conexão, que pode ser descartado ao fechá-la. A tabela temporária não substitui os dados originais de `Estoque`.
+* `empresa.Estoque` é uma tabela permanente do modelo. 
+
+* Já `tmp_reposicao_estoque` é apenas um `resultado de trabalho` da conexão, que pode ser descartado ao fechá-la. 
+
+* A tabela temporária não substitui os dados originais de `Estoque`.
 
 ---
 
 ## Boas práticas
 
-1. Use nomes que indiquem que a tabela é de apoio, como `tmp_resumo_estoque`.
+1. Use nomes que indiquem que a tabela é de apoio (temporária), como `tmp_resumo_estoque`.
 2. Remova a tabela temporária quando ela não for mais necessária, especialmente em conexões que permanecem abertas por muito tempo.
 3. Não dependa de uma tabela temporária criada por outra conexão.
 4. Verifique os privilégios da conta e o acesso às tabelas permanentes consultadas.
