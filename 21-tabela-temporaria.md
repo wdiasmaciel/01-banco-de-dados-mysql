@@ -113,6 +113,17 @@ ON tmp_estoque_por_filial (cnpj_filial);
 SHOW INDEX FROM tmp_estoque_por_filial;
 ```
 
+```sql
+SHOW INDEX FROM tmp_estoque_por_filial FROM empresa;
+```
+
+```sql
+SELECT table_name, index_name, column_name, non_unique
+FROM information_schema.statistics
+WHERE table_schema = DATABASE()
+ORDER BY table_name, index_name, seq_in_index;
+```
+
 ---
 
 ## Escopo e ciclo de vida
