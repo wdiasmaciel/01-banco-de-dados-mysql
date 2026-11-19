@@ -54,6 +54,7 @@ Consulte a tabela como qualquer outra tabela da conexão:
 SELECT *
 FROM   tmp_reposicao_estoque;
 ```
+
 **OBS**:
 
 1. A cláusula `AS SELECT` cria a estrutura com base nas colunas retornadas pela consulta e copia as linhas encontradas naquele momento. 
@@ -67,17 +68,22 @@ FROM   tmp_reposicao_estoque;
 Também é possível declarar as colunas e inserir os dados em etapas:
 
 ```sql
-CREATE TEMPORARY TABLE tmp_estoque_por_filial (
+DROP TEMPORARY TABLE IF EXISTS tmp_estoque_por_filial;
+CREATE TEMPORARY TABLE IF NOT EXISTS tmp_estoque_por_filial (
     cnpj_filial VARCHAR(14) NOT NULL,
     filial VARCHAR(100) NOT NULL,
     quantidade_total BIGINT NOT NULL,
-    valor_estimado DECIMAL(14,2) NOT NULL
+    valor_estimado DECIMAL(14, 2) NOT NULL
 );
 ```
 
 ```sql
-INSERT INTO tmp_estoque_por_filial
-    (cnpj_filial, filial, quantidade_total, valor_estimado)
+SELECT *
+FROM   tmp_estoque_por_filial;
+```
+
+```sql
+INSERT INTO tmp_estoque_por_filial (cnpj_filial, filial, quantidade_total, valor_estimado)
 SELECT f.cnpj,
        f.nome,
        SUM(e.quantidade),
@@ -85,6 +91,11 @@ SELECT f.cnpj,
 FROM   empresa.Filial f
 JOIN   empresa.Estoque e ON e.cnpj_filial = f.cnpj
 GROUP BY f.cnpj, f.nome;
+```
+
+```sql
+SELECT *
+FROM   tmp_estoque_por_filial;
 ```
 
 Os tipos de dados e restrições da tabela são definidos como em uma tabela comum. Índices também podem ser criados quando forem necessários para as consultas da sessão:
