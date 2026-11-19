@@ -54,8 +54,11 @@ Consulte a tabela como qualquer outra tabela da conexão:
 SELECT *
 FROM   tmp_reposicao_estoque;
 ```
+**OBS**:
 
-A cláusula `AS SELECT` cria a estrutura com base nas colunas retornadas pela consulta e copia as linhas encontradas naquele momento. Alterações posteriores na tabela de origem não atualizam automaticamente a tabela temporária.
+1. A cláusula `AS SELECT` cria a estrutura com base nas colunas retornadas pela consulta e copia as linhas encontradas naquele momento. 
+
+2. **Alterações posteriores na tabela de origem não atualizam automaticamente a tabela temporária**.
 
 ---
 
