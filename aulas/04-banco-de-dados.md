@@ -39,7 +39,7 @@ CREATE DATABASE IF NOT EXISTS empresa;
 SHOW DATABASES;
 ```
 
-![Comando SHOW DATABASES](./img/showdatabases2.png)
+![Comando SHOW DATABASES](../img/showdatabases2.png)
 
 ---
 
