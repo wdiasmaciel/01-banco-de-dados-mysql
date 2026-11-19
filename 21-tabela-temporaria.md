@@ -90,7 +90,7 @@ SELECT f.cnpj,
        SUM(e.quantidade * e.preco)
 FROM   empresa.Filial f
 JOIN   empresa.Estoque e ON e.cnpj_filial = f.cnpj
-GROUP BY f.cnpj, f.nome;
+GROUP BY f.cnpj, f.nome
 ```
 
 ```sql
@@ -98,7 +98,11 @@ SELECT *
 FROM   tmp_estoque_por_filial;
 ```
 
-Os tipos de dados e restrições da tabela são definidos como em uma tabela comum. Índices também podem ser criados quando forem necessários para as consultas da sessão:
+Os tipos de dados e restrições da tabela são definidos como em uma tabela comum. 
+
+## Índices
+
+Índices também podem ser criados quando forem necessários para as consultas da sessão:
 
 ```sql
 CREATE INDEX idx_tmp_estoque_filial
