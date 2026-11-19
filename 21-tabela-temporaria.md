@@ -32,6 +32,10 @@
 No modelo da empresa, a quantidade em estoque pertence à relação entre `Produto` e `Filial`, representada pela tabela `Estoque`. Este exemplo reúne os produtos cuja quantidade em alguma filial está abaixo de 10:
 
 ```sql
+USE empresa;
+```
+
+```sql
 CREATE TEMPORARY TABLE tmp_reposicao_estoque AS
 SELECT p.id AS id_produto,
        p.nome AS produto,
