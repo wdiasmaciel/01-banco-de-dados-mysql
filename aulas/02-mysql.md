@@ -3,10 +3,10 @@
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="01-ambiente.md">Anterior</a>
+      <a href="./01-ambiente.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="03-projeto.md">Próximo</a>
+      <a href="./03-projeto.md">Próximo</a>
     </td>
   </tr>
 </table>
@@ -124,7 +124,7 @@ sudo mysql -u root -p
 SHOW DATABASES;
 ```
 
-![Comando SHOW DATABASES](./img/showdatabases1.png)
+![Comando SHOW DATABASES](../img/showdatabases1.png)
 
 ---
 
@@ -155,10 +155,10 @@ Se você estiver no `Windows` e a opção de iniciar o servidor do `MySQL` do Wo
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="01-ambiente.md">Anterior</a>
+      <a href="./01-ambiente.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
-      <a href="03-projeto.md">Próximo</a>
+      <a href="./03-projeto.md">Próximo</a>
     </td>
   </tr>
 </table>
