@@ -15,9 +15,15 @@
 
 # Tabelas temporárias
 
-Uma tabela temporária armazena dados de trabalho durante uma conexão. Ela é útil para preparar resultados intermediários sem manter uma tabela auxiliar permanente no banco.
+1. Uma tabela temporária armazena dados de trabalho durante uma conexão. 
 
-No MySQL, a tabela é visível somente na sessão que a criou. Ao encerrar essa conexão, o servidor remove a tabela automaticamente. Duas sessões podem criar tabelas temporárias com o mesmo nome sem compartilhar os dados.
+2. Ela é útil para preparar resultados intermediários sem manter uma tabela auxiliar permanente no banco.
+
+3. No MySQL, a tabela é visível somente na sessão que a criou. 
+
+4. Ao encerrar essa conexão, o servidor remove a tabela automaticamente. 
+
+5. Duas sessões podem criar tabelas temporárias com o mesmo nome sem compartilhar os dados.
 
 ---
 
