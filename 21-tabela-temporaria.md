@@ -148,12 +148,30 @@ DROP TEMPORARY TABLE IF EXISTS tmp_reposicao_estoque;
 
 ## Permissão necessária
 
-Para criar tabelas temporárias em um banco, a conta precisa do privilégio `CREATE TEMPORARY TABLES` nesse banco. Um administrador pode concedê-lo assim:
+Para criar tabelas temporárias em um banco, a conta precisa do privilégio `CREATE TEMPORARY TABLES` nesse banco. 
+
+Um administrador pode concedê-lo assim:
+
+```sql
+DROP ROLE IF EXISTS 'analista'@'localhost';
+CREATE ROLE IF NOT EXISTS 'analista'@'localhost'; 
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON empresa.*
+TO 'analista'@'localhost'; 
+```
+
+```sql
+SHOW GRANTS FOR 'analista'@'localhost';
+```
 
 ```sql
 GRANT CREATE TEMPORARY TABLES
 ON empresa.*
 TO 'analista'@'localhost';
+```
+
+```sql
+SHOW GRANTS FOR 'analista'@'localhost';
 ```
 
 O privilégio permite criar tabelas temporárias, mas não concede automaticamente acesso às tabelas permanentes consultadas. Para executar o exemplo que lê `empresa.Produto`, a conta também precisa dos privilégios adequados de leitura nessa tabela.
