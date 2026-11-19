@@ -39,15 +39,15 @@ SELECT p.id AS id_produto,
        e.quantidade
 FROM   empresa.Produto p
 JOIN   empresa.Estoque e ON e.id_produto = p.id
-WHERE  e.quantidade < 10;
+WHERE  e.quantidade < 10
+ORDER BY e.cnpj_filial, e.quantidade;
 ```
 
 Consulte a tabela como qualquer outra tabela da conexão:
 
 ```sql
 SELECT *
-FROM   tmp_reposicao_estoque
-ORDER BY cnpj_filial, quantidade;
+FROM   tmp_reposicao_estoque;
 ```
 
 A cláusula `AS SELECT` cria a estrutura com base nas colunas retornadas pela consulta e copia as linhas encontradas naquele momento. Alterações posteriores na tabela de origem não atualizam automaticamente a tabela temporária.
