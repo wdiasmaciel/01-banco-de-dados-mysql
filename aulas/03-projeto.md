@@ -15,7 +15,7 @@
 
 Projeto de uma empresa usado nos exemplos:
 
-![DER Empresa](./img/empresa2.png)
+![DER Empresa](../img/empresa2.png)
 
 1. As entidades do sistema são: Fornecedor, Produto, Identificação, Filial e Estoque.
 
