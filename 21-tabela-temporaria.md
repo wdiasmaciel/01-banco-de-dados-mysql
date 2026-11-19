@@ -109,6 +109,10 @@ CREATE INDEX idx_tmp_estoque_filial
 ON tmp_estoque_por_filial (cnpj_filial);
 ```
 
+```sql
+SHOW INDEX FROM tmp_estoque_por_filial;
+```
+
 ---
 
 ## Escopo e ciclo de vida
