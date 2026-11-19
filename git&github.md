@@ -1,4 +1,4 @@
-teste 2
+# Git & GitHub
 
 Para criar uma branch nova a partir da branch atual e já mudar para ela:
 
