@@ -174,7 +174,9 @@ TO 'analista'@'localhost';
 SHOW GRANTS FOR 'analista'@'localhost';
 ```
 
-O privilégio permite criar tabelas temporárias, mas não concede automaticamente acesso às tabelas permanentes consultadas. Para executar o exemplo que lê `empresa.Produto`, a conta também precisa dos privilégios adequados de leitura nessa tabela.
+1. O privilégio permite criar tabelas temporárias, mas não concede automaticamente acesso às tabelas permanentes consultadas. 
+
+2. Para executar o exemplo que lê `empresa.Produto`, a conta também precisa dos privilégios adequados de leitura nessa tabela.
 
 ---
 
