@@ -31,9 +31,81 @@
 
 ---
 
+## Sintaxe básica (definindo colunas)
+
+```sql
+USE empresa;
+```
+
+```sql
+DROP TEMPORARY TABLE IF EXISTS tmp_cliente;
+
+CREATE TEMPORARY TABLE IF NOT EXISTS tmp_cliente (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    email VARCHAR(150)
+);
+```
+
+```sql
+SELECT *
+FROM   tmp_cliente;
+```
+
+## Manipulando dados na tabela temporária
+
+Após criar `tmp_cliente`, podemos inserir cinco registros:
+
+```sql
+INSERT INTO tmp_cliente (nome, email)
+VALUES ('Ana Souza', 'ana.souza@email.com');
+
+INSERT INTO tmp_cliente (nome, email)
+VALUES ('Bruno Lima', 'bruno.lima@email.com');
+
+INSERT INTO tmp_cliente (nome, email)
+VALUES ('Carla Mendes', 'carla.mendes@email.com');
+
+INSERT INTO tmp_cliente (nome, email)
+VALUES ('Daniel Rocha', 'daniel.rocha@email.com');
+
+INSERT INTO tmp_cliente (nome, email)
+VALUES ('Elisa Costa', 'elisa.costa@email.com');
+```
+
+Atualize os dados de dois clientes:
+
+```sql
+UPDATE tmp_cliente
+SET    email = 'ana.nova@email.com'
+WHERE  id = 1;
+
+UPDATE tmp_cliente
+SET    nome = 'Daniel Pereira'
+WHERE  id = 4;
+```
+
+Exclua um cliente usando a chave primária:
+
+```sql
+DELETE FROM tmp_cliente
+WHERE       id = 5;
+```
+
+Confira o resultado das operações:
+
+```sql
+SELECT *
+FROM   tmp_cliente;
+```
+
+
+(O MySQL não aceita CREATE TEMP TABLE, apenas CREATE TEMPORARY TABLE.)
+---
+
 ## Criando uma tabela temporária
 
-No modelo da empresa, a quantidade em estoque pertence à relação entre `Produto` e `Filial`, representada pela tabela `Estoque`. Este exemplo reúne os produtos cuja quantidade em alguma filial está abaixo de 10:
+No modelo do banco empresa de nosso projeto, a quantidade em estoque pertence à relação entre `Produto` e `Filial`, representada pela tabela `Estoque`. Este exemplo reúne os produtos cuja quantidade em alguma filial está abaixo de 10:
 
 ```sql
 USE empresa;
