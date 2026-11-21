@@ -73,6 +73,11 @@ INSERT INTO tmp_cliente (nome, email)
 VALUES ('Elisa Costa', 'elisa.costa@email.com');
 ```
 
+```sql
+SELECT *
+FROM   tmp_cliente;
+```
+
 Atualizar os dados dos clientes:
 
 ```sql
@@ -85,14 +90,17 @@ SET    nome = 'Daniel Pereira'
 WHERE  id = 4;
 ```
 
+```sql
+SELECT *
+FROM   tmp_cliente;
+```
+
 Excluir clientes:
 
 ```sql
 DELETE FROM tmp_cliente
 WHERE       id = 5;
 ```
-
-Confira o resultado das operações:
 
 ```sql
 SELECT *
