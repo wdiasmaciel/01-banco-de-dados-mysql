@@ -25,6 +25,10 @@
 
 5. Duas sessões podem criar tabelas temporárias com o mesmo nome sem compartilhar os dados.
 
+6. Para criar uma tabela temporária no MySQL, use o comando `CREATE TEMPORARY TABLE`. 
+
+7. Uma tabela temporária existe apenas durante a sessão atual e é apagada automaticamente quando a conexão fecha.
+
 ---
 
 ## Criando uma tabela temporária
