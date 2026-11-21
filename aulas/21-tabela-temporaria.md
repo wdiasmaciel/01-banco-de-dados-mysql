@@ -29,6 +29,8 @@
 
 7. Uma tabela temporária existe apenas durante a sessão atual e é apagada automaticamente quando a conexão fecha.
 
+8. Objetivo de se criar tabela temporária: agilizar consultas complexas, armazenar resultados intermediários, testar dados, etc.
+
 ---
 
 ## Sintaxe básica (definindo colunas)
@@ -127,6 +129,35 @@ WHERE validade < CURDATE();
 ```sql
 SELECT *
 FROM   tmp_produtos_vencidos;
+```
+
+---
+
+## Copiando a estrutura de outra tabela (LIKE)
+
+```sql
+DROP TEMPORARY TABLE IF EXISTS temp_produto;
+
+CREATE TEMPORARY TABLE IF NOT EXISTS temp_produto LIKE produto;
+```
+
+```sql
+DESC temp_produto;
+```
+
+```sql
+SELECT *
+FROM   temp_produto;
+```
+
+---
+
+## Excluido uma tabela temporária manualmente
+
+Para remover antes de encerrar a sessão, execute:
+
+```sql
+DROP TEMPORARY TABLE IF EXISTS temp_produto;
 ```
 
 ---
