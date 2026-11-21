@@ -121,7 +121,7 @@ DROP TEMPORARY TABLE IF EXISTS tmp_produtos_vencidos;
 CREATE TEMPORARY TABLE IF NOT EXISTS tmp_produtos_vencidos AS
 SELECT id_produto, cnpj_filial, preco, quantidade, validade
 FROM Estoque
-WHERE validade > CURDATE();
+WHERE validade < CURDATE();
 ```
 
 ```sql
