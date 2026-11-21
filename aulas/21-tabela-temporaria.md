@@ -107,8 +107,8 @@ SELECT *
 FROM   tmp_cliente;
 ```
 
-
 **OBS**: o MySQL não aceita `CREATE TEMP TABLE`, apenas `CREATE TEMPORARY TABLE`.
+
 ---
 
 ## Criando uma tabela temporária
