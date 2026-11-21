@@ -111,7 +111,7 @@ FROM   tmp_cliente;
 
 ---
 
-## A partir de uma consulta (SELECT)
+## Criando tabela temporária a partir de uma consulta (SELECT)
 
 Crie e preencha a tabela temporária com o resultado de uma consulta (query):
 
