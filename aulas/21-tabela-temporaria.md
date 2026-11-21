@@ -111,6 +111,21 @@ FROM   tmp_cliente;
 
 ---
 
+## A partir de uma consulta (SELECT)
+
+Crie e preencha a tabela temporária com o resultado de uma consulta (query):
+
+```sql
+DROP TEMPORARY TABLE IF EXISTS tmp_produtos_vencidos;
+
+CREATE TEMPORARY TABLE IF NOT EXISTS tmp_produtos_vencidos AS
+SELECT id_produto, cnpj_filial, valor, quantidade, validade
+FROM Estoque
+WHERE validade > NOW();
+```
+
+---
+
 ## Criando uma tabela temporária
 
 No modelo do banco empresa de nosso projeto, a quantidade em estoque pertence à relação entre `Produto` e `Filial`, representada pela tabela `Estoque`. Este exemplo reúne os produtos cuja quantidade em alguma filial está abaixo de 10:
