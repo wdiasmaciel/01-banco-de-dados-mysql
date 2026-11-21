@@ -115,7 +115,7 @@ FROM   tmp_cliente;
 
 ## Criando tabela temporária a partir de uma consulta (SELECT)
 
-Crie e preencha a tabela temporária com o resultado de uma consulta (query):
+Crie e preencha a tabela temporária com o resultado de uma consulta (query). Ela é populada no mesmo momento em que é criada:
 
 ```sql
 DROP TEMPORARY TABLE IF EXISTS tmp_produtos_vencidos;
@@ -129,6 +129,20 @@ WHERE validade < CURDATE();
 ```sql
 SELECT *
 FROM   tmp_produtos_vencidos;
+```
+
+```sql
+DROP TEMPORARY TABLE IF EXISTS tmp_produtos_vencidos_ontem;
+
+CREATE TEMPORARY TABLE IF NOT EXISTS tmp_produtos_vencidos_ontem AS
+SELECT id_produto, cnpj_filial, preco, quantidade, validade
+FROM Estoque
+WHERE validade = CURDATE() - INTERVAL 1 DAY;
+```
+
+```sql
+SELECT *
+FROM   tmp_produtos_vencidos_ontem;
 ```
 
 ---
