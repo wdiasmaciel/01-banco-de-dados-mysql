@@ -27,7 +27,7 @@
 
 6. Para criar uma tabela temporária no MySQL, use o comando `CREATE TEMPORARY TABLE`. 
 
-7. Uma tabela temporária existe apenas durante a sessão atual e é apagada automaticamente quando a conexão fecha.
+7. Uma tabela temporária existe apenas durante a sessão atual e é apagada automaticamente quando a conexão fecha (quando a conexão é encerrada).
 
 8. Objetivo de se criar tabela temporária: agilizar consultas complexas, armazenar resultados intermediários, testar dados, etc.
 
