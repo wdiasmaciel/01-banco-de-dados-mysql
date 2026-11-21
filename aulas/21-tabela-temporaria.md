@@ -54,7 +54,7 @@ FROM   tmp_cliente;
 
 ## Manipulando dados na tabela temporária
 
-Após criar `tmp_cliente`, podemos inserir cinco registros:
+Após criar `tmp_cliente`, podemos inserir registros:
 
 ```sql
 INSERT INTO tmp_cliente (nome, email)
@@ -73,7 +73,7 @@ INSERT INTO tmp_cliente (nome, email)
 VALUES ('Elisa Costa', 'elisa.costa@email.com');
 ```
 
-Atualize os dados de dois clientes:
+Atualizar os dados dos clientes:
 
 ```sql
 UPDATE tmp_cliente
@@ -85,7 +85,7 @@ SET    nome = 'Daniel Pereira'
 WHERE  id = 4;
 ```
 
-Exclua um cliente usando a chave primária:
+Excluir clientes:
 
 ```sql
 DELETE FROM tmp_cliente
@@ -100,7 +100,7 @@ FROM   tmp_cliente;
 ```
 
 
-(O MySQL não aceita CREATE TEMP TABLE, apenas CREATE TEMPORARY TABLE.)
+**OBS**: o MySQL não aceita `CREATE TEMP TABLE`, apenas `CREATE TEMPORARY TABLE`.
 ---
 
 ## Criando uma tabela temporária
