@@ -142,6 +142,10 @@ CREATE TEMPORARY TABLE IF NOT EXISTS temp_produto LIKE produto;
 ```
 
 ```sql
+DESC produto;
+```
+
+```sql
 DESC temp_produto;
 ```
 
