@@ -119,7 +119,7 @@ Crie e preencha a tabela temporária com o resultado de uma consulta (query):
 DROP TEMPORARY TABLE IF EXISTS tmp_produtos_vencidos;
 
 CREATE TEMPORARY TABLE IF NOT EXISTS tmp_produtos_vencidos AS
-SELECT id_produto, cnpj_filial, valor, quantidade, validade
+SELECT id_produto, cnpj_filial, preco, quantidade, validade
 FROM Estoque
 WHERE validade > CURDATE();
 ```
