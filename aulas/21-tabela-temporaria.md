@@ -437,7 +437,7 @@ DROP FUNCTION IF EXISTS fn_total_em_estoque;
 
 DELIMITER $$
 
-CREATE FUNCTION IF NOT EXISTS fn_total_em_estoque() 
+CREATE FUNCTION IF NOT EXISTS fn_total_em_estoque(cnpj_filial VARCHAR(14) IN) 
 RETURNS DECIMAL(10, 2)
 DETERMINISTIC
 READS SQL DATA
@@ -449,6 +449,7 @@ BEGIN
         SELECT IFNULL(SUM(e.quantidade * e.preco), 0) as valor
         FROM     empresa.Filial f
         JOIN     empresa.Estoque e ON e.cnpj_filial = f.cnpj
+        WHERE    f.cnpj_filial = cnpj_filial
         GROUP BY f.cnpj, f.nome
     )
     SELECT valor
@@ -464,7 +465,7 @@ DELIMITER ;
 Após criá-la, você a usa diretamente dentro de um SELECT:
 
 ```sql
-SELECT fn_total_em_estoque() AS total;
+SELECT fn_total_em_estoque('20202020000120') AS total;
 ```
 
 ---
