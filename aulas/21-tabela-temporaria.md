@@ -269,6 +269,8 @@ CREATE INDEX idx_tmp_estoque_por_filial
 ON tmp_estoque_por_filial (cnpj_filial);
 ```
 
+Para consultar os índices da tabela temporária na sessão atual, use `SHOW INDEX`, como nos exemplos abaixo: 
+
 ```sql
 SHOW INDEX FROM tmp_estoque_por_filial;
 ```
@@ -276,6 +278,8 @@ SHOW INDEX FROM tmp_estoque_por_filial;
 ```sql
 SHOW INDEX FROM tmp_estoque_por_filial FROM empresa;
 ```
+
+Tabelas temporárias não são expostas em information_schema.statistics. Portanto, uma consulta a essa view não as retorna. A consulta abaixo lista índices de tabelas permanentes do schema atual:
 
 ```sql
 SELECT table_name, index_name, column_name, non_unique
