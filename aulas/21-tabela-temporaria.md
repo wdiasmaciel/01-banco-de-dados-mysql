@@ -476,12 +476,12 @@ SELECT fn_total_em_estoque_clausula_WITH('20202020000120') AS total;
 Se estiver usando uma versão mais antiga do MySQL, faça o cálculo direto com `SELECT ... INTO`.
 
 ```sql
-DROP FUNCTION IF EXISTS fn_total_em_estoque;
+DROP FUNCTION IF EXISTS fn_total_em_estoque_subquery;
 
 DELIMITER $$
 
 -- Em uma FUNCTION do MySQL, não se escreve IN, OUT ou INOUT. Esses modos são usados em parâmetros de stored procedures. Em functions, declare os parâmetros apenas como nome e tipo:
-CREATE FUNCTION IF NOT EXISTS fn_total_em_estoque(cnpj_filial VARCHAR(14)) 
+CREATE FUNCTION IF NOT EXISTS fn_total_em_estoque_subquery(cnpj_filial VARCHAR(14)) 
 RETURNS DECIMAL(10, 2)
 DETERMINISTIC
 READS SQL DATA
@@ -502,6 +502,12 @@ BEGIN
 END$$
 
 DELIMITER ;
+```
+
+Após criá-la, você a usa diretamente dentro de um SELECT:
+
+```sql
+SELECT fn_total_em_estoque_clausula_subquery('20202020000120') AS total;
 ```
 
 ---
