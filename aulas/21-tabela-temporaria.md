@@ -279,7 +279,7 @@ SHOW INDEX FROM tmp_estoque_por_filial;
 SHOW INDEX FROM tmp_estoque_por_filial FROM empresa;
 ```
 
-Tabelas temporárias não são expostas em information_schema.statistics. Portanto, uma consulta a essa view não as retorna. A consulta abaixo lista índices de tabelas permanentes do schema atual:
+Tabelas temporárias não são expostas em information_schema.statistics. Portanto, uma consulta a essa view não as retorna. A consulta abaixo lista índices apenas de tabelas permanentes do schema atual:
 
 ```sql
 SELECT table_name, index_name, column_name, non_unique
