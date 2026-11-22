@@ -433,7 +433,7 @@ Como alternativa, você deve usar variáveis locais, CTEs (Common Table Expressi
 A cláusula `WITH` funciona como uma "tabela temporária em memória" que existe apenas durante a execução daquela consulta.
 
 ```sql
-DROP TABLE IF EXISTS fn_total_em_estoque;
+DROP FUNCTION IF EXISTS fn_total_em_estoque;
 
 DELIMITER $$
 
@@ -444,17 +444,15 @@ READS SQL DATA
 BEGIN
     DECLARE v_total_final DECIMAL(10, 2);
 
-    -- O bloco WITH substitui a tabela temporária:
+    -- O bloco WITH substitui tabela temporária. A CTE (WITH) só existe para uma única instrução SQL: a instrução que vem logo depois dela. Portanto, não pode haver um ponto e vírgula logo após a definição da CTE, encerrando a instrução antes do SELECT: 
     WITH tmp_total_em_estoque AS (
         SELECT IFNULL(SUM(e.quantidade * e.preco), 0) as valor
         FROM     empresa.Filial f
         JOIN     empresa.Estoque e ON e.cnpj_filial = f.cnpj
         GROUP BY f.cnpj, f.nome
-    );
-
-    -- Inserir o valor na variável local:
+    )
     SELECT valor
-    INTO v_total_final
+    INTO v_total_final -- Inserir o valor na variável local:
     FROM tmp_total_em_estoque;
 
     RETURN v_total_final;
