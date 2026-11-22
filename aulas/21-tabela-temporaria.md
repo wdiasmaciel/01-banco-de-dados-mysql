@@ -165,6 +165,11 @@ DESC temp_produto;
 
 ```sql
 SELECT *
+FROM   produto;
+```
+
+```sql
+SELECT *
 FROM   temp_produto;
 ```
 
