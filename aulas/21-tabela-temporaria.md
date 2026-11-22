@@ -371,7 +371,8 @@ BEGIN
         cnpj_filial VARCHAR(14) NOT NULL,
         filial VARCHAR(100) NOT NULL,
         quantidade_total BIGINT NOT NULL,
-        valor_estimado DECIMAL(14, 2) NOT NULL
+        valor_estimado DECIMAL(14, 2) NOT NULL,
+        valor_com_acrescimo DECIMAL(14, 2) NOT NULL DEFAULT 0
     );
 
     -- 3. Insere os dados processados:
@@ -384,9 +385,9 @@ BEGIN
     JOIN   empresa.Estoque e ON e.cnpj_filial = f.cnpj
     GROUP BY f.cnpj, f.nome;
 
-    -- 4. Faz operações adicionais (ex: aplicar um acréscimo de 10% para valores acima de 1000)
+    -- 4. Faz operações adicionais (ex: aplicar um acréscimo de 10% para valores estimados acima de 1000):
     UPDATE tmp_total_em_estoque
-    SET valor_estimado = valor_estimado * 1.10
+    SET valor_com_acrescimo = valor_estimado * 1.10
     WHERE valor_estimado > 1000;
 
     -- 5. Retorna o resultado final da procedure:
