@@ -437,7 +437,8 @@ DROP FUNCTION IF EXISTS fn_total_em_estoque;
 
 DELIMITER $$
 
-CREATE FUNCTION IF NOT EXISTS fn_total_em_estoque(IN cnpj_filial VARCHAR(14)) 
+-- Em uma FUNCTION do MySQL, não se escreve IN, OUT ou INOUT. Esses modos são usados em parâmetros de stored procedures. Em functions, declare os parâmetros apenas como nome e tipo:
+CREATE FUNCTION IF NOT EXISTS fn_total_em_estoque(cnpj_filial VARCHAR(14)) 
 RETURNS DECIMAL(10, 2)
 DETERMINISTIC
 READS SQL DATA
@@ -449,7 +450,7 @@ BEGIN
         SELECT IFNULL(SUM(e.quantidade * e.preco), 0) as valor
         FROM     empresa.Filial f
         JOIN     empresa.Estoque e ON e.cnpj_filial = f.cnpj
-        WHERE    f.cnpj_filial = cnpj_filial
+        WHERE    f.cnpj = cnpj_filial
         GROUP BY f.cnpj, f.nome
     )
     SELECT valor
