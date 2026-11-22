@@ -409,6 +409,14 @@ Após criá-la, basta chamá-la normalmente:
 CALL sp_relatorio_total_em_estoque();
 ```
 
+**OBS**:
+
+Cuidados importantes em procedures:
+
+1. **Limpeza obrigatória**: como a tabela temporária pertence à sessão (conexão) e não apenas à procedure, ela continua existindo mesmo após a procedure terminar. Sempre use `DROP TEMPORARY TABLE` no início e no fim.
+2. **Limitação de auto-junção (Self-Join)**: no MySQL, você não pode referenciar a mesma tabela temporária mais de uma vez na mesma consulta (ex: `SELECT * FROM temp_a JOIN temp_a`). Se precisar fazer isso, crie uma segunda tabela temporária com os mesmos dados.
+3. **Desempenho**: se a tabela tiver muitos registros e você for fazer `JOIN` ou `WHERE` nela dentro da procedure, adicione índices (`INDEX` ou `PRIMARY KEY`) na criação para manter a execução rápida.
+
 ---
 
 ## Tabela temporária não é tabela permanente
