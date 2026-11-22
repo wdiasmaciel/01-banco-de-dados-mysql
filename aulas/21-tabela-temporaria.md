@@ -228,6 +228,7 @@ Também é possível declarar as colunas e inserir os dados em etapas:
 
 ```sql
 DROP TEMPORARY TABLE IF EXISTS tmp_estoque_por_filial;
+
 CREATE TEMPORARY TABLE IF NOT EXISTS tmp_estoque_por_filial (
     cnpj_filial VARCHAR(14) NOT NULL,
     filial VARCHAR(100) NOT NULL,
