@@ -382,7 +382,7 @@ BEGIN
            SUM(e.quantidade * e.preco)
     FROM   empresa.Filial f
     JOIN   empresa.Estoque e ON e.cnpj_filial = f.cnpj
-    GROUP BY f.cnpj, f.nome
+    GROUP BY f.cnpj, f.nome;
 
     -- 4. Faz operações adicionais (ex: aplicar um acréscimo de 10% para valores acima de 1000)
     UPDATE tmp_total_em_estoque
