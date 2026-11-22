@@ -265,7 +265,7 @@ Os tipos de dados e restrições da tabela são definidos como em uma tabela com
 Índices também podem ser criados quando forem necessários para as consultas da sessão:
 
 ```sql
-CREATE INDEX idx_tmp_estoque_filial
+CREATE INDEX idx_tmp_estoque_por_filial
 ON tmp_estoque_por_filial (cnpj_filial);
 ```
 
