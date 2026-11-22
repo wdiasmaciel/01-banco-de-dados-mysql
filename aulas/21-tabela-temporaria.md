@@ -385,16 +385,16 @@ BEGIN
     GROUP BY f.cnpj, f.nome
 
     -- 4. Faz operações adicionais (ex: aplicar um acréscimo de 10% para valores acima de 1000)
-    UPDATE temp_total_em_estoque
+    UPDATE tmp_total_em_estoque
     SET valor_estimado = valor_estimado * 1.10
     WHERE valor_estimado > 1000;
 
     -- 5. Retorna o resultado final da procedure:
-    SELECT * FROM temp_total_em_estoque 
+    SELECT * FROM tmp_total_em_estoque 
     ORDER BY valor_estimado DESC;
 
     -- 6. Limpa a tabela da memória ao finalizar:
-    DROP TEMPORARY TABLE IF EXISTS temp_total_em_estoque;
+    DROP TEMPORARY TABLE IF EXISTS tmp_total_em_estoque;
 END$$
 
 DELIMITER ;
