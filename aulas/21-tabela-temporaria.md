@@ -381,8 +381,8 @@ BEGIN
     INSERT INTO tmp_total_em_estoque (cnpj_filial, filial, quantidade_total, valor_estimado)
     SELECT f.cnpj,
            f.nome,
-           SUM(e.quantidade),
-           SUM(e.quantidade * e.preco)
+           IFNULL(SUM(e.quantidade), 0),
+           IFNULL(SUM(e.quantidade * e.preco), 0)
     FROM   empresa.Filial f
     JOIN   empresa.Estoque e ON e.cnpj_filial = f.cnpj
     GROUP BY f.cnpj, f.nome;
@@ -428,7 +428,39 @@ O MySQL proíbe instruções DDL (como CREATE, ALTER ou DROP) e transações imp
 
 Como alternativa, você deve usar variáveis locais, CTEs (Common Table Expressions com `WITH`) ou subqueries para atingir o mesmo objetivo dentro de uma função.
 
+### Alternativa 1: usando CTE (WITH)
 
+A cláusula `WITH` funciona como uma "tabela temporária em memória" que existe apenas durante a execução daquela consulta.
+
+```sql
+DELIMITER $$
+
+CREATE FUNCTION fn_total_com_desconto(p_cliente_id INT) 
+RETURNS DECIMAL(10, 2)
+DETERMINISTIC
+READS SQL DATA
+BEGIN
+    DECLARE v_total_final DECIMAL(10, 2);
+
+    -- O bloco WITH substitui a tabela temporária:
+    WITH tmp_total_em_estoque AS (
+        SELECT f.cnpj,
+               f.nome,
+               SUM(e.quantidade),
+               SUM(e.quantidade * e.preco)
+        FROM   empresa.Filial f
+        JOIN   empresa.Estoque e ON e.cnpj_filial = f.cnpj
+        GROUP BY f.cnpj, f.nome;
+    )
+    SELECT IFNULL(SUM(valor), 0) * 0.90 -- Aplica 10% de desconto
+    INTO v_total_final
+    FROM temp_pedidos;
+
+    RETURN v_total_final;
+END$$
+
+DELIMITER ;
+```
 
 ---
 
