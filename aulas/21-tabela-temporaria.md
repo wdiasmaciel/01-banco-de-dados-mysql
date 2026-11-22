@@ -449,8 +449,8 @@ BEGIN
         SELECT IFNULL(SUM(e.quantidade * e.preco), 0) as valor
         FROM     empresa.Filial f
         JOIN     empresa.Estoque e ON e.cnpj_filial = f.cnpj
-        GROUP BY f.cnpj, f.nome;
-    )
+        GROUP BY f.cnpj, f.nome
+    );
 
     -- Inserir o valor na variável local:
     SELECT valor
