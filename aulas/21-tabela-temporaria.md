@@ -359,7 +359,7 @@ Uma boa prática é sempre usar `DROP TEMPORARY TABLE IF EXISTS` antes e depois 
 No exemplo abaixo, a procedure calcula o total em estoque e retorna um relatório consolidado:
 
 ```sql
-DROP PROCEDURE IF EXISTS sp_relatorio_total_em_estoque()
+DROP PROCEDURE IF EXISTS sp_relatorio_total_em_estoque;
 
 DELIMITER $$
 
