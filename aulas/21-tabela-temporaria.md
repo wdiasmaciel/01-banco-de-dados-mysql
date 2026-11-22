@@ -433,9 +433,11 @@ Como alternativa, você deve usar variáveis locais, CTEs (Common Table Expressi
 A cláusula `WITH` funciona como uma "tabela temporária em memória" que existe apenas durante a execução daquela consulta.
 
 ```sql
+DROP TABLE IF EXISTS fn_total_em_estoque;
+
 DELIMITER $$
 
-CREATE FUNCTION fn_total_com_desconto(p_cliente_id INT) 
+CREATE FUNCTION IF NOT EXISTS fn_total_em_estoque() 
 RETURNS DECIMAL(10, 2)
 DETERMINISTIC
 READS SQL DATA
@@ -444,17 +446,16 @@ BEGIN
 
     -- O bloco WITH substitui a tabela temporária:
     WITH tmp_total_em_estoque AS (
-        SELECT f.cnpj,
-               f.nome,
-               SUM(e.quantidade),
-               SUM(e.quantidade * e.preco)
-        FROM   empresa.Filial f
-        JOIN   empresa.Estoque e ON e.cnpj_filial = f.cnpj
+        SELECT IFNULL(SUM(e.quantidade * e.preco), 0) as valor
+        FROM     empresa.Filial f
+        JOIN     empresa.Estoque e ON e.cnpj_filial = f.cnpj
         GROUP BY f.cnpj, f.nome;
     )
-    SELECT IFNULL(SUM(valor), 0) * 0.90 -- Aplica 10% de desconto
+
+    -- Inserir o valor na variável local:
+    SELECT valor
     INTO v_total_final
-    FROM temp_pedidos;
+    FROM tmp_total_em_estoque;
 
     RETURN v_total_final;
 END$$
