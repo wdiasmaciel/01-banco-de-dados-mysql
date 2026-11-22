@@ -463,6 +463,12 @@ END$$
 DELIMITER ;
 ```
 
+Após criá-la, você a usa diretamente dentro de um SELECT:
+
+```sql
+SELECT fn_total_em_estoque() AS total;
+```
+
 ---
 
 ## Tabela temporária não é tabela permanente
