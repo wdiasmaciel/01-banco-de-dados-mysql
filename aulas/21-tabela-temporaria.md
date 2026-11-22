@@ -433,12 +433,12 @@ Como alternativa, você deve usar variáveis locais, CTEs (Common Table Expressi
 A cláusula `WITH` funciona como uma "tabela temporária em memória" que existe apenas durante a execução daquela consulta.
 
 ```sql
-DROP FUNCTION IF EXISTS _fn_total_em_estoque_clausula_WITH;
+DROP FUNCTION IF EXISTS fn_total_em_estoque_clausula_WITH;
 
 DELIMITER $$
 
 -- Em uma FUNCTION do MySQL, não se escreve IN, OUT ou INOUT. Esses modos são usados em parâmetros de stored procedures. Em functions, declare os parâmetros apenas como nome e tipo:
-CREATE FUNCTION IF NOT EXISTS _fn_total_em_estoque_clausula_WITH(cnpj_filial VARCHAR(14)) 
+CREATE FUNCTION IF NOT EXISTS fn_total_em_estoque_clausula_WITH(cnpj_filial VARCHAR(14)) 
 RETURNS DECIMAL(10, 2)
 DETERMINISTIC
 READS SQL DATA
@@ -466,7 +466,7 @@ DELIMITER ;
 Após criá-la, você a usa diretamente dentro de um SELECT:
 
 ```sql
-SELECT _fn_total_em_estoque_clausula_WITH('20202020000120') AS total;
+SELECT fn_total_em_estoque_clausula_WITH('20202020000120') AS total;
 ```
 
 ---
