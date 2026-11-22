@@ -419,6 +419,19 @@ Cuidados importantes em procedures:
 
 ---
 
+## Tabela Temporária e Function
+
+**OBS**:
+> Não é possível criar ou manipular tabelas temporárias dentro de uma `FUNCTION` no MySQL. 
+
+O MySQL proíbe instruções DDL (como CREATE, ALTER ou DROP) e transações implícitas dentro de funções armazenadas, retornando o erro `Explicit or implicit commit is not allowed in stored function or trigger`.
+
+Como alternativa, você deve usar variáveis locais, CTEs (Common Table Expressions com `WITH`) ou subqueries para atingir o mesmo objetivo dentro de uma função.
+
+
+
+---
+
 ## Tabela temporária não é tabela permanente
 
 1. Use uma tabela temporária quando o resultado for intermediário e pertencer a uma conexão. 
