@@ -350,6 +350,58 @@ SHOW GRANTS FOR 'analista'@'localhost';
 
 ---
 
+## Tabela Temporária e Stored Procedure
+
+Para usar tabelas temporárias dentro de uma `Stored Procedure` no `MySQL`, você deve criar, manipular e excluir a tabela dentro do bloco `BEGIN ... END`. 
+
+Uma boa prática é sempre usar `DROP TEMPORARY TABLE IF EXISTS` antes e depois do uso para evitar erros de "tabela já existe" caso a procedure seja chamada duas vezes na mesma sessão.
+
+No exemplo abaixo, a procedure calcula o total em estoque e retorna um relatório consolidado:
+
+```sql
+DELIMITER $$
+
+CREATE PROCEDURE sp_relatorio_total_em_estoque()
+BEGIN
+    -- 1. Garante que a tabela não exista antes de criar (evita erro a partr da 2ª execução):
+    DROP TEMPORARY TABLE IF EXISTS tmp_total_em_estoque;
+
+    -- 2. Cria e popula a tabela temporária:
+    CREATE TEMPORARY TABLE IF NOT EXISTS tmp_total_em_estoque (
+        cnpj_filial VARCHAR(14) NOT NULL,
+        filial VARCHAR(100) NOT NULL,
+        quantidade_total BIGINT NOT NULL,
+        valor_estimado DECIMAL(14, 2) NOT NULL
+    );
+
+    -- 3. Insere os dados processados:
+    INSERT INTO tmp_total_em_estoque (cnpj_filial, filial, quantidade_total, valor_estimado)
+    SELECT f.cnpj,
+           f.nome,
+           SUM(e.quantidade),
+           SUM(e.quantidade * e.preco)
+    FROM   empresa.Filial f
+    JOIN   empresa.Estoque e ON e.cnpj_filial = f.cnpj
+    GROUP BY f.cnpj, f.nome
+
+    -- 4. Faz operações adicionais (ex: aplicar um acréscimo de 10% para valores acima de 1000)
+    UPDATE temp_total_em_estoque
+    SET valor_estimado = valor_estimado * 1.10
+    WHERE valor_estimado > 1000;
+
+    -- 5. Retorna o resultado final da procedure:
+    SELECT * FROM temp_total_em_estoque 
+    ORDER BY valor_estimado DESC;
+
+    -- 6. Limpa a tabela da memória ao finalizar:
+    DROP TEMPORARY TABLE IF EXISTS temp_total_em_estoque;
+END$$
+
+DELIMITER ;
+```
+
+---
+
 ## Tabela temporária não é tabela permanente
 
 1. Use uma tabela temporária quando o resultado for intermediário e pertencer a uma conexão. 
