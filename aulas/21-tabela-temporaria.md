@@ -359,9 +359,11 @@ Uma boa prática é sempre usar `DROP TEMPORARY TABLE IF EXISTS` antes e depois 
 No exemplo abaixo, a procedure calcula o total em estoque e retorna um relatório consolidado:
 
 ```sql
+DROP PROCEDURE IF EXISTS sp_relatorio_total_em_estoque()
+
 DELIMITER $$
 
-CREATE PROCEDURE sp_relatorio_total_em_estoque()
+CREATE PROCEDURE IF NOT EXISTS sp_relatorio_total_em_estoque()
 BEGIN
     -- 1. Garante que a tabela não exista antes de criar (evita erro a partr da 2ª execução):
     DROP TEMPORARY TABLE IF EXISTS tmp_total_em_estoque;
