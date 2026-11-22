@@ -507,7 +507,7 @@ DELIMITER ;
 Após criá-la, você a usa diretamente dentro de um SELECT:
 
 ```sql
-SELECT fn_total_em_estoque_clausula_subquery('20202020000120') AS total;
+SELECT fn_total_em_estoque_subquery('20202020000120') AS total;
 ```
 
 ---
