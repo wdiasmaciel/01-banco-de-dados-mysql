@@ -433,12 +433,12 @@ Como alternativa, você deve usar variáveis locais, CTEs (Common Table Expressi
 A cláusula `WITH` funciona como uma "tabela temporária em memória" que existe apenas durante a execução daquela consulta.
 
 ```sql
-DROP FUNCTION IF EXISTS fn_total_em_estoque;
+DROP FUNCTION IF EXISTS _fn_total_em_estoque_clausula_WITH;
 
 DELIMITER $$
 
 -- Em uma FUNCTION do MySQL, não se escreve IN, OUT ou INOUT. Esses modos são usados em parâmetros de stored procedures. Em functions, declare os parâmetros apenas como nome e tipo:
-CREATE FUNCTION IF NOT EXISTS fn_total_em_estoque(cnpj_filial VARCHAR(14)) 
+CREATE FUNCTION IF NOT EXISTS _fn_total_em_estoque_clausula_WITH(cnpj_filial VARCHAR(14)) 
 RETURNS DECIMAL(10, 2)
 DETERMINISTIC
 READS SQL DATA
@@ -466,7 +466,42 @@ DELIMITER ;
 Após criá-la, você a usa diretamente dentro de um SELECT:
 
 ```sql
-SELECT fn_total_em_estoque('20202020000120') AS total;
+SELECT _fn_total_em_estoque_clausula_WITH('20202020000120') AS total;
+```
+
+---
+
+### Alternativa 2: usando variáveis locais e subquery
+
+Se estiver usando uma versão mais antiga do MySQL, faça o cálculo direto com `SELECT ... INTO`.
+
+```sql
+DROP FUNCTION IF EXISTS fn_total_em_estoque;
+
+DELIMITER $$
+
+-- Em uma FUNCTION do MySQL, não se escreve IN, OUT ou INOUT. Esses modos são usados em parâmetros de stored procedures. Em functions, declare os parâmetros apenas como nome e tipo:
+CREATE FUNCTION IF NOT EXISTS fn_total_em_estoque(cnpj_filial VARCHAR(14)) 
+RETURNS DECIMAL(10, 2)
+DETERMINISTIC
+READS SQL DATA
+BEGIN
+    DECLARE v_total_final DECIMAL(10, 2);
+
+    SELECT valor
+    INTO v_total_final -- Inserir o valor na variável local:
+    FROM (
+        SELECT IFNULL(SUM(e.quantidade * e.preco), 0) as valor
+        FROM     empresa.Filial f
+        JOIN     empresa.Estoque e ON e.cnpj_filial = f.cnpj
+        WHERE    f.cnpj = cnpj_filial
+        GROUP BY f.cnpj, f.nome
+    ) AS tmp_total_em_estoque;
+
+    RETURN v_total_final;
+END$$
+
+DELIMITER ;
 ```
 
 ---
