@@ -400,6 +400,12 @@ END$$
 DELIMITER ;
 ```
 
+Após criá-la, basta chamá-la normalmente:
+
+```sql
+CALL sp_relatorio_total_em_estoque();
+```
+
 ---
 
 ## Tabela temporária não é tabela permanente
