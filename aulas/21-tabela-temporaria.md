@@ -517,7 +517,7 @@ SELECT fn_total_em_estoque_subquery('20202020000120') AS total;
 | Permite `CREATE TEMPORARY TABLE` | Sim | Não |
 | Retorno | Zero, um ou vários conjuntos de dados (`SELECT`) | Apenas um único valor (`RETURN`) |
 | Parâmetro | Nome, tipo, IN, OUT, INOUT | Nome, tipo |
-| Uso dentro de um `SELECT` | Não; usa `CALL` | Sim |
+| Uso dentro de um `SELECT` | Não (usa `CALL`) | Sim |
 
 ---
 
