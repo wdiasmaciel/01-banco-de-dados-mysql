@@ -304,6 +304,11 @@ Uma tabela temporária pode ser removida antes do fim da conexão:
 DROP TEMPORARY TABLE IF EXISTS tmp_reposicao_estoque;
 ```
 
+```sql
+SELECT *
+FROM   tmp_reposicao_estoque;
+```
+
 **OBS**:
 > 1. Use `DROP TEMPORARY TABLE` para deixar claro que a intenção é remover somente a tabela temporária. 
 > 2. Essa instrução não remove uma tabela permanente que tenha o mesmo nome.
