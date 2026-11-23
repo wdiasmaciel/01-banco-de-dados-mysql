@@ -542,7 +542,7 @@ FROM   empresa.Estoque;
 
 ## Boas práticas
 
-1. Use nomes que indiquem que a tabela é de apoio (temporária), como `tmp_resumo_estoque`.
+1. Use nomes que indiquem que a tabela é de apoio (temporária), como `tmp_resumo_estoque` ou `temp_resumo_estoque`.
 2. Remova a tabela temporária quando ela não for mais necessária, especialmente em conexões que permanecem abertas por muito tempo.
 3. Não dependa de uma tabela temporária criada por outra conexão.
 4. Verifique os privilégios da conta e o acesso às tabelas permanentes consultadas.
