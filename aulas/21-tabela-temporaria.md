@@ -561,7 +561,7 @@ FROM   empresa.Estoque;
 7. Crie um índice na coluna de data de vencimento de `tmp_validade_proxima`.
 8. Atualize uma linha de uma tabela temporária e explique por que a tabela permanente de origem não muda.
 9. Exclua `tmp_reservas_abertas` antes de encerrar a conexão, sem afetar uma tabela permanente de mesmo nome.
-10. Use `SHOW TABLES LIKE 'tmp_precos_revisados'` na mesma sessão para verificar se a tabela temporária existe.
+10. Use `SHOW TABLES LIKE '%estoque%'` na mesma sessão para verificar se as tabelas temporárias são apresentada.
 11. Explique por que um usuário conectado em outra sessão não consegue consultar a sua tabela temporária.
 12. Descreva o que acontece com as tabelas temporárias ao desconectar o cliente MySQL.
 13. Duas sessões criam uma tabela temporária chamada `tmp_contagem`. Explique se uma sessão vê os registros da outra.
