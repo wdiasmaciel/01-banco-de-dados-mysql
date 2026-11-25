@@ -154,12 +154,16 @@ CREATE TEMPORARY TABLE IF NOT EXISTS AuditoriaTriggerExemplo (
 );
 ```
 
+---
+
 O `AFTER INSERT` registra os valores recém-inseridos, disponíveis em `NEW`:
 
 ```sql
+DROP TRIGGER IF EXISTS exemplo_cliente_depois_inserir;
+
 DELIMITER $$
 
-CREATE TRIGGER exemplo_cliente_depois_inserir
+CREATE TRIGGER IF NOT EXISTS exemplo_cliente_depois_inserir
 AFTER INSERT ON ClienteTriggerExemplo
 FOR EACH ROW
 BEGIN
@@ -170,30 +174,36 @@ END$$
 DELIMITER ;
 ```
 
+---
+
 O `AFTER UPDATE` registra os valores anteriores (`OLD`) e os novos (`NEW`):
 
 ```sql
+DROP TRIGGER IF EXISTS exemplo_cliente_depois_atualizar;
+
 DELIMITER $$
 
-CREATE TRIGGER exemplo_cliente_depois_atualizar
+CREATE TRIGGER IF NOT EXISTS exemplo_cliente_depois_atualizar
 AFTER UPDATE ON ClienteTriggerExemplo
 FOR EACH ROW
 BEGIN
-    INSERT INTO AuditoriaTriggerExemplo
-        (evento, cliente_id, nome_antigo, nome_novo)
-    VALUES
-        ('UPDATE', NEW.id, OLD.nome, NEW.nome);
+    INSERT INTO AuditoriaTriggerExemplo (evento, cliente_id, nome_antigo, nome_novo)
+    VALUES ('UPDATE', NEW.id, OLD.nome, NEW.nome);
 END$$
 
 DELIMITER ;
 ```
 
+---
+
 O `BEFORE DELETE` registra a linha antes de ela ser excluída. Em um `DELETE`, os valores da linha estão disponíveis em `OLD`:
 
 ```sql
+DROP TRIGGER IF EXISTS exemplo_cliente_antes_excluir;
+
 DELIMITER $$
 
-CREATE TRIGGER exemplo_cliente_antes_excluir
+CREATE TRIGGER IF NOT EXISTS exemplo_cliente_antes_excluir
 BEFORE DELETE ON ClienteTriggerExemplo
 FOR EACH ROW
 BEGIN
@@ -204,12 +214,16 @@ END$$
 DELIMITER ;
 ```
 
+---
+
 O `AFTER DELETE` também pode consultar `OLD`, embora a linha já tenha sido excluída da tabela:
 
 ```sql
+DROP TRIGGER IF EXISTS exemplo_cliente_depois_excluir;
+
 DELIMITER $$
 
-CREATE TRIGGER exemplo_cliente_depois_excluir
+CREATE TRIGGER IF NOT EXISTS exemplo_cliente_depois_excluir
 AFTER DELETE ON ClienteTriggerExemplo
 FOR EACH ROW
 BEGIN
@@ -219,6 +233,8 @@ END$$
 
 DELIMITER ;
 ```
+
+---
 
 Execute os comandos abaixo para disparar cada evento:
 
@@ -236,6 +252,8 @@ WHERE id = 1;
 DELETE FROM ClienteTriggerExemplo
 WHERE id = 1;
 ```
+
+---
 
 Consulte os registros produzidos pelos gatilhos:
 
