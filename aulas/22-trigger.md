@@ -114,6 +114,120 @@ AND    cnpj_filial = '10101010000110';
 
 ---
 
+## Exemplos de `AFTER INSERT`, `AFTER UPDATE`, `BEFORE DELETE` e `AFTER DELETE`
+
+O exemplo a seguir usa uma tabela simples de clientes e uma tabela de auditoria. Crie as tabelas no banco de dados selecionado e, em seguida, crie os quatro gatilhos:
+
+```sql
+CREATE TABLE ClienteTriggerExemplo (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE AuditoriaTriggerExemplo (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    evento VARCHAR(20) NOT NULL,
+    cliente_id INT NOT NULL,
+    nome_antigo VARCHAR(100),
+    nome_novo VARCHAR(100),
+    registrado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+O `AFTER INSERT` registra os valores recém-inseridos, disponíveis em `NEW`:
+
+```sql
+DELIMITER $$
+
+CREATE TRIGGER exemplo_cliente_depois_inserir
+AFTER INSERT ON ClienteTriggerExemplo
+FOR EACH ROW
+BEGIN
+    INSERT INTO AuditoriaTriggerExemplo (evento, cliente_id, nome_novo)
+    VALUES ('INSERT', NEW.id, NEW.nome);
+END$$
+
+DELIMITER ;
+```
+
+O `AFTER UPDATE` registra os valores anteriores (`OLD`) e os novos (`NEW`):
+
+```sql
+DELIMITER $$
+
+CREATE TRIGGER exemplo_cliente_depois_atualizar
+AFTER UPDATE ON ClienteTriggerExemplo
+FOR EACH ROW
+BEGIN
+    INSERT INTO AuditoriaTriggerExemplo
+        (evento, cliente_id, nome_antigo, nome_novo)
+    VALUES
+        ('UPDATE', NEW.id, OLD.nome, NEW.nome);
+END$$
+
+DELIMITER ;
+```
+
+O `BEFORE DELETE` registra a linha antes de ela ser excluída. Em um `DELETE`, os valores da linha estão disponíveis em `OLD`:
+
+```sql
+DELIMITER $$
+
+CREATE TRIGGER exemplo_cliente_antes_excluir
+BEFORE DELETE ON ClienteTriggerExemplo
+FOR EACH ROW
+BEGIN
+    INSERT INTO AuditoriaTriggerExemplo (evento, cliente_id, nome_antigo)
+    VALUES ('BEFORE DELETE', OLD.id, OLD.nome);
+END$$
+
+DELIMITER ;
+```
+
+O `AFTER DELETE` também pode consultar `OLD`, embora a linha já tenha sido excluída da tabela:
+
+```sql
+DELIMITER $$
+
+CREATE TRIGGER exemplo_cliente_depois_excluir
+AFTER DELETE ON ClienteTriggerExemplo
+FOR EACH ROW
+BEGIN
+    INSERT INTO AuditoriaTriggerExemplo (evento, cliente_id, nome_antigo)
+    VALUES ('AFTER DELETE', OLD.id, OLD.nome);
+END$$
+
+DELIMITER ;
+```
+
+Execute os comandos abaixo para disparar cada evento:
+
+```sql
+-- Dispara o AFTER INSERT.
+INSERT INTO ClienteTriggerExemplo (id, nome)
+VALUES (1, 'Ana');
+
+-- Dispara o AFTER UPDATE.
+UPDATE ClienteTriggerExemplo
+SET nome = 'Ana Silva'
+WHERE id = 1;
+
+-- Dispara o BEFORE DELETE e, em seguida, o AFTER DELETE.
+DELETE FROM ClienteTriggerExemplo
+WHERE id = 1;
+```
+
+Consulte os registros produzidos pelos gatilhos:
+
+```sql
+SELECT evento, cliente_id, nome_antigo, nome_novo, registrado_em
+FROM AuditoriaTriggerExemplo
+ORDER BY id;
+```
+
+
+---
+
 ## Delimitador ao criar um trigger
 
 O corpo de um trigger pode conter várias instruções terminadas em `;`. No cliente de linha de comando do MySQL, use `DELIMITER` para que o corpo seja enviado como uma única instrução `CREATE TRIGGER`.
