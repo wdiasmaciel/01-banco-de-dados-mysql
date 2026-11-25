@@ -75,7 +75,7 @@ FOR EACH ROW
 BEGIN
     IF NEW.quantidade < 0 THEN
         SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'A quantidade em estoque nao pode ser negativa';
+            SET MESSAGE_TEXT = 'A quantidade em estoque não pode ser negativa.';
     END IF;
 END$$
 
