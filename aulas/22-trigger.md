@@ -58,7 +58,11 @@ Dentro do gatilho, `NEW` e `OLD` identificam os valores da linha:
 
 ## Validando uma inserção em Estoque
 
-No modelo da empresa, `Estoque` relaciona um produto a uma filial e armazena preço, quantidade e validade. A tabela já possui uma restrição `CHECK` para preço; como não há uma restrição equivalente para quantidade, o gatilho abaixo rejeita quantidades negativas. A quantidade zero continua válida, conforme o modelo. Pressupõe que `empresa.Estoque` já foi criada e que a conta tem o privilégio `TRIGGER` sobre ela.
+1. O gatilho abaixo rejeita quantidades negativas na tabela estoque do banco empresa. 
+
+2. A quantidade zero continua válida, conforme o modelo. 
+
+3. Pressupõe que `empresa.Estoque` já foi criada e que a conta tem o privilégio `TRIGGER` sobre ela.
 
 ```sql
 DELIMITER $$
