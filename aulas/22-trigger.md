@@ -334,10 +334,10 @@ DROP TRIGGER IF EXISTS empresa.exemplo_cliente_depois_excluir;
 
 # Exercícios
 
-1. Crie um `BEFORE INSERT` para impedir que uma reserva de viagem tenha preço negativo.
-2. Faça um gatilho rejeitar a inclusão de um medicamento cuja quantidade inicial em estoque seja menor que zero.
-3. Crie uma validação para impedir que um caixa de supermercado registre uma venda sem identificador de cliente quando essa informação for obrigatória.
-4. Crie um `BEFORE UPDATE` que impeça a alteração do código de barras de um produto já cadastrado.
+1. No banco de uma agência de viagens, crie um gatilho `BEFORE INSERT` para impedir que uma reserva de viagem tenha preço negativo.
+2. No banco de uma farmácia, faça um gatilho rejeitar a inclusão de um medicamento cuja quantidade inicial em estoque seja menor que zero.
+3. Crie um gatilho de validação para impedir que um caixa de supermercado registre uma venda sem identificador de cliente quando essa informação for obrigatória.
+4. Crie um gatilho `BEFORE UPDATE` que impeça a alteração do código de barras de um produto já cadastrado no banco de um supermercado.
 5. Registre em uma tabela de auditoria as mudanças de endereço de um fornecedor usando `OLD` e `NEW`.
 6. Registre a data e o identificador do lote sempre que uma linha de lote de padaria for excluída.
 7. Escreva um trigger `AFTER INSERT` que registre cada novo item de uma reserva em uma tabela de histórico.
