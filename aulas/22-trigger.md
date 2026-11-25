@@ -97,7 +97,11 @@ VALUES (1, '10101010000110', 8.50, -1, '2027-12-31');
 
 ## Validando alterações em Estoque
 
-Em um `BEFORE UPDATE`, `NEW` contém os valores propostos e `OLD` contém os valores atuais. Este exemplo valida a quantidade proposta em `NEW`; `OLD` fica disponível para regras que dependam de comparar o valor anterior com o novo.
+1. Em um `BEFORE UPDATE`, `NEW` contém os valores propostos e `OLD` contém os valores atuais. 
+
+2. Este exemplo valida a quantidade proposta em `NEW`.
+
+3. `OLD` fica disponível para regras que dependam de comparar o valor anterior com o novo.
 
 ```sql
 DELIMITER $$
