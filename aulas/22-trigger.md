@@ -338,22 +338,22 @@ DROP TRIGGER IF EXISTS empresa.exemplo_cliente_depois_excluir;
 2. No banco de uma farmácia, faça um gatilho rejeitar a inclusão de um medicamento cuja quantidade inicial em estoque seja menor que zero.
 3. Crie um gatilho de validação para impedir que um caixa de supermercado registre uma venda sem identificador de cliente quando essa informação for obrigatória.
 4. Crie um gatilho `BEFORE UPDATE` que impeça a alteração do código de barras de um produto já cadastrado no banco de um supermercado.
-5. Registre em uma tabela de auditoria as mudanças de endereço de um fornecedor usando `OLD` e `NEW`.
-6. Registre a data e o identificador do lote sempre que uma linha de lote de padaria for excluída.
-7. Escreva um trigger `AFTER INSERT` que registre cada novo item de uma reserva em uma tabela de histórico.
-8. Faça um `BEFORE UPDATE` que valide que a data de retorno de uma viagem não antecede a data de ida.
-9. Em uma tabela de movimentação de farmácia, rejeite um débito que resulte em estoque negativo.
-10. Crie um `AFTER UPDATE` que registre o preço antigo e o novo preço de um produto de supermercado, mas somente quando o preço mudar.
+5. No banco de um supermercado, registre em uma tabela de auditoria as mudanças de endereço de um fornecedor usando `OLD` e `NEW`.
+6. Como um gatilho, registre a data e o identificador do lote sempre que uma linha de lote de uma padaria for excluída.
+7. No banco de uma agência de viagens, escreva um trigger `AFTER INSERT` que registre cada novo item de uma reserva em uma tabela de histórico.
+8. No banco de uma agência de viagens, faça um `BEFORE UPDATE` que valide que a data de retorno de uma viagem não antecede a data de ida.
+9. Em uma tabela de movimentação de uma farmácia, rejeite um débito que resulte em estoque negativo.
+10. Crie um gatilho `AFTER UPDATE` que registre o preço antigo e o novo preço de um produto de supermercado, mas somente quando o preço mudar.
 11. Explique a diferença entre `BEFORE INSERT` e `AFTER INSERT`.
-12. Para um gatilho `BEFORE DELETE`, indique qual pseudotabela contém os valores da linha removida.
-13. Indique quais pseudotabelas estão disponíveis em um trigger `AFTER UPDATE`.
+12. Para um gatilho `BEFORE DELETE`, indique qual pseudotabela (`NEW` / `OLD`) contém os valores da linha removida.
+13. Indique quais pseudotabelas (`NEW` / `OLD`) estão disponíveis em um trigger `AFTER UPDATE`.
 14. Explique por que `FOR EACH ROW` é executado mais de uma vez quando uma instrução atualiza várias linhas.
 15. Explique a função de `SIGNAL SQLSTATE '45000'` em uma regra de validação.
-16. Consulte a definição de um gatilho chamado `validar_preco_pacote`.
+16. Consulte (apresente) a definição de um gatilho chamado `validar_preco_pacote`.
 17. Remova o trigger `auditar_movimento_estoque` sem excluir a tabela à qual ele pertence.
 18. Explique por que um trigger não deve tentar atualizar a mesma tabela que disparou o evento.
 19. Analise um sistema com regras de auditoria implementadas em vários gatilhos e proponha como tornar seus efeitos mais fáceis de rastrear.
-20. Escolha um evento adequado (`INSERT`, `UPDATE` ou `DELETE`) e o momento (`BEFORE` ou `AFTER`) para validar e auditar a alteração de uma reserva; justifique a escolha.
+20. Escolha um evento adequado (`INSERT`, `UPDATE` ou `DELETE`) e o momento (`BEFORE` ou `AFTER`) para validar e auditar a alteração de uma reserva em uma agência de viagens; justifique a escolha.
 
 ---
 
