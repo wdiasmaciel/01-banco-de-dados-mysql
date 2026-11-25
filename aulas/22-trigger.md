@@ -75,10 +75,8 @@ Ao inserir um item em estoque, o MySQL executa o gatilho. Os valores de `id_prod
 Este exemplo pressupõe que o produto de código `1` já exista e que a filial use o CNPJ padrão apresentado no modelo.
 
 ```sql
-INSERT INTO empresa.Estoque
-    (id_produto, cnpj_filial, preco, quantidade, validade)
-VALUES
-    (1, '10101010000110', 8.50, 20, '2027-12-31');
+INSERT INTO empresa.Estoque (id_produto, cnpj_filial, preco, quantidade, validade)
+VALUES (1, '10101010000110', 8.50, -1, '2027-12-31');
 ```
 
 `SQLSTATE '45000'` é usado para sinalizar uma condição de erro definida pela aplicação.
