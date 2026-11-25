@@ -50,7 +50,9 @@ Dentro do gatilho, `NEW` e `OLD` identificam os valores da linha:
 | `UPDATE` | Valores anteriores | Valores novos |
 | `DELETE` | Valores excluídos | Não disponível |
 
-Em gatilhos `BEFORE`, os valores de `NEW` podem ser alterados com `SET NEW.coluna = ...` para eventos de inserção e atualização, quando a coluna permite a alteração. Os valores de `OLD` são somente para leitura.
+1. Em gatilhos `BEFORE`, os valores de `NEW` podem ser alterados com `SET NEW.coluna = ...` para eventos de inserção e atualização, quando a coluna permite a alteração. 
+
+2. Os valores de `OLD` são somente para leitura.
 
 ---
 
