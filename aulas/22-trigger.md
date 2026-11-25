@@ -104,9 +104,11 @@ VALUES (1, '10101010000110', 8.50, -1, '2027-12-31');
 3. `OLD` fica disponível para regras que dependam de comparar o valor anterior com o novo.
 
 ```sql
+DROP TRIGGER IF EXISTS empresa.validar_atualizacao_estoque;
+
 DELIMITER $$
 
-CREATE TRIGGER empresa.validar_atualizacao_estoque
+CREATE TRIGGER IF NOT EXISTS empresa.validar_atualizacao_estoque
 BEFORE UPDATE ON empresa.Estoque
 FOR EACH ROW
 BEGIN
@@ -123,7 +125,7 @@ Se a validação passar, a instrução de atualização prossegue:
 
 ```sql
 UPDATE empresa.Estoque
-SET    quantidade = 25
+SET    quantidade = -1
 WHERE  id_produto = 1
 AND    cnpj_filial = '10101010000110';
 ```
