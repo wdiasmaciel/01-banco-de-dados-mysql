@@ -15,9 +15,13 @@
 
 # Gatilhos no MySQL
 
-Um **trigger** (gatilho) é um objeto associado a uma tabela. O MySQL executa automaticamente o gatilho quando uma linha é inserida, atualizada ou excluída.
+1. Um **trigger** (gatilho) é um objeto associado a uma tabela. 
 
-Gatilhos são úteis para validar dados e registrar alterações. Eles não são chamados diretamente com `CALL`: são disparados pela instrução que modifica a tabela.
+2. O MySQL executa automaticamente o gatilho quando uma linha é inserida, atualizada ou excluída.
+
+3. Gatilhos são úteis para validar dados e registrar alterações. 
+
+4. Eles não são chamados diretamente com `CALL`: são disparados pela instrução que modifica a tabela.
 
 ---
 
