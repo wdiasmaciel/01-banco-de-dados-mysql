@@ -36,7 +36,7 @@ Um trigger é definido para um momento e um evento:
 - `BEFORE DELETE`: antes de excluir cada linha;
 - `AFTER DELETE`: depois de excluir cada linha.
 
-No MySQL, os gatilhos são executados **uma vez por linha afetada**. Não existe trigger `FOR EACH STATEMENT` para executar apenas uma vez por comando.
+No MySQL, os gatilhos são executados **uma vez por linha afetada**. 
 
 ---
 
