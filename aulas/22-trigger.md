@@ -119,12 +119,14 @@ AND    cnpj_filial = '10101010000110';
 O exemplo a seguir usa uma tabela simples de clientes e uma tabela de auditoria. Crie as tabelas no banco de dados selecionado e, em seguida, crie os quatro gatilhos:
 
 ```sql
-CREATE TABLE ClienteTriggerExemplo (
+DROP TEMPORARY TABLE IF EXISTS ClienteTriggerExemplo; 
+CREATE TEMPORARY TABLE IF NOT EXISTS ClienteTriggerExemplo (
     id INT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE AuditoriaTriggerExemplo (
+DROP TEMPORARY TABLE IF EXISTS AuditoriaTriggerExemplo; 
+CREATE TEMPORATY TABLE IF NOT EXISTS AuditoriaTriggerExemplo (
     id INT AUTO_INCREMENT PRIMARY KEY,
     evento VARCHAR(20) NOT NULL,
     cliente_id INT NOT NULL,
