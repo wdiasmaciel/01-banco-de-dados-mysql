@@ -134,7 +134,7 @@ AND    cnpj_filial = '10101010000110';
 
 ## Exemplos de `AFTER INSERT`, `AFTER UPDATE`, `BEFORE DELETE` e `AFTER DELETE`
 
-O exemplo a seguir usa uma tabela simples de clientes e uma tabela de auditoria. Crie as tabelas no banco de dados selecionado e, em seguida, crie os quatro gatilhos:
+Os exemplos a seguir usam uma tabela temporária de clientes e uma tabela temporária de auditoria.
 
 ```sql
 DROP TEMPORARY TABLE IF EXISTS ClienteTriggerExemplo; 
