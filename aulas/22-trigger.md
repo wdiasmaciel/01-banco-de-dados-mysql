@@ -268,7 +268,9 @@ ORDER BY id;
 
 ## Delimitador ao criar um trigger
 
-O corpo de um trigger pode conter várias instruções terminadas em `;`. No cliente de linha de comando do MySQL, use `DELIMITER` para que o corpo seja enviado como uma única instrução `CREATE TRIGGER`.
+1. O corpo de um trigger pode conter várias instruções terminadas em `;`. 
+
+2. No cliente de linha de comando do MySQL, use `DELIMITER` para que o corpo seja enviado como uma única instrução `CREATE TRIGGER`:
 
 ```sql
 DELIMITER $$
@@ -276,13 +278,15 @@ DELIMITER $$
 DELIMITER ;
 ```
 
-`DELIMITER` é um comando do cliente MySQL, não uma instrução SQL enviada ao servidor. Algumas ferramentas gráficas, incluindo clientes SQL, podem executar a instrução inteira sem exigir essa configuração do mesmo modo; siga a forma de execução suportada pela ferramenta.
+3. `DELIMITER` é um comando do cliente MySQL, não uma instrução SQL enviada ao servidor. 
+
+4. Algumas ferramentas gráficas, incluindo clientes SQL, podem executar a instrução inteira sem exigir essa configuração do mesmo modo; siga a forma de execução suportada pela ferramenta.
 
 ---
 
 ## Consultando e removendo triggers
 
-Liste os gatilhos do banco selecionado:
+Liste os gatilhos (triggers) do banco selecionado:
 
 ```sql
 SHOW TRIGGERS;
@@ -299,6 +303,11 @@ Remova o gatilho quando ele não for mais necessário:
 ```sql
 DROP TRIGGER IF EXISTS empresa.validar_estoque;
 DROP TRIGGER IF EXISTS empresa.validar_atualizacao_estoque;
+
+DROP TRIGGER IF EXISTS empresa.exemplo_cliente_depois_inserir;
+DROP TRIGGER IF EXISTS empresa.exemplo_cliente_depois_atualizar;
+DROP TRIGGER IF EXISTS empresa.exemplo_cliente_antes_excluir;
+DROP TRIGGER IF EXISTS empresa.exemplo_cliente_depois_excluir;
 ```
 
 Remover um trigger não apaga as linhas da tabela associada. Remover a tabela associada também remove seus gatilhos.
