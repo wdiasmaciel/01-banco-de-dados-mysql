@@ -284,7 +284,7 @@ DELIMITER ;
 
 ---
 
-## Consultando e removendo triggers
+## Consultando triggers
 
 Liste os gatilhos (triggers) do banco selecionado:
 
@@ -298,6 +298,10 @@ Consulte a definição de um gatilho:
 SHOW CREATE TRIGGER empresa.validar_estoque;
 ```
 
+---
+
+## Removendo triggers
+
 Remova o gatilho quando ele não for mais necessário:
 
 ```sql
@@ -310,7 +314,9 @@ DROP TRIGGER IF EXISTS empresa.exemplo_cliente_antes_excluir;
 DROP TRIGGER IF EXISTS empresa.exemplo_cliente_depois_excluir;
 ```
 
-Remover um trigger não apaga as linhas da tabela associada. Remover a tabela associada também remove seus gatilhos.
+1. Remover um trigger não apaga as linhas da tabela associada. 
+
+2. Remover a tabela associada também remove seus gatilhos (triggers).
 
 ---
 
