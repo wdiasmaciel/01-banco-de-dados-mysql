@@ -120,6 +120,8 @@ git merge -X ours nome-da-branch
 
 ---
 
+## Resolvendo conflito
+
 Confira primeiro:
 
 ```basg
