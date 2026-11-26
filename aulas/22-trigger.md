@@ -62,7 +62,7 @@ Dentro do gatilho, `NEW` e `OLD` identificam os valores da linha:
 
 2. A quantidade zero continua válida, conforme o modelo. 
 
-3. Pressupõe que `empresa.Estoque` já foi criada e que a conta tem o privilégio `TRIGGER` sobre ela.
+3. Pressupõe que `empresa.Estoque` já foi criada e que a conta do usuário tem o privilégio `TRIGGER` sobre ela.
 
 ```sql
 DROP TRIGGER IF EXISTS empresa.validar_estoque;
