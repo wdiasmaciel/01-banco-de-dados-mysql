@@ -3,7 +3,7 @@
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="README.md">Anterior</a>
+      <a href="../README.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
       <a href="02-mysql.md">Próximo</a>
@@ -86,7 +86,7 @@ git add . && git commit -m "Exemplo" && git push
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="left" style="border: none;">
-      <a href="README.md">Anterior</a>
+      <a href="../README.md">Anterior</a>
     </td>
     <td align="right" style="border: none;">
       <a href="02-mysql.md">Próximo</a>

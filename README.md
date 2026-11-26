@@ -115,7 +115,7 @@ https://learnsql.com.br/blog/o-que-sao-ddl-dml-dql-e-dcl-em-sql/
 <table width="100%" style="border: none; border-collapse: collapse;">
   <tr style="border: none;">
     <td align="right" style="border: none;">
-      <a href="01-ambiente.md">Próximo</a>
+      <a href="./aulas/01-ambiente.md">Próximo</a>
     </td>
   </tr>
 </table>
