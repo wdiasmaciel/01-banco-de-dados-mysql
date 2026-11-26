@@ -258,7 +258,7 @@ WHERE id = 1;
 Consulte os registros produzidos pelos gatilhos:
 
 ```sql
-SELECT evento, cliente_id, nome_antigo, nome_novo, registrado_em
+SELECT evento, cliente_id, nome_antigo, nome_novo, DATE_FORMAT(registrado_em, '%Y-%m-%d %H:%i:%s') AS registrado_em
 FROM AuditoriaTriggerExemplo
 ORDER BY id;
 ```
