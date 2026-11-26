@@ -134,17 +134,17 @@ AND    cnpj_filial = '10101010000110';
 
 ## Exemplos de `AFTER INSERT`, `AFTER UPDATE`, `BEFORE DELETE` e `AFTER DELETE`
 
-Os exemplos a seguir usam uma tabela temporária de clientes e uma tabela temporária de auditoria.
+Os exemplos a seguir usam uma tabela de clientes e uma tabela de auditoria.
 
 ```sql
-DROP TEMPORARY TABLE IF EXISTS ClienteTriggerExemplo; 
-CREATE TEMPORARY TABLE IF NOT EXISTS ClienteTriggerExemplo (
+DROP TABLE IF EXISTS ClienteTriggerExemplo; 
+CREATE TABLE IF NOT EXISTS ClienteTriggerExemplo (
     id INT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL
 );
 
-DROP TEMPORARY TABLE IF EXISTS AuditoriaTriggerExemplo; 
-CREATE TEMPORARY TABLE IF NOT EXISTS AuditoriaTriggerExemplo (
+DROP TABLE IF EXISTS AuditoriaTriggerExemplo; 
+CREATE TABLE IF NOT EXISTS AuditoriaTriggerExemplo (
     id INT AUTO_INCREMENT PRIMARY KEY,
     evento VARCHAR(20) NOT NULL,
     cliente_id INT NOT NULL,
