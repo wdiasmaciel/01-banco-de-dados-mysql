@@ -314,6 +314,12 @@ DROP TRIGGER IF EXISTS empresa.exemplo_cliente_antes_excluir;
 DROP TRIGGER IF EXISTS empresa.exemplo_cliente_depois_excluir;
 ```
 
+```sql
+SHOW TRIGGERS;
+```
+
+**OBS**:
+
 1. Remover um trigger não apaga as linhas da tabela associada. 
 
 2. Remover a tabela associada também remove seus gatilhos (triggers).
