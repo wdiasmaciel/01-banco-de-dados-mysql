@@ -98,3 +98,43 @@ O segundo merge incluirá as novas alterações de temp que ainda não chegaram 
 
 Se main também tiver recebido alterações nesse intervalo, o merge pode exigir resolução de conflitos.
 
+---
+
+
+## Resolver conflitos priorizando um lado automaticamente
+
+Use a estratégia `-X` (`ours` para manter a branch atual ou `theirs` para aceitar a branch que está entrando):
+
+```bash
+git merge -X theirs nome-da-branch
+```
+
+ou
+
+```bash
+git merge -X ours nome-da-branch
+```
+
+**OBS**: 
+`-X theirs/ours` ajuda em conflitos de linha, mas conflitos complexos ainda podem exigir revisão manual.
+
+---
+
+Confira primeiro:
+
+```basg
+git status
+```
+
+Se aparecerem apenas os conflitos esperados, revise os arquivos e marque a resolução:
+
+```bash
+git add -A
+git status
+git commit -m "Merge origin/main na branch main"
+git push origin main
+```
+
+1. O `git add -A` registra também as renomeações e exclusões envolvidas nos conflitos. 
+2. Não execute outro `git reset --hard`: isso pode descartar o merge em andamento. 
+3. Antes do `git add -A`, confirme que não há outras alterações suas que não devam entrar no commit.
